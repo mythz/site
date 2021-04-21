@@ -1,0 +1,60 @@
+# ----
+# Site
+
+title: ServiceStack
+description: ServiceStack Framework
+url: http://site.servicestack.com/
+repository: mythz/site
+google_analytics_key:
+
+collections:
+  about:
+    title: About
+    output: true
+    permalink: /about/:slug.html
+  features:
+    title: Features
+    output: true
+    permalink: /features/:slug.html
+  learn:
+    title: Learn
+    output: true
+    permalink: /learn/:slug.html
+  news:
+    title: News
+    output: true
+    permalink: /news/:slug.html
+  why_servicestack:
+    title: Why ServiceStack
+    output: true
+    permalink: /why/:slug.html
+plugins:
+  - github-pages
+
+exclude:
+  - readme.md
+  - LICENCE
+
+topics: []
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+  -
+    scope:
+      collection: news
+    values:
+      priority: 999
+  -
+    scope:
+      collection: learn
+    values:
+      layout: default
+
+# -----
+# Build
+sass:
+  sass_dir: _scss
+  style: :compressed
