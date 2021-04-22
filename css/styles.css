@@ -407,6 +407,7 @@ header .intro-section .buttons {
 
 .features .feature {
     margin-bottom: 40px;
+    height:8em;
 }
 
 .features .feature .icon-container {
@@ -479,12 +480,13 @@ header .intro-section .buttons {
 }
 
 .app-brief .left-align .feature-list li {
-    margin-bottom: 26px;
+    margin-bottom: 2em;
 }
 
 .app-brief .left-align .feature-list li i {
-    margin-right: 10px;
+    margin-right: 14px;
     vertical-align: inherit;
+    font-size: large;
 }
 
 
@@ -624,6 +626,10 @@ object {
     -webkit-box-shadow: none;
             box-shadow: none;
     display: block;
+}
+
+.screenshots .shot iframe {
+    width:100%;
 }
 
 .screenshots .shot img {
