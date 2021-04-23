@@ -71,7 +71,6 @@ $(window).scroll(function () {
 if (matchMedia('(min-width: 992px), (max-width: 767px)').matches) {
   function mainNav() {
         var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-        console.log(top)
         if (top > 1750) {
             $('.sticky-navigation').stop().animate({"top": '0'});
             $('.floating-navigation').stop().animate({"top": '-60'});
@@ -86,7 +85,6 @@ if (matchMedia('(min-width: 992px), (max-width: 767px)').matches) {
 if (matchMedia('(min-width: 768px) and (max-width: 991px)').matches) {
   function mainNav() {
       var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-      console.log(top)
       if (top > 1750) {
           $('.sticky-navigation').stop().animate({"top": '0'});
           $('.floating-navigation').stop().animate({"top": '-120'});
