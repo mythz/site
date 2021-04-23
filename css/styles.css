@@ -356,7 +356,28 @@ header .phone-image {
     margin-bottom: 50px;
 }
 
+header .logo-image {
+    max-width: 350px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 5em;
+}
+
+header .video-preview {
+    max-height: 400px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+header .video-preview iframe {
+    width: 100%;
+}
+
 header .phone-image img {
+    width: 100%;
+}
+
+header .logo-image img {
     width: 100%;
 }
 
@@ -440,7 +461,16 @@ header .intro-section .buttons {
     width: 100%;
 }
 
+.features .logo-image {
+    max-width: 250px;
+    margin: auto;
+    margin-bottom: 80px;
+    margin-top: 5em;
+}
 
+.features .logo-image img {
+    width: 100%;
+}
 /*---------------------------------------
    SECTION:  BRIEF                 
 -----------------------------------------*/
