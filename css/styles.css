@@ -273,9 +273,19 @@ h5 {
 -----------------------------------------*/
 
 header {
-    background: url(../images/bg-1.jpg) no-repeat center top fixed;
+    background: url(../images/andre-benz-cXU6tNxhub0-unsplash.jpg) no-repeat center top fixed;
     -webkit-background-size: cover;
             background-size: cover;
+}
+
+.instant-client-apps-bg {
+    background: url(/images/henry-chen-x7clQSWhlfE-unsplash.jpg) no-repeat center top fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+.instant-client-apps-bg h2 {
+    color: white;
 }
 
 header .color-overlay {
@@ -322,9 +332,49 @@ header .full-screen {
     color: #000000;
 }
 
+
+.floating-navigation {
+    min-height: 60px;
+    background: #FFFFFF;
+    border: none;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    -webkit-backface-visibility: hidden;
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
+    box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
+}
+
+.floating-navigation .navbar-header img {
+    max-height: 30px;
+    -webkit-backface-visibility: hidden;
+}
+
+.floating-navigation .main-navigation .current a {
+    color: #000000 !important;
+    position: relative;
+    outline: none;
+}
+
+.floating-navigation .main-navigation li a {
+    line-height: 30px;
+    font-weight: 400;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.floating-navigation .main-navigation li a:hover {
+    color: #000000;
+}
+
 .navbar-inverse .navbar-toggle {
 border-color: #313131;
 background: #313131;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav.navbar-center {
+        position: absolute;
+    }
 }
 
 header .only-logo .navbar {
@@ -545,12 +595,20 @@ object {
     background: transparent !important;
 }
 
+.video-right-text {
+    text-align: left;
+}
+
+.video-right-text p {
+    margin-top: 3em;
+}
+
 
 /*---------------------------------------
    SECTION:  TESTIMONIALS                 
 -----------------------------------------*/
 .testimonials {
-    background: url(../images/bg-2.jpg) no-repeat center fixed;
+    background: url(../images/matt-nelson-z4X3yABcf5g-unsplash.jpg) no-repeat center fixed;
     -webkit-background-size: cover;
             background-size: cover;
     color: #ffffff;
@@ -731,7 +789,7 @@ object {
 -----------------------------------------*/
 
 .download {
-    background: url('../images/bg-3.jpg') no-repeat center fixed;
+    background: url('/images/paulo-silva-vEoO4R1FHrY-unsplash.jpg') no-repeat center fixed;
     -webkit-background-size: cover;
             background-size: cover;
     color: #ffffff;

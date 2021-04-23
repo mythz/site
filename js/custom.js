@@ -2,11 +2,11 @@
    LOADER                     
 =================================== */
 // makes sure the whole site is loaded
-jQuery(window).load(function() {
-        // will first fade out the loading animation
-	jQuery(".status").fadeOut();
-        // will fade out the whole DIV that covers the website.
-	jQuery(".preloader").delay(1000).fadeOut("slow");
+$("#home").waitUntilExists(function() {
+    // will first fade out the loading animation
+    jQuery(".status").fadeOut();
+    // will fade out the whole DIV that covers the website.
+    jQuery(".preloader").fadeOut();
 })
 
 /* =================================
@@ -71,18 +71,30 @@ $(window).scroll(function () {
 if (matchMedia('(min-width: 992px), (max-width: 767px)').matches) {
   function mainNav() {
         var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-        if (top > 40) $('.sticky-navigation').stop().animate({"top": '0'});
-
-        else $('.sticky-navigation').stop().animate({"top": '-60'});
+        console.log(top)
+        if (top > 1750) {
+            $('.sticky-navigation').stop().animate({"top": '0'});
+            $('.floating-navigation').stop().animate({"top": '-60'});
+        }
+        else {
+            $('.sticky-navigation').stop().animate({"top": '-60'});
+            $('.floating-navigation').stop().animate({"top": '0'});
+        }
     }
 }
 
 if (matchMedia('(min-width: 768px) and (max-width: 991px)').matches) {
   function mainNav() {
-        var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-        if (top > 40) $('.sticky-navigation').stop().animate({"top": '0'});
-
-        else $('.sticky-navigation').stop().animate({"top": '-120'});
+      var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+      console.log(top)
+      if (top > 1750) {
+          $('.sticky-navigation').stop().animate({"top": '0'});
+          $('.floating-navigation').stop().animate({"top": '-120'});
+      }
+      else {
+          $('.sticky-navigation').stop().animate({"top": '-120'});
+          $('.floating-navigation').stop().animate({"top": '0'});
+      }
     }
 }
 

@@ -1,0 +1,48 @@
+
+<!-- =========================
+     BRIEF LEFT SECTION WITH VIDEO
+============================== -->
+<section class="app-brief {{ include.bg_class }}" id="{{ include.local_link_id }}">
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- PHONES IMAGE -->
+            <div class="col-md-6 wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.5s">
+                <div class="video-container">
+
+                    <div class="video">
+
+                        <iframe width="560" height="315" src="{{ include.youtube_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE WITH BRIEF -->
+            <div class="col-md-6 left-align wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s">
+
+                <!-- SECTION TITLE -->
+                <h2 class="dark-text">{{ include.title }} </h2>
+
+                <div class="colored-line-left">
+                </div>
+
+                <p>
+                    {{ include.content }}
+                </p>
+
+
+            </div>
+            <!-- /END RIGHT BRIEF -->
+
+        </div>
+        <!-- /END ROW -->
+
+    </div>
+    <!-- /END CONTAINER -->
+
+</section>
+<!-- /END SECTION -->

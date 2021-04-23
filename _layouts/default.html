@@ -19,9 +19,41 @@
 
     {% include home/testimonials-section.html %}
 
-    {% include home/brief-section.html %}
+    {%
+    include feature-video-left.html
+    local_link_id="autoquery-feature"
+    youtube_url="https://www.youtube.com/embed/NaJ7TW-Q_pU"
+    title="AutoQuery"
+    bg_class="white-bg"
+    content="Enable modern, customizable web services to simplify your data access."
+    %}
 
-    {% include home/screenshots-section.html %}
+    {%
+    include feature-video-right.html
+    youtube_url="https://www.youtube.com/embed/kN7371bqUII"
+    local_link_id="studio-feature"
+    title="Studio"
+    bg_class="grey-bg"
+    content="Use ServiceStack Studio to manage Users, Validation, Permissions and Data with our portable tool for your AutoQuery services."
+    %}
+
+    {%
+    include feature-video-left.html
+    youtube_url="https://www.youtube.com/embed/NaJ7TW-Q_pU"
+    local_link_id="autogen-feature"
+    title="AutoGen"
+    bg_class="white-bg"
+    content="Generate fully featured CRUD web services without coding them with AutoQuery's AutoGen feature"
+    %}
+
+    {%
+    include feature-video-right.html
+    youtube_url="https://www.youtube.com/embed/GTnuMhvUayg"
+    local_link_id="instant-client-apps-feature"
+    title="Instant Client Apps"
+    bg_class="instant-client-apps-bg"
+    content="Use our hosted tool to generate native clients apps instantly."
+    %}
 
     {% include home/services-section.html %}
 

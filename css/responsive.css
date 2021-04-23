@@ -68,6 +68,26 @@ RESPONSIVE FIXES
         padding-top: 0;
     }
 
+    .floating-navigation .navbar-header {
+        width: 100%;
+        position: relative;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .floating-navigation .navbar-header a {
+        float: none !important;
+    }
+
+    .floating-navigation .navbar-header img {
+        max-height: 40px;
+    }
+
+    .floating-navigation .main-navigation {
+        text-align: center;
+        width: 100%;
+        padding-top: 0;
+    }
+
     header .intro-section {
         padding-top: 0;
     }
