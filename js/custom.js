@@ -153,16 +153,6 @@ wow.init();
 ===  OWL CROUSEL               ====
 =================================== */
 $(document).ready(function () {
-
-    $("#feedbacks").owlCarousel({
-
-        navigation: false, // Show next and prev buttons
-        slideSpeed: 800,
-        paginationSpeed: 400,
-        autoPlay: 5000,
-        singleItem: true
-    });
-
     var owl = $("#screenshots");
 
     owl.owlCarousel({
@@ -172,8 +162,6 @@ $(document).ready(function () {
         itemsTablet: [600, 1], //2 items between 600 and 0
         itemsMobile: false // itemsMobile disabled - inherit from itemsTablet option
     });
-
-
 });
 
 
