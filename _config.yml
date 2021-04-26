@@ -34,6 +34,7 @@ plugins:
 exclude:
   - readme.md
   - LICENCE
+  - .idea/
 
 topics: []
 defaults:
