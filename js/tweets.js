@@ -117,7 +117,7 @@ function createOwlCarousel(number) {
         autoplay: true,
         autoplaySpeed: 400,
         dotsSpeed: 400,
-        autoplayTimeout: 2000,
+        autoplayTimeout: 5000,
     });
     $("#feedbacks").on('changed.owl.carousel', function (event) {
         if(event.item.index === loadMoreIndex) {
