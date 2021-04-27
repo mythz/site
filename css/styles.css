@@ -282,6 +282,24 @@ header {
             background-size: cover;
 }
 
+header .social-icons img {
+    width:2em;
+}
+
+.header .social-icons {
+    margin-top: 1.2em;
+    margin-left: 1em;
+}
+
+.header .social-icons i {
+    font-size: x-large;
+}
+
+.header .social-icons li{
+    padding-left:5px;
+    margin-top:-10px;
+}
+
 .instant-client-apps-bg {
     background: url(/images/henry-chen-x7clQSWhlfE-unsplash.jpg) no-repeat center top fixed;
     -webkit-background-size: cover;
@@ -386,9 +404,46 @@ border-color: #313131;
 background: #313131;
 }
 
+.nav-call-to-action-button {
+    margin:0;
+    padding:0;
+    margin-left: 20px;
+    text-transform:none;
+    border-radius: 2px;
+    margin-top: -4px;
+    margin-right: -20px;
+    min-width: 100px;
+    font-size: medium;
+    color:white;
+    width:100px;
+    background-color: pink;
+}
+
+.nav-call-to-action-button:hover {
+    background: #008ed6;
+}
+
+.navbar .navbar-collapse {
+    position: static;
+    display: inline-block;
+    text-align: center;
+}
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar-nav {
+    margin-top:1em;
+}
+
 @media (min-width: 768px) {
     .navbar-nav.navbar-center {
-        position: absolute;
+        position: static;
+    }
+    .navbar-nav > li > a {
+        padding-top:0;
+        padding-bottom: 5px;
     }
 }
 
