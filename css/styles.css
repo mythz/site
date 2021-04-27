@@ -472,7 +472,7 @@ header .intro-section .buttons {
 .features .features-left {
     text-align: right;
     margin-top: 26px;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 
 .features .features-left .icon-container {
@@ -483,7 +483,7 @@ header .intro-section .buttons {
 .features .features-right {
     text-align: left;
     margin-top: 26px;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 
 .features .features-right .icon-container {
@@ -492,7 +492,7 @@ header .intro-section .buttons {
 }
 
 .features .feature {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     height:8em;
 }
 
@@ -530,7 +530,7 @@ header .intro-section .buttons {
     max-width: 250px;
     margin: auto;
     margin-bottom: 80px;
-    margin-top: 5em;
+    margin-top: 12em;
 }
 
 .features .logo-image img {

@@ -48,6 +48,10 @@ RESPONSIVE FIXES
         min-height: 780px;
     }
 
+    .sticky-navigation {
+        min-height: 120px;
+    }
+
     .sticky-navigation .navbar-header {
         width: 100%;
         position: relative;

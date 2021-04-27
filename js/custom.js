@@ -85,15 +85,16 @@ if (matchMedia('(min-width: 992px), (max-width: 767px)').matches) {
 
 if (matchMedia('(min-width: 768px) and (max-width: 991px)').matches) {
     function mainNav() {
-      var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-      if (top > 1750) {
-          $('.sticky-navigation').stop().animate({"top": '0'});
-          $('.floating-navigation').stop().animate({"top": '-120'});
-      }
-      else {
-          $('.sticky-navigation').stop().animate({"top": '-120'});
-          $('.floating-navigation').stop().animate({"top": '0'});
-      }
+        var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+        console.log('mobile - ' + top)
+        if (top > 1750) {
+            $('.sticky-navigation').stop().animate({'top': '0'}).css({'position': 'fixed'});
+            $('.floating-navigation').stop().animate({'top': '-120'});
+        }
+        else {
+            $('.sticky-navigation').stop().animate({'top': '90'}).css({"position": 'relative'});
+            $('.floating-navigation').stop().animate({'top': '0'});
+        }
     }
 }
 
