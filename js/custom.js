@@ -71,19 +71,20 @@ $(window).scroll(function () {
 if (matchMedia('(min-width: 992px), (max-width: 767px)').matches) {
   function mainNav() {
         var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-        if (top > 1750) {
-            $('.sticky-navigation').stop().animate({"top": '0'});
-            $('.floating-navigation').stop().animate({"top": '-60'});
+        console.log(top);
+        if (top > 1820) {
+            $('.sticky-navigation').stop().animate({'top': '0'}).css({'position': 'fixed'});
+            $('.floating-navigation').stop().animate({'top': '-60'});
         }
         else {
-            $('.sticky-navigation').stop().animate({"top": '-60'});
-            $('.floating-navigation').stop().animate({"top": '0'});
+            $('.sticky-navigation').stop().animate({'top': '60'}).css({"position": 'relative'});
+            $('.floating-navigation').stop().animate({'top': '0'});
         }
     }
 }
 
 if (matchMedia('(min-width: 768px) and (max-width: 991px)').matches) {
-  function mainNav() {
+    function mainNav() {
       var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
       if (top > 1750) {
           $('.sticky-navigation').stop().animate({"top": '0'});

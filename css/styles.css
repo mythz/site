@@ -314,13 +314,14 @@ header .full-screen {
 /* TOP BAR WITH NAVIGATION */
 
 .sticky-navigation {
-  min-height: 60px;
-  background: #FFFFFF;
-  border: none;
-  padding: 0 !important;
-  margin-bottom: 0 !important;
-  -webkit-backface-visibility: hidden;
-  -webkit-box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
+    /*position: relative;*/
+    min-height: 60px;
+    background: #FFFFFF;
+    border: none;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    -webkit-backface-visibility: hidden;
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
           box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
 }
 
