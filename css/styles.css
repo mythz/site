@@ -292,6 +292,16 @@ header {
     color: white;
 }
 
+.grpc-feature-bg {
+    background: url(/images/guillaume-lorain-SQE6eVg65Kg-unsplash.jpg) no-repeat center top fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+.grpc-feature-bg h2 {
+    color: white;
+}
+
 header .color-overlay {
     min-height: 900px;
 }
@@ -793,7 +803,7 @@ object {
 -----------------------------------------*/
 
 .download {
-    background: url('/images/paulo-silva-vEoO4R1FHrY-unsplash.jpg') no-repeat center fixed;
+    background: url('/images/julius-jansson-vJpTUSffogE-unsplash.jpg') no-repeat center fixed;
     -webkit-background-size: cover;
             background-size: cover;
     color: #ffffff;

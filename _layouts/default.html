@@ -43,7 +43,7 @@
     local_link_id="autogen-feature"
     title="AutoGen"
     bg_class="white-bg"
-    content="Generate fully featured CRUD web services without coding them with AutoQuery's AutoGen feature"
+    content="Generate fully featured CRUD web services without coding them with AutoQuery's AutoGen feature."
     %}
 
     {%
@@ -55,9 +55,43 @@
     content="Use our hosted tool to generate native clients apps instantly."
     %}
 
-    {% include home/services-section.html %}
+    {%
+    include feature-video-left.html
+    youtube_url="https://www.youtube.com/embed/cbYuem1b2tg"
+    local_link_id="add-ss-ref-feature"
+    title="Add ServiceStack Reference"
+    bg_class="white-bg"
+    content="Available for all popular IDEs as well as CLI tooling, get your client applications integrated in a consistent, typed, end to end solution for you or your customers."
+    %}
 
-    {% include home/pricing-section.html %}
+    {%
+    include feature-video-right.html
+    youtube_url="https://www.youtube.com/embed/ocH5L-CikQ0"
+    local_link_id="mobile-clients-feature"
+    title="Mobile Clients"
+    bg_class="grey-bg"
+    content="First class client libraries for your favorite Android and iOS development frameworks, working in your preferred language."
+    %}
+
+    {%
+    include feature-video-left.html
+    youtube_url="https://www.youtube.com/embed/0PvzcnxlBvc"
+    local_link_id="project-templates-feature"
+    title="Project Templates"
+    bg_class="white-bg"
+    content="Lots of project templates using modern frameworks, along with video and written tutorials to help your team get started quickly."
+    %}
+
+    {%
+    include feature-video-right.html
+    youtube_url="https://www.youtube.com/embed/5NNCaWMviXU"
+    local_link_id="grpc-feature"
+    title="gRPC Support"
+    bg_class="grpc-feature-bg"
+    content="Create gRPC services in a consistent way to all your other services or easily add gRPC support to your existing ServiceStack services."
+    %}
+
+    {% include home/services-section.html %}
 
     {% include home/download-section.html %}
 

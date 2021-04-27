@@ -221,7 +221,7 @@ RESPONSIVE FIXES
         padding: 11px 20px 11px 20px;
     }
 
-    .features .feature:hover .icon-container .icon, 
+    .features .feature:hover .icon-container .icon,
     footer .contact-button:hover {
         -webkit-background-clip: padding-box;
         -moz-background-clip: padding;
