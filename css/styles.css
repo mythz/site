@@ -423,11 +423,7 @@ background: #313131;
     background: #008ed6;
 }
 
-.navbar .navbar-collapse {
-    position: static;
-    display: inline-block;
-    text-align: center;
-}
+
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
