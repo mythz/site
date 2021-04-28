@@ -66,7 +66,7 @@ function createTestimonialHtml(startIndex) {
 
     html.push('<div class="feedback">');
     html.push('<div class="image">');
-    html.push('<img src="' + profileImg + '" alt="">')
+    html.push('<img src="' + profileImg + '" loading="lazy" alt="">')
     html.push('</div>');
     html.push('<div class="message">');
     html.push(msg);
