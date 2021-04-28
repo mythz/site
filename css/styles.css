@@ -277,7 +277,7 @@ h5 {
 -----------------------------------------*/
 
 header {
-    background: url(../images/andre-benz-cXU6tNxhub0-unsplash.jpg) no-repeat center top fixed;
+    background: url(../images/andre-benz-cXU6tNxhub0-unsplash.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
             background-size: cover;
 }
@@ -301,7 +301,7 @@ header .social-icons img {
 }
 
 .instant-client-apps-bg {
-    background: url(/images/henry-chen-x7clQSWhlfE-unsplash.jpg) no-repeat center top fixed;
+    background: url(/images/henry-chen-x7clQSWhlfE-unsplash.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     color: white;
@@ -311,7 +311,7 @@ header .social-icons img {
 }
 
 .grpc-feature-bg {
-    background: url(/images/guillaume-lorain-SQE6eVg65Kg-unsplash.jpg) no-repeat center top fixed;
+    background: url(/images/guillaume-lorain-SQE6eVg65Kg-unsplash.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     color: white;
@@ -674,7 +674,7 @@ object {
    SECTION:  TESTIMONIALS                 
 -----------------------------------------*/
 .testimonials {
-    background: url(../images/matt-nelson-z4X3yABcf5g-unsplash.jpg) no-repeat center fixed;
+    background: url(../images/matt-nelson-z4X3yABcf5g-unsplash.jpg) center fixed no-repeat;
     -webkit-background-size: cover;
             background-size: cover;
     color: #ffffff;
@@ -855,7 +855,7 @@ object {
 -----------------------------------------*/
 
 .download {
-    background: url('/images/julius-jansson-vJpTUSffogE-unsplash.jpg') no-repeat center fixed;
+    background: url('/images/julius-jansson-vJpTUSffogE-unsplash.jpg') center fixed no-repeat;
     -webkit-background-size: cover;
             background-size: cover;
     color: #ffffff;
@@ -903,7 +903,7 @@ object {
    SECTION:  CONTACT-US
 -----------------------------------------*/
 .contact-container {
-    background: url('/images/julius-jansson-vJpTUSffogE-unsplash.jpg') no-repeat center fixed;
+    background: url('/images/julius-jansson-vJpTUSffogE-unsplash.jpg') center fixed no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     color: #ffffff;

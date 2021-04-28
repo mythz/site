@@ -68,16 +68,30 @@ $(window).scroll(function () {
     mainNav();
 });
 
+var animatingMenu = false;
+
 if (matchMedia('(min-width: 992px), (max-width: 767px)').matches) {
   function mainNav() {
         var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
         if (top > 1820) {
-            $('.sticky-navigation').stop().animate({'top': '0'}).css({'position': 'fixed'});
-            $('.floating-navigation').stop().animate({'top': '-120'});
+            if(!animatingMenu) {
+                $('.sticky-navigation').stop().animate({'top': '0'},200).css({'position': 'fixed'});
+                $('.floating-navigation').stop().animate({'top': '-120'},200);
+                animatingMenu = true;
+                setTimeout(function () {
+                    animatingMenu = false;
+                },100)
+            }
         }
         else {
-            $('.sticky-navigation').stop().animate({'top': '60'}).css({"position": 'relative'});
-            $('.floating-navigation').stop().animate({'top': '0'});
+            if(!animatingMenu) {
+                $('.sticky-navigation').stop().animate({'top': '60'}, 200).css({"position": 'relative'});
+                $('.floating-navigation').stop().animate({'top': '0'}, 200);
+                animatingMenu = true;
+                setTimeout(function () {
+                    animatingMenu = false;
+                },100)
+            }
         }
     }
 }
@@ -86,12 +100,24 @@ if (matchMedia('(min-width: 768px) and (max-width: 991px)').matches) {
     function mainNav() {
         var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
         if (top > 1750) {
-            $('.sticky-navigation').stop().animate({'top': '0'}).css({'position': 'fixed'});
-            $('.floating-navigation').stop().animate({'top': '-180'});
+            if(!animatingMenu) {
+                $('.sticky-navigation').stop().animate({'top': '0'}, 200).css({'position': 'fixed'});
+                $('.floating-navigation').stop().animate({'top': '-180'}, 200);
+                animatingMenu = true;
+                setTimeout(function () {
+                    animatingMenu = false;
+                },100)
+            }
         }
         else {
-            $('.sticky-navigation').stop().animate({'top': '90'}).css({"position": 'relative'});
-            $('.floating-navigation').stop().animate({'top': '0'});
+            if(!animatingMenu) {
+                $('.sticky-navigation').stop().animate({'top': '90'}, 200).css({"position": 'relative'});
+                $('.floating-navigation').stop().animate({'top': '0'}, 200);
+                animatingMenu = true;
+                setTimeout(function () {
+                    animatingMenu = false;
+                },100)
+            }
         }
     }
 }
