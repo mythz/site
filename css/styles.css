@@ -301,7 +301,7 @@ header .social-icons img {
 }
 
 .instant-client-apps-bg {
-    background: url(/images/henry-chen-x7clQSWhlfE-unsplash.jpg) center top no-repeat;
+    background: url(/images/henry-chen-x7clQSWhlfE-unsplash_.jpg) center top no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     color: white;
@@ -311,7 +311,7 @@ header .social-icons img {
 }
 
 .grpc-feature-bg {
-    background: url(/images/guillaume-lorain-SQE6eVg65Kg-unsplash.jpg) center top no-repeat;
+    background: url(/images/guillaume-lorain-SQE6eVg65Kg-unsplash_.jpg) center top no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     color: white;
@@ -856,7 +856,7 @@ object {
 -----------------------------------------*/
 
 .download {
-    background: url('/images/julius-jansson-vJpTUSffogE-unsplash.jpg') center top no-repeat;
+    background: url(../images/julius-jansson-vJpTUSffogE-unsplash.jpg) center top no-repeat;
     -webkit-background-size: cover;
             background-size: cover;
     color: #ffffff;
@@ -904,7 +904,7 @@ object {
    SECTION:  CONTACT-US
 -----------------------------------------*/
 .contact-container {
-    background: url('/images/julius-jansson-vJpTUSffogE-unsplash.jpg') center top no-repeat;
+    background: url(../images/julius-jansson-vJpTUSffogE-unsplash.jpg) center top no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     color: #ffffff;
