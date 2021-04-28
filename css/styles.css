@@ -674,7 +674,7 @@ object {
    SECTION:  TESTIMONIALS                 
 -----------------------------------------*/
 .testimonials {
-    background: url(../images/adam-borkowski-LZzTNnVNb4A-unsplash.jpg) center top no-repeat;
+    background: url(../images/adam-borkowski-LZzTNnVNb4A-unsplash.jpg) center left no-repeat;
     z-index: -1;
     -webkit-background-size: cover;
             background-size: cover;
@@ -904,7 +904,7 @@ object {
    SECTION:  CONTACT-US
 -----------------------------------------*/
 .contact-container {
-    background: url(../images/takashi-watanabe-f2DL8oI-7N8-unsplash.jpg) center bottom no-repeat;
+    background: url(../images/takashi-watanabe-f2DL8oI-7N8-unsplash.jpg) center left no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     color: #ffffff;
