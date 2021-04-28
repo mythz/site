@@ -11,8 +11,9 @@ RESPONSIVE FIXES
         -webkit-transform: translateZ(0);
     }
 
-    
- 
+    header .home-contents {
+        margin-top: 6em;
+    }
     
     body {
         font-size: 15px;
@@ -50,6 +51,10 @@ RESPONSIVE FIXES
 
     header .color-overlay {
         min-height: 780px;
+    }
+
+    header .home-contents {
+        margin-top: 6em;
     }
 
     .sticky-navigation {
@@ -128,6 +133,10 @@ RESPONSIVE FIXES
         line-height: 26px;
     }
 
+    header .home-contents {
+        margin-top: 6em;
+    }
+
     header .color-overlay {
         min-height: 580px;
     }
@@ -190,6 +199,10 @@ RESPONSIVE FIXES
 
     header .color-overlay {
         min-height: 480px;
+    }
+
+    header .home-contents {
+        margin-top: 6em;
     }
 
     header .only-logo .navbar {
