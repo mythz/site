@@ -57,6 +57,30 @@ RESPONSIVE FIXES
         margin-top: 6em;
     }
 
+    .customNavigation {
+        margin-left: 1em;
+    }
+
+    .customNavigation .navbar-header {
+        width: 100%;
+        position: relative;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .customNavigation .navbar-header a {
+        float: none !important;
+    }
+    
+    .customNavigation .navbar-header img {
+        max-height: 40px;
+    }
+    
+    .customNavigation {
+        text-align: center;
+        width: 100%;
+        padding-top: 0;
+    }
+
     .sticky-navigation {
         min-height: 120px;
     }
@@ -70,11 +94,11 @@ RESPONSIVE FIXES
     .sticky-navigation .navbar-header a {
         float: none !important;
     }
-    
+
     .sticky-navigation .navbar-header img {
         max-height: 40px;
     }
-    
+
     .sticky-navigation .main-navigation {
         text-align: center;
         width: 100%;
@@ -161,6 +185,9 @@ RESPONSIVE FIXES
         text-align: center;
     }
 
+    .customNavigation {
+        margin-left: 1em;
+    }
 
     .features .features-left,
     .features .features-right {
@@ -223,6 +250,10 @@ RESPONSIVE FIXES
 
     header .intro-section .buttons {
         margin-top: 15px;
+    }
+
+    .customNavigation {
+        margin-left: 1em;
     }
 
     .testimonials, 

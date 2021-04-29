@@ -218,7 +218,6 @@ h5 {
     background: #F7F8FA !important;
 }
 
-
 /*---------------------------------------
    SECTIONS          
 -----------------------------------------*/
@@ -508,6 +507,36 @@ header .intro-section h5 {
 
 header .intro-section .buttons {
     margin-top: 35px;
+}
+
+/*
+ BUTTONS
+*/
+
+.get-started-menu {
+    top:0.2em;
+}
+
+.floating-navigation .customNavigation > li > span > a {
+    padding-top: 5px;
+    text-transform: none;
+    line-height: 30px;
+    font-weight: 400;
+    font-size: 13px;
+    background-color: #008ed6;
+}
+
+.floating-navigation .customNavigation > li > span > a:hover {
+    background-color: #2a6496 !important;
+    color:black;
+}
+
+.floating-navigation .customNavigation > li > span {
+    color: white !important;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color:black;
 }
 
 /*---------------------------------------
