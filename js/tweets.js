@@ -99,7 +99,7 @@ function removeLinkFromTwitterProfileDescription(profileDesc) {
 }
 
 $(document).ready(function () {
-    createOwlCarousel(12);
+    createOwlCarousel(50);
 });
 
 var loadMoreIndex = 10;
@@ -108,30 +108,14 @@ function createOwlCarousel(number) {
     $("#feedbacks").html(html);
     $("#feedbacks").owlCarousel({
 
-        navigation: true, // Show next and prev buttons
+        nav: true, // Show next and prev buttons
         slideSpeed: 600,
         paginationSpeed: 400,
         dots: true,
-        dotsEach: 3,
         items: 1,
         autoplay: true,
         autoplaySpeed: 400,
         dotsSpeed: 400,
         autoplayTimeout: 5000,
     });
-    $("#feedbacks").on('changed.owl.carousel', function (event) {
-        if(event.item.index === loadMoreIndex) {
-            $("#feedbacks")
-                .trigger('add.owl.carousel', getNextQuotes(1))
-                .trigger('add.owl.carousel', getNextQuotes(1))
-                .trigger('add.owl.carousel', getNextQuotes(1))
-                .trigger('add.owl.carousel', getNextQuotes(1))
-                .trigger('remove.owl.carousel',0)
-                .trigger('remove.owl.carousel',0)
-                .trigger('remove.owl.carousel',0)
-                .trigger('remove.owl.carousel',0)
-                .trigger('to.owl.carousel',[2,400])
-                .trigger('refresh.owl.carousel');
-        }
-    })
 }

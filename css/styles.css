@@ -300,7 +300,7 @@ header .social-icons img {
 }
 
 .instant-client-apps-bg {
-    background: url(/images/andrea-leopardi-QfhbK2pY0Ao-unsplash.jpg) center bottom no-repeat;
+    background: url(/images/andrea-leopardi-QfhbK2pY0Ao-unsplash.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     color: white;
@@ -310,7 +310,7 @@ header .social-icons img {
 }
 
 .grpc-feature-bg {
-    background: url(/images/guillaume-lorain-SQE6eVg65Kg-unsplash_.jpg) center top no-repeat;
+    background: url(/images/guillaume-lorain-SQE6eVg65Kg-unsplash_.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     color: white;
@@ -699,11 +699,17 @@ object {
 }
 
 
+/* Owl Carousel */
+.owl-theme .owl-dots .owl-dot span {
+    width:5px;
+    height:5px;
+}
+
 /*---------------------------------------
    SECTION:  TESTIMONIALS                 
 -----------------------------------------*/
 .testimonials {
-    background: url(../images/adam-borkowski-LZzTNnVNb4A-unsplash.jpg) center left no-repeat;
+    background: url(../images/henry-chen-x7clQSWhlfE-unsplash_.jpg) center top fixed no-repeat;
     z-index: -1;
     -webkit-background-size: cover;
             background-size: cover;
@@ -933,7 +939,7 @@ object {
    SECTION:  CONTACT-US
 -----------------------------------------*/
 .contact-container {
-    background: url(../images/takashi-watanabe-f2DL8oI-7N8-unsplash.jpg) center left no-repeat;
+    background: url(../images/takashi-watanabe-f2DL8oI-7N8-unsplash.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     color: #ffffff;
