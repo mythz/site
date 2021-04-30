@@ -13,7 +13,7 @@
 class LiteYTEmbed extends HTMLElement {
     connectedCallback() {
         this.videoId = this.getAttribute('videoid');
-
+        console.log('addEventListener - ' + this.videoId);
         let playBtnEl = this.querySelector('.lty-playbtn');
         // A label for the button takes priority over a [playlabel] attribute on the custom-element
         this.playLabel = (playBtnEl && playBtnEl.textContent.trim()) || this.getAttribute('playlabel') || 'Play';
@@ -39,6 +39,8 @@ class LiteYTEmbed extends HTMLElement {
         if (!playBtnEl) {
             playBtnEl = document.createElement('button');
             playBtnEl.type = 'button';
+            playBtnEl.classList.add('fas');
+            playBtnEl.classList.add('fa-play');
             playBtnEl.classList.add('lty-playbtn');
             this.append(playBtnEl);
         }
@@ -50,12 +52,14 @@ class LiteYTEmbed extends HTMLElement {
         }
 
         // On hover (or tap), warm up the TCP connections we're (likely) about to use.
+        this.removeEventListener('pointerover', LiteYTEmbed.warmConnections);
         this.addEventListener('pointerover', LiteYTEmbed.warmConnections, {once: true});
 
         // Once the user clicks, add the real iframe and drop our play button
         // TODO: In the future we could be like amp-youtube and silently swap in the iframe during idle time
         //   We'd want to only do this for in-viewport or near-viewport ones: https://github.com/ampproject/amphtml/pull/5003
-        this.addEventListener('click', e => this.addIframe());
+        this.removeEventListener('click', this.addIframe);
+        this.addEventListener('click', this.addIframe);
     }
 
     // // TODO: Support the the user changing the [videoid] attribute
@@ -102,7 +106,7 @@ class LiteYTEmbed extends HTMLElement {
     addIframe() {
         const params = new URLSearchParams(this.getAttribute('params') || []);
         params.append('autoplay', '1');
-
+        console.log('addIframe');
         const iframeEl = document.createElement('iframe');
         iframeEl.width = 560;
         iframeEl.height = 315;

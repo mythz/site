@@ -362,6 +362,7 @@ header .full-screen {
 /* TOP BAR WITH NAVIGATION */
 
 .sticky-navigation {
+    top: -60px;
     /*position: relative;*/
     min-height: 60px;
     background: #FFFFFF;

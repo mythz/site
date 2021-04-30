@@ -2,7 +2,7 @@
    LOADER                     
 =================================== */
 // makes sure the whole site is loaded
-$("#home").waitUntilExists(function() {
+$("#home").waitUntilExists(function () {
     // will first fade out the loading animation
     jQuery(".status").fadeOut();
     // will fade out the whole DIV that covers the website.
@@ -17,7 +17,7 @@ $(".video-container").fitVids();
 $(".videos").owlCarousel({
     dots: true,
     items: 1,
-    nav:false
+    nav: false
 });
 
 
@@ -31,26 +31,26 @@ $('.mailchimp').ajaxChimp({
 });
 
 function mailchimpCallback(resp) {
-     if (resp.result === 'success') {
+    if (resp.result === 'success') {
         $('.subscription-success').html('<i class="icon_check_alt2"></i><br/>' + resp.msg).fadeIn(1000);
         $('.subscription-error').fadeOut(500);
-        
-    } else if(resp.result === 'error') {
+
+    } else if (resp.result === 'error') {
         $('.subscription-error').html('<i class="icon_close_alt2"></i><br/>' + resp.msg).fadeIn(1000);
-    }  
+    }
 }
 
 /* =================================
 ===  STICKY NAV                 ====
 =================================== */
 
-$(document).ready(function() {
-  $('.main-navigation').onePageNav({
-    scrollThreshold: 0.2, // Adjust if Navigation highlights too early or too late
-    filter: ':not(.external)',
-    changeHash: true
-  });
-  
+$(document).ready(function () {
+    $('.main-navigation').onePageNav({
+        scrollThreshold: 0.2, // Adjust if Navigation highlights too early or too late
+        filter: ':not(.external)',
+        changeHash: true
+    });
+
 });
 
 
@@ -76,81 +76,76 @@ $(window).scroll(function () {
 var animatingMenu = false;
 
 if (matchMedia('(min-width: 992px), (max-width: 767px)').matches) {
-  function mainNav() {
+    function mainNav() {
+        if (animatingMenu) {
+            return;
+        }
         var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-        if (top > 1820) {
-            if(!animatingMenu) {
-                $('.sticky-navigation').stop().animate({'top': '0'},200).css({'position': 'fixed'});
-                $('.floating-navigation').stop().animate({'top': '-120'},200);
-                animatingMenu = true;
-                setTimeout(function () {
-                    animatingMenu = false;
-                },100)
-            }
+        if (top > 200) {
+            $('.floating-navigation').stop().animate({'top': '-120'}, 600);
+        } else {
+            $('.floating-navigation').stop().animate({'top': '0'}, 600);
         }
-        else {
-            if(!animatingMenu) {
-                $('.sticky-navigation').stop().animate({'top': '60'}, 200).css({"position": 'relative'});
-                $('.floating-navigation').stop().animate({'top': '0'}, 200);
-                animatingMenu = true;
-                setTimeout(function () {
-                    animatingMenu = false;
-                },100)
-            }
+
+        if (top > 1980) {
+            $('.sticky-navigation').stop().animate({'top': '0', 'position': 'fixed', 'display': 'block'}, 400);
+        } else {
+            $('.sticky-navigation').stop().animate({'top': '-120', 'position': 'relative', 'display': 'none'}, 400);
         }
+        animatingMenu = true;
+        setTimeout(function () {
+            animatingMenu = false;
+        }, 100)
     }
 }
 
 if (matchMedia('(min-width: 768px) and (max-width: 991px)').matches) {
     function mainNav() {
+        if (animatingMenu) {
+            return;
+        }
         var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-        if (top > 1750) {
-            if(!animatingMenu) {
-                $('.sticky-navigation').stop().animate({'top': '0'}, 200).css({'position': 'fixed'});
-                $('.floating-navigation').stop().animate({'top': '-180'}, 200);
-                animatingMenu = true;
-                setTimeout(function () {
-                    animatingMenu = false;
-                },100)
-            }
+        if (top > 200) {
+            $('.floating-navigation').stop().animate({'top': '-60'}, 600);
+        } else {
+            $('.floating-navigation').stop().animate({'top': '0'}, 600);
         }
-        else {
-            if(!animatingMenu) {
-                $('.sticky-navigation').stop().animate({'top': '90'}, 200).css({"position": 'relative'});
-                $('.floating-navigation').stop().animate({'top': '0'}, 200);
-                animatingMenu = true;
-                setTimeout(function () {
-                    animatingMenu = false;
-                },100)
-            }
+
+        if (top > 1980) {
+            $('.sticky-navigation').stop().animate({'top': '0', 'position': 'fixed', 'display': 'block'}, 400);
+        } else {
+            $('.sticky-navigation').stop().animate({'top': '-60', 'position': 'relative', 'display': 'none'}, 400);
         }
+        animatingMenu = true;
+        setTimeout(function () {
+            animatingMenu = false;
+        }, 100)
     }
 }
-
 
 
 /* =================================
 ===  DOWNLOAD BUTTON CLICK SCROLL ==
 =================================== */
-jQuery(function( $ ){
-			$('#download-button').localScroll({
-				duration:1000
-			});
-		});
+jQuery(function ($) {
+    $('#download-button').localScroll({
+        duration: 1000
+    });
+});
 
 
 /* =================================
 ===  FULL SCREEN HEADER         ====
 =================================== */
 function alturaMaxima() {
-  var altura = $(window).height();
-  $(".full-screen").css('min-height',altura); 
-  
+    var altura = $(window).height();
+    $(".full-screen").css('min-height', altura);
+
 }
 
-$(document).ready(function() {
-  alturaMaxima();
-  $(window).bind('resize', alturaMaxima);
+$(document).ready(function () {
+    alturaMaxima();
+    $(window).bind('resize', alturaMaxima);
 });
 
 
@@ -174,9 +169,9 @@ $('a.scrollto').bind('click.smoothscroll', function (event) {
 ===  WOW ANIMATION             ====
 =================================== */
 wow = new WOW(
-  {
-    mobile: false
-  });
+    {
+        mobile: false
+    });
 wow.init();
 
 
@@ -239,8 +234,6 @@ $("#subscribe").submit(function (e) {
 });
 
 
-
-
 /* =================================
 ===  CONTACT FORM          ====
 =================================== */
@@ -276,8 +269,6 @@ $("#contact").submit(function (e) {
 });
 
 
-
-
 /* =================================
 ===  EXPAND COLLAPSE            ====
 =================================== */
@@ -286,12 +277,11 @@ $('.expand-form').simpleexpand({
 });
 
 
-
 /* =================================
 ===  STELLAR                    ====
 =================================== */
-$(window).stellar({ 
-horizontalScrolling: false 
+$(window).stellar({
+    horizontalScrolling: false
 });
 
 
@@ -299,11 +289,11 @@ horizontalScrolling: false
 ===  Bootstrap Internet Explorer 10 in Windows 8 and Windows Phone 8 FIX
 =================================== */
 if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-  var msViewportStyle = document.createElement('style')
-  msViewportStyle.appendChild(
-    document.createTextNode(
-      '@-ms-viewport{width:auto!important}'
+    var msViewportStyle = document.createElement('style')
+    msViewportStyle.appendChild(
+        document.createTextNode(
+            '@-ms-viewport{width:auto!important}'
+        )
     )
-  )
-  document.querySelector('head').appendChild(msViewportStyle)
+    document.querySelector('head').appendChild(msViewportStyle)
 }
