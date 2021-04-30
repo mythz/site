@@ -38,8 +38,6 @@ class LiteYTEmbed extends HTMLElement {
         if (!playBtnEl) {
             playBtnEl = document.createElement('button');
             playBtnEl.type = 'button';
-            playBtnEl.classList.add('fas');
-            playBtnEl.classList.add('fa-play');
             playBtnEl.classList.add('lty-playbtn');
             this.append(playBtnEl);
         }
