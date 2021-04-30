@@ -276,9 +276,18 @@ h5 {
 -----------------------------------------*/
 
 header {
-    background: url(../images/andre-benz-cXU6tNxhub0-unsplash_.jpg) center top no-repeat;
+    background: url(../images/andre-benz-cXU6tNxhub0-unsplash_.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
             background-size: cover;
+}
+
+/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
+@supports (-webkit-touch-callout: none) {
+    header {
+        background: url(../images/andre-benz-cXU6tNxhub0-unsplash_.jpg) center top no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
 }
 
 header .social-icons img {
@@ -305,6 +314,17 @@ header .social-icons img {
     background-size: cover;
     color: white;
 }
+
+/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
+@supports (-webkit-touch-callout: none) {
+    .instant-client-apps-bg {
+        background: url(/images/andrea-leopardi-QfhbK2pY0Ao-unsplash.jpg) center top no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+        color: white;
+    }
+}
+
 .instant-client-apps-bg h2 {
     color: white;
 }
@@ -315,6 +335,17 @@ header .social-icons img {
     background-size: cover;
     color: white;
 }
+
+/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
+@supports (-webkit-touch-callout: none) {
+    .grpc-feature-bg {
+        background: url(/images/guillaume-lorain-SQE6eVg65Kg-unsplash_.jpg) center top no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+        color: white;
+    }
+}
+
 .grpc-feature-bg h2 {
     color: white;
 }
@@ -716,6 +747,17 @@ object {
     color: #ffffff;
 }
 
+/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
+@supports (-webkit-touch-callout: none) {
+    .testimonials {
+        background: url(../images/henry-chen-x7clQSWhlfE-unsplash_.jpg) center top no-repeat;
+        z-index: -1;
+        -webkit-background-size: cover;
+        background-size: cover;
+        color: #ffffff;
+    }
+}
+
 .testimonials .color-overlay {
     padding-top: 110px;
     padding-bottom: 110px;
@@ -850,7 +892,7 @@ object {
 
 }
 .single-package .color-bg {
-    background-color: !important;
+    background-color: #F7F8FA !important;
 }
 .single-package .price h2 {
     color: #272727;
@@ -891,10 +933,20 @@ object {
 -----------------------------------------*/
 
 .download {
-    background: url(../images/julius-jansson-vJpTUSffogE-unsplash.jpg) center top no-repeat;
+    background: url(../images/julius-jansson-vJpTUSffogE-unsplash.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
             background-size: cover;
     color: #ffffff;
+}
+
+/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
+@supports (-webkit-touch-callout: none) {
+    .download {
+        background: url(../images/julius-jansson-vJpTUSffogE-unsplash.jpg) center top no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+        color: #ffffff;
+    }
 }
 
 .download .color-overlay {
@@ -938,11 +990,22 @@ object {
 /*---------------------------------------
    SECTION:  CONTACT-US
 -----------------------------------------*/
+
 .contact-container {
     background: url(../images/takashi-watanabe-f2DL8oI-7N8-unsplash.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     color: #ffffff;
+}
+
+/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
+@supports (-webkit-touch-callout: none) {
+    .contact-container {
+        background: url(../images/takashi-watanabe-f2DL8oI-7N8-unsplash.jpg) center top no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+        color: #ffffff;
+    }
 }
 
 section .contact-box {
