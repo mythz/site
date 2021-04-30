@@ -124,7 +124,7 @@ li {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
- 
+
     @font-face {
         font-family: 'Lane';
         src: url('../fonts/lanenar_Lane.svg#Lane') format('svg');
@@ -731,7 +731,7 @@ object {
     background: transparent !important;
     margin: auto;
     margin-bottom: 50px;
-    margin-top: 40px; 
+    margin-top: 40px;
 }
 
 .video {
@@ -748,29 +748,44 @@ object {
     margin-top: 3em;
 }
 
-
 /* Owl Carousel */
 .owl-theme .owl-dots .owl-dot span {
+    width:10px;
+    height:10px;
+}
+#feedbacks .owl-dots .owl-dot span {
     width:5px;
     height:5px;
 }
+#feedbacks .owl-dot span { background: rgba(255,255,255,.5) !important; }
+#feedbacks .owl-dot.active span { background: #fff !important; }
 
+.owl-nav {
+    display: flex;
+    justify-content: space-between;
+    margin: -200px 0 120px 0 !important;
+}
 .owl-prev, .owl-next {
     width: 60px;
     height: 100%;
     margin: 10px 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: block !important;
-    border:0px solid black;
+    display: block;
+    z-index: 1;
+    opacity: .2;
+    transition: opacity .3s;
 }
-.owl-prev { left: -20px; }
-.owl-next { right: -20px; }
-.owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
+.owl-prev:hover, .owl-next:hover {
+    opacity: 1;
+    transition: opacity .3s;
+}
+.owl-prev:focus, .owl-next:focus, .owl-dot:focus {
+    outline: none;
+}
+.owl-prev { }
+.owl-next { }
+.owl-prev i, .owl-next i { font-size: 60px; color: #ccc;}
 .owl-theme .owl-nav [class*='owl-']:hover {
     background: transparent;
-    outline: 5px auto -webkit-focus-ring-color;
 }
 
 /*---------------------------------------
@@ -937,7 +952,7 @@ object {
 
 .single-package .price .color-bg h2 {
     color: #FFFFFF !important;
-} 
+}
 
 .single-package .price .sign {
     vertical-align: super;
@@ -1009,7 +1024,7 @@ object {
     border: 2px solid #FFF;
 }
 
-.download .subscription-form .input-box:focus, 
+.download .subscription-form .input-box:focus,
 .download .subscription-form .input-box:active {
     color: #000;
     font-weight: 400;
