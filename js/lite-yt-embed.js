@@ -13,7 +13,6 @@
 class LiteYTEmbed extends HTMLElement {
     connectedCallback() {
         this.videoId = this.getAttribute('videoid');
-        console.log('addEventListener - ' + this.videoId);
         let playBtnEl = this.querySelector('.lty-playbtn');
         // A label for the button takes priority over a [playlabel] attribute on the custom-element
         this.playLabel = (playBtnEl && playBtnEl.textContent.trim()) || this.getAttribute('playlabel') || 'Play';
@@ -106,7 +105,6 @@ class LiteYTEmbed extends HTMLElement {
     addIframe() {
         const params = new URLSearchParams(this.getAttribute('params') || []);
         params.append('autoplay', '1');
-        console.log('addIframe');
         const iframeEl = document.createElement('iframe');
         iframeEl.width = 560;
         iframeEl.height = 315;
