@@ -106,7 +106,7 @@ if (matchMedia('(min-width: 768px) and (max-width: 991px)').matches) {
         }
         var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
         if (top > 200) {
-            $('.floating-navigation').stop().animate({'top': '-60'}, 600);
+            $('.floating-navigation').stop().animate({'top': '-250'}, 600);
         } else {
             $('.floating-navigation').stop().animate({'top': '0'}, 600);
         }
@@ -114,7 +114,7 @@ if (matchMedia('(min-width: 768px) and (max-width: 991px)').matches) {
         if (top > 1980) {
             $('.sticky-navigation').stop().animate({'top': '0', 'position': 'fixed', 'display': 'block'}, 400);
         } else {
-            $('.sticky-navigation').stop().animate({'top': '-60', 'position': 'relative', 'display': 'none'}, 400);
+            $('.sticky-navigation').stop().animate({'top': '-120', 'position': 'relative', 'display': 'none'}, 400);
         }
         animatingMenu = true;
         setTimeout(function () {

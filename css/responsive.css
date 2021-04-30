@@ -90,10 +90,6 @@ RESPONSIVE FIXES
         padding-top: 0;
     }
 
-    .sticky-navigation {
-        min-height: 120px;
-    }
-
     .sticky-navigation .navbar-header {
         width: 100%;
         position: relative;
