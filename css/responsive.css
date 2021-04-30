@@ -44,6 +44,9 @@ RESPONSIVE FIXES
         float: none;
         margin: auto;
     }
+    .owl-prev, .owl-next {
+        width: 30px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -150,6 +153,10 @@ RESPONSIVE FIXES
     .features .features-right .icon-container {
         display: none;
     }
+
+    .owl-prev, .owl-next {
+        width: 30px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -234,6 +241,9 @@ RESPONSIVE FIXES
         width: 80%;
         margin-bottom: 10px;
     }
+    .owl-prev, .owl-next {
+        width: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -301,6 +311,10 @@ RESPONSIVE FIXES
         -webkit-background-clip: padding-box;
         -moz-background-clip: padding;
         background-clip: padding-box;
+    }
+
+    .owl-prev, .owl-next {
+        width: 20px;
     }
 }
 
