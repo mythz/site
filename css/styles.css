@@ -710,7 +710,7 @@ object {
 }
 
 .video-container {
-    width: 90%;
+    width: 100%;
     background: transparent !important;
     margin: auto;
     margin-bottom: 50px;
@@ -718,6 +718,8 @@ object {
 }
 
 .video {
+    max-width: 750px;
+    margin: auto 2em;
     background: transparent !important;
 }
 

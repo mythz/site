@@ -31,12 +31,20 @@
             <!-- RIGHT SIDE WITH BRIEF -->
             <div class="col-md-6 left-align wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s">
 
-                <div class="video-container">
-
-                    <div class="video">
-
-                        <iframe width="560" height="315" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/{{include.youtube_id}}?autoplay=1><img src=https://img.youtube.com/vi/{{include.youtube_id}}/maxresdefault.jpg alt='{{include.youtube_alt}}'><span>▶</span></a>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+                <div class="video-container videos owl-carousel owl-theme">
+                    {% assign videos = include.youtube_id | split: "," %}
+                        {% if videos.size == 0 %}
+                            <div class="video">
+                                <lite-youtube width="560" height="315" videoid="{{include.youtube_id}}" style="background-image: url('https://img.youtube.com/vi/{{include.youtube_id}}/maxresdefault.jpg')"></lite-youtube>
+                            </div>
+                        {% endif %}
+                    {% if videos.size > 0 %}
+                        {% for vid_id in videos %}
+                            <div class="video">
+                                <lite-youtube width="560" height="315" videoid="{{ vid_id }}" style="background-image: url('https://img.youtube.com/vi/{{ vid_id }}/maxresdefault.jpg')"></lite-youtube>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
 
                 </div>
 

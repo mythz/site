@@ -14,6 +14,11 @@ $("#home").waitUntilExists(function() {
 =================================== */
 
 $(".video-container").fitVids();
+$(".videos").owlCarousel({
+    dots: true,
+    items: 1,
+    nav:false
+});
 
 
 /* =================================
