@@ -58,7 +58,7 @@ RESPONSIVE FIXES
     }
 
     header .home-contents {
-        margin-top: 6em;
+        margin-top: 10em;
     }
 
     .navbar-nav {
@@ -165,7 +165,7 @@ RESPONSIVE FIXES
     }
 
     header .home-contents {
-        margin-top: 6em;
+        margin-top: 0;
     }
 
     header .color-overlay {
@@ -189,6 +189,14 @@ RESPONSIVE FIXES
 
     .navbar-nav {
         margin-top: 0;
+    }
+
+    .floating-navigation .navbar-header img {
+        max-height: 30px;
+    }
+
+    .sticky-navigation .navbar-header img {
+        max-height: 30px;
     }
 
     header .intro-section {

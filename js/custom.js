@@ -123,6 +123,12 @@ if (matchMedia('(min-width: 768px) and (max-width: 991px)').matches) {
     }
 }
 
+if (matchMedia('(max-width: 768px)').matches) {
+    function mainNav() {
+        // Do nothing, think of a way to better handle dynamic menu in mobile for scrolling features.
+    }
+}
+
 
 /* =================================
 ===  DOWNLOAD BUTTON CLICK SCROLL ==
