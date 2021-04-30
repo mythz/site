@@ -270,6 +270,7 @@ function createOwlCarousel(number) {
     $("#feedbacks").html(html);
     $("#feedbacks").owlCarousel({
         nav: true, // Show next and prev buttons
+        navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
         dots: true,
         items: 1,
         autoplay: true,
