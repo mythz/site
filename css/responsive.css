@@ -316,6 +316,7 @@ RESPONSIVE FIXES
     .owl-prev, .owl-next {
         width: 20px;
     }
+}
 
 @media (max-width: 320px) {
 
