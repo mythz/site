@@ -627,6 +627,10 @@ header .intro-section .buttons {
            -moz-background-clip: padding;
             background-clip: padding-box;
 }
+.features .feature:hover .icon a {
+    display: inline-block;
+    color: #fff;
+}
 
 .features .phone-image {
     max-width: 250px;
