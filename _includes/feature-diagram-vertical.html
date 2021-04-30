@@ -1,0 +1,29 @@
+<section class="feature-diagram-section {{ include.bg_class }}" id="{{ include.local_link_id }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.5s">
+                <!-- SECTION TITLE -->
+                <h2 class="dark-text">{{ include.title }} </h2>
+
+                <div class="colored-line"></div>
+                <p>
+                    {{ include.content }}
+                </p>
+                <!-- BUTTON -->
+                <div class="buttons">
+                    <a href="{{ include.learn_url }}" class="btn btn-default btn-lg standard-button learn-more-button">Learn
+                        more</a>
+                </div>
+                <!-- /END BUTTONS -->
+            </div>
+        </div>
+        <div class="row">
+            <!-- RIGHT SIDE WITH BRIEF -->
+            <div class="col-12 left-align wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s">
+                <div class="feature-diagram-container">
+                    <img src="{{include.image}}" alt="{{include.image_alt}}">
+                </div>
+            </div>
+            <!-- /END RIGHT BRIEF -->
+        </div>
+</section>

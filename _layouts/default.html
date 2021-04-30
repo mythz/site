@@ -51,7 +51,7 @@
     youtube_id="GTnuMhvUayg"
     local_link_id="instant-client-apps-feature"
     title="Instant Client Apps"
-    bg_class="instant-client-apps-bg"
+    bg_class="grey-bg"
     content="Use our hosted tool to generate native clients apps instantly."
     %}
 
@@ -74,6 +74,14 @@
     %}
 
     {%
+    include feature-diagram-vertical.html
+    bg_class="grpc-feature-bg"
+    title="ServiceStack Clients"
+    image="https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/clients/servicestack-clients.png"
+    content="Smart Generic .NET gRPC Service Client using Clean APIs and Rich POCO DTOs "
+    %}
+
+    {%
     include feature-video-left.html
     youtube_id="0PvzcnxlBvc,Eh4tvLN8i8g,8mpGNTsSlvE"
     local_link_id="project-templates-feature"
@@ -87,8 +95,16 @@
     youtube_id="5NNCaWMviXU"
     local_link_id="grpc-feature"
     title="gRPC Support"
-    bg_class="grpc-feature-bg"
+    bg_class="grey-bg"
     content="Create gRPC services in a consistent way to all your other services or easily add gRPC support to your existing ServiceStack services."
+    %}
+
+    {%
+    include feature-diagram-vertical.html
+    bg_class="grpc-feature-bg"
+    title="Architecture Overview"
+    image="https://docs.servicestack.net/images/overview/servicestack-logical-view-02.png"
+    content="Testing testing testing"
     %}
 
     {% include home/services-section.html %}
