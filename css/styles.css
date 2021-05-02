@@ -375,7 +375,7 @@ header .full-screen {
 }
 
 .sticky-navigation .navbar-header img {
-  max-height: 30px;
+  max-height: 36px;
   -webkit-backface-visibility: hidden;
 }
 
@@ -409,40 +409,33 @@ header .full-screen {
 }
 
 .floating-navigation .navbar-header img {
-    max-height: 30px;
+    max-height: 36px;
     -webkit-backface-visibility: hidden;
 }
-
-.floating-navigation .main-navigation .current a {
-    color: #000000 !important;
-    position: relative;
-    outline: none;
+.floating-navigation .navbar-nav {
+    margin-right: 1em;
 }
-
-.floating-navigation .main-navigation li a {
-    line-height: 30px;
+.floating-navigation .navbar-nav .nav-link {
+    color: #9ca3af;
+    font-size: 16px;
     font-weight: 400;
-    font-size: 13px;
-    text-transform: uppercase;
 }
-
-.floating-navigation .main-navigation li a:hover {
-    color: #000000;
+.floating-navigation .navbar-nav .nav-link:hover {
+    color: #374151;
 }
-
+.floating-navigation .navbar-nav .btn:hover {
+    color: #fff;
+}
 .navbar-inverse .navbar-toggle {
-border-color: #313131;
-background: #313131;
+    border-color: #313131;
+    background: #313131;
 }
 
 .nav-call-to-action-button {
-    margin:0;
     padding:0;
-    margin-left: 20px;
     text-transform:none;
     border-radius: 2px;
-    margin-top: -4px;
-    margin-right: -20px;
+    margin: -4px -20px 0 20px;
     min-width: 100px;
     font-size: medium;
     color:white;

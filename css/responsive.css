@@ -4,8 +4,16 @@ RESPONSIVE FIXES
 =========================================
 -----------------------------------------*/
 
+@media (min-width: 1024px) {
+    #account-navigation {
+        display: flex !important;
+        align-content: flex-start;
+        justify-content: flex-end;
+    }
+}
 
 @media (max-width: 1024px) {
+    .hide-md {display: none !important}
 
     .animated {
         -webkit-transform: translateZ(0);
@@ -26,10 +34,6 @@ RESPONSIVE FIXES
 
     header .color-overlay {
         min-height: 800px;
-    }
-
-    .navbar-nav {
-        margin-top: 0;
     }
 
     .app-brief .left-align {
@@ -62,10 +66,6 @@ RESPONSIVE FIXES
 
     header .home-contents {
         margin-top: 10em;
-    }
-
-    .navbar-nav {
-        margin-top: 0;
     }
 
     .customNavigation {
@@ -109,27 +109,6 @@ RESPONSIVE FIXES
     }
 
     .sticky-navigation .main-navigation {
-        text-align: center;
-        width: 100%;
-        padding-top: 0;
-    }
-
-    .floating-navigation .navbar-header {
-        width: 100%;
-        position: relative;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .floating-navigation .navbar-header a {
-        float: none !important;
-    }
-
-    .floating-navigation .navbar-header img {
-        max-height: 40px;
-    }
-
-    .floating-navigation .main-navigation {
         text-align: center;
         width: 100%;
         padding-top: 0;
@@ -198,14 +177,6 @@ RESPONSIVE FIXES
         margin-top: 0;
     }
 
-    .floating-navigation .navbar-header img {
-        max-height: 30px;
-    }
-
-    .sticky-navigation .navbar-header img {
-        max-height: 30px;
-    }
-
     header .intro-section {
         padding-top: 9%;
         text-align: center;
@@ -237,9 +208,8 @@ RESPONSIVE FIXES
     }
 
     .download .subscription-form .input-box {
-        margin: auto;
         width: 80%;
-        margin-bottom: 10px;
+        margin: auto auto 10px;
     }
     .owl-prev, .owl-next {
         width: 20px;
