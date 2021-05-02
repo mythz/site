@@ -225,9 +225,9 @@ function createTestimonialHtml(startIndex) {
     html.push('<div class="image">');
     html.push('<img src="' + profileImg + '" loading="lazy" alt="">')
     html.push('</div>');
-    html.push('<div class="message">');
+    html.push('<blockquote class="message">');
     html.push(msg);
-    html.push('</div>');
+    html.push('</blockquote>');
     html.push('<div class="white-line"></div>');
     html.push('<div class="name">');
     html.push('<a href="' + url + '">');
