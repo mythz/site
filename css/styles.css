@@ -321,7 +321,7 @@ header .social-icons img {
 }
 
 .bg-service-clients {
-    background: url(/images/bg-service-clients.jpg) center top fixed no-repeat;
+    background: url(/images/bg-service-clients.jpg) no-repeat fixed center top;
     -webkit-background-size: cover;
     background-size: cover;
     color: white;
@@ -329,6 +329,21 @@ header .social-icons img {
 .bg-service-clients h2 {
     color: white;
     text-shadow: #1f2937;
+}
+.lang-links {
+    display: flex;
+    justify-content: center;
+    column-gap: 1em;
+    max-height: 100px;
+}
+.lang-links img {
+    width: 100px;
+}
+#grpc-links {
+    max-height: 70px;
+}
+#grpc-links img {
+    width: 70px;
 }
 
 /* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
