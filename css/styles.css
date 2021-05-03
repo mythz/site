@@ -124,7 +124,7 @@ li {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
- 
+
     @font-face {
         font-family: 'Lane';
         src: url('../fonts/lanenar_Lane.svg#Lane') format('svg');
@@ -276,18 +276,9 @@ h5 {
 -----------------------------------------*/
 
 header {
-    background: url(../images/andre-benz-cXU6tNxhub0-unsplash_.jpg) center top fixed no-repeat;
+    background: url(../images/bg-header.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
             background-size: cover;
-}
-
-/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
-@supports (-webkit-touch-callout: none) {
-    header {
-        background: url(../images/andre-benz-cXU6tNxhub0-unsplash_.jpg) center top no-repeat;
-        -webkit-background-size: cover;
-        background-size: cover;
-    }
 }
 
 header .social-icons img {
@@ -308,46 +299,58 @@ header .social-icons img {
     margin-top:-10px;
 }
 
-.instant-client-apps-bg {
-    background: url(/images/andrea-leopardi-QfhbK2pY0Ao-unsplash.jpg) center top fixed no-repeat;
+.bg-instant-client-apps {
+    background: url(/images/bg-instant-client-apps.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     color: white;
 }
 
-/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
-@supports (-webkit-touch-callout: none) {
-    .instant-client-apps-bg {
-        background: url(/images/andrea-leopardi-QfhbK2pY0Ao-unsplash.jpg) center top no-repeat;
-        -webkit-background-size: cover;
-        background-size: cover;
-        color: white;
-    }
-}
-
-.instant-client-apps-bg h2 {
+.bg-instant-client-apps h2 {
     color: white;
 }
 
-.grpc-feature-bg {
-    background: url(/images/guillaume-lorain-SQE6eVg65Kg-unsplash_.jpg) center top fixed no-repeat;
+.bg-grpc-feature {
+    background: url(/images/bg-grpc-feature.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     color: white;
 }
+.bg-grpc-feature h2 {
+    color: white;
+}
+
+.bg-service-clients {
+    background: url(/images/bg-service-clients.jpg) no-repeat fixed center top;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+.bg-service-clients h2 {
+    color: white;
+    text-shadow: #1f2937;
+}
+.lang-links {
+    display: flex;
+    justify-content: center;
+    column-gap: 1em;
+    max-height: 100px;
+}
+.lang-links img {
+    width: 100px;
+}
+#grpc-links {
+    max-height: 70px;
+}
+#grpc-links img {
+    width: 70px;
+}
 
 /* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
 @supports (-webkit-touch-callout: none) {
-    .grpc-feature-bg {
-        background: url(/images/guillaume-lorain-SQE6eVg65Kg-unsplash_.jpg) center top no-repeat;
-        -webkit-background-size: cover;
-        background-size: cover;
-        color: white;
+    header, .testimonials, .bg-instant-client-apps, .bg-grpc-feature, .bg-service-clients, .contact-container, .download {
+        background-position: center top;
     }
-}
-
-.grpc-feature-bg h2 {
-    color: white;
 }
 
 header .color-overlay {
@@ -375,7 +378,7 @@ header .full-screen {
 }
 
 .sticky-navigation .navbar-header img {
-  max-height: 30px;
+  max-height: 36px;
   -webkit-backface-visibility: hidden;
 }
 
@@ -409,40 +412,33 @@ header .full-screen {
 }
 
 .floating-navigation .navbar-header img {
-    max-height: 30px;
+    max-height: 36px;
     -webkit-backface-visibility: hidden;
 }
-
-.floating-navigation .main-navigation .current a {
-    color: #000000 !important;
-    position: relative;
-    outline: none;
+.floating-navigation .navbar-nav {
+    margin-right: 1em;
 }
-
-.floating-navigation .main-navigation li a {
-    line-height: 30px;
+.floating-navigation .navbar-nav .nav-link {
+    color: #9ca3af;
+    font-size: 16px;
     font-weight: 400;
-    font-size: 13px;
-    text-transform: uppercase;
 }
-
-.floating-navigation .main-navigation li a:hover {
-    color: #000000;
+.floating-navigation .navbar-nav .nav-link:hover {
+    color: #374151;
 }
-
+.floating-navigation .navbar-nav .btn:hover {
+    color: #fff;
+}
 .navbar-inverse .navbar-toggle {
-border-color: #313131;
-background: #313131;
+    border-color: #313131;
+    background: #313131;
 }
 
 .nav-call-to-action-button {
-    margin:0;
     padding:0;
-    margin-left: 20px;
     text-transform:none;
     border-radius: 2px;
-    margin-top: -4px;
-    margin-right: -20px;
+    margin: -4px -20px 0 20px;
     min-width: 100px;
     font-size: medium;
     color:white;
@@ -627,6 +623,10 @@ header .intro-section .buttons {
            -moz-background-clip: padding;
             background-clip: padding-box;
 }
+.features .feature:hover .icon a {
+    display: inline-block;
+    color: #fff;
+}
 
 .features .phone-image {
     max-width: 250px;
@@ -706,7 +706,6 @@ header .intro-section .buttons {
 .feature-diagram-section {
     padding-top: 110px;
     padding-bottom: 60px;
-    margin-bottom: 20px;
 }
 
 .feature-diagram-container img {
@@ -731,7 +730,7 @@ object {
     background: transparent !important;
     margin: auto;
     margin-bottom: 50px;
-    margin-top: 40px; 
+    margin-top: 40px;
 }
 
 .video {
@@ -748,51 +747,55 @@ object {
     margin-top: 3em;
 }
 
-
 /* Owl Carousel */
 .owl-theme .owl-dots .owl-dot span {
+    width:10px;
+    height:10px;
+}
+#feedbacks .owl-dots .owl-dot span {
     width:5px;
     height:5px;
 }
+#feedbacks .owl-dot span { background: rgba(255,255,255,.5) !important; }
+#feedbacks .owl-dot.active span { background: #fff !important; }
 
+.owl-nav {
+    display: flex;
+    justify-content: space-between;
+    margin: -200px 0 120px 0 !important;
+}
 .owl-prev, .owl-next {
     width: 60px;
     height: 100%;
     margin: 10px 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: block !important;
-    border:0px solid black;
+    display: block;
+    z-index: 1;
+    opacity: .2;
+    transition: opacity .3s;
 }
-.owl-prev { left: -20px; }
-.owl-next { right: -20px; }
-.owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
+.owl-prev:hover, .owl-next:hover {
+    opacity: 1;
+    transition: opacity .3s;
+}
+.owl-prev:focus, .owl-next:focus, .owl-dot:focus {
+    outline: none;
+}
+.owl-prev { }
+.owl-next { }
+.owl-prev i, .owl-next i { font-size: 60px; color: #ccc;}
 .owl-theme .owl-nav [class*='owl-']:hover {
     background: transparent;
-    outline: 5px auto -webkit-focus-ring-color;
 }
 
 /*---------------------------------------
    SECTION:  TESTIMONIALS                 
 -----------------------------------------*/
 .testimonials {
-    background: url(../images/henry-chen-x7clQSWhlfE-unsplash_.jpg) center top fixed no-repeat;
+    background: url(../images/bg-testimonials.jpg) center top fixed no-repeat;
     z-index: -1;
     -webkit-background-size: cover;
-            background-size: cover;
+    background-size: cover;
     color: #ffffff;
-}
-
-/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
-@supports (-webkit-touch-callout: none) {
-    .testimonials {
-        background: url(../images/henry-chen-x7clQSWhlfE-unsplash_.jpg) center top no-repeat;
-        z-index: -1;
-        -webkit-background-size: cover;
-        background-size: cover;
-        color: #ffffff;
-    }
 }
 
 .testimonials .color-overlay {
@@ -829,6 +832,22 @@ object {
     font-style: italic;
     margin-top: 40px;
     margin-bottom: 30px;
+}
+
+.testimonials .feedback blockquote {
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C" "\201D";
+    border: none;
+    display: block;
+}
+.testimonials .feedback blockquote:before {
+    opacity: 40%;
+    content: open-quote;
+    font-size: 5em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
 }
 
 .testimonials .feedback .name {
@@ -937,7 +956,7 @@ object {
 
 .single-package .price .color-bg h2 {
     color: #FFFFFF !important;
-} 
+}
 
 .single-package .price .sign {
     vertical-align: super;
@@ -970,20 +989,10 @@ object {
 -----------------------------------------*/
 
 .download {
-    background: url(../images/julius-jansson-vJpTUSffogE-unsplash.jpg) center top fixed no-repeat;
+    background: url(../images/bg-download.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
             background-size: cover;
     color: #ffffff;
-}
-
-/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
-@supports (-webkit-touch-callout: none) {
-    .download {
-        background: url(../images/julius-jansson-vJpTUSffogE-unsplash.jpg) center top no-repeat;
-        -webkit-background-size: cover;
-        background-size: cover;
-        color: #ffffff;
-    }
 }
 
 .download .color-overlay {
@@ -1009,7 +1018,7 @@ object {
     border: 2px solid #FFF;
 }
 
-.download .subscription-form .input-box:focus, 
+.download .subscription-form .input-box:focus,
 .download .subscription-form .input-box:active {
     color: #000;
     font-weight: 400;
@@ -1029,20 +1038,10 @@ object {
 -----------------------------------------*/
 
 .contact-container {
-    background: url(../images/takashi-watanabe-f2DL8oI-7N8-unsplash.jpg) center top fixed no-repeat;
+    background: url(../images/bg-contact-container.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     color: #ffffff;
-}
-
-/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
-@supports (-webkit-touch-callout: none) {
-    .contact-container {
-        background: url(../images/takashi-watanabe-f2DL8oI-7N8-unsplash.jpg) center top no-repeat;
-        -webkit-background-size: cover;
-        background-size: cover;
-        color: #ffffff;
-    }
 }
 
 section .contact-box {

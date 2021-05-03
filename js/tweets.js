@@ -225,9 +225,9 @@ function createTestimonialHtml(startIndex) {
     html.push('<div class="image">');
     html.push('<img src="' + profileImg + '" loading="lazy" alt="">')
     html.push('</div>');
-    html.push('<div class="message">');
+    html.push('<blockquote class="message">');
     html.push(msg);
-    html.push('</div>');
+    html.push('</blockquote>');
     html.push('<div class="white-line"></div>');
     html.push('<div class="name">');
     html.push('<a href="' + url + '">');
@@ -270,13 +270,14 @@ function createOwlCarousel(number) {
     $("#feedbacks").html(html);
     $("#feedbacks").owlCarousel({
         nav: true, // Show next and prev buttons
-        navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+        navText : ['<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>',
+            '<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>'],
         dots: true,
         items: 1,
         autoplay: true,
         loop: true,
-        autoplaySpeed: 400,
+        autoplaySpeed: 2000,
         dotsSpeed: 400,
-        autoplayTimeout: 5000,
+        autoplayTimeout: 10000,
     });
 }
