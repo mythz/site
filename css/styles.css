@@ -276,18 +276,9 @@ h5 {
 -----------------------------------------*/
 
 header {
-    background: url(../images/andre-benz-cXU6tNxhub0-unsplash_.jpg) center top fixed no-repeat;
+    background: url(../images/bg-header.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
             background-size: cover;
-}
-
-/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
-@supports (-webkit-touch-callout: none) {
-    header {
-        background: url(../images/andre-benz-cXU6tNxhub0-unsplash_.jpg) center top no-repeat;
-        -webkit-background-size: cover;
-        background-size: cover;
-    }
 }
 
 header .social-icons img {
@@ -308,46 +299,43 @@ header .social-icons img {
     margin-top:-10px;
 }
 
-.instant-client-apps-bg {
-    background: url(/images/andrea-leopardi-QfhbK2pY0Ao-unsplash.jpg) center top fixed no-repeat;
+.bg-instant-client-apps {
+    background: url(/images/bg-instant-client-apps.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     color: white;
 }
 
-/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
-@supports (-webkit-touch-callout: none) {
-    .instant-client-apps-bg {
-        background: url(/images/andrea-leopardi-QfhbK2pY0Ao-unsplash.jpg) center top no-repeat;
-        -webkit-background-size: cover;
-        background-size: cover;
-        color: white;
-    }
-}
-
-.instant-client-apps-bg h2 {
+.bg-instant-client-apps h2 {
     color: white;
 }
 
-.grpc-feature-bg {
-    background: url(/images/guillaume-lorain-SQE6eVg65Kg-unsplash_.jpg) center top fixed no-repeat;
+.bg-grpc-feature {
+    background: url(/images/bg-grpc-feature.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     color: white;
 }
+.bg-grpc-feature h2 {
+    color: white;
+}
+
+.bg-service-clients {
+    background: url(/images/bg-service-clients.jpg) center top fixed no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+.bg-service-clients h2 {
+    color: white;
+    text-shadow: #1f2937;
+}
 
 /* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
 @supports (-webkit-touch-callout: none) {
-    .grpc-feature-bg {
-        background: url(/images/guillaume-lorain-SQE6eVg65Kg-unsplash_.jpg) center top no-repeat;
-        -webkit-background-size: cover;
-        background-size: cover;
-        color: white;
+    header, .testimonials, .bg-instant-client-apps, .bg-grpc-feature, .bg-service-clients, .contact-container, .download {
+        background-position: center top;
     }
-}
-
-.grpc-feature-bg h2 {
-    color: white;
 }
 
 header .color-overlay {
@@ -789,22 +777,11 @@ object {
    SECTION:  TESTIMONIALS                 
 -----------------------------------------*/
 .testimonials {
-    background: url(../images/henry-chen-x7clQSWhlfE-unsplash_.jpg) center top fixed no-repeat;
+    background: url(../images/bg-testimonials.jpg) center top fixed no-repeat;
     z-index: -1;
     -webkit-background-size: cover;
-            background-size: cover;
+    background-size: cover;
     color: #ffffff;
-}
-
-/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
-@supports (-webkit-touch-callout: none) {
-    .testimonials {
-        background: url(../images/henry-chen-x7clQSWhlfE-unsplash_.jpg) center top no-repeat;
-        z-index: -1;
-        -webkit-background-size: cover;
-        background-size: cover;
-        color: #ffffff;
-    }
 }
 
 .testimonials .color-overlay {
@@ -998,20 +975,10 @@ object {
 -----------------------------------------*/
 
 .download {
-    background: url(../images/julius-jansson-vJpTUSffogE-unsplash.jpg) center top fixed no-repeat;
+    background: url(../images/bg-download.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
             background-size: cover;
     color: #ffffff;
-}
-
-/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
-@supports (-webkit-touch-callout: none) {
-    .download {
-        background: url(../images/julius-jansson-vJpTUSffogE-unsplash.jpg) center top no-repeat;
-        -webkit-background-size: cover;
-        background-size: cover;
-        color: #ffffff;
-    }
 }
 
 .download .color-overlay {
@@ -1057,20 +1024,10 @@ object {
 -----------------------------------------*/
 
 .contact-container {
-    background: url(../images/takashi-watanabe-f2DL8oI-7N8-unsplash.jpg) center top fixed no-repeat;
+    background: url(../images/bg-contact-container.jpg) center top fixed no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     color: #ffffff;
-}
-
-/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
-@supports (-webkit-touch-callout: none) {
-    .contact-container {
-        background: url(../images/takashi-watanabe-f2DL8oI-7N8-unsplash.jpg) center top no-repeat;
-        -webkit-background-size: cover;
-        background-size: cover;
-        color: #ffffff;
-    }
 }
 
 section .contact-box {
