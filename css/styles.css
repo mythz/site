@@ -319,7 +319,7 @@ header .social-icons img {
     color: white;
 }
 
-.bg-service-clients, .bg-bg-apimap, .bg-thirdparty {
+.bg-service-clients, .bg-apimap, .bg-thirdparty {
     background: url(/images/bg-service-clients.jpg) no-repeat fixed center top;
     -webkit-background-size: cover;
     background-size: cover;
