@@ -19,14 +19,18 @@
     </style>
 </head>
 <body>
-{% include navigation.html %}
+<div style="text-align: center">
+    {% include navigation.html %}
+
 
 <section class="section-body {{ page.section_css }}">
     {{ content }}
 </section>
-
+</div>
 {% include footer-section.html %}
 
 {% include scripts-section.html %}
+
+<script src="/js/custom.js"></script>
 </body>
 </html>
