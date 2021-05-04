@@ -7,11 +7,17 @@ url: http://site.servicestack.com/
 repository: mythz/site
 google_analytics_key:
 
+package_version: 5.11.0
+
 collections:
   about:
     title: About
     output: true
     permalink: /about/:slug.html
+  downloads:
+    title: Downloads
+    output: true
+    permalink: /downloads/:slug.html
   features:
     title: Features
     output: true
@@ -24,6 +30,10 @@ collections:
     title: News
     output: true
     permalink: /news/:slug.html
+  pricing:
+    title: Pricing
+    output: true
+    permalink: /pricing/:slug.html
   why_servicestack:
     title: Why ServiceStack
     output: true

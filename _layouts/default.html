@@ -13,8 +13,17 @@
     {% include fixes-section.html %}
 </head>
 <body>
+<!-- =========================
+     PRE LOADER
+============================== -->
+<div class="preloader">
+    <div class="status"></div>
+</div>
 <div class="text-center">
-    {% include header-section.html %}
+
+    {% include navigation.html %}
+
+    {% include home/hero-banner.html %}
 
     {% include home/features-section.html %}
 
@@ -121,5 +130,8 @@
     {% include footer-section.html %}
 
     {% include scripts-section.html %}
+
+    <script src="/js/custom.js"></script>
+    <script src="/js/tweets.js"></script>
 </body>
 </html>

@@ -893,6 +893,29 @@ object {
 }
 
 
+/*---------------------------------------
+NUGET PACKAGE REFERENCE
+------------------------------------------*/
+
+.copied::after {
+    content: "copied";
+}
+.svg-copy{
+    display: inline-block;
+    width:24px;
+    height:24px;
+    vertical-align: middle;
+    background-image: url("data:image/svg+xml,%3Csvg fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2'%3E%3C/path%3E%3C/svg%3E");
+}
+pre.copy {
+    display: inline-block;
+    padding-right: .5rem;
+
+}
+pre.sh {
+    background: #eee;
+    border-radius: 5px;
+}
 
 /*---------------------------------------
    SECTION:  SCREENSHOTS 
