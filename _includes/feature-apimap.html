@@ -1,45 +1,3 @@
-<style>
-#apimap h4, #apimap ul, #apimap li {margin:0;padding:0}
-.apibox {
-}
-ul.apibox, ul.apibox > li {
-    border-style: solid;
-    border-color: rgba(255,255,255,.25);
-}
-ul.apibox      { border-width: 1px  0   0  1px }
-ul.apibox > li { border-width:  0  1px 1px  0  }
-ul.apibox      { background: rgba(255,255,255,.1) }
-ul.apibox > li { text-align: center; padding-right: .2rem; }
-.apibox-md {
-    background: rgba(255,255,255,.1);
-    border: 1px solid rgba(255,255,255,.25);
-    padding: .5rem;
-}
-.apibox-md h4 {
-    font-size: 1.1rem;
-    line-height: 1.5rem;
-    font-weight: 600;
-}
-@media (max-width:1024px) {
-    #apimap li {
-        font-size: 12px;
-    }
-    .apibox-md {
-        padding: .25rem;
-    }
-    .apibox-md h4 {
-        font-size: 1rem;
-        line-height: 1.25rem;
-        font-weight: 600;
-    }
-}
-@media (max-width:640px) {
-    #apimap img {
-        width:7.5rem;
-    }
-}
-</style>
-
 <section class="feature-diagram-section bg-apimap" id="apimap">
     <div class="container">
         <div class="row">
@@ -154,7 +112,7 @@ ul.apibox > li { text-align: center; padding-right: .2rem; }
                                     <li>Azure Service Bus</li>
                                 </ul>
                             </div>
-                            <div class="apibox-md mx-2 mt-4">
+                            <div class="apibox-md mx-2 mt-4 noshow sm:block">
                                 <h4>SOAP</h4>
                                 <ul class="flex flex-wrap">
                                     <li>WCF</li>
