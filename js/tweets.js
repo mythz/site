@@ -125,37 +125,18 @@ var twitterQuotes = [
     ["Daniel Auger","https://twitter.com/danielauger/status/156221965596762112","I vow that I will use ServiceStack .net or WCF Web API preview on the next SOA project where vanilla WCF isn't manditory.","danielauger","https://pbs.twimg.com/profile_images/1201362250377973761/KDdR5dUE.jpg","Code Custodian, guitar tinkerer, retro gamer, and table-top RPG player.","717"]
 ];
 
-var tCoMapping = [{
-    orig: "https://t.co/tMpnGMRqQG",
-    alias: "snapbean.ch"
-},{
-    orig: "https://t.co/d3uz61ZfvF",
-    alias: "RumDood.com"
-},{
-    orig: "https://t.co/SAWNlDr2Hg",
-    alias: "MakerFiesta.com"
-},{
-    orig: "https://t.co/SGZSmIfqLB",
-    alias: "GyanQuest.com"
-},{
-    orig: "https://t.co/Bj1MgmIiim",
-    alias: "GyanQuest.org"
-},{
-    orig: "https://t.co/pWPARpETAA",
-    alias: "keybase.io/degrammer"
-}, {
-    orig: "https://t.co/t5PIeQOOsG",
-    alias: "gregpakes.co.uk"
-},{
-    orig: "https://t.co/SeecnHDw5Y",
-    alias: "taktikal.is"
-},{
-    orig: "http://t.co/m0gasFIlOE",
-    alias: "dotnetkicks.com"
-},{
-    orig: "http://t.co/leSeGRblBf",
-    alias: "javascriptkicks.com"
-}]
+var tCoMapping = {
+    "https://t.co/tMpnGMRqQG": "snapbean.ch",
+    "https://t.co/d3uz61ZfvF": "RumDood.com",
+    "https://t.co/SAWNlDr2Hg": "MakerFiesta.com",
+    "https://t.co/SGZSmIfqLB": "GyanQuest.com",
+    "https://t.co/Bj1MgmIiim": "GyanQuest.org",
+    "https://t.co/pWPARpETAA": "keybase.io/degrammer",
+    "https://t.co/t5PIeQOOsG": "gregpakes.co.uk",
+    "https://t.co/SeecnHDw5Y": "taktikal.is",
+    "http://t.co/m0gasFIlOE": "dotnetkicks.com",
+    "http://t.co/leSeGRblBf": "javascriptkicks.com"
+}
 
 function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -243,28 +224,18 @@ function createTestimonialHtml(startIndex) {
 
 function removeLinkFromTwitterProfileDescription(profileDesc) {
     var result = profileDesc;
-    if(profileDesc.indexOf('//t.co/') > -1) {
-        var tCoIndex = profileDesc.indexOf('//t.co/');
-        var tCoLinkProtocolIsHTTP = profileDesc[tCoIndex - 5] === 'h';
-        var tCoLink = profileDesc.substr(tCoIndex - (tCoLinkProtocolIsHTTP ? 5 : 6),tCoIndex + 10 + (tCoLinkProtocolIsHTTP ? 5 : 6));
-        var replacement = tCoMapping.filter((val) => {
-            if(val.orig === tCoLink) {
-                return val.alias
-            }
-        })
-        result = profileDesc.replace(tCoLink,replacement);
-    }
-    if(result.indexOf('//t.co/') > -1) {
-        removeLinkFromTwitterProfileDescription(result);
+    for(var key in tCoMapping) {
+        if (tCoMapping.hasOwnProperty(key)) {
+            result = result.replace(key,tCoMapping[key])
+        }
     }
     return result;
 }
 
 $(document).ready(function () {
-    createOwlCarousel(50);
+    createOwlCarousel(52);
 });
 
-var loadMoreIndex = 10;
 function createOwlCarousel(number) {
     var html = getNextQuotes(number).join('');
     $("#feedbacks").html(html);
@@ -277,6 +248,7 @@ function createOwlCarousel(number) {
         autoplay: true,
         loop: true,
         autoplaySpeed: 2000,
+        autoplayHoverPause: true,
         dotsSpeed: 400,
         autoplayTimeout: 10000,
     });
