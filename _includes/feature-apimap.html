@@ -1,3 +1,45 @@
+<style>
+#apimap h4, #apimap ul, #apimap li {margin:0;padding:0}
+.apibox {
+}
+ul.apibox, ul.apibox > li {
+    border-style: solid;
+    border-color: rgba(255,255,255,.25);
+}
+ul.apibox      { border-width: 1px  0   0  1px }
+ul.apibox > li { border-width:  0  1px 1px  0  }
+ul.apibox      { background: rgba(255,255,255,.1) }
+ul.apibox > li { text-align: center; padding-right: .2rem; }
+.apibox-md {
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.25);
+    padding: .5rem;
+}
+.apibox-md h4 {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+}
+@media (max-width:1024px) {
+    #apimap li {
+        font-size: 12px;
+    }
+    .apibox-md {
+        padding: .25rem;
+    }
+    .apibox-md h4 {
+        font-size: 1rem;
+        line-height: 1.25rem;
+        font-weight: 600;
+    }
+}
+@media (max-width:640px) {
+    #apimap img {
+        width:7.5rem;
+    }
+}
+</style>
+
 <section class="feature-diagram-section bg-apimap" id="apimap">
     <div class="container">
         <div class="row">
@@ -7,7 +49,119 @@
                     Maximize the utility, reach &amp; value of your System APIs with the most versatile framework in the world
                 </p>
                 <div class="py-8">
-                    <img src="../images/svgs/apimap.svg" width="100%" alt="API Map">
+                    <div class="apimap text-left flex flex-wrap">
+                        <div class="left w-1/2 md:w-1/3 mb-2">
+                            <div class="flex justify-end">
+                                <div class="apibox-md" style="width:370px">
+                                    <h4>Add ServiceStack Reference</h4>
+                                    <ul class="flex flex-row justify-between">
+                                        <li>C#</li>
+                                        <li>TypeScript</li>
+                                        <li>Swift</li>
+                                        <li>Java</li>
+                                        <li>Kotlin</li>
+                                        <li>Dart</li>
+                                        <li>F#</li>
+                                        <li>VB.NET</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="flex mt-4">
+                                <div class="w-2/3 flex flex-col justify-center text-right">
+                                    <ul>
+                                        <li>C# F# VB.NET</li>
+                                        <li>Service Clients</li>
+                                    </ul>
+                                </div>
+                                <div class="w-1/3 flex justify-end">
+                                <ul class="apibox flex flex-col w-20">
+                                    <li>JSON</li>
+                                    <li>CSV</li>
+                                    <li>XML</li>
+                                    <li>JSV</li>
+                                    <li>ProtoBuf</li>
+                                    <li>MsgPack</li>
+                                </ul>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end justify-end">
+                                <div class="mt-4 w-2/3 apibox-md" style="max-width:220px">
+                                    <h4 class="text-xl font-semibold">Encrypted Messaging</h4>
+                                </div>
+                                <div class="mt-2 w-2/3 apibox-md" style="max-width:220px">
+                                    <h4 class="text-xl font-semibold">Auto Batching</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="middle w-1/2 md:w-1/3 pl-4 sm:p-0 mb-2">
+                            <div class="flex flex-wrap text-center justify-center">
+                                <div class="w-2/5 mx-2 mb-2 apibox-md"><h4>User Routes</h4></div>
+                                <div class="w-2/5 mx-2 mb-2 apibox-md"><h4>QueryString</h4></div>
+                                <div class="w-2/5 mx-2 mb-2 apibox-md"><h4>Auto Routes</h4></div>
+                                <div class="w-2/5 mx-2 mb-2 apibox-md"><h4>FormData</h4></div>
+                            </div>
+                            <div class="flex justify-center">
+                                <img src="../images/svgs/servicestack.svg" class="w-50 sm:w-30" alt="ServiceStack Logo">
+                            </div>
+                            <div class="flex flex-wrap justify-center mt-4">
+                                <div class="apibox-md mx-2 w-2/5">
+                                    <h4>Service Gateway</h4>
+                                    <ul class="flex flex-col">
+                                        <li>Microservices</li>
+                                        <li>Consul</li>
+                                        <li>Redis Discovery</li>
+                                    </ul>
+                                </div>
+                                <div class="apibox-md mx-2 w-2/5">
+                                    <h4>RPC Gateway</h4>
+                                    <ul class="flex flex-col">
+                                        <li>gRPC</li>
+                                        <li>Custom Integration</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right w-full md:w-1/3">
+                            <div class="apibox-md mx-2">
+                                <h4>Open API</h4>
+                                <ul class="flex flex-wrap justify-evenly md:justify-between">
+                                    <li>Generated Clients</li>
+                                    <li>AWS API Management</li>
+                                    <li>Azure API Management</li>
+                                </ul>
+                            </div>
+                            <div class="apibox-md mx-2 mt-4">
+                                <h4>gRPC</h4>
+                                <ul class="flex flex-wrap justify-evenly md:justify-between">
+                                    <li>C#</li>
+                                    <li>Swift</li>
+                                    <li>Java</li>
+                                    <li>Dart</li>
+                                    <li>Go</li>
+                                    <li>Node.js</li>
+                                    <li>Python</li>
+                                    <li>Ruby</li>
+                                    <li>PHP</li>
+                                </ul>
+                            </div>
+                            <div class="apibox-md mx-2 mt-4">
+                                <h4>MQ</h4>
+                                <ul class="flex flex-wrap justify-evenly md:justify-between">
+                                    <li>RabbitMQ</li>
+                                    <li>Redis MQ</li>
+                                    <li>Background MQ</li>
+                                    <li>AWS SQS MQ</li>
+                                    <li>Azure Service Bus</li>
+                                </ul>
+                            </div>
+                            <div class="apibox-md mx-2 mt-4">
+                                <h4>SOAP</h4>
+                                <ul class="flex flex-wrap">
+                                    <li>WCF</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
