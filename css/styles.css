@@ -870,6 +870,38 @@ object {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+/*---------------------------------------
+   SECTION:  3rdParty
+-----------------------------------------*/
+
+.ext {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.ext div {
+    text-align: left;
+    padding: .5em;
+}
+.ext div:hover {
+    background: rgba(255,255,255,.1);
+}
+.ext a {
+    color: #fff;
+}
+.ext h4 {
+    color: rgba(255,255,255,.5);
+}
+.ext h4, .ext ul, .ext li {
+    margin: 0;
+    padding: 0;
+}
+.ext li {
+    display: inline-block;
+    font-size: 13px;
+    margin-right: .5em;
+}
+
 
 /*---------------------------------------
    SECTION:  SERVICES           
