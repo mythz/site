@@ -329,6 +329,7 @@ header .social-icons img {
     color: white;
     text-shadow: #1f2937;
 }
+
 .lang-links {
     display: flex;
     justify-content: center;
@@ -788,7 +789,7 @@ object {
    SECTION:  TESTIMONIALS                 
 -----------------------------------------*/
 .testimonials {
-    background: url(../images/bg-testimonials.jpg) center top fixed no-repeat;
+    background: url(../images/bg-header.jpg) center top fixed no-repeat;
     z-index: -1;
     -webkit-background-size: cover;
     background-size: cover;
