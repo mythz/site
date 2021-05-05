@@ -1,20 +1,58 @@
+<style>
+.contact-container {
+    background: url(../images/bg-contact-container.jpg) center top fixed no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #ffffff;
+}
+
+section .contact-box {
+    margin-bottom: 78px;
+}
+
+section .contact-box .expanded-contact-form {
+    margin-top: 40px;
+    display: none;
+}
+
+section .contact-box .expanded-contact-form .success,
+section .contact-box .expanded-contact-form .error {
+    display: none;
+}
+
+section .contact-box .expanded-contact-form .input-box {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    height: 50px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+section .contact-box .expanded-contact-form .textarea-box {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+section .contact-box .expanded-contact-form .textarea-box:active {
+    color: #000;
+}
+</style>
+
 <section class="contact-container">
     <div class="container text-center">
-        <div class="contact-box wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s">
+        <div class="contact-box wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s" style="margin-top:-40px">
 
-            <!-- CONTACT BUTTON TO EXPAND OR COLLAPSE FORM -->
+            <a style="background-clip:padding-box"
+               class="contact-button expand-form expanded bg-white inline-block border border-blue-800 h-20 w-20 rounded-full text-3xl pt-4"><i class="icon_mail_alt"></i></a>
 
-            <a class="btn contact-button expand-form expanded"><i class="icon_mail_alt"></i></a>
-
-            <!-- EXPANDED CONTACT FORM -->
             <div class="row expanded-contact-form">
 
                 <div class="col-md-8 col-md-offset-2">
 
-                    <!-- FORM -->
                     <form class="contact-form" id="contact" role="form">
 
-                        <!-- IF MAIL SENT SUCCESSFULLY -->
                         <h4 class="success">
                             <i class="icon_check"></i> Your message has been sent successfully.
                         </h4>
@@ -36,17 +74,16 @@
                             <textarea class="form-control textarea-box" id="message" rows="8" placeholder="Message"></textarea>
                         </div>
 
-                        <button class="btn btn-primary standard-button2 ladda-button" type="submit" id="submit" name="submit" data-style="expand-left">Send Message</button>
+                        <button class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">
+                            Send Message
+                        </button>
 
                     </form>
-                    <!-- /END FORM -->
 
                 </div>
 
             </div>
-            <!-- /END EXPANDED CONTACT FORM -->
 
         </div>
-        <!-- /END CONTACT BOX -->
     </div>
 </section>

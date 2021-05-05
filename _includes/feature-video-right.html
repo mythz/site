@@ -8,10 +8,8 @@
 
         <div class="row">
 
-            <!-- PHONES IMAGE -->
             <div class="col-md-6 wow fadeInRight animated video-right-text" data-wow-offset="10" data-wow-duration="1.5s">
 
-                <!-- SECTION TITLE -->
                 <h2 class="dark-text">{{ include.title }} </h2>
 
                 <div class="colored-line-left">
@@ -25,15 +23,14 @@
                 {% if page_content_ref_size > 0 %}
                 {% include {{ include.page_content_ref }} %}
                 {% endif %}
-                <!-- BUTTON -->
                 <div class="buttons">
-                    <a href="{{ include.learn_url }}" class="btn btn-default btn-lg standard-button learn-more-button">Learn more</a>
+                    <a href="{{ include.learn_url }}" class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">
+                        Learn more
+                    </a>
                 </div>
-                <!-- /END BUTTONS -->
 
             </div>
 
-            <!-- RIGHT SIDE WITH BRIEF -->
             <div class="col-md-6 left-align wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s">
 
                 <div class="video-container videos owl-carousel owl-theme">
@@ -54,13 +51,9 @@
                 </div>
 
             </div>
-            <!-- /END RIGHT BRIEF -->
 
         </div>
-        <!-- /END ROW -->
 
     </div>
-    <!-- /END CONTAINER -->
 
 </section>
-<!-- /END SECTION -->

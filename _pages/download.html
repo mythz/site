@@ -21,12 +21,23 @@ slug: download
     text-align: left;
 }
 
-.package-reference-box {
-    max-width: 540px;
+@media (min-width: 1024px) {
+    .package-reference-box {
+        max-width: 500px;
+    }
+    .package-reference-box .copy label {
+        max-width: 470px;
+        overflow: hidden;
+    }
 }
-.package-reference-box .copy label {
-    max-width: 510px;
-    overflow: hidden;
+@media (min-width: 1280px) {
+    .package-reference-box {
+        max-width: 540px;
+    }
+    .package-reference-box .copy label {
+        max-width: 510px;
+        overflow: hidden;
+    }
 }
 .package-reference-box .svg-copy {
     background: #008ed6 url("data:image/svg+xml,%3Csvg fill='none' stroke='white' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1' d='M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2'%3E%3C/path%3E%3C/svg%3E") no-repeat;
@@ -52,7 +63,6 @@ slug: download
     margin-bottom: 0;
     border-radius: 0;
     border: none;
-    overflow: inherit !important;
 }
 .package-reference-box .copy-text label {
     font-weight: 400;
@@ -61,7 +71,7 @@ slug: download
 </style>
 
 <div class="download container mx-auto px-4">
-    <h1 class="text-center mb-4">Add ServiceStack to your project</h1>
+    <h1 class="text-center pt-4 mb-4">Add ServiceStack to your project</h1>
     <div class="sm:flex sm:flex-wrap">
         <div>
             <p>
@@ -148,7 +158,7 @@ slug: download
     </div>
 
     <div class="download-breaker my-10 flex flex-col items-center">
-        <h2 class="text-4xl">Add ServiceStack with advanced HTML Support</h2>
+        <h2 class="text-4xl py-2">Add ServiceStack with advanced HTML Support</h2>
         <div class="colored-line"></div>
         <p class="mt-4">
             If you plan on using ServiceStack to also create HTML websites then start with one of these 2 packages instead:
@@ -203,7 +213,7 @@ slug: download
     </div>
 
     <div class="download-breaker my-10 flex flex-col items-center">
-        <h2 class="text-4xl">Using Redis or OrmLite?</h2>
+        <h2 class="text-4xl py-2">Using Redis or OrmLite?</h2>
         <div class="colored-line"></div>
         <p class="mt-4">
             If you've started with <b>ServiceStack.Server</b> you already have OrmLite and Redis, if not you can add
@@ -281,7 +291,7 @@ slug: download
     </div>
 
     <div class="download-breaker">
-        <h2 class="text-4xl">Just ServiceStack.Text?</h2>
+        <h2 class="text-4xl py-2">Just ServiceStack.Text?</h2>
         <div class="colored-line"></div>
     </div>
     <div class="flex flex-wrap">
@@ -312,7 +322,7 @@ slug: download
     </div>
 
     <div class="download-breaker my-10 flex flex-col items-center">
-        <h2 class="text-4xl">Message Queue Servers</h2>
+        <h2 class="text-4xl py-2">Message Queue Servers</h2>
         <div class="colored-line"></div>
         <p class="mt-4">
             ServiceStack's message-based design enables it to host Services on a variety of different
@@ -402,7 +412,7 @@ slug: download
     </div>
 
     <div class="download-breaker my-10 flex flex-col items-center">
-        <h2 class="text-4xl">Amazon Web Services</h2>
+        <h2 class="text-4xl py-2">Amazon Web Services</h2>
         <div class="colored-line"></div>
         <p class="mt-4">
             You can participate in AWS's vibrant ecosystem with ServiceStack's first-class support and deep
@@ -465,7 +475,7 @@ slug: download
     </div>
 
     <div class="download-breaker my-10 flex flex-col items-center">
-        <h2 class="text-4xl">Microsoft Azure</h2>
+        <h2 class="text-4xl py-2">Microsoft Azure</h2>
         <div class="colored-line"></div>
     </div>
     <div class="flex flex-wrap">
@@ -508,7 +518,7 @@ slug: download
     </div>
 
     <div class="download-breaker my-10 flex flex-col items-center">
-        <h2 class="text-4xl">Authentication</h2>
+        <h2 class="text-4xl py-2">Authentication</h2>
         <div class="colored-line"></div>
     </div>
     <div class="flex flex-wrap">
@@ -631,7 +641,7 @@ slug: download
     </div>
 
     <div class="download-breaker my-10 flex flex-col items-center">
-        <h2 class="text-4xl">Caching and Logging Providers</h2>
+        <h2 class="text-4xl py-2">Caching and Logging Providers</h2>
         <div class="colored-line"></div>
     </div>
     <div class="flex flex-wrap">
@@ -721,7 +731,7 @@ slug: download
     </div>
 
     <div class="download-breaker my-10 flex flex-col items-center">
-        <h2 class="text-4xl">Additional Formats</h2>
+        <h2 class="text-4xl py-2">Additional Formats</h2>
         <div class="colored-line"></div>
     </div>
     <div class="flex flex-wrap">
@@ -776,7 +786,7 @@ slug: download
     </div>
 
     <div class="download-breaker my-10 flex flex-col items-center">
-        <h2 class="text-4xl">Build Tasks</h2>
+        <h2 class="text-4xl py-2">Build Tasks</h2>
         <div class="colored-line"></div>
     </div>
     <div class="flex flex-wrap">
@@ -839,7 +849,7 @@ slug: download
 
     <a name="client"></a>
     <div class="download-breaker my-10 flex flex-col items-center">
-        <h2 class="text-4xl">Client Libraries</h2>
+        <h2 class="text-4xl py-2">Client Libraries</h2>
         <div class="colored-line"></div>
     </div>
     <div class="flex flex-wrap">
@@ -895,7 +905,7 @@ slug: download
 
     <a name="core"></a>
     <div class="download-breaker my-10 flex flex-col items-center">
-        <h2 class="text-4xl">.Core Packages</h2>
+        <h2 class="text-4xl py-2">.Core Packages</h2>
         <div class="colored-line"></div>
         <p class="mt-4">
             Use <b>.Core</b> packages if <a href="https://docs.servicestack.net/netcore#run-aspnet-core-apps-on-the-net-framework">running ServiceStack ASP.NET Core on .NET Framework</a>.
@@ -904,7 +914,7 @@ slug: download
 
     <a name="external"></a>
     <div class="download-breaker my-10 flex flex-col items-center">
-        <h2 class="text-4xl">External Libraries</h2>
+        <h2 class="text-4xl py-2">External Libraries</h2>
         <div class="colored-line"></div>
     </div>
     <div class="flex flex-wrap">
@@ -952,7 +962,7 @@ slug: download
 
     <a name="register"></a>
     <div class="download-breaker my-10 flex flex-col items-center">
-        <h2 class="text-4xl">Registering your License Key with your ServiceStack Projects</h2>
+        <h2 class="text-4xl py-2">Registering your License Key with your ServiceStack Projects</h2>
         <div class="colored-line"></div>
         <p class="mt-4">
             The ServiceStack license key allows un-restricted access to ServiceStack packages and
@@ -1048,7 +1058,7 @@ SERVICESTACK_LICENSE   {licenseKeyText}
 
     <a name="free-quotas"></a>
     <div class="download-breaker my-10 flex flex-col items-center">
-        <h2 class="text-4xl">Free Quotas</h2>
+        <h2 class="text-4xl py-2">Free Quotas</h2>
         <div class="colored-line"></div>
         <p class="mt-4">
             Whilst ServiceStack v4+ is a commercially-supported product, we allow free usage
