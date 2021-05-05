@@ -956,66 +956,6 @@ ul.apibox:hover, ul.apibox:hover > li,.apibox-md:hover { border-color: rgba(255,
 
 
 /*---------------------------------------
-NUGET PACKAGE REFERENCE
-------------------------------------------*/
-
-.package-reference-box .copied::after {
-    content: "copied";
-}
-.package-reference-box .svg-copy{
-    display: inline-block;
-    width:2em;
-    height:100%;
-    vertical-align: middle;
-    background-image: url("data:image/svg+xml,%3Csvg fill='none' stroke='white' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1' d='M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2'%3E%3C/path%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center;
-    background-color:#008ed6;
-}
-.package-reference-box pre.copy {
-    display: inline-block;
-    padding-right: .5rem;
-
-}
-.package-reference-box pre.sh {
-    background: #002440;
-    color:white;
-    width:100%;
-}
-
-.package-reference-box pre label {
-    margin:0;
-}
-
-.package-reference-box pre {
-    margin-bottom: 0;
-    border-radius: 0;
-    border: none;
-    overflow: inherit !important;
-}
-
-.package-reference-box i {
-}
-
-.package-reference-box .copy-text label {
-    vertical-align: middle;
-    margin-left: 1em;
-    float:right;
-}
-
-.package-reference-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    align-content: flex-start;
-    text-align: left;
-    -webkit-transition: all ease 0.25s;
-    transition: all ease 0.25s;
-}
-
-/*---------------------------------------
    SECTION:  SCREENSHOTS 
 -----------------------------------------*/
 
@@ -1101,55 +1041,6 @@ NUGET PACKAGE REFERENCE
   margin-right: 7px;
 }
 
-
-/*---------------------------------------
-   SECTION:  DOWNLOAD                 
------------------------------------------*/
-
-.download {
-    background: url(../images/bg-download.jpg) center top fixed no-repeat;
-    -webkit-background-size: cover;
-            background-size: cover;
-    color: #ffffff;
-}
-
-.download .color-overlay {
-    padding-top: 110px;
-    padding-bottom: 70px;
-}
-
-.download .download-container {
-    padding-bottom: 80px;
-}
-
-.download .subscription-form-container {
-    padding-bottom: 80px;
-}
-
-.download .subscription-form .input-box {
-    height: 57px;
-    padding-left: 20px;
-    width: 320px;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    background: #FFF;
-    border: 2px solid #FFF;
-}
-
-.download .subscription-form .input-box:focus,
-.download .subscription-form .input-box:active {
-    color: #000;
-    font-weight: 400;
-}
-
-.download .subscription-form .subscription-success,
-.download .subscription-form .subscription-error {
-    display: none;
-}
-
-.download h2 {
-    margin-bottom: 30px;
-}
 
 /*---------------------------------------
    SECTION:  CONTACT-US

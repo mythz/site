@@ -1,42 +1,67 @@
 ---
 title: ServiceStack Downloads
-layout: content-page
+slug: download
 ---
+
 <style>
-    .downloads-section h1 {
-        text-align: center;
-    }
+.download h3 {
+    font-weight: 400;
+}
+.download h4 { margin:0 }
+.download-breaker {
+    text-align: center;
+    width: 100%;
+}
+.download-breaker p { max-width: 890px}
+.download ul > li {
+    list-style: circle;
+    margin-left: 2em;
+}
+.download pre {
+    text-align: left;
+}
 
-    .downloads-section h3 {
-        font-weight: 400;
-    }
-
-    .downloads-section {
-        padding-left: 2em;
-        padding-right: 2em;
-    }
-
-    .downloads-section-breaker {
-        text-align: center;
-    }
-
-    .downloads-section ul > li {
-        list-style: circle;
-        margin-left: 2em;
-    }
-    .downloads-section pre {
-        text-align: left;
-    }
-
-    @media (max-width: 768px) {
-        .downloads-section pre {
-            font-size: 1.5vw;
-        }
-    }
+.package-reference-box {
+    max-width: 540px;
+}
+.package-reference-box .copy label {
+    max-width: 510px;
+    overflow: hidden;
+}
+.package-reference-box .svg-copy {
+    background: #008ed6 url("data:image/svg+xml,%3Csvg fill='none' stroke='white' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1' d='M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2'%3E%3C/path%3E%3C/svg%3E") no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 1.4em;
+    cursor: pointer;
+}
+.package-reference-box .svg-copy:hover {
+    opacity: .8;
+}
+.package-reference-box pre.copy {
+    display: inline-block;
+    padding-right: .5rem;
+}
+.package-reference-box pre.sh {
+    color:white;
+}
+.package-reference-box pre label {
+    margin:0;
+}
+.package-reference-box pre {
+    margin-bottom: 0;
+    border-radius: 0;
+    border: none;
+    overflow: inherit !important;
+}
+.package-reference-box .copy-text label {
+    font-weight: 400;
+    color: rgb(107, 114, 128);
+}
 </style>
 
-<div class="downloads-section container mx-auto px-4">
-    <h1>Add ServiceStack to your project to get started</h1>
+<div class="download container mx-auto px-4">
+    <h1 class="text-center mb-4">Add ServiceStack to your project</h1>
     <div class="sm:flex sm:flex-wrap">
         <div>
             <p>
@@ -62,10 +87,10 @@ layout: content-page
         </div>
     </div>
     <br/>
-    <div class="flex-wrap sm:flex-wrap md:flex-wrap lg:flex">
-        <div class="mx-4 flex-1">
+    <div class="flex flex-wrap">
+        <div class="px-1 w-full lg:w-1/2">
             <h3>Just ServiceStack</h3>
-            <p>The minimal installation of ServiceStack, create an Empty ASP.NET project and: </p>
+            <p>Minimal install of ServiceStack, create an empty ASP.NET project and: </p>
             {% include nuget-package-reference.html
             package="ServiceStack"
             version=site.package_version
@@ -93,9 +118,9 @@ layout: content-page
                 medium-sized ServiceStack project.
             </p>
         </div>
-        <div class="mx-4 flex-1">
+        <div class="px-1 w-full lg:w-1/2">
             <h3>ServiceStack with OrmLite, Redis and adapters</h3>
-            <p>Would like to use Redis and/or OrmLite, create an Empty ASP.NET project and: </p>
+            <p>Would like to use Redis or OrmLite, create an empty ASP.NET project and: </p>
             {% include nuget-package-reference.html
             package="ServiceStack.Server"
             version=site.package_version
@@ -109,24 +134,51 @@ layout: content-page
             <p>
                 Server project includes
                 <a href="https://docs.servicestack.net/autoquery">Auto Query</a>,
-                the
+                <a href="https://docs.servicestack.net/autogen">Autogen</a>,
+                <a href="https://docs.servicestack.net/messaging-and-redis">Redis MQ</a>,
+                <a href="https://docs.servicestack.net/redis-server-events">Redis Server Events</a>,
+                <a href="https://docs.servicestack.net/request-logger">Redis Request Logger</a>
+                <a href="https://docs.servicestack.net/caching">OrmLite Cache Provider</a>
+                and
                 <a href="https://docs.servicestack.net/authentication-and-authorization#userauth-persistence---the-iuserauthrepository">
                     OrmLite Auth Repository
                 </a>
-                and
-                <a href="https://docs.servicestack.net/messaging-and-redis">Redis MQ</a>
             </p>
         </div>
     </div>
-    <div class="downloads-section-breaker">
-        <h2>Add ServiceStack with advanced HTML Support</h2>
-        <p>
-            If you plan on using ServiceStack to create HTML websites as well then you should
-            instead start with one of these 2 packages below:
+
+    <div class="download-breaker my-10 flex flex-col items-center">
+        <h2 class="text-4xl">Add ServiceStack with advanced HTML Support</h2>
+        <div class="colored-line"></div>
+        <p class="mt-4">
+            If you plan on using ServiceStack to also create HTML websites then start with one of these 2 packages instead:
         </p>
     </div>
-    <div class="flex-wrap sm:flex-wrap md:flex-wrap lg:flex">
-        <div class="mx-4 flex-1">
+    <div class="flex flex-wrap">
+        <div class="px-1 w-full lg:w-1/2">
+            <h3><a href="https://docs.servicestack.net/mvc-integration">ServiceStack with .NET 5 or ASP.NET MVC</a></h3>
+            <p>
+                You want to use ServiceStack together with an ASP.NET Core or ASP.NET MVC Website,
+                Create an Empty Project and:
+            </p>
+
+            {% include nuget-package-reference.html
+            package="ServiceStack.Mvc"
+            version=site.package_version
+            %}
+
+            <h4>Dependencies</h4>
+            <ul>
+                <li>ServiceStack</li>
+            </ul>
+
+            <p>
+                After it's added to your MVC Project you'll need to follow the guidelines in
+                <a href="https://docs.servicestack.net/mvc-integration">MVC Integration</a>
+                and ensure ServiceStack is properly integrated.
+            </p>
+        </div>
+        <div class="px-1 w-full lg:w-1/2">
             <h3><a href="http://razor.servicestack.net">ServiceStack with Razor Support</a></h3>
             <p>
                 You want to use ServiceStack's built-in support for Razor, Create an Empty ASP.NET
@@ -148,39 +200,18 @@ layout: content-page
                 website to explore ServiceStack's Razor features.
             </p>
         </div>
-        <div class="mx-4 flex-1">
-            <h3><a href="https://docs.servicestack.net/mvc-integration">ServiceStack together with ASP.NET MVC</a></h3>
-            <p>
-                You want to use ServiceStack together with an ASP.NET MVC Website, Create an Empty
-                <b>ASP.NET MVC</b> Project and:
-            </p>
-
-            {% include nuget-package-reference.html
-            package="ServiceStack.Mvc"
-            version=site.package_version
-            %}
-
-            <h4>Dependencies</h4>
-            <ul>
-                <li>ServiceStack</li>
-            </ul>
-
-            <p>
-                After it's added to your MVC Project you'll need to follow the guidelines in
-                <a href="https://docs.servicestack.net/mvc-integration">MVC Integration</a>
-                and ensure ServiceStack is properly integrated.
-            </p>
-        </div>
     </div>
-    <div class="downloads-section-breaker">
-        <h2>Using Redis or OrmLite?</h2>
-        <p>
+
+    <div class="download-breaker my-10 flex flex-col items-center">
+        <h2 class="text-4xl">Using Redis or OrmLite?</h2>
+        <div class="colored-line"></div>
+        <p class="mt-4">
             If you've started with <b>ServiceStack.Server</b> you already have OrmLite and Redis, if not you can add
             them individually:
         </p>
     </div>
-    <div class="flex-wrap sm:flex-wrap md:flex-wrap lg:flex">
-        <div class="mx-4 flex-1">
+    <div class="flex flex-wrap">
+        <div class="px-1 w-full lg:w-1/2">
             <h3><a href="https://github.com/ServiceStack/ServiceStack.Redis">Redis Client</a></h3>
             <p>
                 <a href="http://redis.io">Redis</a>
@@ -205,7 +236,7 @@ layout: content-page
                 for the 2 most popular ways of running redis on windows.
             </p>
         </div>
-        <div class="mx-4 flex-1">
+        <div class="px-1 w-full lg:w-1/2">
             <h3><a href="https://github.com/ServiceStack/ServiceStack.OrmLite">OrmLite</a></h3>
             <p>
                 <a href="https://github.com/ServiceStack/ServiceStack.OrmLite/">OrmLite</a>
@@ -248,11 +279,13 @@ layout: content-page
             </ul>
         </div>
     </div>
-    <div class="downloads-section-breaker">
-        <h2>Just ServiceStack.Text? </h2>
+
+    <div class="download-breaker">
+        <h2 class="text-4xl">Just ServiceStack.Text?</h2>
+        <div class="colored-line"></div>
     </div>
-    <div class="flex-wrap sm:flex-wrap md:flex-wrap lg:flex">
-        <div class="mx-4 flex-1">
+    <div class="flex flex-wrap">
+        <div class="px-1 w-full lg:w-1/2">
             <h3><a href="https://github.com/ServiceStack/ServiceStack.Text">JSON, JSV, CSV Serializers</a></h3>
             <p>
                 ServiceStack.Text is a high-performance dependency-free library that contains all of ServiceStack's text
@@ -277,17 +310,19 @@ layout: content-page
             %}
         </div>
     </div>
-    <div class="downloads-section-breaker">
-        <h2>Message Queue Servers</h2>
-        <p>
+
+    <div class="download-breaker my-10 flex flex-col items-center">
+        <h2 class="text-4xl">Message Queue Servers</h2>
+        <div class="colored-line"></div>
+        <p class="mt-4">
             ServiceStack's message-based design enables it to host Services on a variety of different
             transports including a number of different MQ Servers via the
             <a href="https://docs.servicestack.net/messaging">Messaging API</a>
             all MQ Servers implement making it trivial to swap between different MQ Brokers.
         </p>
     </div>
-    <div class="flex-wrap sm:flex-wrap md:flex-wrap lg:flex">
-        <div class="mx-4 flex-1">
+    <div class="flex flex-wrap">
+        <div class="px-1 w-full lg:w-1/2">
             <h3><a href="https://docs.servicestack.net/rabbit-mq">Rabbit MQ</a></h3>
             <p>
                 <a href="http://www.rabbitmq.com">Rabbit MQ</a>
@@ -326,7 +361,7 @@ layout: content-page
             %}
 
         </div>
-        <div class="mx-4 flex-1">
+        <div class="px-1 w-full lg:w-1/2">
             <h3><a href="https://docs.servicestack.net/messaging">Redis MQ</a></h3>
             <p>
                 If Redis is already apart of your infrastructure,
@@ -365,16 +400,18 @@ layout: content-page
             </p>
         </div>
     </div>
-    <div class="downloads-section-breaker">
-        <h2>Amazon Web Services</h2>
-        <p>
+
+    <div class="download-breaker my-10 flex flex-col items-center">
+        <h2 class="text-4xl">Amazon Web Services</h2>
+        <div class="colored-line"></div>
+        <p class="mt-4">
             You can participate in AWS's vibrant ecosystem with ServiceStack's first-class support and deep
             integration with AWS that seamlessly integrates with popular back-end AWS technologies allowing
             hosting of ServiceStack solutions entirely on the managed AWS platform
         </p>
     </div>
-    <div class="flex-wrap sm:flex-wrap md:flex-wrap lg:flex">
-        <div class="mx-4 flex-1">
+    <div class="flex flex-wrap">
+        <div class="px-1 w-full lg:w-1/2">
             <h3>
                 <a href="https://github.com/ServiceStack/ServiceStack.Aws">ServiceStack.Aws</a>
             </h3>
@@ -396,7 +433,7 @@ layout: content-page
                 <li>AWSSDK.SQS</li>
             </ul>
         </div>
-        <div class="mx-4 flex-1">
+        <div class="px-1 w-full lg:w-1/2">
 
             The <b>ServiceStack.Aws</b> NuGet package includes implementations for the following ServiceStack providers:
 
@@ -426,11 +463,13 @@ layout: content-page
             </ul>
         </div>
     </div>
-    <div class="downloads-section-breaker">
-        <h2>Microsoft Azure</h2>
+
+    <div class="download-breaker my-10 flex flex-col items-center">
+        <h2 class="text-4xl">Microsoft Azure</h2>
+        <div class="colored-line"></div>
     </div>
-    <div class="flex-wrap sm:flex-wrap md:flex-wrap lg:flex">
-        <div class="mx-4 flex-1">
+    <div class="flex flex-wrap">
+        <div class="px-1 w-full lg:w-1/2">
             <h3>
                 <a href="https://github.com/ServiceStack/ServiceStack.Azure">ServiceStack.Azure</a>
             </h3>
@@ -445,7 +484,7 @@ layout: content-page
             version=site.package_version
             %}
         </div>
-        <div class="mx-4 flex-1">
+        <div class="px-1 w-full lg:w-1/2">
             <b>ServiceStack.Azure</b> includes implementation of the following ServiceStack providers:
             <ul>
                 <li><strong><a href="https://github.com/ServiceStack/ServiceStack.Azure/#ServiceBusMqServer">ServiceBusMqServer</a></strong>
@@ -467,11 +506,13 @@ layout: content-page
             </ul>
         </div>
     </div>
-    <div class="downloads-section-breaker">
-        <h2>Authentication</h2>
+
+    <div class="download-breaker my-10 flex flex-col items-center">
+        <h2 class="text-4xl">Authentication</h2>
+        <div class="colored-line"></div>
     </div>
-    <div class="flex-wrap sm:flex-wrap md:flex-wrap lg:flex">
-        <div class="mx-4 flex-1">
+    <div class="flex flex-wrap">
+        <div class="px-1 w-full lg:w-1/2">
             <h3>
                 <a href="https://docs.servicestack.net/openid">
                     Open Id
@@ -537,7 +578,7 @@ layout: content-page
                 is a good showcase showing how to enable all authentication providers within a single project.
             </p>
         </div>
-        <div class="mx-4 flex-1">
+        <div class="px-1 w-full lg:w-1/2">
             <h3>
                 <a href="https://docs.servicestack.net/authentication-and-authorization#wiki-userauth-persistence---the-iuserauthrepository">User
                     Auth Repositories</a></h3>
@@ -588,11 +629,13 @@ layout: content-page
             </ul>
         </div>
     </div>
-    <div class="downloads-section-breaker">
-        <h2>Caching and Logging Providers</h2>
+
+    <div class="download-breaker my-10 flex flex-col items-center">
+        <h2 class="text-4xl">Caching and Logging Providers</h2>
+        <div class="colored-line"></div>
     </div>
-    <div class="flex-wrap sm:flex-wrap md:flex-wrap lg:flex">
-        <div class="mx-4 flex-1">
+    <div class="flex flex-wrap">
+        <div class="px-1 w-full lg:w-1/2">
             <h3><a href="https://docs.servicestack.net/caching">Caching</a></h3>
             <p>
                 In Memory Caching is available in <b>ServiceStack</b> and
@@ -641,7 +684,7 @@ layout: content-page
                 <li>WindowsAzure.Caching</li>
             </ul>
         </div>
-        <div class="mx-4 flex-1">
+        <div class="px-1 w-full lg:w-1/2">
             <h3><a href="https://docs.servicestack.net/logging">Logging</a></h3>
             <p>
                 ServiceStack also provides an implementation and dependency-free logging API with adapters
@@ -676,11 +719,13 @@ layout: content-page
             </ul>
         </div>
     </div>
-    <div class="downloads-section-breaker">
-        <h2>Additional Formats</h2>
+
+    <div class="download-breaker my-10 flex flex-col items-center">
+        <h2 class="text-4xl">Additional Formats</h2>
+        <div class="colored-line"></div>
     </div>
-    <div class="flex-wrap sm:flex-wrap md:flex-wrap lg:flex">
-        <div class="mx-4 flex-1">
+    <div class="flex flex-wrap">
+        <div class="px-1 w-full lg:w-1/2">
             <h3>
                 <a href="https://docs.servicestack.net/protobuf-format">Protocol Buffers</a>
             </h3>
@@ -711,7 +756,7 @@ layout: content-page
             version=site.package_version
             %}
         </div>
-        <div class="mx-4 flex-1">
+        <div class="px-1 w-full lg:w-1/2">
             <h3>
                 <a href="https://docs.servicestack.net/messagepack-format">Message Pack</a>
             </h3>
@@ -729,11 +774,13 @@ layout: content-page
             %}
         </div>
     </div>
-    <div class="downloads-section-breaker">
-        <h2>Build Tasks</h2>
+
+    <div class="download-breaker my-10 flex flex-col items-center">
+        <h2 class="text-4xl">Build Tasks</h2>
+        <div class="colored-line"></div>
     </div>
-    <div class="flex-wrap sm:flex-wrap md:flex-wrap lg:flex">
-        <div class="mx-4 flex-1">
+    <div class="flex flex-wrap">
+        <div class="px-1 w-full lg:w-1/2">
             <h3>
                 <a href="https://docs.servicestack.net/compiled-razor-views">Compiled Razor Views</a>
             </h3>
@@ -764,7 +811,7 @@ layout: content-page
                 for more info.
             </p>
         </div>
-        <div class="mx-4 flex-1">
+        <div class="px-1 w-full lg:w-1/2">
             <h3>
                 <a href="https://github.com/ServiceStack/ServiceStack.Gap">Portable ServiceStack Desktop Apps</a>
             </h3>
@@ -789,15 +836,14 @@ layout: content-page
             </p>
         </div>
     </div>
-    <div class="downloads-section-breaker">
-        <h2>
-            <a href="https://docs.servicestack.net/clients-overview">
-                Client Libraries
-            </a>
-        </h2>
+
+    <a name="client"></a>
+    <div class="download-breaker my-10 flex flex-col items-center">
+        <h2 class="text-4xl">Client Libraries</h2>
+        <div class="colored-line"></div>
     </div>
-    <div class="flex-wrap sm:flex-wrap md:flex-wrap lg:flex">
-        <div class="mx-4 flex-1">
+    <div class="flex flex-wrap">
+        <div class="px-1 w-full lg:w-1/2">
             <p>
                 As ServiceStack is just a pure HTTP web service it can be accessed with any HTTP-capable client.
                 However in order to provide the least friction and most productivity end-to-end, we also maintain
@@ -846,34 +892,29 @@ layout: content-page
             <p>&nbsp;</p>
         </div>
     </div>
-    <div class="downloads-section-breaker">
-        <h2>Signed Packages</h2>
-        <p>
-            Starting from <a href="https://docs.servicestack.net/releases/v5.0.0">ServiceStack v5</a> all .NET 4.5 NuGet packages are now strong named.
-        </p>
-    </div>
-    <div class="downloads-section-breaker">
-        <h2>.Core Packages</h2>
-        <p>
-            Use <b>.Core</b> packages if <a href="https://docs.servicestack.net/netcore#run-aspnet-core-apps-on-the-net-framework">running ServiceStack ASP.NET Core on .NET Framework</a>.
-        </p>
-    </div>
-    <div class="downloads-section-breaker">
-        <h2>External Libraries</h2>
-        <p>
-            Use <b>.Core</b> packages if <a href="https://docs.servicestack.net/netcore#run-aspnet-core-apps-on-the-net-framework">running ServiceStack ASP.NET Core on .NET Framework</a>.
-        </p>
-    </div>
-    <div class="flex-wrap sm:flex-wrap md:flex-wrap lg:flex">
-        <div class="mx-4 flex-1">
-            <h3><a href="https://github.com/ServiceStack/Stripe">Stripe</a></h3>
 
+    <a name="core"></a>
+    <div class="download-breaker my-10 flex flex-col items-center">
+        <h2 class="text-4xl">.Core Packages</h2>
+        <div class="colored-line"></div>
+        <p class="mt-4">
+            Use <b>.Core</b> packages if <a href="https://docs.servicestack.net/netcore#run-aspnet-core-apps-on-the-net-framework">running ServiceStack ASP.NET Core on .NET Framework</a>.
+        </p>
+    </div>
+
+    <a name="external"></a>
+    <div class="download-breaker my-10 flex flex-col items-center">
+        <h2 class="text-4xl">External Libraries</h2>
+        <div class="colored-line"></div>
+    </div>
+    <div class="flex flex-wrap">
+        <div class="px-1 w-full lg:w-1/2">
+            <h3><a href="https://github.com/ServiceStack/Stripe">Stripe</a></h3>
             <p>
                 Contains a typed .NET client gateway for accessing
                 <a href="https://stripe.com/docs/api/">Stripe's REST API</a>
-                to process merhcant payments and recurring subcriptions online.
+                to process merchant payments and recurring subscriptions online.
             </p>
-
 
             {% include nuget-package-reference.html
             package="ServiceStack.Stripe"
@@ -885,33 +926,52 @@ layout: content-page
                 <a href="https://github.com/ServiceStack/Stripe">Stripe GitHub repository</a>
                 for documentation and example source code.
             </p>
+            <p>&nbsp;</p>
+        </div>
+        <div class="px-1 w-full lg:w-1/2">
+            <h3><a href="https://github.com/ServiceStack/Stripe">ServiceStack.CefGlue</a></h3>
+            <p>
+                Contains
+                <a href="https://gitlab.com/xiliumhq/chromiumembedded/cefglue">CefGlue</a>
+                bindings for .NET Standard 2.0 with support for running Windows 64 Desktop Applications.
+            </p>
 
+            {% include nuget-package-reference.html
+            package="ServiceStack.CefGlue"
+            version=site.package_version
+            %}
+            <p>
+                See the
+                <a href="https://github.com/ServiceStack/ServiceStack.CefGlue"></a> project and
+                <a href="https://www.vuedesktop.com">vuedesktop.com</a> website
+                for documentation and examples.
+            </p>
             <p>&nbsp;</p>
         </div>
     </div>
-    <div class="downloads-section-breaker">
-        <h2>Registering your License Key with your ServiceStack Projects</h2>
-        <p>
-            Use <b>.Core</b> packages if <a href="https://docs.servicestack.net/netcore#run-aspnet-core-apps-on-the-net-framework">running ServiceStack ASP.NET Core on .NET Framework</a>.
+
+    <a name="register"></a>
+    <div class="download-breaker my-10 flex flex-col items-center">
+        <h2 class="text-4xl">Registering your License Key with your ServiceStack Projects</h2>
+        <div class="colored-line"></div>
+        <p class="mt-4">
+            The ServiceStack license key allows un-restricted access to ServiceStack packages and
+            is available in your <a href="/account/subscription">My Account Section</a>
+            after purchasing a commercial license.
         </p>
     </div>
-    <div class="flex-wrap sm:flex-wrap md:flex-wrap lg:flex">
-        <div class="mx-4 flex-1">
+    <div class="">
+        <div class="px-1">
             <div id="license-instructions">
-                <p>
-                    The ServiceStack license key allows un-restricted access to ServiceStack packages and
-                    is available in your <a href="/account/subscription">My Account Section</a>
-                    after purchasing a commercial license.
-                </p>
                 <p>
                     There are multiple ways of registering your license key, all options only need to be added
                     to your <b>top-level host</b> projects:
                 </p>
 
-                <h2>a) Add it to your Web.Config or appsettings.json</h2>
+                <h2 class="text-2xl">a) Add it to your Web.Config or appsettings.json</h2>
                 <div class="section" style="padding: 0 0 10px 15px">
                     <p>
-                        The easiest way to register your license key is in to copy the <b>servicestack:license</b>
+                        Easiest way to register your license key is in to copy the <b>servicestack:license</b>
                         appSetting into your <b>Web.config</b> or App.config's <b>&lt;appSettings/&gt;</b> config section, e.g:
                     </p>
                     <pre>&lt;appSettings/&gt;
@@ -933,7 +993,7 @@ layout: content-page
                 </div>
 
 
-                <h2>b) Add it in code before your Application Starts Up</h2>
+                <h2 class="text-2xl">b) Add it in code before your Application Starts Up</h2>
                 <div class="section" style="padding: 0 0 10px 15px">
                     <p>
                         By calling <b>Licensing.RegisterLicense()</b> before your application starts up,
@@ -950,7 +1010,7 @@ layout: content-page
                     </p>
                 </div>
 
-                <h2>c) Add the System Environment Variable</h2>
+                <h2 class="text-2xl">c) Add the System Environment Variable</h2>
                 <div class="section" style="padding: 0 0 10px 15px">
                     <p>
                         To simplify license key registration when developing multiple ServiceStack solutions you can register the License Key once in
@@ -959,12 +1019,12 @@ layout: content-page
                     <pre>Variable               Value
 SERVICESTACK_LICENSE   {licenseKeyText}
 </pre>
-                </div>
                 <p>
                     Note: you'll need to restart IIS or VS.NET for them to pickup any new Environment Variables.
                 </p>
+                </div>
 
-                <h2>d) Copy license key text into an external text file</h2>
+                <h2 class="text-2xl">d) Copy license key text into an external text file</h2>
                 <div class="section" style="padding: 0 0 10px 15px">
                     <p>
                         Similar to above, we can register the license from an external plain-text file containing the license key text, e.g:
@@ -978,27 +1038,28 @@ SERVICESTACK_LICENSE   {licenseKeyText}
                     <p>
                         For Self-Hosting set the BuildAction to <b>Copy if Newer</b> and use <b>"~/license.txt".MapAbsolutePath()</b> extension method.
                     </p>
+                    <p>
+                        Note: the license key is white-space insensitive so can be broken up over multiple lines.
+                    </p>
                 </div>
-                <p>
-                    Note: the license key is white-space insensitive so can be broken up over multiple lines.
-                </p>
-
             </div>
         </div>
     </div>
-    <div class="downloads-section-breaker">
-        <h2>Free Quotas</h2>
-        <p>
-            Use <b>.Core</b> packages if <a href="https://docs.servicestack.net/netcore#run-aspnet-core-apps-on-the-net-framework">running ServiceStack ASP.NET Core on .NET Framework</a>.
+
+    <a name="free-quotas"></a>
+    <div class="download-breaker my-10 flex flex-col items-center">
+        <h2 class="text-4xl">Free Quotas</h2>
+        <div class="colored-line"></div>
+        <p class="mt-4">
+            Whilst ServiceStack v4+ is a commercially-supported product, we allow free usage
+            of our Commercial Products in small projects and for evaluation purposes. <br>
         </p>
     </div>
-    <div class="flex-wrap sm:flex-wrap md:flex-wrap lg:flex">
-        <div class="mx-4 flex-1">
-            <p>
-                Whilst ServiceStack v4+ is a commercially-supported product, we allow free usage
-                of our Commercial Products in small projects and for evaluation purposes. <br>
-                The NuGet packages above include the quota's for our Commercial Products below which can be unlocked with a license key:
-            </p>
+    <div class="">
+        <p>
+            The NuGet packages above include the quota's for our Commercial Products below which can be unlocked with a license key:
+        </p>
+        <div class="px-1">
             <ul>
                 <li><b>10 Operations in ServiceStack</b> (i.e. Request DTOs)</li>
                 <li><b>10 Database Tables in OrmLite</b></li>
@@ -1018,23 +1079,6 @@ SERVICESTACK_LICENSE   {licenseKeyText}
             </p>
         </div>
     </div>
+
+    <p>&nbsp;</p>
 </div>
-
-
-<script type="application/javascript">
-    function copy(e) {
-        console.log(e);
-        let $el = document.createElement("input");
-        let $parent = e.parentElement.parentElement;
-        let $lbl = $parent.firstElementChild;
-        $el.setAttribute("value", $lbl.innerText);
-        document.body.appendChild($el);
-        $el.select();
-        document.execCommand("copy");
-        document.body.removeChild($el);
-        $($parent).find('.copy-text').html('<label>copied!</label>');
-        setTimeout(function () {
-            $($parent).find('.copy-text').html('')
-        }, 5000);
-    }
-</script>

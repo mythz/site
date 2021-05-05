@@ -3,41 +3,17 @@
 
 title: ServiceStack
 description: ServiceStack Framework
-url: http://site.servicestack.com/
+url: http://site.servicestack.com
 repository: mythz/site
 google_analytics_key:
 
-package_version: 5.11.0
+package_version: 5.*
 
 collections:
-  about:
-    title: About
+  pages:
+    title: ServiceStack
     output: true
-    permalink: /about/:slug.html
-  downloads:
-    title: Downloads
-    output: true
-    permalink: /downloads/:slug.html
-  features:
-    title: Features
-    output: true
-    permalink: /features/:slug.html
-  learn:
-    title: Learn
-    output: true
-    permalink: /learn/:slug.html
-  news:
-    title: News
-    output: true
-    permalink: /news/:slug.html
-  pricing:
-    title: Pricing
-    output: true
-    permalink: /pricing/:slug.html
-  why_servicestack:
-    title: Why ServiceStack
-    output: true
-    permalink: /why/:slug.html
+    permalink: /:slug.html
 plugins:
   - github-pages
 
@@ -55,14 +31,10 @@ defaults:
       layout: default
   -
     scope:
-      collection: news
+      collection: pages
     values:
       priority: 999
-  -
-    scope:
-      collection: learn
-    values:
-      layout: default
+      layout: content-page
 
 # -----
 # Build
