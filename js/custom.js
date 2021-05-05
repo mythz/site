@@ -235,7 +235,7 @@ function copy(e) {
     $el.select();
     document.execCommand("copy");
     document.body.removeChild($el);
-    let $copyText = $parent.parentElement.parentElement.querySelector('.copy-text');
+    let $copyText = $parent.parentElement.querySelector('.copy-text');
     $copyText.innerHTML = '<label>copied!</label>';
     setTimeout(function () {
         $copyText.innerHTML = '';
