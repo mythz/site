@@ -53,8 +53,8 @@ layout: content-page
         </div>
     </div>
     <br/>
-    <div class="flex">
-        <div class="mx-4">
+    <div class="flex sm:flex-wrap">
+        <div class="mx-4 flex-1">
             <h3>Just ServiceStack</h3>
             <p>The minimal installation of ServiceStack, create an Empty ASP.NET project and: </p>
             {% include nuget-package-reference.html
@@ -84,7 +84,7 @@ layout: content-page
                 medium-sized ServiceStack project.
             </p>
         </div>
-        <div class="mx-4">
+        <div class="mx-4 flex-1">
             <h3>ServiceStack with OrmLite, Redis and adapters</h3>
             <p>Would like to use Redis and/or OrmLite, create an Empty ASP.NET project and: </p>
             {% include nuget-package-reference.html
@@ -116,8 +116,8 @@ layout: content-page
             instead start with one of these 2 packages below:
         </p>
     </div>
-    <div class="flex">
-        <div class="mx-4">
+    <div class="flex sm:flex-wrap">
+        <div class="mx-4 flex-1">
             <h3><a href="http://razor.servicestack.net">ServiceStack with Razor Support</a></h3>
             <p>
                 You want to use ServiceStack's built-in support for Razor, Create an Empty ASP.NET
@@ -139,7 +139,7 @@ layout: content-page
                 website to explore ServiceStack's Razor features.
             </p>
         </div>
-        <div class="mx-4  min-w-0">
+        <div class="mx-4 flex-1">
             <h3><a href="https://docs.servicestack.net/mvc-integration">ServiceStack together with ASP.NET MVC</a></h3>
             <p>
                 You want to use ServiceStack together with an ASP.NET MVC Website, Create an Empty
@@ -170,8 +170,8 @@ layout: content-page
             them individually:
         </p>
     </div>
-    <div class="flex">
-        <div class="mx-4">
+    <div class="flex sm:flex-wrap">
+        <div class="mx-4 flex-1">
             <h3><a href="https://github.com/ServiceStack/ServiceStack.Redis">Redis Client</a></h3>
             <p>
                 <a href="http://redis.io">Redis</a>
@@ -196,7 +196,7 @@ layout: content-page
                 for the 2 most popular ways of running redis on windows.
             </p>
         </div>
-        <div class="mx-4  min-w-0">
+        <div class="mx-4 flex-1">
             <h3><a href="https://github.com/ServiceStack/ServiceStack.OrmLite">OrmLite</a></h3>
             <p>
                 <a href="https://github.com/ServiceStack/ServiceStack.OrmLite/">OrmLite</a>
@@ -242,8 +242,8 @@ layout: content-page
     <div class="downloads-section-breaker">
         <h2>Just ServiceStack.Text? </h2>
     </div>
-    <div class="flex">
-        <div class="mx-4">
+    <div class="flex sm:flex-wrap">
+        <div class="mx-4 flex-1">
             <h3><a href="https://github.com/ServiceStack/ServiceStack.Text">JSON, JSV, CSV Serializers</a></h3>
             <p>
                 ServiceStack.Text is a high-performance dependency-free library that contains all of ServiceStack's text
@@ -277,8 +277,8 @@ layout: content-page
             all MQ Servers implement making it trivial to swap between different MQ Brokers.
         </p>
     </div>
-    <div class="flex">
-        <div class="mx-4">
+    <div class="flex sm:flex-wrap">
+        <div class="mx-4 flex-1">
             <h3><a href="https://docs.servicestack.net/rabbit-mq">Rabbit MQ</a></h3>
             <p>
                 <a href="http://www.rabbitmq.com">Rabbit MQ</a>
@@ -317,7 +317,7 @@ layout: content-page
             %}
 
         </div>
-        <div class="mx-4 min-w-0">
+        <div class="mx-4 flex-1">
             <h3><a href="https://docs.servicestack.net/messaging">Redis MQ</a></h3>
             <p>
                 If Redis is already apart of your infrastructure,
@@ -364,8 +364,8 @@ layout: content-page
             hosting of ServiceStack solutions entirely on the managed AWS platform
         </p>
     </div>
-    <div class="flex">
-        <div class="mx-4">
+    <div class="flex sm:flex-wrap">
+        <div class="mx-4 flex-1">
             <h3>
                 <a href="https://github.com/ServiceStack/ServiceStack.Aws">ServiceStack.Aws</a>
             </h3>
@@ -387,7 +387,7 @@ layout: content-page
                 <li>AWSSDK.SQS</li>
             </ul>
         </div>
-        <div class="mx-4 min-w-0">
+        <div class="mx-4 flex-1">
 
             The <b>ServiceStack.Aws</b> NuGet package includes implementations for the following ServiceStack providers:
 
@@ -420,8 +420,8 @@ layout: content-page
     <div class="downloads-section-breaker">
         <h2>Microsoft Azure</h2>
     </div>
-    <div class="flex">
-        <div class="mx-4">
+    <div class="flex sm:flex-wrap">
+        <div class="mx-4 flex-1">
             <h3>
                 <a href="https://github.com/ServiceStack/ServiceStack.Azure">ServiceStack.Azure</a>
             </h3>
@@ -436,7 +436,7 @@ layout: content-page
             version=site.package_version
             %}
         </div>
-        <div class="mx-4 min-w-0">
+        <div class="mx-4 flex-1">
             <b>ServiceStack.Azure</b> includes implementation of the following ServiceStack providers:
             <ul>
                 <li><strong><a href="https://github.com/ServiceStack/ServiceStack.Azure/#ServiceBusMqServer">ServiceBusMqServer</a></strong>
@@ -461,8 +461,8 @@ layout: content-page
     <div class="downloads-section-breaker">
         <h2>Authentication</h2>
     </div>
-    <div class="flex">
-        <div class="mx-4">
+    <div class="flex sm:flex-wrap">
+        <div class="mx-4 flex-1">
             <h3>
                 <a href="https://docs.servicestack.net/openid">
                     Open Id
@@ -528,7 +528,7 @@ layout: content-page
                 is a good showcase showing how to enable all authentication providers within a single project.
             </p>
         </div>
-        <div class="mx-4 min-w-0">
+        <div class="mx-4 flex-1">
             <h3>
                 <a href="https://docs.servicestack.net/authentication-and-authorization#wiki-userauth-persistence---the-iuserauthrepository">User
                     Auth Repositories</a></h3>
@@ -582,8 +582,8 @@ layout: content-page
     <div class="downloads-section-breaker">
         <h2>Caching and Logging Providers</h2>
     </div>
-    <div class="flex">
-        <div class="mx-4">
+    <div class="flex sm:flex-wrap">
+        <div class="mx-4 flex-1">
             <h3><a href="https://docs.servicestack.net/caching">Caching</a></h3>
             <p>
                 In Memory Caching is available in <b>ServiceStack</b> and
@@ -632,7 +632,7 @@ layout: content-page
                 <li>WindowsAzure.Caching</li>
             </ul>
         </div>
-        <div class="mx-4 min-w-0">
+        <div class="mx-4 flex-1">
             <h3><a href="https://docs.servicestack.net/logging">Logging</a></h3>
             <p>
                 ServiceStack also provides an implementation and dependency-free logging API with adapters
@@ -670,8 +670,8 @@ layout: content-page
     <div class="downloads-section-breaker">
         <h2>Additional Formats</h2>
     </div>
-    <div class="flex">
-        <div class="mx-4">
+    <div class="flex sm:flex-wrap">
+        <div class="mx-4 flex-1">
             <h3>
                 <a href="https://docs.servicestack.net/protobuf-format">Protocol Buffers</a>
             </h3>
@@ -702,7 +702,7 @@ layout: content-page
             version=site.package_version
             %}
         </div>
-        <div class="mx-4">
+        <div class="mx-4 flex-1">
             <h3>
                 <a href="https://docs.servicestack.net/messagepack-format">Message Pack</a>
             </h3>
@@ -723,8 +723,8 @@ layout: content-page
     <div class="downloads-section-breaker">
         <h2>Build Tasks</h2>
     </div>
-    <div class="flex">
-        <div class="mx-4">
+    <div class="flex sm:flex-wrap">
+        <div class="mx-4 flex-1">
             <h3>
                 <a href="https://docs.servicestack.net/compiled-razor-views">Compiled Razor Views</a>
             </h3>
@@ -755,7 +755,7 @@ layout: content-page
                 for more info.
             </p>
         </div>
-        <div class="mx-4">
+        <div class="mx-4 flex-1">
             <h3>
                 <a href="https://github.com/ServiceStack/ServiceStack.Gap">Portable ServiceStack Desktop Apps</a>
             </h3>
@@ -787,8 +787,8 @@ layout: content-page
             </a>
         </h2>
     </div>
-    <div class="flex">
-        <div class="mx-4">
+    <div class="flex sm:flex-wrap">
+        <div class="mx-4 flex-1">
             <p>
                 As ServiceStack is just a pure HTTP web service it can be accessed with any HTTP-capable client.
                 However in order to provide the least friction and most productivity end-to-end, we also maintain
@@ -855,8 +855,8 @@ layout: content-page
             Use <b>.Core</b> packages if <a href="https://docs.servicestack.net/netcore#run-aspnet-core-apps-on-the-net-framework">running ServiceStack ASP.NET Core on .NET Framework</a>.
         </p>
     </div>
-    <div class="flex">
-        <div class="mx-4">
+    <div class="flex sm:flex-wrap">
+        <div class="mx-4 flex-1">
             <h3><a href="https://github.com/ServiceStack/Stripe">Stripe</a></h3>
 
             <p>
@@ -886,8 +886,8 @@ layout: content-page
             Use <b>.Core</b> packages if <a href="https://docs.servicestack.net/netcore#run-aspnet-core-apps-on-the-net-framework">running ServiceStack ASP.NET Core on .NET Framework</a>.
         </p>
     </div>
-    <div class="flex">
-        <div class="mx-4">
+    <div class="flex sm:flex-wrap">
+        <div class="mx-4 flex-1">
             <div id="license-instructions">
                 <p>
                     The ServiceStack license key allows un-restricted access to ServiceStack packages and
@@ -983,8 +983,8 @@ SERVICESTACK_LICENSE   {licenseKeyText}
             Use <b>.Core</b> packages if <a href="https://docs.servicestack.net/netcore#run-aspnet-core-apps-on-the-net-framework">running ServiceStack ASP.NET Core on .NET Framework</a>.
         </p>
     </div>
-    <div class="flex">
-        <div class="mx-4">
+    <div class="flex sm:flex-wrap">
+        <div class="mx-4 flex-1">
             <p>
                 Whilst ServiceStack v4+ is a commercially-supported product, we allow free usage
                 of our Commercial Products in small projects and for evaluation purposes. <br>
