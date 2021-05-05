@@ -89,29 +89,35 @@
 
     {%
     include feature-video-left.html
-    youtube_id="0PvzcnxlBvc,Eh4tvLN8i8g,8mpGNTsSlvE"
+    youtube_id="8mpGNTsSlvE"
     local_link_id="project-templates-feature"
     title="Project Templates"
     bg_class="white-bg"
-    content="Lots of project templates using modern frameworks, along with video and written tutorials to help your team get started quickly."
+    page_content_ref="home/project-templates-content.html"
     %}
 
     {%
     include feature-video-right.html
-    youtube_id="5NNCaWMviXU,t83gDzEGpac,K0QAUQPJNtM,y3MBaapcN-0,9XTy3eOdpHw,QL56lOHiXVM"
-    local_link_id="grpc-feature"
-    title="gRPC Support"
+    youtube_id="0PvzcnxlBvc,Eh4tvLN8i8g"
+    local_link_id="github_action_templates"
+    title="GitHub Action Templates"
     bg_class="grey-bg"
-    content="Create gRPC services in a consistent way to all your other services or easily add gRPC support to your existing ServiceStack services."
+    embed_html="<p>
+    ServiceStack tools expand into helping you setup everything your development team needs to get started on a project, including making it fast to setup a full CI system on GitHub with GitHub Actions.
+    </p>
+    <p>
+    These templates `Mix` in the configuration via our CLI `X` tool.
+    </p>
+    "
     %}
 
     {%
     include feature-video-left.html
-    youtube_id="WmzI-5L0hJk,Yjx_9Tp91bQ"
-    local_link_id="sharp-script-feature"
-    title="#Script"
+    youtube_id="5NNCaWMviXU,t83gDzEGpac,K0QAUQPJNtM,y3MBaapcN-0,9XTy3eOdpHw,QL56lOHiXVM"
+    local_link_id="grpc-feature"
+    title="gRPC Support"
     bg_class="white-bg"
-    content="#Script is a simple, fast, highly versatile and embeddable scripting language for .NET Core and .NET Apps that utilizes a familiar JavaScript inspired expressive Syntax to enable dynamic scripting of .NET Apps via controlled access to pluggable methods and arguments within a sandbox environment - ensuring scripts are encapsulated and encourages the use of reusable and testable components where live environments can be easily re-created and simulated."
+    content="Create gRPC services in a consistent way to all your other services or easily add gRPC support to your existing ServiceStack services."
     %}
 
     {% include feature-thirdparty.html %}

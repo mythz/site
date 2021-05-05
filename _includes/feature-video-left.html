@@ -40,9 +40,14 @@
                 <div class="colored-line-left">
                 </div>
 
+                {% assign page_content_ref_size = include.page_content_ref | size %}
+                {% if page_content_ref_size > 0 %}
+                    {% include {{ include.page_content_ref }} %}
+                {% endif %}
                 <p>
                     {{ include.content }}
                 </p>
+                {{ include.embed_html }}
 
                 <!-- BUTTON -->
                 <div class="buttons">
