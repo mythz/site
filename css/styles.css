@@ -1202,6 +1202,7 @@ ul.apibox:hover, ul.apibox:hover > li,.apibox-md:hover { border-color: rgba(255,
 
 .services .single-service {
     padding-bottom: 60px;
+    height: 16em;
 }
 
 .services .single-service .service-icon {
