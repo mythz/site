@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+{% include meta-section.html %}
+<!-- SITE TITLE -->
+<title>{{page.title}}</title>
 
-    {% include meta-section.html %}
-    <!-- SITE TITLE -->
-    <title>{{page.title}}</title>
+{% include fav-icons-section.html %}
 
-    {% include fav-icons-section.html %}
+{% include stylesheets-section.html %}
 
-    {% include stylesheets-section.html %}
+{% include fixes-section.html %}
 
-    {% include fixes-section.html %}
-
-    <style>
-        .section-body {
-            margin-top:6em;
-        }
-    </style>
+<style>
+.section-body {
+    margin-top:6em;
+}
+</style>
 </head>
 <body>
-<div>
+<div class="pb-8">
     {% include navigation.html %}
 
-<section class="section-body {{ page.section_css }}">
+    <section class="section-body {{ page.section_css }}">
     {{ content }}
-</section>
+    </section>
 </div>
 {% include footer-section.html %}
 
