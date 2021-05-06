@@ -3,7 +3,6 @@
 <head>
 
     {% include meta-section.html %}
-    <!-- SITE TITLE -->
     <title>Simple and Fast .NET Web Services Framework</title>
 
     {% include fav-icons-section.html %}
@@ -26,13 +25,10 @@
     <!--EMBED YOUTUBE LITE-->
     <link rel="stylesheet" href="/css/lite-yt-embed.css">
 
-    <!-- ANIMATIONS -->
     <link rel="stylesheet" href="/css/animate.min.css">
+    <link rel="stylesheet" href="/css/flip.min.css">
 </head>
 <body>
-<!-- =========================
-     PRE LOADER
-============================== -->
 <div class="preloader">
     <div class="status"></div>
 </div>
@@ -191,6 +187,7 @@
 <script src="/js/lite-yt-embed.js"></script>
 <script src="/js/home-menu-transition.js"></script>
 <script src="/js/tweets.js"></script>
+<script src="/js/flip.min.js"></script>
 
 <script>
 
@@ -350,6 +347,20 @@ $('.expand-form').simpleexpand({
 $(window).stellar({
     horizontalScrolling: false
 });
+
+/* DOWNLOAD COUNTER https://pqina.nl/flip/ */
+function handleTickInit(tick) {
+    Tick.helper.interval(function () {
+        fetch('https://servicestack.net/stats/live/servicestack.json')
+            .then(function (r) { return r.json() })
+            .then(function(stats) {
+                if (!stats || tick.value === stats.DownloadCount)
+                    return;
+
+                tick.value = stats.DownloadCount;
+            }, function (err) { console.log('checkDownloadCount', err) });
+    }, 100000);
+}
 </script>
 
 </body>
