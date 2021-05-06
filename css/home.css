@@ -180,6 +180,13 @@ header .intro-section .buttons {
 .app-brief .row:last-child {
     margin-bottom: 0;
 }
+@media (max-width: 767px) {
+    .app-brief {
+        padding-top: 45px;
+        padding-bottom: 30px;
+    }
+}
+
 .feature-diagram-section {
     padding-top: 110px;
     padding-bottom: 60px;
