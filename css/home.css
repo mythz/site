@@ -39,31 +39,6 @@ header {
     background-size: cover;
     color: #ffffff;
 }
-
-.lang-links {
-    display: flex;
-    justify-content: center;
-    max-height: 100px;
-}
-.lang-links a {
-    margin-right: 1em;
-}
-.lang-links a:hover {
-    opacity: .8;
-}
-.lang-links img {
-    width: 100px;
-}
-#grpc-links {
-    max-height: 70px;
-}
-#grpc-links img {
-    width: 70px;
-}
-#grpc-links a {
-    margin-right: .5em;
-}
-
 header .color-overlay {
     min-height: 900px;
 }
@@ -165,75 +140,6 @@ header .intro-section .buttons {
     margin-top: 35px;
 }
 
-/*---------------------------------------
-   SECTION:  FEATURES
------------------------------------------*/
-.features {
-    padding-top: 80px;
-    padding-bottom: 30px;
-    background: #ffffff;
-}
-.features .features-left {
-    text-align: right;
-    margin-top: 26px;
-    margin-bottom: 20px;
-}
-.features .features-left .icon-container {
-    float: right;
-    margin-left: 20px;
-}
-.features .features-right {
-    text-align: left;
-    margin-top: 26px;
-    margin-bottom: 20px;
-}
-.features .features-right .icon-container {
-    float: left;
-    margin-right: 20px;
-}
-.features .feature {
-    margin-bottom: 20px;
-    height:8em;
-}
-.features .feature .icon-container {
-    display: block;
-    min-height: 120px;
-    margin-top: 5px;
-}
-.features .feature .icon-container .icon {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    line-height: 55px;
-    font-size: 18px;
-    text-align: center;
-    -webkit-transition: all ease-in 0.25s;
-    transition: all ease-in 0.25s;
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    background-clip: padding-box;
-}
-.features .feature:hover .icon a {
-    display: inline-block;
-    color: #fff;
-}
-.features .phone-image {
-    max-width: 250px;
-    margin: auto;
-    margin-bottom: 80px;
-}
-.features .phone-image img {
-    width: 100%;
-}
-.features .logo-image {
-    max-width: 250px;
-    margin: auto;
-    margin-bottom: 80px;
-    margin-top: 12em;
-}
-.features .logo-image img {
-    width: 100%;
-}
 
 /*---------------------------------------
    SECTION:  BRIEF
@@ -305,12 +211,6 @@ object {
     width:10px;
     height:10px;
 }
-#feedbacks .owl-dots .owl-dot span {
-    width:5px;
-    height:5px;
-}
-#feedbacks .owl-dot span { background: rgba(255,255,255,.5) !important; }
-#feedbacks .owl-dot.active span { background: #fff !important; }
 
 .owl-nav {
     display: flex;
@@ -339,24 +239,3 @@ object {
 .owl-theme .owl-nav [class*='owl-']:hover {
     background: transparent;
 }
-
-/*---------------------------------------
-   SECTION:  SERVICES
------------------------------------------*/
-
-.services {
-    padding-top: 80px;
-    padding-bottom: 60px;
-    background: #ffffff;
-}
-.services .single-service {
-    padding-bottom: 60px;
-    height: 16em;
-}
-.services .single-service .service-icon {
-    font-size: 80px;
-}
-.services .single-service h3 {
-    margin-top: 20px;
-}
-

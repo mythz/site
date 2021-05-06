@@ -38,19 +38,6 @@
     .owl-prev, .owl-next {
         width: 30px;
     }
-    #grpc-links { column-gap: .5em; max-height: 50px }
-    #grpc-links img { width: 50px }
-    #apimap li {
-        font-size: 12px;
-    }
-    .apibox-md {
-        padding: .25rem;
-    }
-    .apibox-md h4 {
-        font-size: 1rem;
-        line-height: 1.25rem;
-        font-weight: 600;
-    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -206,94 +193,66 @@
     .owl-prev, .owl-next {
         width: 20px;
     }
-    #grpc-links { max-height: 35px }
-    #grpc-links img { width: 35px }
-}
-
-@media (max-width:640px) {
-    .apibox-md h4 {
-        text-align: center;
-    }
-    #apimap img {
-        width:7.5rem;
-    }
 }
 
 @media (max-width: 480px) {
 
-
     html {
         font-size: 65%;
     }
-
     header .color-overlay {
         min-height: 480px;
     }
-
     header .home-contents {
         margin-top: 6em;
     }
-
     header .only-logo .navbar {
         padding: 10px;
     }
-
     header .intro-section {
         padding-top: 2%;
     }
-
     header .intro-section .intro {
         margin-bottom: 16px;
     }
-
     header .intro-section h5 {
         color: #ffffff;
     }
-
     header .intro-section .buttons {
         margin-top: 15px;
     }
-
     .navbar-nav {
         margin-top: 0;
     }
-
     .customNavigation {
         margin-left: 1em;
     }
-
     .testimonials,
     .download {
         background-attachment: inherit !important;
     }
-
     .download .subscription-form .input-box {
         width: 95%;
         height: 50px;
     }
-
     .standard-button,
     .standard-button2 {
         font-size: 15px;
         min-width: 100px;
         padding: 11px 20px 11px 20px;
     }
-
     .features .feature:hover .icon-container .icon,
     footer .contact-button:hover {
         -webkit-background-clip: padding-box;
         -moz-background-clip: padding;
         background-clip: padding-box;
     }
-
     .owl-prev, .owl-next {
         width: 20px;
     }
 }
 
 @media (max-width: 320px) {
-
-
     html {
         font-size: 60.5%;
     }
@@ -301,28 +260,23 @@
 
 
 @media (min-width: 320px) and (max-width: 640px) and  (orientation: landscape) {
-
     .full-screen h1 {
         font-size: 30px !important;
         line-height: 40px;
         margin-top: 0;
         font-weight: bold;
     }
-
     .full-screen .intro-section .intro {
         margin-bottom: 0;
 
     }
-
     .full-screen .intro-section h5 {
 
         font-size: 14px;
     }
-
     .full-screen .intro-section .buttons {
         margin-top: 0;
     }
-
     .full-screen .standard-button {
         font-size: 14px;
         padding: 8px 5px;

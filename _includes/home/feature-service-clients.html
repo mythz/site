@@ -1,3 +1,45 @@
+<style>
+.lang-links {
+    display: flex;
+    justify-content: center;
+    max-height: 100px;
+}
+.lang-links a {
+    margin-right: 1em;
+}
+.lang-links a:hover {
+    opacity: .8;
+}
+.lang-links img {
+    width: 100px;
+}
+#grpc-links {
+    max-height: 70px;
+}
+#grpc-links img {
+    width: 70px;
+}
+#grpc-links a {
+    margin-right: .5em;
+}
+@media (max-width: 1024px) {
+    #grpc-links { column-gap: .5em; max-height: 50px }
+    #grpc-links img { width: 50px }
+    #apimap li {
+        font-size: 12px;
+    }
+}
+@media (max-width: 767px) {
+    .lang-links { max-height: 60px }
+    .lang-links img { width: 60px }
+    .lang-links a { margin-right: .5em; }
+    #grpc-links { max-height: 40px }
+    #grpc-links img { width: 40px }
+    #grpc-links a { margin-right: .25em }
+}
+
+</style>
+
 <section class="feature-diagram-section bg-service-clients" id="service-clients">
     <div class="container">
         <div class="row">
