@@ -3,7 +3,13 @@ header {
     -webkit-background-size: cover;
     background-size: cover;
 }
-
+.testimonials {
+    background: url(../images/bg-header.jpg) no-repeat center top fixed;
+    z-index: -1;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #ffffff;
+}
 .bg-instant-client-apps {
     background: url(/images/bg-instant-client-apps.jpg) no-repeat center top fixed;
     -webkit-background-size: cover;
@@ -22,7 +28,6 @@ header {
 .bg-grpc-feature h2 {
     color: white;
 }
-
 .bg-service-clients, .bg-apimap, .bg-thirdparty {
     background: url(/images/bg-service-clients.jpg) no-repeat fixed center top;
     -webkit-background-size: cover;
