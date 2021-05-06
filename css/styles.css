@@ -607,7 +607,7 @@ header .social-icons img {
 /* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
 @supports (-webkit-touch-callout: none) {
     header, .testimonials, .bg-instant-client-apps, .bg-grpc-feature, .bg-service-clients, .contact-container, .download {
-        background-position: center top;
+        background-attachment: unset;
     }
 }
 
