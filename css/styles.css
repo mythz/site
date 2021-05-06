@@ -599,15 +599,22 @@ header .social-icons img {
     justify-content: center;
     max-height: 100px;
 }
+.lang-links a {
+    margin-right: 1em;
+}
+.lang-links a:hover {
+    opacity: .8;
+}
 .lang-links img {
     width: 100px;
-    margin-right: 1em;
 }
 #grpc-links {
     max-height: 70px;
 }
 #grpc-links img {
     width: 70px;
+}
+#grpc-links a {
     margin-right: .5em;
 }
 
