@@ -503,7 +503,7 @@ img,video{max-width:100%;height:auto}
     .sm\:flex-row-reverse { flex-direction: row-reverse }
     .sm\:flex-wrap { flex-wrap: wrap }
     .sm\:align-middle { vertical-align:middle}
-    .sm\:text-left { text-align: left }
+    .sm\:text-left{text-align:left}.sm\:text-center{text-align:center}.sm\:text-right{text-align:right}
     .sm\:text-sm { font-size: 0.875rem; line-height: 1.25rem }
     .sm\:text-base{font-size:1rem;line-height:1.5rem}
     .sm\:justify-between{justify-content:space-between}.sm\:justify-evenly{justify-content:space-evenly}
@@ -517,6 +517,7 @@ img,video{max-width:100%;height:auto}
     .md\:w-1\/5{width:20%}.md\:w-2\/5{width:40%}.md\:w-1\/6{width:16.666667%}.md\:w-1\/8{width:12.5%}.md\:w-1\/10{width:10%}.md\:w-full{width:100%}
     .md\:flex-wrap { flex-wrap: wrap }
     .md\:justify-between{justify-content:space-between}.md\:justify-evenly{justify-content:space-evenly}
+    .md\:text-left{text-align:left}.md\:text-center{text-align:center}.md\:text-right{text-align:right}
 }
 @media (min-width: 1024px) {
     .container { max-width: 1024px }
@@ -526,6 +527,7 @@ img,video{max-width:100%;height:auto}
     .lg\:col-span-2 {grid-column: span 2 / span 2}
     .lg\:flex-wrap { flex-wrap: wrap }
     .lg\:justify-between{justify-content:space-between}.lg\:justify-evenly{justify-content:space-evenly}
+    .lg\:text-left{text-align:left}.lg\:text-center{text-align:center}.lg\:text-right{text-align:right}
 }
 
 @media (min-width: 1280px) {
@@ -537,4 +539,5 @@ img,video{max-width:100%;height:auto}
     .xl\:mt-0 { margin-top: 0 }
     .xl\:flex-wrap { flex-wrap: wrap }
     .xl\:justify-between{justify-content:space-between}.xl\:justify-evenly{justify-content:space-evenly}
+    .xl\:text-left{text-align:left}.xl\:text-center{text-align:center}.xl\:text-right{text-align:right}
 }

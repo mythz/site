@@ -905,53 +905,34 @@ header .intro-section .buttons {
     width: 100%;
 }
 /*---------------------------------------
-   SECTION:  BRIEF                 
+   SECTION:  BRIEF
 -----------------------------------------*/
 
 .app-brief {
     padding-top: 110px;
     padding-bottom: 60px;
 }
-
 .app-brief h2 {
     margin-bottom: 20px;
 }
-
 .app-brief .phone-image {
     max-width: 350px;
-    margin: auto;
-    margin-bottom: 50px;
+    margin: auto auto 50px;
 }
-
 .app-brief .phone-image img {
     width: 100%;
 }
-
-.app-brief .left-align {
-    text-align: left;
-    margin-bottom: 50px;
-}
-
-.app-brief .left-align p {
-    display: block;
-    float: none;
-    margin-top: 50px;
-}
-
 .app-brief .left-align .feature-list {
     margin-top: 40px;
 }
-
 .app-brief .left-align .feature-list li {
     margin-bottom: 2em;
 }
-
 .app-brief .left-align .feature-list li i {
     margin-right: 14px;
     vertical-align: inherit;
     font-size: large;
 }
-
 .app-brief .row {
     margin-bottom: 1em;
 }
@@ -963,7 +944,6 @@ header .intro-section .buttons {
     padding-top: 110px;
     padding-bottom: 60px;
 }
-
 .feature-diagram-container img {
     margin:auto;
 }
@@ -993,14 +973,6 @@ object {
     max-width: 750px;
     margin: auto 2em;
     background: transparent !important;
-}
-
-.video-right-text {
-    text-align: left;
-}
-
-.video-right-text p {
-    margin-top: 3em;
 }
 
 /* Owl Carousel */

@@ -35,14 +35,6 @@ RESPONSIVE FIXES
         min-height: 800px;
     }
 
-    .app-brief .left-align {
-        text-align: center;
-    }
-
-    .app-brief .video-right-text {
-        text-align: center;
-    }
-
     .colored-line-left {
         float: none;
         margin: auto;

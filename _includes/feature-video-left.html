@@ -31,23 +31,20 @@
 
             </div>
 
-            <div class="col-md-6 left-align wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s">
-                <h2 class="dark-text">{{ include.title }} </h2>
-
-                <div class="colored-line-left">
+            <div class="col-md-6 text-left wow fadeInLeft animated px-2" data-wow-offset="10" data-wow-duration="1.5s">
+                <h2 class="dark-text px-2 text-center lg:text-left">{{ include.title }}</h2>
+                <div class="colored-line-left"></div>
+                <div class="p-2 text-left clearfix">
+                    <p>{{ include.content }}</p>
+                    {{ include.embed_html }}
                 </div>
-
-                <p>
-                    {{ include.content }}
-                </p>
-                {{ include.embed_html }}
 
                 {% assign page_content_ref_size = include.page_content_ref | size %}
                 {% if page_content_ref_size > 0 %}
                 {% include {{ include.page_content_ref }} %}
                 {% endif %}
 
-                <div class="buttons">
+                <div class="buttons text-center sm:text-left px-2">
                     <a href="{{ include.learn_url }}" class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">
                         Learn more
                     </a>
