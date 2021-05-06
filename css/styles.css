@@ -597,17 +597,18 @@ header .social-icons img {
 .lang-links {
     display: flex;
     justify-content: center;
-    column-gap: 1em;
     max-height: 100px;
 }
 .lang-links img {
     width: 100px;
+    margin-right: 1em;
 }
 #grpc-links {
     max-height: 70px;
 }
 #grpc-links img {
     width: 70px;
+    margin-right: .5em;
 }
 
 header .color-overlay {
