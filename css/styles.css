@@ -604,13 +604,6 @@ header .social-icons img {
     width: 70px;
 }
 
-/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
-@supports (-webkit-touch-callout: none) {
-    header, .testimonials, .bg-instant-client-apps, .bg-grpc-feature, .bg-service-clients, .contact-container, .download {
-        background-attachment: unset;
-    }
-}
-
 header .color-overlay {
     min-height: 900px;
 }
