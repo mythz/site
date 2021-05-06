@@ -105,7 +105,10 @@ header .home-contents {
 }
 @media (max-width: 767px) {
     header .home-contents {
-        margin-top: 2em;
+        margin-top: 4em;
+    }
+    header .color-overlay {
+        min-height: 700px;
     }
 }
 
