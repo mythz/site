@@ -533,7 +533,7 @@ h5 {
 -----------------------------------------*/
 
 header {
-    background: url(../images/bg-header.jpg) center top fixed no-repeat;
+    background: url(../images/bg-header.jpg) no-repeat center top fixed;
     -webkit-background-size: cover;
             background-size: cover;
 }
@@ -557,7 +557,7 @@ header .social-icons img {
 }
 
 .bg-instant-client-apps {
-    background: url(/images/bg-instant-client-apps.jpg) center top fixed no-repeat;
+    background: url(/images/bg-instant-client-apps.jpg) no-repeat center top fixed;
     -webkit-background-size: cover;
     background-size: cover;
     color: white;
@@ -568,7 +568,7 @@ header .social-icons img {
 }
 
 .bg-grpc-feature {
-    background: url(/images/bg-grpc-feature.jpg) center top fixed no-repeat;
+    background: url(/images/bg-grpc-feature.jpg) no-repeat center top fixed;
     -webkit-background-size: cover;
     background-size: cover;
     color: white;
@@ -587,6 +587,13 @@ header .social-icons img {
     color: white;
     text-shadow: #1f2937;
 }
+.contact-container {
+    background: url(../images/bg-contact-container.jpg) no-repeat center top fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #ffffff;
+}
+
 
 .lang-links {
     display: flex;
@@ -1040,7 +1047,7 @@ object {
    SECTION:  TESTIMONIALS                 
 -----------------------------------------*/
 .testimonials {
-    background: url(../images/bg-header.jpg) center top fixed no-repeat;
+    background: url(../images/bg-header.jpg) no-repeat center top fixed;
     z-index: -1;
     -webkit-background-size: cover;
     background-size: cover;
