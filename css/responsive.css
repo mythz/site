@@ -283,10 +283,3 @@
     }
 }
 
-/* iOS fix for inconsistent behaviour for 'fixed' + 'cover' */
-@supports (-webkit-touch-callout: none) {
-    header, .testimonials, .bg-instant-client-apps, .bg-grpc-feature, .bg-service-clients, .bg-apimap, .bg-thirdparty, .contact-container, .download {
-        background-attachment: unset;
-    }
-}
-
