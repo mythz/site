@@ -1,24 +1,80 @@
+<style>
+.testimonials {
+    background: url(../images/bg-header.jpg) no-repeat center top fixed;
+    z-index: -1;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #ffffff;
+}
+.testimonials .color-overlay {
+    padding-top: 110px;
+    padding-bottom: 110px;
+}
+.testimonials .feedback {
+    max-width: 750px;
+    margin: auto;
+}
+.testimonials .feedback .image {
+    font-size: 24px;
+    border: 2px solid transparent;
+    -webkit-box-shadow: 0px 0px 0px 2px #ffffff;
+    box-shadow: 0px 0px 0px 2px #ffffff;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    margin: 5px auto auto;
+    overflow: hidden;
+}
+.testimonials .feedback .image img {
+    width: 100%;
+    vertical-align: top;
+}
+.testimonials .feedback .message {
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.testimonials .feedback blockquote {
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C" "\201D";
+    border: none;
+    display: block;
+}
+.testimonials .feedback blockquote:before {
+    opacity: 40%;
+    content: open-quote;
+    font-size: 5em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+.testimonials .feedback .name {
+    margin-top: 15px;
+    font-weight: 400;
+}
 
-<!-- =========================
-     TESTIMONIALS 
-============================== -->
+.testimonials .feedback .company-info {
+    font-size: 12px;
+}
+.testimonials .owl-theme .owl-controls .owl-page span {
+    background: #ffffff;
+    border-radius: 50%;
+}
+.testimonials .customNavigation a {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+</style>
 <section class="testimonials">
-
     <div class="color-overlay">
-
         <div class="container wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-
-            <!-- FEEDBACKS -->
-            <div id="feedbacks" class="owl-carousel owl-theme">
-
-            </div>
-            <!-- /END FEEDBACKS -->
+            <div id="feedbacks" class="owl-carousel owl-theme"></div>
         </div>
-        <!-- /END CONTAINER -->
-
     </div>
-    <!-- /END COLOR OVERLAY -->
-
 </section>
-<!-- /END TESTIMONIALS SECTION -->
-

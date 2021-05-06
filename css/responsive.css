@@ -1,8 +1,4 @@
-/* --------------------------------------
-=========================================
-RESPONSIVE FIXES
-=========================================
------------------------------------------*/
+/* RESPONSIVE FIXES */
 
 @media (min-width: 1024px) {
     #account-navigation {
@@ -59,38 +55,30 @@ RESPONSIVE FIXES
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
-
     html {
         font-size: 90%;
     }
-
     header .color-overlay {
         min-height: 780px;
     }
-
     header .home-contents {
         margin-top: 10em;
     }
-
     .customNavigation {
         margin-left: 1em;
     }
-
     .customNavigation .navbar-header {
         width: 100%;
         position: relative;
         text-align: center;
         margin-top: 10px;
     }
-
     .customNavigation .navbar-header a {
         float: none !important;
     }
-
     .customNavigation .navbar-header img {
         max-height: 40px;
     }
-
     .customNavigation {
         text-align: center;
         width: 100%;
