@@ -498,6 +498,7 @@ img,video{max-width:100%;height:auto}
     .sm\:-mx-4 { margin-left: -1rem; margin-right: -1rem }
     .sm\:mx-auto { margin-left: auto; margin-right: auto }
     .sm\:p-0 {padding:0}.sm\:p-6 {padding: 1.5rem}
+    .sm\:pt-1{padding-top:0.25rem}
     .sm\:px-6 { padding-left: 1.5rem;padding-right: 1.5rem}
     .sm\:h-10 { height: 2.5rem }
     .sm\:h-screen { height: 100vh }

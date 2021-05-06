@@ -101,8 +101,14 @@ header .full-screen {
 /* INTRO */
 
 header .home-contents {
-    margin-top: 5%;
+    margin-top: 11em;
 }
+@media (max-width: 767px) {
+    header .home-contents {
+        margin-top: 2em;
+    }
+}
+
 header .intro-section {
     text-align: left;
 }
