@@ -404,10 +404,6 @@ li {
     -webkit-box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
     box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
 }
-.floating-navigation .navbar-header img {
-    max-height: 36px;
-    -webkit-backface-visibility: hidden;
-}
 .floating-navigation .navbar-nav {
     margin-right: 1em;
 }

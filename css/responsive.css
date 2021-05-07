@@ -54,9 +54,6 @@
     .customNavigation .navbar-header a {
         float: none !important;
     }
-    .customNavigation .navbar-header img {
-        max-height: 40px;
-    }
     .customNavigation {
         text-align: center;
         width: 100%;
@@ -72,10 +69,6 @@
 
     .sticky-navigation .navbar-header a {
         float: none !important;
-    }
-
-    .sticky-navigation .navbar-header img {
-        max-height: 40px;
     }
 
     .sticky-navigation .main-navigation {
