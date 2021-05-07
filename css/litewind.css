@@ -126,7 +126,7 @@ img,video{max-width:100%;height:auto}
 .top-0{top:0}.right-0{right:0}.bottom-0{bottom:0}.left-0{left:0}
 .-top-0{top:0}.-right-0{right:0}.-bottom-0{bottom:0}.-left-0{left:0}
 
-.flex{display:flex} .block{display:block} .inline-block{display:inline-block} .inline{display:inline} .grid{display:grid} .hidden{display:none}
+.flex{display:flex} .block{display:block} .inline-block{display:inline-block} .inline{display:inline} .grid{display:grid} .hidden{display:none!important}
 .visible{visibility:visible} .invisible{visibility:hidden}
 .flex-1{flex: 1 1 0} .flex-auto{flex: 1 1 auto} .flex-initial{flex: 0 1 auto} .flex-none{flex: none} .flex-wrap{flex-wrap:wrap}
 .flex-row{flex-direction:row} .flex-row-reverse{ flex-direction:row-reverse}
