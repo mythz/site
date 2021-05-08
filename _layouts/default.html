@@ -276,6 +276,15 @@ $(document).ready(function () {
     });
 });
 
+/* STICKY NAV */
+$(document).ready(function () {
+    $('.main-navigation').onePageNav({
+        scrollThreshold: 0.2, // Adjust if Navigation highlights too early or too late
+        filter: ':not(.external)',
+        changeHash: true
+    });
+});
+
 /* SUBSCRIPTION FORM */
 $("#subscribe").submit(function (e) {
     e.preventDefault();

@@ -12,15 +12,7 @@ function on(sel, handlers) {
     });
 }
 
-
-/* STICKY NAV */
 $(document).ready(function () {
-    $('.main-navigation').onePageNav({
-        scrollThreshold: 0.2, // Adjust if Navigation highlights too early or too late
-        filter: ':not(.external)',
-        changeHash: true
-    });
-
     // Bootstrap Navbar and dropdowns
     let toggle = $1('.navbar-toggle'),
         collapse = $1('.navbar-collapse'),
