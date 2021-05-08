@@ -345,6 +345,12 @@ pre {
     background-color: rgb(243, 244, 246);
     border: 1px solid rgb(209, 213, 219);
 }
+code, pre {
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+pre {
+    white-space: pre-wrap;
+}
 
 .btn:focus,
 .btn:active {
@@ -493,6 +499,9 @@ header .only-logo .navbar .navbar-header {
 }
 .package-reference-box pre label {
     margin:0;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 2.5em;
 }
 .package-reference-box pre {
     margin-bottom: 0;
@@ -520,6 +529,16 @@ header .only-logo .navbar .navbar-header {
         max-width: 510px;
         overflow: hidden;
     }
+}
+.package-reference-box-lg .package-reference-box pre {
+    display: flex;
+}
+.package-reference-box-lg pre label {
+    font-size: 1.125rem;line-height: 1.75rem; /*.text-lg*/
+    padding: .5rem 0;
+}
+.package-reference-box-lg .package-reference-box, .package-reference-box-lg .package-reference-box .copy label {
+    max-width: unset;
 }
 
 /*---------------------------------------
