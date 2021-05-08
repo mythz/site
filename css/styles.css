@@ -6,7 +6,7 @@ html {
 body {
     background: #ffffff;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.125rem;line-height: 1.75rem; /*.text-lg*/
+    font-size: 1rem;line-height: 1.5rem;; /*.text-base*/
     font-weight: 300;
     color: #313131;
     overflow-x: hidden !important;
