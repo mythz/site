@@ -12,42 +12,6 @@ function on(sel, handlers) {
     });
 }
 
-// Bootstrap Navbar and dropdowns
-let toggle = $1('.navbar-toggle'),
-    collapse = $1('.navbar-collapse'),
-    dropdowns = $$('.dropdown');
-function toggleMenu() {
-    collapse.classList.toggle('collapse');
-    collapse.classList.toggle('in');
-}
-function closeMenus() {
-    for (let j = 0; j < dropdowns.length; j++) {
-        $1('.dropdown-toggle',dropdowns[j]).classList.remove('dropdown-open');
-        dropdowns[j].classList.remove('open');
-    }
-}
-for (let i = 0; i < dropdowns.length; i++) {
-    dropdowns[i].addEventListener('click', function() {
-        if (document.body.clientWidth < 768) {
-            let open = this.classList.contains('open');
-            closeMenus();
-            if (!open) {
-                $1('.dropdown-toggle',this).classList.toggle('dropdown-open');
-                this.classList.toggle('open');
-            }
-        }
-    });
-}
-function closeMenusOnResize() {
-    if (document.body.clientWidth >= 768) {
-        closeMenus();
-        collapse.classList.add('collapse');
-        collapse.classList.remove('in');
-    }
-}
-on(window, { resize: closeMenusOnResize });
-on(toggle, { click: toggleMenu });
-
 
 /* STICKY NAV */
 $(document).ready(function () {
@@ -56,6 +20,42 @@ $(document).ready(function () {
         filter: ':not(.external)',
         changeHash: true
     });
+
+    // Bootstrap Navbar and dropdowns
+    let toggle = $1('.navbar-toggle'),
+        collapse = $1('.navbar-collapse'),
+        dropdowns = $$('.dropdown');
+    function toggleMenu() {
+        collapse.classList.toggle('collapse');
+        collapse.classList.toggle('in');
+    }
+    function closeMenus() {
+        for (let j = 0; j < dropdowns.length; j++) {
+            $1('.dropdown-toggle',dropdowns[j]).classList.remove('dropdown-open');
+            dropdowns[j].classList.remove('open');
+        }
+    }
+    for (let i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].addEventListener('click', function() {
+            if (document.body.clientWidth < 768) {
+                let open = this.classList.contains('open');
+                closeMenus();
+                if (!open) {
+                    $1('.dropdown-toggle',this).classList.toggle('dropdown-open');
+                    this.classList.toggle('open');
+                }
+            }
+        });
+    }
+    function closeMenusOnResize() {
+        if (document.body.clientWidth >= 768) {
+            closeMenus();
+            collapse.classList.add('collapse');
+            collapse.classList.remove('in');
+        }
+    }
+    on(window, { resize: closeMenusOnResize });
+    on(toggle, { click: toggleMenu });
 });
 
 /* COLLAPSE NAVIGATION ON MOBILE AFTER CLICKING ON LINK - ADDED ON V1.5*/
