@@ -6,13 +6,13 @@ html {
 body {
     background: #ffffff;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 1.125rem;line-height: 1.75rem; /*.text-lg*/
     font-weight: 300;
     color: #313131;
-    line-height: 28px;
     overflow-x: hidden !important;
     margin: auto !important;
 }
+
 
 /* Bootstrap imports */
 .container {
@@ -25,6 +25,10 @@ body {
     margin-left: -15px;
     margin-right: -15px;
 }
+.mw-p {
+    max-width: 890px
+}
+
 @media (min-width: 1200px) {
     .container {
         width: 1170px;
@@ -366,6 +370,12 @@ li {
     list-style: none;
 }
 
+.ul-circle > li {
+    list-style-type: circle;
+    list-style-position: inside;
+    margin-left: 1em;
+}
+
 /* PRE LOADER */
 .preloader {
     position: fixed;
@@ -454,7 +464,6 @@ header .only-logo .navbar .navbar-header {
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
     color:black;
 }
-
 @media (min-width: 768px) {
     .navbar-nav.navbar-center {
         position: static;
@@ -462,6 +471,54 @@ header .only-logo .navbar .navbar-header {
     .navbar-nav > li > a {
         padding-top:0;
         padding-bottom: 5px;
+    }
+}
+
+.package-reference-box .svg-copy {
+    background: #008ed6 url("data:image/svg+xml,%3Csvg fill='none' stroke='white' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1' d='M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2'%3E%3C/path%3E%3C/svg%3E") no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 1.4em;
+    cursor: pointer;
+}
+.package-reference-box .svg-copy:hover {
+    opacity: .8;
+}
+.package-reference-box pre.copy {
+    display: inline-block;
+    padding-right: .5rem;
+}
+.package-reference-box pre.sh {
+    color:white;
+}
+.package-reference-box pre label {
+    margin:0;
+}
+.package-reference-box pre {
+    margin-bottom: 0;
+    border-radius: 0;
+    border: none;
+}
+.package-reference-box .copy-text label {
+    font-weight: 400;
+    color: rgb(107, 114, 128);
+}
+@media (min-width: 1024px) {
+    .package-reference-box {
+        max-width: 500px;
+    }
+    .package-reference-box .copy label {
+        max-width: 470px;
+        overflow: hidden;
+    }
+}
+@media (min-width: 1280px) {
+    .package-reference-box {
+        max-width: 540px;
+    }
+    .package-reference-box .copy label {
+        max-width: 510px;
+        overflow: hidden;
     }
 }
 
