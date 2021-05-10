@@ -142,10 +142,6 @@ select:focus, textarea:focus {
         font-size: 0.875rem;line-height: 1.25rem; /*text-sm*/
     }
 }
-[type=button]:disabled, [type=reset]:disabled, [type=submit]:disabled, button:disabled {
-    cursor: text;
-    --tw-bg-opacity: 1;background-color: rgba(156, 163, 175, var(--tw-bg-opacity)); /*bg-gray-400*/
-}
 
 .font-sans{font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}
 .font-serif{font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif}
