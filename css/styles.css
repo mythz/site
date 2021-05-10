@@ -471,6 +471,19 @@ header .only-logo .navbar .navbar-header {
     color:black;
 }
 @media (min-width: 768px) {
+    .main-navigation li.active a:after {
+        background-color: #1389FD;
+        content: '';
+        display: block;
+        height: 3px;
+        left: 0;
+        position: absolute;
+        top: calc(50% + (54px / 2) - 3px);
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
     .navbar-nav.navbar-center {
         position: static;
     }
