@@ -318,12 +318,12 @@ h5 {
 }
 
 a {
-    color: rgb(59, 130, 246);
+    --tw-text-opacity: 1;color: rgba(59, 130, 246, var(--tw-text-opacity));
     -webkit-transition: all ease 0.25s;
             transition: all ease 0.25s;
 }
 a:hover {
-    color:rgba(37, 99, 235,.9);
+    --tw-text-opacity: 1;color: rgba(37, 99, 235, var(--tw-text-opacity));
     text-decoration: none;
 }
 h1, .h1, h2, .h2, h3, .h3 {

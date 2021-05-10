@@ -14,10 +14,11 @@
             <ul class="nav navbar-nav main-navigation pt-1">
                 <li><a class="nav-link" href="/">Home</a></li>
                 <li><a class="nav-link" href="https://docs.servicestack.net">Docs</a></li>
-                <li><a class="nav-link" href="https://forums.servicestack.net/">Forums</a></li>
+                <li><a class="nav-link" href="https://forums.servicestack.net">Forums</a></li>
                 <li class="{% if page.slug == "download"%}active{% endif %}"><a class="nav-link" href="/download">Download</a></li>
-                <li><a class="nav-link" href="/pricing">Pricing</a></li>
-                <li><a class="nav-link" href="#getstarted">Sign In</a></li>
+                <li><a class="nav-link" href="{{site.account_url}}/trial">Trial</a></li>
+                <li><a class="nav-link" href="{{site.account_url}}/pricing">Pricing</a></li>
+                <li><a class="nav-link" href="{{site.account_url}}/login">Sign In</a></li>
             </ul>
 
             <div class="nav social-buttons hidden md:inline-block align-top pt-5 pr-2">
@@ -35,3 +36,4 @@
         </div>
     </div>
 </div>
+
