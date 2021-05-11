@@ -5,7 +5,8 @@ $(document).ready(function () {
 });
 
 $(window).scroll(function () {
-    mainNav();
+    setTimeout(mainNav,0);
+    setTimeout(mainNav,100); //delayed double-check
 });
 
 var animatingMenu = false;
