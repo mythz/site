@@ -5,7 +5,7 @@ $(document).ready(function () {
 });
 
 $(window).scroll(function () {
-    mainNav();
+    setTimeout(mainNav,0);
 });
 
 var animatingMenu = false;
