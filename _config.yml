@@ -16,7 +16,7 @@ collections:
   pages:
     title: ServiceStack
     output: true
-    permalink: /:slug.html
+    permalink: /:slug/index.html
 plugins:
   - github-pages
 
