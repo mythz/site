@@ -20,10 +20,15 @@ collections:
 plugins:
   - github-pages
 
+# https://github.com/helaili/jekyll-action/issues/43
 exclude:
   - readme.md
   - LICENCE
   - .idea/
+  - vendor/bundle
+  - node_modules
+  - package.json
+  - src
 
 topics: []
 defaults:
