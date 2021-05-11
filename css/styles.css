@@ -252,6 +252,17 @@ textarea.form-control {
     }
 }
 
+[type=button]:disabled, [type=reset]:disabled, [type=submit]:disabled, button:disabled {
+    cursor: text;
+    --tw-bg-opacity: 1;background-color: rgba(156, 163, 175, var(--tw-bg-opacity)); /*bg-gray-400*/
+}
+.loading [type=button], .loading [type=submit], .loading button {
+    cursor: text;
+    --tw-bg-opacity: 1;background-color: rgba(156, 163, 175, var(--tw-bg-opacity)); /*bg-gray-400*/
+    color: #fff;
+}
+
+
 /*---------------------------------------
    Typography
 -----------------------------------------*/
