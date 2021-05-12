@@ -8,8 +8,10 @@ pagination:
   per_page: 15
   permalink: '/page/:num/'
 ---
-<div class="container whatsnew-container">
-    <h1 style="text-align: center">Latest features & highlights</h1>
+<div class="download container mx-auto">
+    <h1 class="text-center my-4 pt-8">Latest features &amp; highlights</h1>
+    <div class="colored-line"></div>
+
     {% assign sorted = site.whatsnew | reverse %}
     {% for item in paginator.posts %}
     <div class="row mt-8">

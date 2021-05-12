@@ -12,7 +12,7 @@ function on(sel, handlers) {
     });
 }
 
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function(event) {
     // Bootstrap Navbar and dropdowns
     let toggle = $1('.navbar-toggle'),
         collapse = $1('.navbar-collapse'),
@@ -52,9 +52,13 @@ $(document).ready(function () {
 
 /* COLLAPSE NAVIGATION ON MOBILE AFTER CLICKING ON LINK - ADDED ON V1.5*/
 if (matchMedia('(max-width: 480px)').matches) {
-    $('.main-navigation a').on('click', function () {
-        $(".navbar-toggle").click();
-    });
+    on({
+        click: function () {
+            $$(".navbar-toggle").forEach(function () {
+                this.click();
+            });
+        }
+    })
 }
 
 /* Nuget copy */
