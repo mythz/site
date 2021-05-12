@@ -57,7 +57,7 @@
   },
   {
     "Condition": {
-      "KeyPrefixEquals": "redis"
+      "KeyPrefixEquals": "redis/"
     },
     "Redirect": {
       "HostName": "account.servicestack.net"
@@ -65,7 +65,7 @@
   },
   {
     "Condition": {
-      "KeyPrefixEquals": "ormlite"
+      "KeyPrefixEquals": "ormlite/"
     },
     "Redirect": {
       "HostName": "account.servicestack.net"
@@ -73,7 +73,7 @@
   },
   {
     "Condition": {
-      "KeyPrefixEquals": "text"
+      "KeyPrefixEquals": "text/"
     },
     "Redirect": {
       "HostName": "account.servicestack.net"
