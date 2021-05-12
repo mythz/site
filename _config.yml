@@ -20,10 +20,11 @@ collections:
   whatsnew:
     title: Latest features & highlights
     output: true
-    paginate: 5
-    paginate_path: "/whatsnew/page:num/"
-    pagination:
-      enabled: true
+  news:
+    title: News
+    output: true
+    permalink: /news/:slug/
+
 plugins:
   - github-pages
   - jekyll-paginate-v2
@@ -57,8 +58,3 @@ defaults:
       priority: 999
       layout: content-page
 
-# -----
-# Build
-sass:
-  sass_dir: _scss
-  style: :compressed
