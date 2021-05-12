@@ -590,6 +590,12 @@ header .only-logo .navbar .navbar-header {
     padding-bottom: 10px;
 }
 
+/* Whats new */
+.whatsnew-container ul>li {
+    list-style: disc;
+    margin-left: 1em;
+}
+
 /*---------------------------------------
    LINES          
 -----------------------------------------*/
