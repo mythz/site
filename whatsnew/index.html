@@ -1,11 +1,17 @@
 ---
 title: What's new
 slug: whatsnew
+pagination:
+  enabled: true
+  collection: whatsnew
+  sort_reverse: true
+  per_page: 15
+  permalink: '/page/:num/'
 ---
 <div class="container whatsnew-container">
     <h1 style="text-align: center">Latest features & highlights</h1>
     {% assign sorted = site.whatsnew | reverse %}
-    {% for item in sorted %}
+    {% for item in paginator.posts %}
     <div class="row mt-8">
         <h2>{{ item.title }}</h2>
         <span style="text-align: left;display: block;font-size: x-small">{{ item.date | date: '%B %d, %Y' }}</span>
@@ -29,4 +35,28 @@ slug: whatsnew
         </div>
     </div>
     {% endfor %}
+
+    <!-- PAGINATION -->
+    {% if paginator.total_pages > 1 %}
+    <div class="row">
+        <div class="col-sm-12 text-center m-t-40 m-b-40">
+            <div class="pagination font-alt">
+                {% if paginator.previous_page %}
+                <span><a href="{{ paginator.previous_page_path | prepend: site.baseurl }}"><i class="fa fa-angle-left"></i></a></span>
+                {% endif %}
+                {% if paginator.page_trail %}
+                {% for trail in paginator.page_trail %}
+                <span {% if page.url == trail.path %}class="active"{% endif %}>
+                    <a href="{{ trail.path | prepend: site.baseurl | remove: 'index.html' }}" title="{{trail.title}}">{{ trail.num }}</a>
+                </span>
+                {% endfor %}
+                {% endif %}
+                {% if paginator.next_page %}
+                <span><a href="{{ paginator.next_page_path | prepend: site.baseurl }}"><i class="fa fa-angle-right"></i></a></span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <!-- /PAGINATION -->
 </div>
