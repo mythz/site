@@ -8,6 +8,7 @@ slug: whatsnew
     {% for item in sorted %}
     <div class="row mt-8">
         <h2>{{ item.title }}</h2>
+        <span style="text-align: left;display: block;font-size: x-small">{{ item.date | date: '%B %d, %Y' }}</span>
         <div class="col-md-6 wow fadeInRight animated" style="margin-top: 4rem" data-wow-offset="10" data-wow-duration="1.5s">
             <div class="video-container">
                 <div class="video shadow-sm">
