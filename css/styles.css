@@ -151,6 +151,11 @@ body {
 .navbar-collapse.in {
     overflow-y: auto;
 }
+@media (max-width: 640px) {
+    .navbar-collapse.in {
+        overflow-y: visible; /*workaround for Safari iOS*/
+    }
+}
 .collapse.in {
     display: block;
 }
