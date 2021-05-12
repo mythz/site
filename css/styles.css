@@ -130,8 +130,8 @@ body {
     float: left;
     padding: 15px;
     font-size: 18px;
-    line-height: 20px;
-    height: 20px;
+    line-height: 32px;
+    height: 32px;
 }
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     border-color: #101010;
@@ -191,6 +191,10 @@ body {
 }
 textarea.form-control {
     height: auto;
+}
+
+.navbar-brand img {
+    height: 32px;
 }
 .form-control {
     display: block;
