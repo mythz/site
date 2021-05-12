@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include meta-section.html %}
+    <title>{{page.title}}</title>
+    {% include fav-icons-section.html %}
+    {% include stylesheets-section.html %}
+</head>
+<body>
+<div>
+    {% include navigation.html %}
+    <section class="my-8 pt-8 {{ page.section_css }}">
+        <div class="container">
+            <div class="row">
+                {{ content }}
+            </div>
+        </div>
+    </section>
+</div>
+{% include footer-section.html %}
+{% include scripts-section.html %}
+</body>
+</html>

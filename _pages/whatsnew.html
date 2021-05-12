@@ -1,0 +1,31 @@
+---
+title: What's new
+slug: whatsnew
+---
+<div class="container">
+    <h1 style="text-align: center">Latest features & highlights</h1>
+    {% assign sorted = site.whatsnew | reverse %}
+    {% for item in sorted %}
+    <div class="row mt-8">
+        <h2>{{ item.title }}</h2>
+        <div class="col-md-6 wow fadeInRight animated" style="margin-top: 4rem" data-wow-offset="10" data-wow-duration="1.5s">
+            <div class="video-container">
+                <div class="video shadow-sm">
+                    <img src="{{item.preview_img_url}}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 text-left wow fadeInLeft animated px-2" data-wow-offset="10" data-wow-duration="1.5s">
+            <h3 class="text-gray-700 px-2 text-center"><a href="{{item.feature_url}}">{{ item.subtitle }}</a></h3>
+            <div class="colored-line"></div>
+            <div class="p-2 text-left clearfix"></div>
+            {{ item.content | markdownify }}
+            <div class="buttons text-center sm:text-left">
+                <a href="{{ item.feature_url }}" class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">
+                    Learn more
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

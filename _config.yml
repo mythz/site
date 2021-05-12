@@ -16,7 +16,11 @@ collections:
   pages:
     title: ServiceStack
     output: true
-    permalink: /:slug/index.html
+    permalink: /:slug/
+  whatsnew:
+    title: Latest features & highlights
+    output: true
+    permalink: /whatsnew/:slug/
 plugins:
   - github-pages
 
