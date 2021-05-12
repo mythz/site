@@ -14,25 +14,32 @@ pagination:
 
     {% assign sorted = site.whatsnew | reverse %}
     {% for item in paginator.posts %}
-    <div class="row mt-8">
-        <h2>{{ item.title }}</h2>
-        <span style="text-align: left;display: block;font-size: x-small">{{ item.date | date: '%B %d, %Y' }}</span>
-        <div class="col-md-6 wow fadeInRight animated" style="margin-top: 4rem" data-wow-offset="10" data-wow-duration="1.5s">
-            <div class="video-container">
-                <div class="video shadow-sm">
-                    <img src="{{item.preview_img_url}}" alt="">
+    <div class="my-20">
+        <div class="my-20">
+            <h2 class="mt-8 text-center text-7xl font-normal">{{ item.title }}</h2>
+            <div class="text-center text-lg font-normal text-gray-500 mb-8">{{ item.date | date: '%B %d, %Y' }}</div>
+        </div>
+
+        <div class="mt-8 flex flex-wrap">
+            <div class="w-full sm:w-1/2 wow fadeInRight animated px-4" data-wow-offset="10" data-wow-duration="1.5s">
+                <div class="video-container">
+                    <div class="video shadow-sm">
+                        <img src="{{item.preview_img_url}}" alt="">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6 text-left wow fadeInLeft animated px-2" data-wow-offset="10" data-wow-duration="1.5s">
-            <h3 class="text-gray-700 px-2 text-center"><a href="{{item.feature_url}}">{{ item.subtitle }}</a></h3>
-            <div class="colored-line"></div>
-            <div class="p-2 text-left clearfix"></div>
-            {{ item.content | markdownify }}
-            <div class="buttons text-center sm:text-left">
-                <a href="{{ item.feature_url }}" class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">
-                    Learn more
-                </a>
+
+            <div class="w-full sm:w-1/2 text-left wow fadeInLeft animated px-4" data-wow-offset="10" data-wow-duration="1.5s">
+                <h3 class="text-gray-700 px-2 text-center m-0 mb-4"><a href="{{item.feature_url}}">{{ item.subtitle }}</a></h3>
+                <div class="colored-line"></div>
+                <div class="mt-4">
+                    {{ item.content | markdownify }}
+                </div>
+                <div class="buttons text-center sm:text-left">
+                    <a href="{{ item.feature_url }}" class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">
+                        Learn more
+                    </a>
+                </div>
             </div>
         </div>
     </div>
