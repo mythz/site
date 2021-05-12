@@ -4,8 +4,8 @@
 title: ServiceStack
 description: ServiceStack Framework
 environment: production
-url: https://site.servicestack.com
-content_url: https://site.servicestack.com
+url: https://servicestack.net
+content_url: https://servicestack.net
 account_url: https://account.servicestack.net
 repository: mythz/site
 google_analytics_key: UA-7722718-7
