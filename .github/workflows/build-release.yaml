@@ -37,7 +37,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Push to S3
+      - name: Push to S3 staging
         run: |
           aws s3 sync ./_site/ s3://site.servicestack.net/
+
+      - name: Push to S3 prod
+        run: |
+          aws s3 sync ./_site/ s3://servicestack.net/
 
