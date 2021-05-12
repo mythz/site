@@ -1,0 +1,82 @@
+[
+  {
+    "Condition": {
+      "KeyPrefixEquals": "buy/"
+    },
+    "Redirect": {
+      "HostName": "account.servicestack.net"
+    }
+  },
+  {
+    "Condition": {
+      "KeyPrefixEquals": "renew/"
+    },
+    "Redirect": {
+      "HostName": "account.servicestack.net"
+    }
+  },
+  {
+    "Condition": {
+      "KeyPrefixEquals": "account/"
+    },
+    "Redirect": {
+      "HostName": "account.servicestack.net"
+    }
+  },
+  {
+    "Condition": {
+      "KeyPrefixEquals": "trial/"
+    },
+    "Redirect": {
+      "HostName": "account.servicestack.net"
+    }
+  },
+  {
+    "Condition": {
+      "KeyPrefixEquals": "forgot-password/"
+    },
+    "Redirect": {
+      "HostName": "account.servicestack.net"
+    }
+  },
+  {
+    "Condition": {
+      "KeyPrefixEquals": "reset-password/"
+    },
+    "Redirect": {
+      "HostName": "account.servicestack.net"
+    }
+  },
+  {
+    "Condition": {
+      "KeyPrefixEquals": "pricing/"
+    },
+    "Redirect": {
+      "HostName": "account.servicestack.net"
+    }
+  },
+  {
+    "Condition": {
+      "KeyPrefixEquals": "redis"
+    },
+    "Redirect": {
+      "HostName": "account.servicestack.net"
+    }
+  },
+  {
+    "Condition": {
+      "KeyPrefixEquals": "ormlite"
+    },
+    "Redirect": {
+      "HostName": "account.servicestack.net"
+    }
+  },
+  {
+    "Condition": {
+      "KeyPrefixEquals": "text"
+    },
+    "Redirect": {
+      "HostName": "account.servicestack.net"
+    }
+  }
+]
