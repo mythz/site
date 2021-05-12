@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include meta-section.html %}
+    <title>{{page.title}}</title>
+    {% include fav-icons-section.html %}
+    {% include stylesheets-section.html %}
+    <style>
+        .news-post-page {
+
+        }
+        .news-post-page-date {
+            display:block;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .news-post-page-author-container {
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+<div>
+    {% include navigation.html %}
+    <section class="my-8 pt-8 {{ page.section_css }}">
+        <div class="container news-post-page mt-8">
+            <div class="grid grid-cols-12">
+                <div class="flex-grow col-start-1 col-end-10 text-left wow fadeInLeft animated px-4">
+                    <span class="news-post-page-date">{{ page.date | date: '%B %d, %Y' }}</span>
+                    <h1 style="text-align: center">{{page.title}}</h1>
+                    {{ content }}
+                </div>
+                <div class="flex-shrink col-start-10 col-end-13 px-4 bg-gray-100 news-post-page-author-container">
+                    <h3 style="font-weight: 700">Author</h3>
+                    {% if page.author_img %}
+                        <img src="{{page.author_img}}" alt="{{page.author_img_alt}}" />
+                    {% endif %}
+                    <h4 style="font-weight: 400">{{page.author}}</h4>
+                    <h5>{{page.author_title}}</h5>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+</div>
+{% include footer-section.html %}
+{% include scripts-section.html %}
+</body>
+</html>

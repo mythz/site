@@ -1,0 +1,65 @@
+---
+title: News
+slug: news
+pagination:
+  enabled: true
+  collection: news
+  sort_reverse: true
+  per_page: 10
+  permalink: '/page/:num/'
+---
+<style>
+    .news-post-date {
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+</style>
+<div class="container news-container">
+    <h1 style="text-align: center">News</h1>
+    {% assign sorted = site.whatsnew | reverse %}
+    {% for item in paginator.posts %}
+    <div class="grid grid-cols-12 mt-8">
+        <div class="flex-shrink col-start-1 col-end-3 wow fadeInRight animated" style="margin-top: 4rem" data-wow-offset="10" data-wow-duration="1.5s">
+            <div class="video-container">
+                <div class="news-img-container shadow-sm">
+                    <img src="{{item.preview_img_url}}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="flex-grow col-start-3 col-end-12 text-left wow fadeInLeft animated px-4" data-wow-offset="10" data-wow-duration="1.5s">
+            <span class="news-post-date">{{ item.date | date: '%B %d, %Y' }}</span>
+            <h3 class="text-gray-700"><a href="{{item.url}}">{{ item.title }}</a></h3>
+            <div class="colored-line-left"></div>
+            <div class="p-2 text-left clearfix"></div>
+            <div class="mt-4 mb-4">
+                <p>{{ item.preview_text }}</p>
+            </div>
+            <span class="text-xs">Author: {{item.author}}</span>
+        </div>
+    </div>
+    {% endfor %}
+
+    <!-- PAGINATION -->
+    {% if paginator.total_pages > 1 %}
+    <div class="row">
+        <div class="col-sm-12 text-center m-t-40 m-b-40">
+            <div class="pagination font-alt">
+                {% if paginator.previous_page %}
+                <span><a href="{{ paginator.previous_page_path | prepend: site.baseurl }}"><i class="fa fa-angle-left"></i></a></span>
+                {% endif %}
+                {% if paginator.page_trail %}
+                {% for trail in paginator.page_trail %}
+                <span {% if page.url == trail.path %}class="active"{% endif %}>
+                    <a href="{{ trail.path | prepend: site.baseurl | remove: 'index.html' }}" title="{{trail.title}}">{{ trail.num }}</a>
+                </span>
+                {% endfor %}
+                {% endif %}
+                {% if paginator.next_page %}
+                <span><a href="{{ paginator.next_page_path | prepend: site.baseurl }}"><i class="fa fa-angle-right"></i></a></span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <!-- /PAGINATION -->
+</div>
