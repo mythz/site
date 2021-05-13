@@ -344,7 +344,7 @@ $(window).stellar({
 /* DOWNLOAD COUNTER https://pqina.nl/flip/ */
 function handleTickInit(tick) {
     Tick.helper.interval(function () {
-        fetch('https://servicestack.net/stats/live/servicestack.json')
+        fetch('{{site.account_url}}/stats/live/servicestack.json')
             .then(function (r) { return r.json() })
             .then(function(stats) {
                 if (!stats || tick.value === stats.DownloadCount)
