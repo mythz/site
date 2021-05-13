@@ -9,6 +9,7 @@ content_url: https://servicestack.net
 account_url: https://account.servicestack.net
 repository: mythz/site
 google_analytics_key: UA-7722718-7
+content_separator: <!--separator-->
 
 package_version: 5.*
 
