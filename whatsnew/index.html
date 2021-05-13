@@ -15,8 +15,8 @@ pagination:
     }
     .whatsnew-container-item-img {
         display:flex;
-        align-items: center;
         justify-content: center;
+        padding-top: 1em;
     }
 </style>
 <div class="whatsnew-container container mx-auto">
@@ -42,15 +42,14 @@ pagination:
         <div class="mt- flex flex-wrap my-20">
             <div class="w-full sm:w-1/2 wow fadeInRight animated px-4 whatsnew-container-item-img" data-wow-offset="10" data-wow-duration="1.5s">
                 <div class="video-container w-full">
-                    <div class="video shadow-sm">
+                    <div class="video">
                         <a href="{{ item.feature_url[i] }}"><img src="{{item.preview_img_url[i]}}" alt=""></a>
                     </div>
                 </div>
             </div>
 
             <div class="w-full sm:w-1/2 text-left wow fadeInLeft animated px-4" data-wow-offset="10" data-wow-duration="1.5s">
-                <h3 class="text-gray-700 px-2 text-center m-0 mb-4"><a href="{{item.feature_url[i]}}">{{ item.subtitle[i] }}</a></h3>
-                <div class="colored-line"></div>
+                <h3 class="text-gray-700 m-0 mb-4 font-normal"><a href="{{item.feature_url[i]}}">{{ item.subtitle[i] }}</a></h3>
                 <div class="mt-4">
                     {{ contentSplit[i] | markdownify }}
                 </div>
