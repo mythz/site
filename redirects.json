@@ -9,6 +9,14 @@
   },
   {
     "Condition": {
+      "KeyPrefixEquals": "subscriptions/"
+    },
+    "Redirect": {
+      "HostName": "account.servicestack.net"
+    }
+  },
+  {
+    "Condition": {
       "KeyPrefixEquals": "renew/"
     },
     "Redirect": {
@@ -49,7 +57,7 @@
   },
   {
     "Condition": {
-      "KeyPrefixEquals": "pricing/"
+      "KeyPrefixEquals": "pricing"
     },
     "Redirect": {
       "HostName": "account.servicestack.net"
@@ -57,7 +65,7 @@
   },
   {
     "Condition": {
-      "KeyPrefixEquals": "redis/"
+      "KeyPrefixEquals": "redis"
     },
     "Redirect": {
       "HostName": "account.servicestack.net"
@@ -65,7 +73,7 @@
   },
   {
     "Condition": {
-      "KeyPrefixEquals": "ormlite/"
+      "KeyPrefixEquals": "ormlite"
     },
     "Redirect": {
       "HostName": "account.servicestack.net"
@@ -73,7 +81,15 @@
   },
   {
     "Condition": {
-      "KeyPrefixEquals": "text/"
+      "KeyPrefixEquals": "text"
+    },
+    "Redirect": {
+      "HostName": "account.servicestack.net"
+    }
+  },
+  {
+    "Condition": {
+      "KeyPrefixEquals": "login"
     },
     "Redirect": {
       "HostName": "account.servicestack.net"
