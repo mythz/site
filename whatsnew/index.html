@@ -23,7 +23,6 @@ pagination:
     <h1 class="text-center my-4 pt-8">Latest features &amp; highlights</h1>
     <div class="colored-line"></div>
 
-    {% assign sorted = site.whatsnew | reverse %}
     {% for item in paginator.posts %}
     {% assign contentSplit = item.content | split: site.content_separator %}
     {% assign contentSize = contentSplit | size %}
@@ -37,8 +36,7 @@ pagination:
             <div class="text-center text-lg font-normal text-gray-500 mb-8">{{ item.date | date: '%B %d, %Y' }}</div>
         </div>
     {% for i in (0..2) %}
-        {% assign i2 = i | plus:1 %}
-        {% if i2 > contentSize or i2 > featureSize or i2 > previewSize or i2 > subtitleSize %}
+        {% if i >= contentSize or i >= featureSize or i >= previewSize or i >= subtitleSize %}
            {% break %}
         {% else %}
         <div class="mt- flex flex-wrap my-20">
