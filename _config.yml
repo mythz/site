@@ -29,6 +29,7 @@ collections:
 plugins:
   - github-pages
   - jekyll-paginate-v2
+  - jekyll-sitemap
 
 pagination:
 

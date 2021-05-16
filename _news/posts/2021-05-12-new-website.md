@@ -2,6 +2,8 @@
 slug: new-website
 title: New Website!
 layout: news-post
+sitemap: false
+
 preview_text: We're excited to share with you our new website! We decided to invest the time for a new website to make it easier to make finding resources about ServiceStack easier to find and navigate. 
 preview_img_url: https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/sharpscript/logo-large.png
 author: Demis Bellot
