@@ -1,0 +1,114 @@
+---
+title: ServiceStack.Redis
+slug: redis
+---
+
+<div class="">
+    <div class="pt-10 wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+        <h2 class="text-center my-4 pt-8">
+            <a href="https://github.com/ServiceStack/ServiceStack.Redis" class="text-gray-700">ServiceStack.Redis</a>
+        </h2>
+        <div class="colored-line"></div>
+        <div class="text-center mt-8 text-2xl">
+            .NET's most popular Redis Client for worlds fastest distributed NoSQL datastore
+        </div>
+    </div>
+
+    <div class="container my-20">
+        <p>
+            Fast C# Redis Client with high and low-level typed, string and byte[] clients <br>
+            Use
+            <a href="https://gist.cafe/c2e4ac0ba376df9175df28895537d4dd?mode=viewonly">typed, intuitive apis</a>
+            for simplifying talking to redis:
+        </p>
+
+        <div class="flex flex-wrap">
+            <div class="w-full sm:w-1/2">
+<pre>
+using var redisManager = new PooledRedisClientManager();
+using var redis = redisManager.GetClient();
+
+var redisTodos = redis.As&lt;Todo&gt;();
+var todo = new Todo
+{
+    Id = redisTodos.GetNextSequence(),
+    Content = "Learn Redis",
+    Order = 1,
+};
+
+redisTodos.Store(todo);
+
+Todo savedTodo = redisTodos.GetById(todo.Id);
+savedTodo.Done = true;
+redisTodos.Store(savedTodo);
+
+"Updated Todo:".Print();
+redisTodos.GetAll().ToList().PrintDump();
+
+redisTodos.DeleteById(savedTodo.Id);
+
+"No more Todos:".Print();
+redisTodos.GetAll().ToList().PrintDump();
+</pre>
+            </div>
+
+            <div class="w-full sm:w-1/2">
+            <span>
+                <ul class="ul-circle">
+                    <li>Use thread-safe Redis Client Pool</li>
+                    <li class="line-1">Get Redis Client from Pool</li>
+                    <li>Create typed Redis client for <b>Todo</b> types</li>
+                    <li class="line-1">Create new TODO item</li>
+                    <li class="line-4">Get next unique id for <b>Todo</b> types</li>
+                    <li class="line-1">Store Todo item in redis</li>
+                    <li>Fetch Todo item by id</li>
+                    <li>Update item</li>
+                    <li class="line-1">Save Updated Todo item</li>
+                    <li class="line-2">Print dump of all Todo items in redis after update</li>
+                    <li class="line-1">Delete Todo item by id</li>
+                    <li class="line-2">Print dump of all Todo items in redis after delete</li>
+                </ul>
+            </span>
+            </div>
+        </div>
+
+        <h2 class="mt-8 pt-8 text-center">API Overview</h2>
+        <div class="colored-line"></div>
+
+        <div class="flex flex-wrap mt-8">
+            <div class="w-full sm:w-1/2">
+                <a href="/images/redis-annotated.png"><img src="/images/redis-annotated-preview.png" alt="C# Redis Client API"></a>
+            </div>
+            <div class="w-full sm:w-1/2 pl-4">
+                <p>
+                    ServiceStack's Redis Client provides a comprehensive idiomatic typed C# sync &amp; async library API around the NoSQL
+                    <a href="https://redis.io">Redis Datastore</a>.
+                </p>
+                <p>
+                    Including adapters for .NET collection interfaces over redis server-side collections
+                    as well as support for Transactions, Pub/Sub, Lua and more.
+                </p>
+            </div>
+        </div>
+
+        {% include pricing-options.html code="REDIS" %}
+
+        <div class="text-center flex justify-center">
+            <div class="">
+                <h2 class="mt-8 pt-8">Download</h2>
+                <div class="colored-line"></div>
+
+                <p class="my-8">
+                    NuGet package contains support for both .NET v4.5+ and .NET Standard 2.0 (.NET Core 5/3/2). <br />
+                    Use <b>.Core</b> package if <a href="https://docs.servicestack.net/netcore#run-aspnet-core-apps-on-the-net-framework">running ASP.NET Core on .NET Framework</a>.
+                </p>
+
+                <div class="package-reference-box-lg" style="max-width:800px;">
+                    {% include nuget-package-reference.html package="ServiceStack.Redis" version=site.package_version %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
