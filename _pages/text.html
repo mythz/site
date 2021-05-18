@@ -1,0 +1,108 @@
+---
+title: ServiceStack.Text - .NET's missing high-performance utility belt
+slug: text
+---
+
+<div class="">
+    <div class="pt-10 wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+        <h2 class="text-center my-4 pt-8">
+            <a href="https://github.com/ServiceStack/ServiceStack.Text" class="text-gray-700">ServiceStack.Text</a>
+        </h2>
+        <div class="colored-line"></div>
+        <div class="text-center mt-8 text-2xl">
+            .NET's missing high-performance utility belt
+        </div>
+    </div>
+
+    <div class="container my-20">
+        <p>
+            JSON, JSV, CSV, Http Utils, Auto Mapping, Dump Utils, .NET type extensions + more... <br>
+            Write
+            <a href="https://gist.cafe/3f4a82c3802da7ac1d1adcf31e050977">terse, intuitive, beautiful code</a>
+            that
+            <a href="https://github.com/ServiceStack/ServiceStack.Text/blob/master/tests/ServiceStack.Text.Tests/UseCases/ServiceStack_Text_UseCase.cs">packs a punch</a>:
+        </p>
+
+        <div class="flex flex-wrap">
+            <div class="w-full sm:w-1/2">
+            <pre class="text-sm">
+var orgName = "ServiceStack";
+
+var orgRepos = $"https://api.github.com/orgs/{orgName}/repos"
+    .GetJsonFromUrl(httpReq => httpReq.UserAgent = "ServiceStack.Text")
+    .FromJson&lt;List&lt;GithubRepository&gt;&gt;();
+
+$"Writing {orgName} Github Repositories:".Print();
+orgRepos.PrintDump();
+
+var csvFilePath = $"~/{orgName}-repos.csv".MapAbsolutePath();
+File.WriteAllText(csvFilePath, orgRepos.ToCsv());
+
+Process.Start(csvFilePath);
+</pre>
+            </div>
+
+            <div class="w-full sm:w-1/2 pl-4 text-base">
+                <p>Write this GitHub organization repository info out to a .csv spreadsheet:</p>
+                <ul class="leading-8">
+                    <li>1. <a href="https://docs.servicestack.net/http-utils">HTTP Utils</a> - DRY, intuitive, convenience API's around .NET's WebRequest</li>
+                    <li class="line-1">2. <a href="https://github.com/ServiceStack/ServiceStack.Text">JSON Serializer</a></li>
+                    <li>3. <b>Print()</b> String extension</li>
+                    <li class="line-1">4. <a href="https://docs.servicestack.net/dump-utils">Dump Utils</a> - recursive, pretty-format dump of any C# POCOs</li>
+                    <li>5. <b>MapAbsolutePath()</b> String extension</li>
+                    <li class="line-1">7. <a href="https://docs.servicestack.net/csv-format">CSV Serializer</a></li>
+                    <li>8. View new .csv in spreadsheet viewer</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="mt-4">
+            Deep inside all of ServiceStack's premium libraries lies a high-performance core containing all of ServiceStack's super text powers.
+            Centered around .NET's fastest full-featured JSON Serializer is a convenient utility belt containing 100's of extensions enhancing .NET's built-in
+            String, Stream, Bytes, List, Dictionary, Reflection, Task, WebRequest types and more.
+        </p>
+
+        <div class="text-center flex justify-center">
+            <div class="">
+                <h2 class="mt-8 pt-8">
+                    <a href="https://docs.servicestack.net/releases/v4.0.62#servicestacktext-is-now-free">Download and use for Free!</a>
+                </h2>
+                <div class="colored-line"></div>
+
+                <p class="my-8">
+                    NuGet package contains support for both .NET v4.5+ and .NET Standard 2.0 (.NET Core 5/3/2). <br />
+                    Use <b>.Core</b> package if <a href="https://docs.servicestack.net/netcore#run-aspnet-core-apps-on-the-net-framework">running ASP.NET Core on .NET Framework</a>.
+                </p>
+
+                <div class="package-reference-box-lg" style="max-width:800px;">
+                    {% include nuget-package-reference.html package="ServiceStack.Text" version=site.package_version %}
+                </div>
+
+                <p>
+                    <a href="https://github.com/ServiceStackApps/HelloMobile">Android, iOS, Xamarin.Forms, UWP and WPF clients</a>:
+                </p>
+                <div class="package-reference-box-lg" style="max-width:800px;">
+                    {% include nuget-package-reference.html package="ServiceStack.Client" version=site.package_version %}
+                </div>
+
+                <h2 class="mt-8">High-level libraries</h2>
+                <div class="colored-line"></div>
+
+                <div class="mw-p my-10 text-left">
+                    <h3 class="text-3xl">Stripe</h3>
+                    <p class="">
+                        A typed .NET client gateway for accessing
+                        <a href="https://stripe.com/docs/api/">Stripe's REST API</a>
+                        to process merchant payments and recurring subscriptions online.
+                    </p>
+                    <div class="package-reference-box-lg" style="max-width:800px;">
+                        {% include nuget-package-reference.html package="ServiceStack.Stripe" version=site.package_version %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

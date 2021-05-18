@@ -1,0 +1,110 @@
+---
+title: OrmLite - Fast, simple, config-free, code-first POCO ORM for .NET
+slug: ormlite
+---
+
+<div class="">
+    <div class="pt-10 wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+        <h2 class="text-center my-4 pt-8">
+            <a href="https://github.com/ServiceStack/ServiceStack.OrmLite" class="text-gray-700">ServiceStack.OrmLite</a>
+        </h2>
+        <div class="colored-line"></div>
+        <div class="text-center mt-8 text-2xl">
+            Fast, simple, config-free, code-first POCO ORM for .NET
+        </div>
+    </div>
+
+    <div class="container my-20">
+        <p>
+            Fast, Lightweight ORM providing intuitive, Typed API's over ADO.NET's core interfaces <br>
+            Use
+            <a href="https://gist.cafe/87164fa870ac7503b43333d1d275456c?docs=8a70f8bf2755f0a755afeca6b2a5238e">typed, intuitive apis</a>
+            for simplifying talking to RDBMS's:
+        </p>
+
+        <div class="">
+            <p class="gistrun" data-gist="87164fa870ac7503b43333d1d275456c" data-height="850" data-gist-title="OrmLite Tour" data-user="gistlyn" data-docs="8a70f8bf2755f0a755afeca6b2a5238e" style="height:850px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;border:2px solid #ddd;margin:1em 0;padding:1em;">
+<span><a href="https://gist.cafe/87164fa870ac7503b43333d1d275456c">OrmLite Tour</a>
+by <a href="https://gist.github.com/gistlyn">@gistlyn</a>
+on <a href="https://gist.cafe">gist.cafe</a>.</span>
+            </p><script src="https://gist.cafe/assets/embed.js?"></script>
+
+            <div class="clearfix"></div>
+            <p>&nbsp;</p>
+            <p>
+                Create schema's from code-first POCO's, supports foreign keys, indexes, multi-nested
+                database connections, convenience API's for common data access patterns,
+                querying with typed-expressions,
+                whilst providing seamless access raw SQL and ADO.NET transactions whenever needed.
+            </p>
+        </div>
+
+        {% include pricing-options.html code="ORMLITE" %}
+
+        <div class="text-center flex justify-center">
+
+            <div class="">
+                <h2 class="mt-8 pt-8">Download</h2>
+                <div class="colored-line"></div>
+
+                <p class="my-8">
+                    NuGet package contains support for both .NET v4.5+ and .NET Standard 2.0 (.NET Core 5/3/2). <br />
+                    Use <b>.Core</b> package if <a href="https://docs.servicestack.net/netcore#run-aspnet-core-apps-on-the-net-framework">running ASP.NET Core on .NET Framework</a>.
+                </p>
+
+                <div>
+
+                    <h3 class="text-3xl">SQL Server</h3>
+                    <div class="package-reference-box-lg">
+                        {% include nuget-package-reference.html package="ServiceStack.OrmLite.SqlServer" version=site.package_version %}
+                    </div>
+                    <p>
+                        Using <a href="https://devblogs.microsoft.com/dotnet/introducing-the-new-microsoftdatasqlclient/">Microsoft.Data.SqlClient</a>
+                    </p>
+                    <div class="package-reference-box-lg">
+                        {% include nuget-package-reference.html package="ServiceStack.OrmLite.SqlServer.Data" version=site.package_version %}
+                    </div>
+                    <p>
+                        Using SQL Server 2012 specific
+                        <a href="https://github.com/ServiceStack/ServiceStack.OrmLite/wiki/SQL-Server-Types">SqlGeography, SqlGeometry and SqlHierarchyId Types</a>:
+                    </p>
+                    <div class="package-reference-box-lg" style="max-width:920px;">
+                        {% include nuget-package-reference.html package="ServiceStack.OrmLite.SqlServer.Converters" version=site.package_version %}
+                    </div>
+
+                    <h3 class="text-3xl">MySQL</h3>
+                    <div class="package-reference-box-lg">
+                        {% include nuget-package-reference.html package="ServiceStack.OrmLite.MySql" version=site.package_version %}
+                    </div>
+
+                    <p>
+                        Using Async <a href="https://github.com/mysql-net/MySqlConnector/">MySqlConnector</a>:
+                    </p>
+                    <div class="package-reference-box-lg">
+                        {% include nuget-package-reference.html package="ServiceStack.OrmLite.MySqlConnector" version=site.package_version %}
+                    </div>
+
+                    <h3 class="text-3xl">PostgreSQL</h3>
+                    <div class="package-reference-box-lg">
+                        {% include nuget-package-reference.html package="ServiceStack.OrmLite.PostgreSQL" version=site.package_version %}
+                    </div>
+
+                    <h3 class="text-3xl">SQLite</h3>
+                    <div class="package-reference-box-lg">
+                        {% include nuget-package-reference.html package="ServiceStack.OrmLite.Sqlite" version=site.package_version %}
+                    </div>
+                    <p>
+                        Using <a href="https://stackoverflow.com/a/52025556/85785">Microsoft.Data.SQLite</a>
+                    </p>
+                    <div class="package-reference-box-lg">
+                        {% include nuget-package-reference.html package="ServiceStack.OrmLite.Sqlite.Data" version=site.package_version %}
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<p>&nbsp;</p>
