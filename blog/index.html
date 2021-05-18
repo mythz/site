@@ -1,9 +1,10 @@
 ---
-title: News
-slug: news
+title: Blog
+slug: blog
+sitemap: false
 pagination:
   enabled: true
-  collection: news
+  collection: blog
   sort_reverse: true
   per_page: 10
   permalink: '/page/:num/'
@@ -15,18 +16,17 @@ pagination:
     }
 </style>
 <div class="container news-container">
-    <h1 style="text-align: center">News</h1>
-    {% assign sorted = site.whatsnew | reverse %}
+    <h1 style="text-align: center">{{page.title}}</h1>
     {% for item in paginator.posts %}
     <div class="grid grid-cols-12 mt-8">
-        <div class="flex-shrink col-start-1 col-end-3 wow fadeInRight animated" style="margin-top: 4rem" data-wow-offset="10" data-wow-duration="1.5s">
-            <div class="video-container">
+        <div class="flex-shrink col-start-1 col-end-4 wow fadeInRight animated" style="margin-top: 4rem" data-wow-offset="10" data-wow-duration="1.5s">
+            <div class="video-container px-4">
                 <div class="news-img-container shadow-sm">
                     <img src="{{item.preview_img_url}}" alt="">
                 </div>
             </div>
         </div>
-        <div class="flex-grow col-start-3 col-end-12 text-left wow fadeInLeft animated px-4" data-wow-offset="10" data-wow-duration="1.5s">
+        <div class="flex-grow col-start-4 col-end-12 text-left wow fadeInLeft animated px-4" data-wow-offset="10" data-wow-duration="1.5s">
             <span class="news-post-date">{{ item.date | date: '%B %d, %Y' }}</span>
             <h3 class="text-gray-700"><a href="{{item.url}}">{{ item.title }}</a></h3>
             <div class="colored-line-left"></div>

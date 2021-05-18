@@ -21,10 +21,10 @@ collections:
   whatsnew:
     title: Latest features & highlights
     output: true
-  news:
-    title: News
+  blog:
+    title: Blog
     output: true
-    permalink: /news/:slug/
+    permalink: /blog/:slug/
 
 plugins:
   - github-pages
