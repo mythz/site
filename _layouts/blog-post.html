@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% include gtm-header.html %}
     {% include meta-section.html %}
     <title>{{page.title}}</title>
     {% include fav-icons-section.html %}
@@ -25,6 +26,7 @@
     </style>
 </head>
 <body>
+{% include gtm-body.html %}
 <div>
     {% include navigation.html %}
     <section class="my-8 pt-8 {{ page.section_css }}">
