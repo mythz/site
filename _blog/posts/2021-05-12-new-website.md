@@ -1,9 +1,10 @@
 ---
+draft: true
 slug: new-website
 title: New Website!
 layout: blog-post
 sitemap: false
-preview_text: We're excited to share with you our new website! We decided to invest the time for a new website to make it easier to make finding resources about ServiceStack easier to find and navigate. 
+preview_text: We're excited to share with you our new website! We decided to invest the time for a new website to make it easier to make finding resources about ServiceStack easier to find and navigate.
 preview_img_url: https://servicestack.net/images/logo-text.svg
 author: Demis Bellot
 author_title: ServiceStack CEO
@@ -27,7 +28,7 @@ To highlight what we mean but 'put aside', here is our Google Search Console per
 
 ![Google Search Console stats](/images/blog/google-search-console-stats-1.png)
 
-The filter isn't broken, there just wasn't any data until the 2021-05-12! So we are really starting this effort from the beginning. 
+The filter isn't broken, there just wasn't any data until the 2021-05-12! So we are really starting this effort from the beginning.
 
 If this kind of thing interests, stay tuned as we'll be sharing various efforts and milestones. The hope is it will be useful for others as well as ourselves, and if nothing else, it should be good for a laugh :).
 

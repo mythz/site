@@ -1,3 +1,4 @@
 environment: development
 content_url: http://localhost:4000
 account_url: https://localhost:5001
+show_drafts: true
