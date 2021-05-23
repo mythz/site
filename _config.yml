@@ -28,13 +28,7 @@ collections:
 
 plugins:
   - github-pages
-  - jekyll-paginate-v2
   - jekyll-sitemap
-
-pagination:
-
-  # Site-wide kill switch, disabled here it doesn't run at all
-  enabled: true
 
 # https://github.com/helaili/jekyll-action/issues/43
 exclude:

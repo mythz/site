@@ -1,12 +1,6 @@
 ---
 title: What's new
 slug: whatsnew
-pagination:
-  enabled: true
-  collection: whatsnew
-  sort_reverse: true
-  per_page: 15
-  permalink: '/page/:num/'
 ---
 <style>
     .whatsnew-container ul>li {
@@ -23,7 +17,8 @@ pagination:
     <h1 class="text-center my-4 pt-8">Latest features &amp; highlights</h1>
     <div class="colored-line"></div>
 
-    {% for item in paginator.posts %}
+    {% assign sorted = site.whatsnew | reverse %}
+    {% for item in sorted %}
     {% assign contentSplit = item.content | split: site.content_separator %}
     {% assign contentSize = contentSplit | size %}
     {% assign featureSize = item.feature_url | size %}
@@ -35,9 +30,9 @@ pagination:
             <h2 class="mt-8 text-center text-7xl font-normal">{{ item.title }}</h2>
             <div class="text-center text-lg font-normal text-gray-500 mb-8">{{ item.date | date: '%B %d, %Y' }}</div>
         </div>
-    {% for i in (0..2) %}
+        {% for i in (0..2) %}
         {% if i >= contentSize or i >= featureSize or i >= previewSize or i >= subtitleSize %}
-           {% break %}
+        {% break %}
         {% else %}
         <div class="mt- flex flex-wrap my-20">
             <div class="w-full sm:w-1/2 wow fadeInRight animated px-4 whatsnew-container-item-img" data-wow-offset="10" data-wow-duration="1.5s">
@@ -61,7 +56,7 @@ pagination:
             </div>
         </div>
         {% endif %}
-    {% endfor %}
+        {% endfor %}
 
 
     </div>
@@ -69,27 +64,7 @@ pagination:
 
     {% endfor %}
 
-    <!-- PAGINATION -->
-    {% if paginator.total_pages > 1 %}
-    <div class="row">
-        <div class="col-sm-12 text-center m-t-40 m-b-40">
-            <div class="pagination font-alt">
-                {% if paginator.previous_page %}
-                <span><a href="{{ paginator.previous_page_path | prepend: site.baseurl }}"><i class="fa fa-angle-left"></i></a></span>
-                {% endif %}
-                {% if paginator.page_trail %}
-                {% for trail in paginator.page_trail %}
-                <span {% if page.url == trail.path %}class="active"{% endif %}>
-                    <a href="{{ trail.path | prepend: site.baseurl | remove: 'index.html' }}" title="{{trail.title}}">{{ trail.num }}</a>
-                </span>
-                {% endfor %}
-                {% endif %}
-                {% if paginator.next_page %}
-                <span><a href="{{ paginator.next_page_path | prepend: site.baseurl }}"><i class="fa fa-angle-right"></i></a></span>
-                {% endif %}
-            </div>
-        </div>
-    </div>
-    {% endif %}
+    <!-- PAGINATION when needed -->
+
     <!-- /PAGINATION -->
 </div>
