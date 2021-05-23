@@ -17,14 +17,14 @@ collections:
   pages:
     title: ServiceStack
     output: true
-    permalink: /:slug/
+    permalink: /:slug
   whatsnew:
     title: Latest features & highlights
     output: true
   blog:
     title: Blog
     output: true
-    permalink: /blog/:slug/
+    permalink: /blog/:slug
 
 plugins:
   - github-pages
