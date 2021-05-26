@@ -48,7 +48,7 @@ layout: content-page
         <div class="flex flex-wrap">
             <div class="w-full mt-4 text-center text-lg">
                 <p>
-                    Connect your database and enable configure AutoQuery to use AutoGen to generate typed end to end HTTP services for your database tables.
+                    Connect your database and configure AutoQuery to use AutoGen to generate typed end to end HTTP services for your database tables.
                 </p>
             </div>
         </div>
@@ -99,7 +99,7 @@ Plugins.Add(new AutoQueryFeature {
             </div>
         </div>
 
-        <h2 class="mt-8 pt-8 text-center">Add tables using code-first with minimal code</h2>
+        <h2 class="mt-8 pt-8 text-center">Add tables with code-first using minimal code</h2>
         <div class="colored-line"></div>
 
         <div class="flex flex-wrap mt-8">
@@ -113,7 +113,7 @@ container.AddSingleton&lt;IDbConnectionFactory&gt;(c =>
 Plugins.Add(new AutoQueryFeature { MaxLimit = 100 });
 
 // Add your custom DTO with route to register a table to query.
-[Route("/query/customers")]
+[Route("/customers")]
 public class QueryCustomers : QueryDb&lt;Customer&gt; {}
 </pre>
 
@@ -197,9 +197,9 @@ public class MyQueryServices : Service
         <div class="flex flex-wrap mt-8">
             <div class="w-full sm:w-1/2 px-4">
                 <h3 class="font-medium">Connect to anything with data</h3>
-                <p>Expose data from RDBMS, In memory, DynamoDb or even other services through consistent flexible APIs where clients can control the query details.</p>
-                <h3 class="font-medium">Work with your favorite databases</h3>
-                <p>AutoQuery RDBMS works with anything OrmLite can connect to including</p>
+                <p>Expose data from various data sources including RDBMS, In memory, DynamoDb or even other services through consistent flexible APIs where clients can control the query details.</p>
+                <h3 class="font-medium">Works with your favorite databases</h3>
+                <p>AutoQuery RDBMS works with anything OrmLite can connect to, including:</p>
                 <ul class="ul-circle">
                     <li>PostgreSQL</li>
                     <li>SQL Server</li>
