@@ -1,0 +1,255 @@
+---
+title: AutoQuery
+slug: autoquery
+layout: content-page
+---
+<link rel="stylesheet" href="/css/lite-yt-embed.css">
+<style>
+    /* VIDEO */
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+    iframe,
+    embed,
+    object {
+        max-width: 100%;
+    }
+    .video-container {
+        width: 100%;
+        background: transparent !important;
+        margin: auto;
+        margin-bottom: 50px;
+        margin-top: 40px;
+    }
+    .video {
+        max-width: 750px;
+        margin: auto 2em;
+        background: transparent !important;
+    }
+
+</style>
+<div class="">
+    <div class="pt-10 wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+        <h2 class="text-center my-4 pt-8">
+            <a href="https://docs.servicestack.net/autoquery" class="text-gray-700">AutoQuery</a>
+        </h2>
+        <div class="colored-line"></div>
+        <div class="text-center mt-8 text-2xl">
+            The fastest way to servicify your existing database with intuitive typed end to end smart clients.
+        </div>
+    </div>
+
+    <div class="container my-20">
+        <div class="text-center">
+            <h2>Present your data instantly with AutoGen</h2>
+            <div class="colored-line"></div>
+        </div>
+        <div class="flex flex-wrap">
+            <div class="w-full mt-4 text-center text-lg">
+                <p>
+                    Connect your database and enable configure AutoQuery to use AutoGen to generate typed end to end HTTP services for your database tables.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap">
+            <div class="w-full">
+<pre>
+// Connect your database
+container.AddSingleton&lt;IDbConnectionFactory&gt;(c =>
+    new OrmLiteConnectionFactory(MapProjectPath("~/northwind.sqlite"), SqliteDialect.Provider));
+
+// Configure AutoQuery to Generate CRUD services
+Plugins.Add(new AutoQueryFeature {
+    MaxLimit = 1000,
+    GenerateCrudServices = new GenerateCrudServices {
+        AutoRegister = true
+    }
+});
+</pre>
+            </div>
+        </div>
+        <div class="flex flex-wrap">
+            <div class="w-full text-center centered">
+                <h2>AutoGen in Action</h2>
+                <div class="colored-line"></div>
+                <div class="video-container videos">
+                    <div class="video shadow-sm" style="margin: auto">
+                        <lite-youtube width="560" height="315" videoid="NaJ7TW-Q_pU"
+                                      style="margin-bottom:3px;background-image: url('https://img.youtube.com/vi/NaJ7TW-Q_pU/maxresdefault.jpg')"></lite-youtube>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap mt-8">
+            <div class="w-full text-center centered">
+                <h2>AutoQuery services are ServiceStack services</h2>
+                <div class="colored-line"></div>
+                <p class="text-lg mt-4">Integrates with all core ServiceStack features and tools seamlessly for maximum reuse and composability.</p>
+            </div>
+            <div class="w-full text-center centered">
+                <div class="video-container videos">
+                    <div class="video shadow-sm" style="margin: auto">
+                        <lite-youtube width="560" height="315" videoid="kN7371bqUII"
+                                      style="margin-bottom:3px;background-image: url('https://img.youtube.com/vi/kN7371bqUII/maxresdefault.jpg')"></lite-youtube>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-8 pt-8 text-center">Add tables using code-first with minimal code</h2>
+        <div class="colored-line"></div>
+
+        <div class="flex flex-wrap mt-8">
+            <div class="w-full">
+<pre>
+// Connect your database
+container.AddSingleton&lt;IDbConnectionFactory&gt;(c =>
+    new OrmLiteConnectionFactory(MapProjectPath("~/northwind.sqlite"), SqliteDialect.Provider));
+
+// Add the AutoQuery Plugin
+Plugins.Add(new AutoQueryFeature { MaxLimit = 100 });
+
+// Add your custom DTO with route to register a table to query.
+[Route("/query/customers")]
+public class QueryCustomers : QueryDb&lt;Customer&gt; {}
+</pre>
+
+            </div>
+            <div class="w-full text-center">
+                <p class="text-lg font-medium">That's all you need, you now have a fully queryable, type safe API for the Customer table.</p>
+            </div>
+        </div>
+
+        <h2 class="mt-8 pt-8 text-center">Customize further to fine tune your services</h2>
+        <div class="colored-line"></div>
+        <div class="flex flex-wrap mt-8">
+            <div class="w-full sm:w-1/2">
+<pre>
+// Connect your database
+container.AddSingleton&lt;IDbConnectionFactory&gt;(c =>
+    new OrmLiteConnectionFactory(MapProjectPath("~/my_database.sqlite"),
+      SqliteDialect.Provider));
+
+// Add the AutoQuery Plugin
+Plugins.Add(new AutoQueryFeature { MaxLimit = 100 });
+
+// Return CustomRockstar result to control what the service returns
+// Join with other tables
+[Route("/rockstar-albums")]
+public class QueryRockstarAlbums
+  : QueryDb&lt;Rockstar,CustomRockstar&gt;, IJoin&lt;Rockstar,RockstarAlbum&gt;
+{
+    public int? Age { get; set; }
+    public string RockstarAlbumName { get; set; }
+}
+
+// Custom result
+public class CustomRockstar
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public int? Age { get; set; }
+
+    // Comes from joined table
+    public string RockstarAlbumName { get; set; }
+}
+
+// Override with custom implementation
+public class MyQueryServices : Service
+{
+    public IAutoQueryDb AutoQuery { get; set; }
+
+    public async Task&lt;object&gt; Any(QueryRockstarAlbums query)
+    {
+        using var db = AutoQuery.GetDb(query, base.Request);
+        var q = AutoQuery.CreateQuery(query, base.Request, db);
+        return await AutoQuery.ExecuteAsync(query, q, base.Request, db);
+    }
+}
+</pre>
+            </div>
+            <div class="w-full sm:w-1/2">
+                <div class="mx-4">
+                    <h3 class="px-2">Packed with features</h3>
+                    <ul class="ul-circle text-lg">
+                        <li class="mt-6"><a href="https://docs.servicestack.net/autoquery-rdbms#custom-autoquery-implementations">Custom AutoQuery Implementations</a></li>
+                        <li class="mt-6"><a href="https://docs.servicestack.net/autoquery-rdbms#returning-custom-results">Return Custom Results</a></li>
+                        <li class="mt-6"><a href="https://docs.servicestack.net/autoquery-rdbms#joining-tables">Join with other table</a></li>
+                        <li class="mt-6"><a href="https://docs.servicestack.net/autoquery-rdbms#joining-multiple-tables">Join multiple tables</a></li>
+                        <li class="mt-6"><a href="https://docs.servicestack.net/autoquery-rdbms#returning-nested-related-results">Return nested related results</a></li>
+                        <li class="mt-6"><a href="https://docs.servicestack.net/autoquery-rdbms#customizable-operands">Customizable Operands</a></li>
+                        <li class="mt-6"><a href="https://docs.servicestack.net/autoquery-rdbms#customizable-templates">Customizable Templates</a></li>
+                        <li class="mt-6"><a href="https://docs.servicestack.net/autoquery-rdbms#formatting-values">Formatting Values</a></li>
+                        <li class="mt-6"><a href="https://docs.servicestack.net/autoquery-rdbms#specifying-multi-airity-queries">Query against multiple client provided values</a></li>
+                        <li class="mt-6"><a href="https://docs.servicestack.net/autoquery-rdbms#changing-querying-behavior">Change query behavior per field</a></li>
+                        <li class="mt-6"><a href="https://docs.servicestack.net/autoquery">Loads more features!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-8 pt-8 text-center">Great alternative to OData, GraphQL or JsonAPI</h2>
+        <div class="colored-line"></div>
+
+        <div class="flex flex-wrap mt-8">
+            <div class="w-full sm:w-1/2 px-4">
+                <h3 class="font-medium">Connect to anything with data</h3>
+                <p>Expose data from RDBMS, In memory, DynamoDb or even other services through consistent flexible APIs where clients can control the query details.</p>
+                <h3 class="font-medium">Work with your favorite databases</h3>
+                <p>AutoQuery RDBMS works with anything OrmLite can connect to including</p>
+                <ul class="ul-circle">
+                    <li>PostgreSQL</li>
+                    <li>SQL Server</li>
+                    <li>SQLite</li>
+                    <li>MySQL</li>
+                    <li>MariaDB</li>
+                    <li>AWS Aurora</li>
+                    <li>Oracle*</li>
+                    <li>Firebird*</li>
+                    <li>VistDb*</li>
+                </ul>
+            </div>
+            <div class="w-full sm:w-1/2 px-4">
+                <h3 class="font-medium">Clean REST routes, accessible from everywhere.</h3>
+                <p>
+                    Unlike OData and GraphQL, AutoQuery provides clean REST services making them easy to use from standard browsers, avoiding the requirement for complex clients.
+                </p>
+                <h3 class="font-medium">Unmatched client integration experience.</h3>
+                <p>
+                    Add ServiceStack Reference provides best in class client generation in a multitude of languages straight from the server you're integrating with.
+                </p>
+                <p>
+                    Instant Client Apps can generate working native client solutions through an easy to use free web tool, only needing a base URL of a ServiceStack service.
+                </p>
+                <div class="video-container videos">
+                    <div class="video shadow-sm" style="margin: auto">
+                        <lite-youtube width="560" height="315" videoid="GTnuMhvUayg"
+                                      style="margin-bottom:3px;background-image: url('https://img.youtube.com/vi/GTnuMhvUayg/maxresdefault.jpg')"></lite-youtube>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center flex justify-center">
+            <div class="">
+                <h2 class="mt-8 pt-8">Free Trial</h2>
+                <div class="colored-line"></div>
+
+                <p class="mt-4 text-lg font-medium">
+                    Claim your free 30 day free ServiceStack trial today and servicify your databases with AutoQuery.
+                </p>
+                <div class="buttons mb-8 mt-8">
+                    <a href="{{site.account_url}}/trial"
+                       class="cursor-pointer text-2xl font-normal bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-6 py-3 inline-block text-blue-100 rounded">
+                        Get ServiceStack
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/lite-yt-embed.js"></script>
+
