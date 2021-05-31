@@ -28,6 +28,14 @@ layout: content-page
         background: transparent !important;
     }
 
+    code {
+        padding: .2em;
+        background-color: rgba(0,0,0,0.04);
+        border-radius: 3px;
+        font-size: 87.5%;
+        color: #e83e8c;
+        word-break: break-word;
+    }
 </style>
 <div class="">
     <div class="pt-10 wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
@@ -79,6 +87,26 @@ Plugins.Add(new AutoQueryFeature {
                         <lite-youtube width="560" height="315" videoid="NaJ7TW-Q_pU"
                                       style="margin-bottom:3px;background-image: url('https://img.youtube.com/vi/NaJ7TW-Q_pU/maxresdefault.jpg')"></lite-youtube>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap">
+            <div class="w-full text-center centered">
+                <h2>Explore sample AutoQuery services yourself</h2>
+                <div class="colored-line"></div>
+
+                <h3 class="font-medium">1. Install the ServiceStack <code>app</code> CLI tool</h3>
+<pre>
+dotnet tool install -g app
+</pre>
+                <h3 class="font-medium">2. Launch ServiceStack Studio with <code>app</code></h3>
+<pre>
+app open studio -connect https://chinook.netcore.io/
+</pre>
+                <h3 class="font-medium">3. Explore AutoQuery data via ServiceStack Studio</h3>
+                <div class="mx-auto">
+                    <img src="/images/studio-example.gif" alt="Navigating data using ServiceStack Studio.">
                 </div>
             </div>
         </div>
