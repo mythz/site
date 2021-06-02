@@ -49,125 +49,52 @@ layout: content-page
     </div>
 
     <div class="container my-20">
-        <div class="text-center">
-            <h2>Present your data instantly with AutoGen</h2>
-            <div class="colored-line"></div>
-        </div>
-        <div class="flex flex-wrap">
-            <div class="w-full mt-4 text-center text-lg">
-                <p>
-                    Connect your existing database and configure AutoQuery to use AutoGen to generate typed end to end HTTP services for your database tables.
-                </p>
-            </div>
-        </div>
 
-        <div class="flex flex-wrap">
-            <div class="w-full">
-<pre>
-// Connect your database
-container.AddSingleton&lt;IDbConnectionFactory&gt;(c =>
-    new OrmLiteConnectionFactory(MapProjectPath("~/northwind.sqlite"), SqliteDialect.Provider));
-
-// Configure AutoQuery to Generate CRUD services
-Plugins.Add(new AutoQueryFeature {
-    MaxLimit = 1000,
-    GenerateCrudServices = new GenerateCrudServices {
-        AutoRegister = true
-    }
-});
-</pre>
-            </div>
-        </div>
-        <div class="flex flex-wrap">
-            <div class="w-full text-center centered">
-                <h2>AutoGen in Action</h2>
-                <div class="colored-line"></div>
-                <div class="video-container videos">
-                    <div class="video shadow-sm" style="margin: auto">
-                        <lite-youtube width="560" height="315" videoid="NaJ7TW-Q_pU"
-                                      style="margin-bottom:3px;background-image: url('https://img.youtube.com/vi/NaJ7TW-Q_pU/maxresdefault.jpg')"></lite-youtube>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex flex-wrap">
-            <div class="w-full text-center centered">
-                <h2>Explore sample AutoQuery services yourself</h2>
-                <div class="colored-line"></div>
-
-                <h3 class="font-medium">1. Install the ServiceStack <code>app</code> CLI tool</h3>
-<pre>
-dotnet tool install -g app
-</pre>
-                <h3 class="font-medium">2. Launch ServiceStack Studio with <code>app</code></h3>
-<pre>
-app open studio -connect https://chinook.netcore.io/
-</pre>
-                <h3 class="font-medium">3. Explore AutoQuery data via ServiceStack Studio</h3>
-                <div class="mx-auto">
-                    <img src="/images/studio-example.gif" alt="Navigating data using ServiceStack Studio.">
-                </div>
-            </div>
-        </div>
+        <h2 class="mt-8 text-center">Add tables with minimal code-first approach</h2>
+        <div class="colored-line"></div>
 
         <div class="flex flex-wrap mt-8">
-            <div class="w-full text-center centered px-4">
-                <h2>AutoQuery services are ServiceStack services</h2>
-                <div class="colored-line"></div>
-                <p class="text-lg mt-4">Integrates with all core ServiceStack features and tools seamlessly for maximum reuse and composability.</p>
+            <div class="w-full">
+                <h4 class="mt-4 font-medium">Configure AutoQuery with your RDBMS in your AppHost</h4>
+                <iframe src="https://gist.cafe/embed?gist=dca77f43121a16baf716e75ce7d82382&title=AppHost Setup&show=AppHost.cs&mode=viewonly" frameborder="0" style="height:180px;width:100%;border:1px solid #ddd"></iframe>
+                <h4 class="mt-4 font-medium">Add your custom DTO with route to register a table to query.</h4>
+                <iframe src="https://gist.cafe/embed?gist=1f56877c7a7f0d35c4c743b5c5ca9bc7&title=Customers Table&show=Customers.cs&mode=viewonly" frameborder="0" style="height:100px;width:100%;border:1px solid #ddd"></iframe>
+
             </div>
+            <div class="w-full text-center">
+                <p class="text-lg font-medium mt-4">That's all you need, you now have a fully queryable, type safe API for the Customer table.</p>
+            </div>
+
+            <div class="w-full text-center">
+                <h2>Build easy to manage CRUD APIs</h2>
+            </div>
+
             <div class="w-full sm:w-1/2 centered px-4">
-                <h3 class="font-bold">Manage your services using ServiceStack Studio</h3>
+                <h3 class="text-center">Follow along step by step.</h3>
                 <div class="video-container videos">
                     <div class="video shadow-sm" style="margin: auto">
-                        <lite-youtube width="560" height="315" videoid="kN7371bqUII"
-                                      style="margin-bottom:3px;background-image: url('https://img.youtube.com/vi/kN7371bqUII/maxresdefault.jpg')"></lite-youtube>
+                        <lite-youtube width="560" height="315" videoid="nhc4MZufkcM"
+                                      style="margin-bottom:3px;background-image: url('https://img.youtube.com/vi/nhc4MZufkcM/maxresdefault.jpg')"></lite-youtube>
                     </div>
                 </div>
             </div>
             <div class="w-full sm:w-1/2">
                 <div class="mx-4">
-                    <h3 class="font-bold">Easily add the following functionality and more</h3>
+                    <h3 class="text-center">Shows how to</h3>
                     <ul class="ul-circle text-xl">
-                        <li class="mt-2"><a href="https://docs.servicestack.net/grpc"><i class="fas fa-arrows-alt-h"></i>  gRPC</a></li>
-                        <li class="mt-2"><a href="https://docs.servicestack.net/add-servicestack-reference"><i class="fas fa-cogs"></i>  Add ServiceStack Reference</a></li>
-                        <li class="mt-2"><a href="https://docs.servicestack.net/messaging"><i class="fas fa-inbox"></i>  Message Queues</a></li>
-                        <li class="mt-2"><a href="https://docs.servicestack.net/formats"><i class="fas fa-tools"></i>  XML, CSV, JSV, MsgPack and more formats</a></li>
-                        <li class="mt-2"><a href="https://docs.servicestack.net/server-events"><i class="far fa-bell"></i>  Server Events</a></li>
-                        <li class="mt-2"><a href="https://docs.servicestack.net/authentication-and-authorization"><svg class="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                        </svg> ServiceStack Authentication providers</a></li>
-                        <li class="mt-2"><a href="https://docs.servicestack.net/declarative-validation"><i class="far fa-check-square"></i>  Declarative + Fluent Validation</a></li>
-                        <li class="mt-2"><a href="https://docs.servicestack.net/encrypted-messaging"><i class="fab fa-expeditedssl"></i>  Encrypted Messaging</a></li>
-                        <li class="mt-2"><a href="https://docs.servicestack.net/caching"><i class="far fa-save"></i>  Caching</a></li>
-                        <li class="mt-2"><a href="https://servicestack.net/features">Any much more!</a></li>
+                        <li class="mt-2"><i class="fab fa-servicestack"></i><span class="ml-2">Start project from ServiceStack template</span></li>
+                        <li class="mt-2"><i class="fas fa-database"></i><span class="ml-2">Add SQLite support</span></li>
+                        <li class="mt-2"><i class="fas fa-lock"></i><span class="ml-2">Add Authentication support</span></li>
+                        <li class="mt-2"><i class="fas fa-scroll"></i><span class="ml-2">Define code-first database model</span></li>
+                        <li class="mt-2"><i class="fas fa-question-circle"></i><span class="ml-2">Define code-first validation</span></li>
+                        <li class="mt-2"><i class="fas fa-user"></i><span class="ml-2">Add User Management support</span></li>
+                        <li class="mt-2"><i class="fas fa-search-plus"></i><span class="ml-2">Add API event audit history support</span></li>
+                        <li class="mt-2"><i class="fas fa-file"></i><span class="ml-2">Use AutoFilters with AutoQuery services</span></li>
+                        <li class="mt-2"><i class="fas fa-file-excel"></i><span class="ml-2">Add Excel integration</span></li>
+                        <li class="mt-2"><i class="fab fa-servicestack"></i><span class="ml-2">Use ServiceStack Studio</span></li>
+
                     </ul>
                 </div>
-            </div>
-        </div>
-
-        <h2 class="mt-8 pt-8 text-center">Add tables with code-first using minimal code</h2>
-        <div class="colored-line"></div>
-
-        <div class="flex flex-wrap mt-8">
-            <div class="w-full">
-<pre>
-// Connect your database
-container.AddSingleton&lt;IDbConnectionFactory&gt;(c =>
-    new OrmLiteConnectionFactory(MapProjectPath("~/northwind.sqlite"), SqliteDialect.Provider));
-
-// Add the AutoQuery Plugin
-Plugins.Add(new AutoQueryFeature { MaxLimit = 100 });
-
-// Add your custom DTO with route to register a table to query.
-[Route("/customers")]
-public class QueryCustomers : QueryDb&lt;Customer&gt; {}
-</pre>
-
-            </div>
-            <div class="w-full text-center">
-                <p class="text-lg font-medium">That's all you need, you now have a fully queryable, type safe API for the Customer table.</p>
             </div>
         </div>
 
@@ -175,49 +102,7 @@ public class QueryCustomers : QueryDb&lt;Customer&gt; {}
         <div class="colored-line"></div>
         <div class="flex flex-wrap mt-8">
             <div class="w-full sm:w-1/2">
-<pre>
-// Connect your database
-container.AddSingleton&lt;IDbConnectionFactory&gt;(c =>
-    new OrmLiteConnectionFactory(MapProjectPath("~/my_database.sqlite"),
-      SqliteDialect.Provider));
-
-// Add the AutoQuery Plugin
-Plugins.Add(new AutoQueryFeature { MaxLimit = 100 });
-
-// Return CustomRockstar result to control what the service returns
-// Join with other tables
-[Route("/rockstar-albums")]
-public class QueryRockstarAlbums
-  : QueryDb&lt;Rockstar,CustomRockstar&gt;, IJoin&lt;Rockstar,RockstarAlbum&gt;
-{
-    public int? Age { get; set; }
-    public string RockstarAlbumName { get; set; }
-}
-
-// Custom result
-public class CustomRockstar
-{
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public int? Age { get; set; }
-
-    // Comes from joined table
-    public string RockstarAlbumName { get; set; }
-}
-
-// Override with custom implementation
-public class MyQueryServices : Service
-{
-    public IAutoQueryDb AutoQuery { get; set; }
-
-    public async Task&lt;object&gt; Any(QueryRockstarAlbums query)
-    {
-        using var db = AutoQuery.GetDb(query, base.Request);
-        var q = AutoQuery.CreateQuery(query, base.Request, db);
-        return await AutoQuery.ExecuteAsync(query, q, base.Request, db);
-    }
-}
-</pre>
+                <iframe src="https://gist.cafe/embed?gist=522d867ba7064d0732544de79088f746&title=Custom Service&show=CustomService.cs&mode=viewonly" frameborder="0" style="height:775px;width:100%;border:1px solid #ddd"></iframe>
             </div>
             <div class="w-full sm:w-1/2">
                 <div class="mx-4">
@@ -239,7 +124,122 @@ public class MyQueryServices : Service
             </div>
         </div>
 
-        <h2 class="mt-8 pt-8 text-center">Great alternative to OData, GraphQL or JsonAPI</h2>
+        <div class="text-center">
+            <h2 class="mt-8">Create APIs for all RDBMS tables with AutoGen!</h2>
+            <div class="colored-line"></div>
+        </div>
+        <div class="flex flex-wrap">
+            <div class="w-full mt-4 text-center text-lg">
+                <p>
+                    Connect your existing database and configure AutoQuery to use AutoGen to generate typed end to end HTTP services for your database tables.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap">
+            <div class="w-full">
+                <iframe src="https://gist.cafe/embed?gist=afdbf2f8dbc6dbad40ab20756569cfbb&title=Register+AutoQuery+Plugin&show=AppHost.cs&mode=viewonly" frameborder="0" style="height:300px;width:100%;border:1px solid #ddd"></iframe>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap">
+            <div class="w-full text-center centered">
+                <h2>AutoGen in Action</h2>
+                <div class="colored-line"></div>
+                <div class="video-container videos">
+                    <div class="video shadow-sm" style="margin: auto">
+                        <lite-youtube width="560" height="315" videoid="NaJ7TW-Q_pU"
+                                      style="margin-bottom:3px;background-image: url('https://img.youtube.com/vi/NaJ7TW-Q_pU/maxresdefault.jpg')"></lite-youtube>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap mt-8">
+            <div class="w-full text-center centered px-4">
+                <h2>Maximum reuse, flexibility and ease of integration</h2>
+                <div class="colored-line"></div>
+                <p class="text-lg mt-4">Integrates with all core ServiceStack features and tools seamlessly for maximum reuse and composability.</p>
+            </div>
+            <div class="w-full text-center centered px-4">
+                <h3 class="text-center">Seamless rich client integration with Studio</h3>
+            </div>
+            <div class="w-full sm:w-1/2 centered px-4">
+                <div class="video-container videos">
+                    <div class="video shadow-sm" style="margin: auto">
+                        <lite-youtube width="560" height="315" videoid="kN7371bqUII"
+                                      style="margin-bottom:3px;background-image: url('https://img.youtube.com/vi/kN7371bqUII/maxresdefault.jpg')"></lite-youtube>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full sm:w-1/2">
+                <div class="mx-4 mt-8">
+                    <p class="centered py-6">Manage your AutoQuery services with ServiceStack Studio, a dynamic, capability driven UI that only needs your
+                    ServiceStack instance base URL for integration. Metadata from ServiceStack service message contracts are able to drive completely dynamic user interfaces,
+                        enabling smart clients to deliver amazing levels of reuse.</p>
+                    <p class="centered py-6">
+                        ServiceStack Studio is Open Source with full examples of how it works as well as a reusable delivery model
+                        that can be used with your Windows Desktop Apps for simplified deployments.
+                    </p>
+                </div>
+            </div>
+
+            <div class="w-full text-center centered px-4">
+                <h3 class="text-center">Along side flexible data centric integration</h3>
+            </div>
+
+            <div class="w-full">
+                <div class="mx-4">
+                    <img src="/images/autoquery/excel-add-datasource-guide.png" alt="Easy Excel Data Source Integration">
+                </div>
+            </div>
+            <div class="w-full text-center centered px-4">
+                <h3 class="text-center">With a focus on simplicity</h3>
+            </div>
+            <div class="w-full">
+                <div class="mx-4">
+                    <img src="/images/autoquery/excel-import-data-example-2.png" alt="Added Excel Datasource">
+                </div>
+            </div>
+
+            <div class="w-full text-center centered px-4">
+                <h3 class="text-center">Thanks to Composable ServiceStack features</h3>
+            </div>
+
+            <div class="w-full sm:w-1/2">
+                <div class="mx-4">
+                    <ul class="ul-circle text-xl">
+                        <li class="mt-2"><a href="https://docs.servicestack.net/grpc"><i class="fas fa-arrows-alt-h"></i>  gRPC</a></li>
+                        <li class="mt-2"><a href="https://docs.servicestack.net/add-servicestack-reference"><i class="fas fa-cogs"></i>  Add ServiceStack Reference</a></li>
+                        <li class="mt-2"><a href="https://docs.servicestack.net/messaging"><i class="fas fa-inbox"></i>  Message Queues</a></li>
+                        <li class="mt-2"><a href="https://docs.servicestack.net/formats"><i class="fas fa-tools"></i>  XML, CSV, JSV, MsgPack and more formats</a></li>
+                        <li class="mt-2"><a href="https://docs.servicestack.net/server-events"><i class="far fa-bell"></i>  Server Events</a></li>
+                        <li class="mt-2"><a href="https://docs.servicestack.net/authentication-and-authorization"><svg class="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg> ServiceStack Authentication providers</a></li>
+                        <li class="mt-2"><a href="https://docs.servicestack.net/declarative-validation"><i class="far fa-check-square"></i>  Declarative + Fluent Validation</a></li>
+                        <li class="mt-2"><a href="https://docs.servicestack.net/encrypted-messaging"><i class="fab fa-expeditedssl"></i>  Encrypted Messaging</a></li>
+                        <li class="mt-2"><a href="https://docs.servicestack.net/caching"><i class="far fa-save"></i>  Caching</a></li>
+                        <li class="mt-2"><a href="https://servicestack.net/features">And much more!</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="w-full sm:w-1/2">
+                <div class="mx-4">
+                    <p class="py-6 mt-8">
+                        AutoQuery services are ServiceStack services, so they benefit from the ServiceStack ecosystem of features.
+                        This makes responding to changing requirements more straight forward as all these features are designed from the ground up to
+                        work together with clean consistent APIs.
+                    </p>
+                    <p class="py-6">
+                        ServiceStack Plugins use the same interfaces that your custom plugins can use, giving you the ability to extend and expand
+                        your service features consistently across AutoQuery or standard ServiceStack services.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-8 pt-8 text-center">Great alternative to OData, GraphQL or JSON:API</h2>
         <div class="colored-line"></div>
 
         <div class="flex flex-wrap mt-8">
@@ -278,18 +278,48 @@ public class MyQueryServices : Service
             </div>
         </div>
 
+        <div class="flex flex-wrap">
+            <div class="w-full">
+                <h2>Explore sample AutoQuery services yourself</h2>
+                <div class="colored-line"></div>
+
+                <h3 class="font-medium">1. <a href="https://dotnet.microsoft.com/download">Install .NET 5 SDK</a>
+                </h3>
+                <h3 class="font-medium">2. Install the ServiceStack <code>app</code> CLI tool with Win+R shortcut</h3>
+                <pre class="sm:w-1/2 w-full">
+powershell iwr servicestack.net/install.ps1 -useb | iex
+</pre>
+                <h3 class="font-medium">3. <a href="app://studio?connect=https://chinook.netcore.io">Explore AutoQuery data via ServiceStack Studio</a></h3>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap">
+            <div class="w-full sm:w-1/2">
+                <img src="/images/autoquery/studio-connect.png" alt="Connect to example AutoQuery services">
+            </div>
+            <div class="w-full sm:w-1/2">
+                <img src="/images/autoquery/studio-tables.png" alt="Lists tables served by AutoQuery">
+            </div>
+            <div class="w-full sm:w-1/2">
+                <img src="/images/autoquery/studio-dynamic-filtering.png" alt="Filter dynamically">
+            </div>
+            <div class="w-full sm:w-1/2">
+                <img src="/images/autoquery/studio-dynamic-forms.png" alt="Dynamic forms to manage data">
+            </div>
+        </div>
+
         <div class="text-center flex justify-center">
             <div class="">
                 <h2 class="mt-8 pt-8">Free Trial</h2>
                 <div class="colored-line"></div>
 
                 <p class="mt-4 text-lg font-medium">
-                    Claim your free 30 day free ServiceStack trial today and servicify your databases with AutoQuery.
+                    Claim your 30 day free ServiceStack trial today and servicify your databases with AutoQuery.
                 </p>
                 <div class="buttons mb-8 mt-8">
                     <a href="{{site.account_url}}/trial"
                        class="cursor-pointer text-2xl font-normal bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-6 py-3 inline-block text-blue-100 rounded">
-                        Get ServiceStack
+                        30 Day Free Trial
                     </a>
                 </div>
             </div>
