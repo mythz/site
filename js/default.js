@@ -78,6 +78,19 @@ function copy(e) {
     }, 5000);
 }
 
+/* copy-cmd */
+function copyCmd(e) {
+    let $el = document.createElement("input");
+    let $parent = e.parentElement;
+    let $lbl = $parent.firstElementChild;
+    $el.setAttribute("value", $lbl.innerText);
+    document.body.appendChild($el);
+    $el.select();
+    document.execCommand("copy");
+    document.body.removeChild($el);
+    $parent.classList.add('copied');
+}
+
 
 /* Bootstrap Internet Explorer 10 in Windows 8 and Windows Phone 8 FIX */
 if (navigator.userAgent.match(/IEMobile\/10\.0/)) {

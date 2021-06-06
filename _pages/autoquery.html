@@ -303,17 +303,23 @@ code {
         <div class="flex flex-wrap">
             <div class="w-full">
                 <h3 class="font-medium">1. <a href="https://dotnet.microsoft.com/download">Install .NET 5 SDK</a></h3>
-                <h3 class="font-medium">2. Install the ServiceStack <code>app</code> dotnet tool with <code>Win+R</code> shortcut"</h3>
-                <p class="">
-                    <img src="/images/pages/install-app.png" alt="Install app screenshot">
-                    <pre class="sm:w-1/2 w-full mt-4">powershell iwr servicestack.net/install/app.ps1 -useb | iex</pre>
-                </p>
-                <h3 class="font-medium">3. Explore Chinook's AutoQuery APIs in ServiceStack Studio:</h3>
-                <p class="">
-                    <h3><a href="app://studio?connect=https://chinook.netcore.io">app://studio?connect=https://chinook.netcore.io</a></h3>
-                    <div>OR</div>
-                    <pre class="sm:w-1/2 w-full mt-4">app open studion -connect https://chinook.netcore.io</pre>
-                </p>
+                <h3 class="font-medium">2. Install the <code>app</code> dotnet tool by running
+                    <a href="{{site.content_url}}/install/app.ps1">install/app.ps1</a>
+                    with Windows Run dialog (<code>Win+R</code>)</h3>
+                <div class="my-8 flex justify-center">
+                    <div class="max-w-screen-md">
+                        {% include copy-cmd.html text="powershell iwr servicestack.net/install/app.ps1 -useb | iex" %}
+                        <img src="/images/pages/install-app.png" alt="Install app screenshot">
+                    </div>
+                </div>
+                <h3 class="font-medium">3. Explore Chinook's AutoQuery APIs in ServiceStack Studio</h3>
+                <div class="my-8 flex justify-center">
+                    <div class="max-w-screen-md text-center">
+                        <h3 class="text-3xl"><a href="app://studio?connect=https://chinook.netcore.io">app://studio?connect=https://chinook.netcore.io</a></h3>
+                        <div class="mb-4 text-gray-400">OR</div>
+                        {% include copy-cmd.html text="app open studio -connect https://chinook.netcore.io" %}
+                    </div>
+                </div>
                 <h3 class="font-medium">4. Click on Chinook's Site <code>AutoQuery</code> button to access Chinook's AutoQuery APIs:</h3>
             </div>
         </div>
