@@ -1,0 +1,333 @@
+---
+title: Getting Started
+slug: start
+layout: content-page
+sitemap: false
+---
+<style xmlns="http://www.w3.org/1999/html">
+    code {
+        padding: .2em;
+        background-color: rgba(0,0,0,0.04);
+        border-radius: 3px;
+        font-size: 87.5%;
+        color: #e83e8c;
+        word-break: break-word;
+    }
+</style>
+<div class="">
+    <div class="pt-10 wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+        <h1 class="text-center my-4 pt-8">
+            <a href="https://docs.servicestack.net/autoquery" class="text-gray-700">Get Started with ServiceStack</a>
+        </h1>
+        <div class="colored-line"></div>
+        <div class="text-center mt-8 text-2xl">
+            Follow the steps below to explore ServiceStack
+        </div>
+    </div>
+
+    <div class="container my-20">
+        <div class="flex flex-wrap mt-8">
+            <div class="w-full sm:w-1/2 centered px-4 py-2">
+                <a onclick="changetopview('build-your-own')">
+                    <div class="border-2 border-gray-700 rounded-md p-6 text-center hover:border-blue-600">
+                        <h3>Start building your own web services</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="w-full sm:w-1/2 centered px-4 py-2">
+                <a onclick="changetopview('explore-live-demos')">
+                    <div class="border-2 border-gray-700 rounded-md p-6 text-center hover:border-blue-600">
+                        <h3>Explore live demos</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="w-full centered px-4 py-2 wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+                <div class="border-2 border-gray-700 rounded-md p-6">
+                    <div id="build-your-own">
+                        <h4>Step 1: Install the dotnet <code>x</code> tool</h4>
+                        <pre class="w-full sm:w-1/2">$ dotnet tool install -g x</pre>
+                        <h4>Step 2: Select a template</h4>
+                        <div class="flex flex-wrap mt-2">
+                            <div class="w-full sm:w-1/2 xl:w-1/4 centered mt-2 mb-2">
+                                <a onclick="changepreview('web')">
+                                    <div class="border-2 border-gray-400 rounded-md p-2 mx-2 hover:border-blue-600">
+                                        <div class="grid grid-cols-12">
+                                            <h4 class="col-start-1 col-end-10">Web</h4>
+                                            <span class="text-center col-start-11 col-end-13">
+                                                <i class="fab fa-servicestack text-4xl px-1"></i>
+                                            </span>
+                                        </div>
+                                        <pre>x new web WebApp</pre>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="w-full sm:w-1/2 xl:w-1/4 centered mt-2 mb-2">
+                                <a onclick="changepreview('vue-spa')">
+                                    <div class="border-2 border-gray-400 rounded-md p-2 mx-2 hover:border-blue-600">
+                                        <div class="grid grid-cols-12">
+                                            <h4 class="col-start-1 col-end-10">VueJS</h4>
+                                            <span class="text-center col-start-11 col-end-13">
+                                                <i class="fab fa-vuejs text-4xl px-1"></i>
+                                            </span>
+                                        </div>
+                                        <pre>x new vue-spa VueApp</pre>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="w-full sm:w-1/2 xl:w-1/4 centered mt-2 mb-2">
+                                <a onclick="changepreview('react-spa')">
+                                    <div class="border-2 border-gray-400 rounded-md p-2 mx-2 hover:border-blue-600">
+                                        <div class="grid grid-cols-12">
+                                            <h4 class="col-start-1 col-end-10">React</h4>
+                                            <span class="text-center col-start-11 col-end-13">
+                                                <i class="fab fa-react text-4xl px-1"></i>
+                                            </span>
+                                        </div>
+                                        <pre>x new react-spa ReactApp</pre>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="w-full sm:w-1/2 xl:w-1/4 centered mt-2 mb-2">
+                                <a onclick="changepreview('angular-spa')">
+                                    <div class="border-2 border-gray-400 rounded-md p-2 mx-2 hover:border-blue-600">
+                                        <div class="grid grid-cols-12">
+                                            <h4 class="col-start-1 col-end-10">Angular</h4>
+                                            <span class="text-center col-start-11 col-end-13">
+                                                <i class="fab fa-angular text-4xl px-1"></i>
+                                            </span>
+                                        </div>
+                                        <pre>x new angular-spa AngularApp</pre>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="w-full sm:w-1/2 xl:w-1/4 centered mt-2 mb-2">
+                                <a onclick="changepreview('aws-lambda')">
+                                    <div class="border-2 border-gray-400 rounded-md p-2 mx-2 hover:border-blue-600">
+                                        <div class="grid grid-cols-12">
+                                            <h4 class="col-start-1 col-end-10">AWS Lambda</h4>
+                                            <span class="text-center col-start-11 col-end-13">
+                                                <i class="fab fa-aws text-3xl px-1"></i>
+                                            </span>
+                                        </div>
+                                        <pre>x new aws-lambda AwsLambdaApp</pre>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <h4>Step 3: Run with your favorite IDE</h4>
+                        <div class="flex flex-wrap mt-2">
+                            <div class="w-full centered">
+                                <div class="border-2 border-gray-400 rounded-md p-2 mx-2">
+                                    <img id="run-preview" src="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/web.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <h3>Step 4: Learn more</h3>
+                        <div class="flex flex-wrap mt-2">
+                            <div class="w-full sm:w-1/3 centered">
+                                <div class="border-2 border-gray-400 rounded-md p-2 mx-2 hover:border-blue-600">
+                                    <h4>Write your own service</h4>
+                                </div>
+                            </div>
+                            <div class="w-full sm:w-1/3 centered">
+                                <div class="border-2 border-gray-400 rounded-md p-2 mx-2 hover:border-blue-600">
+                                    <h4>Mix in functionality</h4>
+                                </div>
+                            </div>
+                            <div class="w-full sm:w-1/3 centered">
+                                <div class="border-2 border-gray-400 rounded-md p-2 mx-2 hover:border-blue-600">
+                                    <h4>Learn ServiceStack Essentials</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="explore-live-demos" class="hidden">
+                        <div class="flex flex-wrap mt-2">
+                            <div class="w-full centered mt-2 mb-2">
+                                <h3>Feature Showcase</h3>
+                                <div class="flex flex-wrap mt-8">
+
+                                </div>
+                            </div>
+                            <div class="w-full centered mt-2 mb-2">
+                                <h3>Data Focused</h3>
+                            </div>
+                            <div class="w-full centered mt-2 mb-2">
+                                <h3>Native Mobile Apps</h3>
+                            </div>
+                            <div class="w-full centered mt-2 mb-2">
+                                <h3>Fullstack</h3>
+                                <div class="w-full md:w-1/2 centered mt-2 mb-2 px-4">
+                                    <a href="https://techstacks.io"><h4>TechStacks.io</h4></a>
+                                    <div class="border-2 border-gray-400 p-2 mx-2">
+                                        <a href="https://techstacks.io"><img style="min-height: 144px" src="https://raw.githubusercontent.com/ServiceStack/Assets/master/img/livedemos/techstacks/screenshots/techstacks.png" alt="TechStacks WebSite"></a>
+                                        <div class="flex flex-wrap mt-2">
+                                            <div class="w-1/3 text-center mt-2 mb-2 px-4 text-xl">
+                                                <a href="https://techstacks.io" title="Live Demo"><i class="fa fa-link"></i> <span class="hidden">Live Demo</span></a>
+                                            </div>
+                                            <div class="w-1/3 text-center mt-2 mb-2 px-4 text-xl">
+                                                <a href="https://github.com/ServiceStackApps/TechStacks" title="Source on GitHub"><i class="fab fa-github"></i> <span class="hidden">Source on GitHub</span></a>
+                                            </div>
+                                            <div class="w-1/3 text-center mt-2 mb-2 px-4 text-xl">
+                                                <a href="https://github.com/ServiceStackApps/TechStacks/blob/master/README.md" title="Readme"><i class="fas fa-list"></i> <span class="hidden">Read me</span></a>
+                                            </div>
+                                        </div>
+                                        <p class="m-4">
+                                            TechStacks is a AngularJS CRUD App that lets you Browse and Add Technology Stacks of popular StartUps.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full centered mt-2 mb-2">
+                                <h3>Templates</h3>
+                                <div class="flex flex-wrap mt-8">
+
+                                    {% include live-demo-item.html
+                                    name="Angular SPA"
+                                    live_demo_url="https://angular-spa.web-templates.io"
+                                    preview_img_url="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/angular-spa.png"
+                                    preview_img_alt="Angular SPA Template"
+                                    github_url="https://github.com/ServiceStackApps/AngularSpa"
+                                    readme_url="https://github.com/ServiceStackApps/AngularSpa/blob/main/README.md"
+                                    %}
+
+                                    {% include live-demo-item.html
+                                    name="Aurelia SPA"
+                                    live_demo_url="https://aurelia-spa.web-templates.io"
+                                    preview_img_url="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/aurelia-spa.png"
+                                    preview_img_alt="Aurelia SPA Template"
+                                    github_url="https://github.com/ServiceStackApps/AureliaSpa"
+                                    readme_url="https://github.com/ServiceStackApps/AureliaSpa/blob/main/README.md"
+                                    %}
+
+                                    {% include live-demo-item.html
+                                    name="MVC"
+                                    live_demo_url="https://mvc.web-templates.io"
+                                    preview_img_url="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/mvc.png"
+                                    preview_img_alt="MVC Template"
+                                    github_url="https://github.com/ServiceStackApps/MvcTemplate"
+                                    readme_url="https://github.com/ServiceStackApps/MvcTemplate/blob/main/README.md"
+                                    %}
+
+                                    {% include live-demo-item.html
+                                    name="MVC Auth"
+                                    live_demo_url="https://mvcauth.web-templates.io"
+                                    preview_img_url="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/mvcauth.png"
+                                    preview_img_alt="MVC Auth Template"
+                                    github_url="https://github.com/ServiceStackApps/MvcAuthTemplate"
+                                    readme_url="https://github.com/ServiceStackApps/MvcAuthTemplate/blob/main/README.md"
+                                    %}
+
+                                    {% include live-demo-item.html
+                                    name="Razor"
+                                    live_demo_url="https://razor.web-templates.io"
+                                    preview_img_url="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/razor.png"
+                                    preview_img_alt="Razor Template"
+                                    github_url="https://github.com/ServiceStackApps/RazorTemplate"
+                                    readme_url="https://github.com/ServiceStackApps/RazorTemplate/blob/main/README.md"
+                                    %}
+
+                                    {% include live-demo-item.html
+                                    name="React SPA"
+                                    live_demo_url="https://react-spa.web-templates.io"
+                                    preview_img_url="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/react-spa.png"
+                                    preview_img_alt="React SPA Template"
+                                    github_url="https://github.com/ServiceStackApps/ReactSPA"
+                                    readme_url="https://github.com/ServiceStackApps/ReactSPA/blob/main/README.md"
+                                    %}
+
+                                    {% include live-demo-item.html
+                                    name="#Script"
+                                    live_demo_url="https://script.web-templates.io"
+                                    preview_img_url="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/script.png"
+                                    preview_img_alt="#Script Template"
+                                    github_url="https://github.com/ServiceStackApps/ScriptTemplate"
+                                    readme_url="https://github.com/ServiceStackApps/ScriptTemplate/blob/main/README.md"
+                                    %}
+
+                                    {% include live-demo-item.html
+                                    name="Self Host"
+                                    live_demo_url="https://selfhost.web-templates.io"
+                                    preview_img_url="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/selfhost.png"
+                                    preview_img_alt="MVC Template"
+                                    github_url="https://github.com/ServiceStackApps/SelfHostTemplate"
+                                    readme_url="https://github.com/ServiceStackApps/SelfHostTemplate/blob/main/README.md"
+                                    %}
+
+                                    {% include live-demo-item.html
+                                    name="Svelte SPA"
+                                    live_demo_url="https://svelte-spa.web-templates.io"
+                                    preview_img_url="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/svelte-spa.png"
+                                    preview_img_alt="Svelte SPA Template"
+                                    github_url="https://github.com/ServiceStackApps/SvelteSpa"
+                                    readme_url="https://github.com/ServiceStackApps/SvelteSpa/blob/main/README.md"
+                                    %}
+
+                                    {% include live-demo-item.html
+                                    name="Vue Nuxt"
+                                    live_demo_url="https://vue-nuxt.web-templates.io"
+                                    preview_img_url="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/vue-nuxt.png"
+                                    preview_img_alt="Vue Nuxt Template"
+                                    github_url="https://github.com/ServiceStackApps/VueNuxt"
+                                    readme_url="https://github.com/ServiceStackApps/VueNuxt/blob/main/README.md"
+                                    %}
+
+                                    {% include live-demo-item.html
+                                    name="Vue SPA"
+                                    live_demo_url="https://vue-spa.web-templates.io"
+                                    preview_img_url="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/vue-spa.png"
+                                    preview_img_alt="Vue SPA Template"
+                                    github_url="https://github.com/ServiceStackApps/VueSpa"
+                                    readme_url="https://github.com/ServiceStackApps/VueSpa/blob/main/README.md"
+                                    %}
+
+                                    {% include live-demo-item.html
+                                    name="Vuetify Nuxt"
+                                    live_demo_url="https://vuetify-nuxt.web-templates.io"
+                                    preview_img_url="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/vuetify-nuxt.png"
+                                    preview_img_alt="Vuetify Nuxt Template"
+                                    github_url="https://github.com/ServiceStackApps/VuetifyNuxt"
+                                    readme_url="https://github.com/ServiceStackApps/VuetifyNuxt/blob/main/README.md"
+                                    %}
+
+                                    {% include live-demo-item.html
+                                    name="Vuetify SPA"
+                                    live_demo_url="https://vuetify-spa.web-templates.io"
+                                    preview_img_url="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/vuetify-spa.png"
+                                    preview_img_alt="Vuetify SPA Template"
+                                    github_url="https://github.com/ServiceStackApps/VuetifySpa"
+                                    readme_url="https://github.com/ServiceStackApps/VuetifySpa/blob/main/README.md"
+                                    %}
+
+                                    {% include live-demo-item.html
+                                    name="Web"
+                                    live_demo_url="https://web.web-templates.io"
+                                    preview_img_url="https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/web.png"
+                                    preview_img_alt="Web Template"
+                                    github_url="https://github.com/ServiceStackApps/WebTemplate"
+                                    readme_url="https://github.com/ServiceStackApps/WebTemplate/blob/main/README.md"
+                                    %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="/js/jquery.min.js"></script>
+<script type="text/javascript">
+    function changepreview(templateName) {
+        $('#run-preview').attr('src','https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/' + templateName + '.png')
+    }
+
+    function changetopview(id) {
+        $('#build-your-own').hide();
+        $('#explore-live-demos').hide();
+        $('#' + id).show();
+    }
+</script>
