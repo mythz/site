@@ -1,16 +1,11 @@
-<!-- Card 1 -->
-<div class="p-2">
-    <div class="bg-white px-2 py-4 rounded-lg shadow-lg text-center items-center justify-center hover:shadow-2xl">
+<a class="archive-url" href="{{site.account_url}}/archive/{{include.repo}}">
+    <div class="bg-white px-4 py-4 rounded-lg shadow-lg text-center items-center justify-center hover:shadow-2xl" style="min-width:150px">
         <div class="text-center font-extrabold flex items-center justify-center bg-white mb-2">
-            <div class="rounded-full shadow-lg h-15 w-15">
-                <div class="text-4xl text-blue-400 my-3">
-                    {{ include.icon_element }}
-                </div>
+            <div class="text-4xl text-blue-400 my-3">
+                {{ include.icon_element }}
             </div>
         </div>
-        <span class="text-xl font-medium text-gray-700">{{include.name}}</span>
-        <span class="text-gray-200 block mb-4 text-2xl"><a href="{{include.source_url}}" class="hover:text-blue-800"><i class="fab fa-github"></i></a></span>
-
-        <a href="{{include.zip_url}}" class="px-4 py-2 bg-blue-500 text-white rounded-full hover:text-white hover:bg-blue-600">Download</a>
+        <div class="text-xl font-medium text-gray-700 mb-4">{{include.name}}</div>
+        <span class="archive-name px-4 py-2 text-blue-600">MyApp.zip</span>
     </div>
-</div>
+</a>

@@ -21,95 +21,188 @@ sitemap: false
             <a href="https://docs.servicestack.net/autoquery" class="text-gray-700">Get Started with ServiceStack</a>
         </h1>
         <div class="colored-line"></div>
-        <div class="text-center mt-8 text-xl">
-            Checkout the different ways to get started with ServiceStack. Project templates, Walk-throughts, Documentation and Videos, choose the best one for you.
+        <div class="flex justify-center">
+            <div class="text-center mt-8 text-xl max-w-prose">
+                Different ways for getting started with ServiceStack: <br>
+                Project templates, Walkthroughs, Docs and Videos, choose what's best for you
+            </div>
         </div>
     </div>
 
-    <div class="container my-12">
-        <div class="flex flex-wrap mt-8">
-            <div class="w-full sm:w-1/2 centered px-4 py-2">
+    <div class="container my-20">
+
+        <div class="px-4 py-2 flex justify-center">
+            <div class="max-w-screen-md text-center">
                 <h2>Get the .NET SDK</h2>
-                <div class="colored-line-left block"></div>
+                <div class="colored-line"></div>
 
-                <div class="py-4 text-left clearfix">
+                <div class="py-4">
                     <p>
-                        If you haven't already got the .NET SDK installed, it's recommended you start with the latest .NET SDK 5.0 or higher.
+                        If you haven't already got the .NET SDK installed, we recommended starting with the latest .NET
+                        SDK.
                     </p>
-                    <p>
-                        ServiceStack runs on both the older .NET Core LTS versions as well as the Windows-only .NET Framework but to get the best experience, use the latest .NET SDK 5.0 or higher.
-                    </p>
-                    <div class="buttons text-center sm:text-left my-6">
-                        <a href="https://dotnet.microsoft.com/download" class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Download</a>
+                    <div class="">
+                        <a href="https://dotnet.microsoft.com/download"
+                           class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Download
+                            .NET</a>
                     </div>
-                </div>
-            </div>
-            <div class="w-full sm:w-1/2 hidden sm:block px-4 py-2">
-                <a href="https://dotnet.microsoft.com/download"><img src="/images/svgs/dotnet.svg" class="max-h-64 mx-auto" alt=".NET SDK"></a>
-            </div>
-
-            <div class="w-full sm:w-1/2 px-4 py-2">
-                <h2>Download a template</h2>
-                <div class="colored-line-left block"></div>
-
-                <div class="py-4 text-left clearfix">
-                    <p>
-                        ServiceStack has many templated projects so you can get started quickly on a new project. They are available to download as a zip here as well as a link to their source on GitHub.
-                    </p>
-                    <p>
-                        These templates can also create projects with ServiceStack dotnet tooling which can be installed using the command <code>dotnet tool install -g x</code>.
-                        The <code>x</code> tool not only has project templates, but supports many other great workflows as well.
-                    </p>
-                    <p>
-                        Templates are designed with developer workflows in mind, specific to each template. Building on existing OSS tooling like Vue CLI, and useful NPM scripts, you'll get everything you need to start integrating with your ServiceStack server quickly right from the beginning.
+                    <p class="text-gray-400 mt-8">
+                        ServiceStack also runs on older .NET Core LTS versions and the Windows-only .NET Framework,
+                        but we recommend the latest .NET SDK 5.0 for the best experience.
                     </p>
                 </div>
+            </div>
+        </div>
 
-                <div class="buttons text-center sm:text-left my-2">
-                    <a href="https://docs.servicestack.net/dotnet-new" class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn more</a>
+        <div class="px-4 py-2 w-full flex justify-center text-center">
+            <div class="px-4 py-2">
+                <h2>Download your new Project</h2>
+                <div class="colored-line"></div>
+                <div class="py-4">
+                    <p>
+                        ServiceStack has a number of different project templates that will help you get started quickly
+                        on a new project.
+                    </p>
                 </div>
             </div>
-            <div class="w-full sm:w-1/2 px-4 py-2">
-                <div class="flex flex-wrap">
-                    <div class="w-1/2 centered mt-2 mb-2">
+        </div>
+
+        <div class="flex justify-center">
+            <div class="w-70">
+                <input id="txtProjectName" type="text" class="text-2xl" placeholder="ProjectName"
+                       onkeypress="return isAlphaNumeric(event.charCode)"
+                       onchange="this.value = this.value.replace(/[\W]+/g,'')"
+                       oninput="updateTemplates(this.value)"
+                       >
+            </div>
+        </div>
+
+        <div class="w-full flex flex-col justify-center text-center">
+
+            <div class="mt-4 mb-2">
+                <h3 class="text-gray-400">Empty Project Templates</h3>
+
+                <div class="flex flex-wrap justify-evenly">
+                    <div>
                         {% include project-template-install-card.html
+                        repo="NetCoreTemplates/web"
                         name="Web"
-                        icon_element="<i class='fab fa-servicestack'></i>"
-                        zip_url="https://github.com/NetCoreTemplates/web/archive/refs/heads/master.zip"
-                        source_url="https://github.com/NetCoreTemplates/web"
-                        %}
+                        icon_element="<i class='fab fa-servicestack'></i>" %}
                     </div>
-                    <div class="w-1/2 centered mt-2 mb-2">
+                    <div>
                         {% include project-template-install-card.html
-                        name="Vue SPA"
-                        icon_element="<i class='fab fa-vuejs'></i>"
-                        zip_url="https://github.com/NetCoreTemplates/vue-spa/archive/refs/heads/master.zip"
-                        source_url="https://github.com/NetCoreTemplates/vue-spa"
-                        %}
+                        repo="NetCoreTemplates/empty"
+                        name="Empty"
+                        icon_element="<i class='fab fa-servicestack'></i>" %}
                     </div>
-                    <div class="w-1/2 centered mt-2 mb-2 hidden sm:block">
+                    <div>
                         {% include project-template-install-card.html
-                        name="React SPA"
-                        icon_element="<i class='fab fa-react'></i>"
-                        zip_url="https://github.com/NetCoreTemplates/react-spa/archive/refs/heads/master.zip"
-                        source_url="https://github.com/NetCoreTemplates/react-spa"
-                        %}
-                    </div>
-                    <div class="w-1/2 centered mt-2 mb-2 hidden sm:block">
-                        {% include project-template-install-card.html
-                        name="Angular SPA"
-                        icon_element="<i class='fab fa-angular'></i>"
-                        zip_url="https://github.com/NetCoreTemplates/angular-spa/archive/refs/heads/master.zip"
-                        source_url="https://github.com/NetCoreTemplates/angular-spa"
-                        %}
-                    </div>
-                    <div class="w-full centered mt-2 mb-2">
-                        <div class="text-center">
-                            <h3>And many more</h3>
-                        </div>
+                        repo="NetCoreTemplates/selfhost"
+                        name="Self Host"
+                        icon_element="<i class='fab fa-servicestack'></i>" %}
                     </div>
                 </div>
             </div>
+
+            <div class="mt-4 mb-2">
+                <h3 class="text-gray-400">Single Page Apps</h3>
+                <div class="flex flex-wrap justify-evenly">
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/vue-spa"
+                        name="Vue SPA"
+                        icon_element="<i class='fab fa-vuejs'></i>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/react-spa"
+                        name="React SPA"
+                        icon_element="<i class='fab fa-react'></i>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/angular-spa"
+                        name="Angular SPA"
+                        icon_element="<i class='fab fa-angular'></i>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/svelte-spa"
+                        name="Svelte SPA"
+                        icon_element="<i class='fab fa-servicestack'></i>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/aurelia-spa"
+                        name="Aurelia SPA"
+                        icon_element="<i class='fab fa-servicestack'></i>" %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 mb-2">
+                <h3 class="text-gray-400">Server Generated Websites</h3>
+
+                <div class="flex flex-wrap justify-evenly">
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/mvc"
+                        name="MVC"
+                        icon_element="<i class='fab fa-servicestack'></i>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/razor"
+                        name="ServiceStack Razor"
+                        icon_element="<i class='fab fa-servicestack'></i>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/script"
+                        name="#Script"
+                        icon_element="<i class='fab fa-servicestack'></i>" %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="my-20 flex justify-center">
+            <div class="flex items-center">
+                <span class="text-2xl mr-4 text-gray-400">Next:</span>
+                <a href="/learn/essentials">
+                    <div class="rounded-md py-2 px-4 shadow-lg bg-blue-500 text-white hover:bg-blue-600 text-2xl">
+                        Project Overview
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="w-full centered mt-2 mb-2">
+            <div class="text-center bg-blue-100">
+                <h3>Move to other pages</h3>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <div class="max-w-prose">
+                <p>
+                    These templates can also create projects with ServiceStack dotnet tooling which can be
+                    installed using the command <code>dotnet tool install -g x</code>.
+                    The <code>x</code> tool not only has project templates, but supports many other great
+                    workflows as well.
+                </p>
+                <p>
+                    Templates are designed with developer workflows in mind, specific to each template. Building
+                    on existing OSS tooling like Vue CLI, and useful NPM scripts, you'll get everything you need
+                    to start integrating with your ServiceStack server quickly right from the beginning.
+                </p>
+            </div>
+        </div>
+
+        <div class="w-full clearfix"></div>
+
+        <div class="flex flex-wrap">
             <div class="w-full md:w-1/3 px-4 py-2">
                 <h2>Open and Run</h2>
                 <div class="colored-line-left block"></div>
@@ -117,19 +210,29 @@ sitemap: false
                     The templates all have a <code>MyApp.sln</code> file which you can open with your favorite IDE.
                 </p>
                 <p class="py-2 text-left clearfix">
-                    The Recommended project structure separating the <a class="underline" href="https://docs.servicestack.net/create-your-first-webservice#host-project">Host</a>,
-                    <a class="underline" href="https://docs.servicestack.net/create-your-first-webservice#serviceinterface-project">Service Interface</a>,
-                    <a class="underline" href="https://docs.servicestack.net/create-your-first-webservice#servicemodel-project">Service Model</a> and
-                    <a class="underline" href="https://docs.servicestack.net/create-your-first-webservice#test-project">Tests</a> is a common part of the ServiceStack templates, this ensures ServiceStack solutions starts off from an optimal logical project layout, laying the foundation for growing into a more maintainable, cohesive and reusable code-base.
+                    The Recommended project structure separating the <a class="underline"
+                                                                        href="https://docs.servicestack.net/create-your-first-webservice#host-project">Host</a>,
+                    <a class="underline"
+                       href="https://docs.servicestack.net/create-your-first-webservice#serviceinterface-project">Service
+                        Interface</a>,
+                    <a class="underline"
+                       href="https://docs.servicestack.net/create-your-first-webservice#servicemodel-project">Service
+                        Model</a> and
+                    <a class="underline"
+                       href="https://docs.servicestack.net/create-your-first-webservice#test-project">Tests</a> is a
+                    common part of the ServiceStack templates, this ensures ServiceStack solutions starts off from
+                    an optimal logical project layout, laying the foundation for growing into a more maintainable,
+                    cohesive and reusable code-base.
                 </p>
                 <div class="buttons text-center sm:text-left my-2">
-                    <a href="https://docs.servicestack.net/physical-project-structure" class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn more</a>
+                    <a href="https://docs.servicestack.net/physical-project-structure"
+                       class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
+                        more</a>
                 </div>
-
             </div>
+
             <div class="w-full md:w-2/3 px-4 py-2">
                 <div class="flex flex-wrap px-10">
-
                     <div class="w-1/2">
                         <img src="/images/start/default-template-files.png" alt="Default file explorer with template.">
                     </div>
@@ -138,33 +241,53 @@ sitemap: false
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="flex flex-wrap">
             <div class="w-full lg:w-1/3 centered px-4 py-2">
                 <h2>How does it work?</h2>
                 <div class="colored-line-left block"></div>
                 <p class="py-4 text-left clearfix">
-                    Now that your new project is running, let’s have a look at what we have. The template comes with a single web service route which comes from the request DTO (Data Transfer Object) which is located in the Hello.cs file.
+                    Now that your new project is running, let’s have a look at what we have. The template comes with
+                    a single web service route which comes from the request DTO (Data Transfer Object) which is
+                    located in the Hello.cs file.
                 </p>
                 <p class="py-2 text-left clearfix">
-                    The <code>Route</code> attribute is specifying what path <code>/hello/{Name}</code> where <code>{Name}</code> binds its value to the public string property of Name.
+                    The <code>Route</code> attribute is specifying what path <code>/hello/{Name}</code> where <code>{Name}</code>
+                    binds its value to the public string property of Name.
                 </p>
                 <p class="py-2 text-left clearfix">
-                    The <code>MyServices</code> class is a ServiceStack service with a method utilizing the <code>Hello</code> and <code>HelloResponse</code> DTOs. The name of the method <code>Any</code> means the server will run this method for any of the valid HTTP Verbs. Service methods are where you control what returns from your service.
+                    The <code>MyServices</code> class is a ServiceStack service with a method utilizing the <code>Hello</code>
+                    and <code>HelloResponse</code> DTOs. The name of the method <code>Any</code> means the server
+                    will run this method for any of the valid HTTP Verbs. Service methods are where you control what
+                    returns from your service.
                 </p>
                 <p class="py-2 text-left clearfix">
-                    Accessing the <a href="https://web.web-templates.io/hello/world">route using your browser</a> via the <code>/hello/world</code> route, you will see a snapshot of the Result in a friendly HTML response format. To change the return format to JSON, simply add <code>?format=json</code> to the end of the URL.
+                    Accessing the <a href="https://web.web-templates.io/hello/world">route using your browser</a>
+                    via the <code>/hello/world</code> route, you will see a snapshot of the Result in a friendly
+                    HTML response format. To change the return format to JSON, simply add <code>?format=json</code>
+                    to the end of the URL.
                 </p>
                 <div class="buttons text-center sm:text-left my-2">
-                    <a href="https://docs.servicestack.net/architecture-overview" class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn more</a>
+                    <a href="https://docs.servicestack.net/architecture-overview"
+                       class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
+                        more</a>
                 </div>
             </div>
+
             <div class="w-full lg:w-2/3 mt-8" data-wow-offset="10" data-wow-duration="1.5s">
                 <div>
-                    <iframe src="https://gist.cafe/embed?gist=b0a4a97573b4db2927a0d16bedc94cad&title=Hello DTOs&show=Hello.cs&mode=viewonly" frameborder="0" style="height:450px;width:100%;border:1px solid #ddd"></iframe>
+                    <iframe src="https://gist.cafe/embed?gist=b0a4a97573b4db2927a0d16bedc94cad&title=Hello DTOs&show=Hello.cs&mode=viewonly"
+                            frameborder="0" style="height:450px;width:100%;border:1px solid #ddd"></iframe>
                 </div>
                 <div>
-                    <img src="/images/start/hello-world-html.png" class="mt-4 shadow-lg" alt="HTML result of the hello world route.">
+                    <img src="/images/start/hello-world-html.png" class="mt-4 shadow-lg"
+                         alt="HTML result of the hello world route.">
                 </div>
             </div>
+        </div>
+
+        <div class="flex flex-wrap">
             <div class="w-full sm:w-1/2 centered px-4 py-2">
                 <h2>Take it further</h2>
                 <div class="colored-line-left block"></div>
@@ -172,9 +295,12 @@ sitemap: false
                     Congratulations!
                 </p>
                 <p>
-                    You now have your very own ServiceStack service. If you want to see how powerful this framework really is, take the next step by looking into our live demos, mix tooling, YouTube tutorials or jump straight into our documentation.
+                    You now have your very own ServiceStack service. If you want to see how powerful this framework
+                    really is, take the next step by looking into our live demos, mix tooling, YouTube tutorials or
+                    jump straight into our documentation.
                 </p>
             </div>
+
             <div class="w-full sm:w-1/2 centered px-4 py-2 mt-16">
                 <div class="flex flex-wrap mt-2 text-center">
                     <div class="w-full lg:w-1/2 centered my-4">
@@ -207,8 +333,33 @@ sitemap: false
                     </div>
                 </div>
             </div>
-
         </div>
+
     </div>
 </div>
+
 <script src="/js/jquery.min.js"></script>
+
+<script>
+function isAlphaNumeric(c) {
+    return c >= 65 && c <= 90 || c >= 97 && c <= 122 || c >= 48 && c <= 57 || c === 95; //A-Za-z0-9_
+}
+function leftPart(s, needle) {
+    if (s == null)
+        return null;
+    let pos = s.indexOf(needle);
+    return pos == -1
+        ? s
+        : s.substring(0, pos);
+}
+function updateTemplates(name) {
+    if (!name) name = "MyApp";
+    $('.archive-url').each(function () {
+        this.href = leftPart(this.href, '?') + '?Name=' + encodeURIComponent(name);
+    });
+    $('.archive-name').each(function () {
+        this.innerHTML = name + '.zip';
+    });
+}
+</script>
+
