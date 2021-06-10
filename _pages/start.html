@@ -79,7 +79,7 @@ sitemap: false
 
         <div class="w-full flex flex-col justify-center text-center">
 
-            <div class="mt-4 mb-2">
+            <div id="empty" class="mt-4 mb-2">
                 <h3 class="text-gray-400">Empty Project Templates</h3>
 
                 <div class="flex flex-wrap justify-center">
@@ -104,7 +104,7 @@ sitemap: false
                 </div>
             </div>
 
-            <div class="mt-4 mb-2">
+            <div id="spa" class="mt-4 mb-2">
                 <h3 class="text-gray-400">Single Page Apps</h3>
                 <div class="flex flex-wrap justify-center">
                     <div>
@@ -137,10 +137,16 @@ sitemap: false
                         name="Aurelia SPA"
                         icon_element="<img class='w-10 h-10' src='/images/svgs/aurelia.svg'>" %}
                     </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/parcel"
+                        name="Parcel"
+                        icon_element="<i class='fas fa-box-open'></i>" %}
+                    </div>
                 </div>
             </div>
 
-            <div class="mt-4 mb-2">
+            <div id="server" class="mt-4 mb-2">
                 <h3 class="text-gray-400">Server Generated Websites</h3>
 
                 <div class="flex flex-wrap justify-center">
@@ -165,7 +171,7 @@ sitemap: false
                 </div>
             </div>
 
-            <div class="mt-4 mb-2">
+            <div id="mvc" class="mt-4 mb-2">
                 <h3 class="text-gray-400">MVC OAuth Projects</h3>
 
                 <div class="flex flex-wrap justify-center">
@@ -190,7 +196,7 @@ sitemap: false
                 </div>
             </div>
 
-            <div class="mt-4 mb-2">
+            <div id="lite" class="mt-4 mb-2">
                 <h3 class="text-gray-400">npm-free "lite" Single Page Apps</h3>
 
                 <div class="flex flex-wrap justify-center">
@@ -209,7 +215,7 @@ sitemap: false
                 </div>
             </div>
 
-            <div class="mt-4 mb-2">
+            <div id="nuxt" class="mt-4 mb-2">
                 <h3 class="text-gray-400">Vuetify &amp; Nuxt Templates</h3>
 
                 <div class="flex flex-wrap justify-center">
@@ -234,7 +240,51 @@ sitemap: false
                 </div>
             </div>
 
-            <div class="mt-4 mb-2">
+            <div id="workers" class="mt-4 mb-2">
+                <h3 class="text-gray-400">Background MQ Workers</h3>
+
+                <div class="flex flex-wrap justify-center">
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/worker-rabbitmq"
+                        name="RabbitMQ"
+                        icon_element="<img class='w-10 h-10' src='/images/svgs/rabbitmq.svg'>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/worker-redismq"
+                        name="Redis MQ"
+                        icon_element="<img class='w-10 h-10' src='/images/svgs/redis.svg'>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/worker-sqs"
+                        name="AWS SQS"
+                        icon_element="<i class='fab fa-aws'></i>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/worker-servicebus"
+                        name="Azure Service Bus"
+                        icon_element="<img class='w-10 h-10' src='/images/svgs/azure.svg'>" %}
+                    </div>
+                </div>
+            </div>
+
+            <div id="grpc" class="mt-4 mb-2">
+                <h3 class="text-gray-400">gRPC</h3>
+
+                <div class="flex flex-wrap justify-center">
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/grpc"
+                        name="gRPC"
+                        icon_element="<i class='fas fa-arrows-alt-h'></i>" %}
+                    </div>
+                </div>
+            </div>
+
+            <div id="aws" class="mt-4 mb-2">
                 <h3 class="text-gray-400">AWS Projects</h3>
 
                 <div class="flex flex-wrap justify-center">
@@ -247,7 +297,7 @@ sitemap: false
                 </div>
             </div>
 
-            <div class="mt-4 mb-2">
+            <div id="desktop" class="mt-4 mb-2">
                 <h3 class="text-gray-400">Desktop Projects</h3>
 
                 <div class="flex flex-wrap justify-center">
@@ -260,7 +310,7 @@ sitemap: false
                 </div>
             </div>
 
-            <div class="mt-4 mb-2">
+            <div id="community" class="mt-4 mb-2">
                 <h3 class="text-gray-400">Community Project Templates</h3>
 
                 <div class="flex flex-wrap justify-center">
