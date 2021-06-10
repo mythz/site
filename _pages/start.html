@@ -84,6 +84,18 @@ sitemap: false
                     </div>
                     <div>
                         {% include project-template-install-card.html
+                        repo="NetCoreTemplates/grpc"
+                        name="gRPC"
+                        icon_element="<i class='fas fa-arrows-alt-h'></i>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/aws-lambda"
+                        name="AWS Lambda"
+                        icon_element="<i class='fab fa-aws'></i>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
                         repo="NetCoreTemplates/empty"
                         name="Empty"
                         icon_element="<i class='fab fa-servicestack'></i>" %}
@@ -260,32 +272,6 @@ sitemap: false
                         repo="NetCoreTemplates/worker-servicebus"
                         name="Azure Service Bus"
                         icon_element="<img class='w-10 h-10' src='/images/svgs/azure.svg'>" %}
-                    </div>
-                </div>
-            </div>
-
-            <div id="grpc" class="mt-4 mb-2">
-                <h3 class="text-gray-400">gRPC</h3>
-
-                <div class="flex flex-wrap justify-center">
-                    <div>
-                        {% include project-template-install-card.html
-                        repo="NetCoreTemplates/grpc"
-                        name="gRPC"
-                        icon_element="<i class='fas fa-arrows-alt-h'></i>" %}
-                    </div>
-                </div>
-            </div>
-
-            <div id="aws" class="mt-4 mb-2">
-                <h3 class="text-gray-400">AWS Projects</h3>
-
-                <div class="flex flex-wrap justify-center">
-                    <div>
-                        {% include project-template-install-card.html
-                        repo="NetCoreTemplates/aws-lambda"
-                        name="AWS Lambda"
-                        icon_element="<i class='fab fa-aws'></i>" %}
                     </div>
                 </div>
             </div>
