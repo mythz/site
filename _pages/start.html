@@ -5,6 +5,11 @@ layout: content-page
 sitemap: false
 ---
 
+<style>
+#mix label {
+    user-select: none;
+}
+</style>
 <div class="">
     <div class="pt-10">
         <h1 class="text-center my-4 pt-8">
@@ -38,7 +43,7 @@ sitemap: false
 
         <div class="px-4 py-2 w-full flex justify-center text-center">
             <div class="px-4 py-2">
-                <h2>Download your new Project</h2>
+                <h2>Customize &amp; Download a new Project</h2>
                 <div class="colored-line"></div>
                 <div class="py-4">
                     <p>
@@ -53,8 +58,136 @@ sitemap: false
                 <input id="txtProjectName" type="text" class="text-2xl" placeholder="ProjectName"
                        onkeypress="return isAlphaNumeric(event.charCode)"
                        onchange="this.value = this.value.replace(/[\W]+/g,'')"
-                       oninput="updateTemplates(this.value)"
+                       oninput="updateTemplates()"
                        >
+            </div>
+        </div>
+        <div id="mix" class="flex justify-center flex-col items-center">
+            <h2 class="text-2xl">Add Features</h2>
+            <div class="flex flex-wrap">
+                <div class="p-2 mr-2">
+                    <h4>Authentication</h4>
+                    <div>
+                        <input id="chkAuth" type="checkbox" value="auth">
+                        <label for="chkAuth">auth</label>
+                    </div>
+                    <h4 class="my-2">Auth Repository</h4>
+                    <div>
+                        <input id="chkAuthDb" type="radio" name="auth-repo" value="auth-db">
+                        <label for="chkAuthDb">RDBMS</label>
+                    </div>
+                    <div>
+                        <input id="chkAuthRedis" type="radio" name="auth-repo" value="auth-redis">
+                        <label for="chkAuthRedis">Redis</label>
+                    </div>
+                    <div>
+                        <input id="chkAuthDynamoDb" type="radio" name="auth-repo" value="auth-dynamodb">
+                        <label for="chkAuthDynamoDb">DynamoDB</label>
+                    </div>
+                    <div>
+                        <input id="chkAuthMemory" type="radio" name="auth-repo" value="auth-memory">
+                        <label for="chkAuthMemory">In Memory</label>
+                    </div>
+                </div>
+                <div class="p-2 mr-2">
+                    <h4>RDBMS</h4>
+                    <div>
+                        <input id="chkDbPostgreSql" type="radio" name="db" value="postgres">
+                        <label for="chkDbPostgreSql">PostgreSQL</label>
+                    </div>
+                    <div>
+                        <input id="chkDbSqlServer" type="radio" name="db" value="sqlserver">
+                        <label for="chkDbSqlServer">SQL Server</label>
+                    </div>
+                    <div>
+                        <input id="chkDbMySql" type="radio" name="db" value="mysql">
+                        <label for="chkDbMySql">MySQL</label>
+                    </div>
+                    <div>
+                        <input id="chkDbSqlite" type="radio" name="db" value="sqlite">
+                        <label for="chkDbSqlite">SQLite</label>
+                    </div>
+                    <div>
+                        <input id="chkFirebird" type="radio" name="db" value="firebird">
+                        <label for="chkFirebird">Firebird</label>
+                    </div>
+                    <div>
+                        <input id="chkOracle" type="radio" name="db" value="oracle">
+                        <label for="chkOracle">Oracle</label>
+                    </div>
+                </div>
+                <div class="p-2 mr-2">
+                    <h4>Data Stores</h4>
+                    <div>
+                        <input id="chkRedis" type="checkbox" value="redis">
+                        <label for="chkRedis">Redis</label>
+                    </div>
+                    <div>
+                        <input id="chkDynamoDb" type="checkbox" value="dynamodb">
+                        <label for="chkDynamoDb">DynamoDb</label>
+                    </div>
+                    <div>
+                        <input id="chkRavenDb" type="checkbox" value="ravendb">
+                        <label for="chkRavenDb">RavenDB</label>
+                    </div>
+                    <div>
+                        <input id="chkMongoDb" type="checkbox" value="mongodb">
+                        <label for="chkMongoDb">MongoDB</label>
+                    </div>
+                    <div>
+                        <input id="chkMarten" type="checkbox" value="marten">
+                        <label for="chkMarten">Marten</label>
+                    </div>
+                </div>
+                <div class="p-2 mr-2">
+                    <h4>Messaging (MQ)</h4>
+                    <div>
+                        <input id="chkBackgroundMq" type="radio" name="mq" value="backgroundmq">
+                        <label for="chkBackgroundMq">Background MQ</label>
+                    </div>
+                    <div>
+                        <input id="chkRabbitMq" type="radio" name="mq" value="rabbitmq">
+                        <label for="chkRabbitMq">RabbitMQ</label>
+                    </div>
+                    <div>
+                        <input id="chkSqs" type="radio" name="mq" value="sqs">
+                        <label for="chkSqs">AWS SQS MQ</label>
+                    </div>
+                    <div>
+                        <input id="chkServiceBus" type="radio" name="mq" value="servicebus">
+                        <label for="chkServiceBus">Azure Service Bus</label>
+                    </div>
+                    <div>
+                        <input id="chkRedisMq" type="radio" name="mq" value="redismq">
+                        <label for="chkRedisMq">Redis MQ</label>
+                    </div>
+                </div>
+                <div class="p-2 mr-2">
+                    <h4>GitHub Actions</h4>
+                    <div>
+                        <input id="chkActionBuild" type="checkbox" value="build">
+                        <label for="chkActionBuild">Build &amp; Run Tests</label>
+                    </div>
+                    <div>
+                        <input id="chkActionEcrAws" type="radio" name="action" value="release-ecr-aws">
+                        <label for="chkActionEcrAws">Deploy to AWS ECS via ECR</label>
+                    </div>
+                    <div>
+                        <input id="chkActionGhrVanilla" type="radio" name="action" value="release-ghr-vanilla">
+                        <label for="chkActionGhrVanilla">Deploy to Linux via GHCR</label>
+                    </div>
+                    <div>
+                        <input id="chkActionEcrVanilla" type="radio" name="action" value="release-ecr-vanilla">
+                        <label for="chkActionEcrVanilla">Deploy to Linux via ECR</label>
+                    </div>
+                    <div>
+                        <input id="chkActionHubVanilla" type="radio" name="action" value="release-hub-vanilla">
+                        <label for="chkActionHubVanilla">Deploy to Linux via Docker Hub</label>
+                    </div>
+                </div>
+            </div>
+            <div class="text-gray-500">
+                see <a href="https://docs.servicestack.net/mix-tool">mix</a> for adding more features.
             </div>
         </div>
 
@@ -285,7 +418,7 @@ sitemap: false
             </div>
 
             <div id="desktop" class="mt-4 mb-2">
-                <h3 class="text-gray-400">Desktop Projects</h3>
+                <h3 class="text-gray-400">Desktop Project Templates</h3>
 
                 <div class="flex flex-wrap justify-center">
                     <div>
@@ -342,10 +475,15 @@ function leftPart(s, needle) {
         ? s
         : s.substring(0, pos);
 }
-function updateTemplates(name) {
-    if (!name) name = "MyApp";
+function updateTemplates() {
+    let name = $('#txtProjectName').val() || 'MyApp';
+    let mix = getMix();
     $('.archive-url').each(function () {
-        this.href = leftPart(this.href, '?') + '?Name=' + encodeURIComponent(name);
+        let url = leftPart(this.href, '?') + '?Name=' + encodeURIComponent(name);
+        if (mix) {
+            url += '&Mix=' + mix;
+        }
+        this.href = url;
     });
     $('.archive-name').each(function () {
         this.innerHTML = name + '.zip';
@@ -354,5 +492,16 @@ function updateTemplates(name) {
         this.innerHTML = name;
     });
 }
+function getMix() {
+    let mix = [];
+    $('#mix input:checked').each(function () {
+        mix.push(this.value);
+    });
+    return mix.join(',');
+}
+$('#mix [type=checkbox],#mix [type=radio]').on('input', updateTemplates);
+$('[name=auth-repo]').on('input', function () { $('#chkAuth').prop('checked',true) });
+$('[name=action]').on('input', function () { $('#chkActionBuild').prop('checked',true) });
+
 </script>
 
