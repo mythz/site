@@ -1,21 +1,38 @@
-<div class="px-4 py-2 flex justify-center">
+<style>
+.card {
+    min-width:150px;
+}
+.active .card {
+    border: 2px solid #818cf8;
+}
+.active .card:hover {
+    --tw-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05);
+    box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+    cursor: default;
+}
+</style>
+<div id="learning-resources" class="px-4 py-2 flex justify-center">
     <div class="max-w-screen-lg text-center">
-        <h3>Learning resources</h3>
+        <div class="px-4 py-2 w-full flex justify-center text-center">
+            <div class="px-4 py-2">
+                <h2>Learning Resources</h2>
+            </div>
+        </div>
         <div class="flex flex-wrap justify-center">
-            <a href="/start" class="w-1/2 md:w-1/4">
-                <div class="border-gray-200 border-2 bg-gray-50 px-4 py-4 mr-4 mb-4 rounded-lg shadow-2xl text-center items-center justify-center hover:shadow-2xl" style="min-width:150px">
-                    <div class="text-center font-extrabold flex items-center justify-center bg-gray-50 mb-2">
-                        <div class="text-8xl my-3 nav-link text-gray-500 hover:text-black">
+            <a href="/start" class="active w-1/2 md:w-1/4">
+                <div class="card bg-white px-4 py-4 mr-4 mb-4 rounded-lg shadow-lg text-center items-center justify-center hover:shadow-2xl">
+                    <div class="text-center font-extrabold flex items-center justify-center bg-white mb-2">
+                        <div class="text-8xl my-3 nav-link text-black">
                             <i class="fab fa-servicestack"></i>
                         </div>
                     </div>
                     <h4 class="text-xl font-medium text-gray-700 mb-2" style="white-space: nowrap">Getting Started</h4>
                 </div>
             </a>
-            <a href="https://www.youtube.com/channel/UC0kXKGVU4NHcwNdDdRiAJSA" class="w-1/2 md:w-1/4">
-                <div class="bg-white px-4 py-4 mr-4 mb-4 rounded-lg shadow-lg text-center items-center justify-center hover:shadow-2xl" style="min-width:150px">
+            <a href="https://www.youtube.com/channel/UC0kXKGVU4NHcwNdDdRiAJSA/videos" class="w-1/2 md:w-1/4">
+                <div class="card bg-white px-4 py-4 mr-4 mb-4 rounded-lg shadow-lg text-center items-center justify-center hover:shadow-2xl">
                     <div class="text-center font-extrabold flex items-center justify-center bg-white mb-2">
-                        <div class="text-8xl my-3 nav-link text-gray-500 hover:text-red-600">
+                        <div class="text-8xl my-3 nav-link text-red-600">
                             <i class="fab fa-youtube"></i>
                         </div>
                     </div>
@@ -23,19 +40,19 @@
                 </div>
             </a>
             <a href="https://github.com/NetCoreApps/LiveDemos" class="w-1/2 md:w-1/4">
-                <div class="bg-white px-4 py-4 mr-4 mb-4 rounded-lg shadow-lg text-center items-center justify-center hover:shadow-2xl" style="min-width:150px">
+                <div class="card bg-white px-4 py-4 mr-4 mb-4 rounded-lg shadow-lg text-center items-center justify-center hover:shadow-2xl">
                     <div class="text-center font-extrabold flex items-center justify-center bg-white mb-2">
-                        <div class="text-8xl my-3 nav-link text-gray-500 hover:text-black">
+                        <div class="text-8xl my-3 nav-link text-black">
                             <i class="fab fa-github"></i>
                         </div>
                     </div>
-                    <h4 class="text-xl font-medium text-gray-700 mb-2">Walkthroughs</h4>
+                    <h4 class="text-xl font-medium text-gray-700 mb-2">Live Demos</h4>
                 </div>
             </a>
             <a href="https://docs.servicestack.net" class="w-1/2 md:w-1/4">
-                <div class="bg-white px-4 py-4 mr-4 mb-4 rounded-lg shadow-lg text-center items-center justify-center hover:shadow-2xl" style="min-width:150px">
+                <div class="card bg-white px-4 py-4 mr-4 mb-4 rounded-lg shadow-lg text-center items-center justify-center hover:shadow-2xl">
                     <div class="text-center font-extrabold flex items-center justify-center bg-white mb-2">
-                        <div class="text-8xl my-3 nav-link text-gray-500 hover:text-black">
+                        <div class="text-8xl my-3 nav-link text-blue-600">
                             <i class="fa fa-file-alt"></i>
                         </div>
                     </div>
