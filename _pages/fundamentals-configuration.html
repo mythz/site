@@ -1,0 +1,145 @@
+---
+title: ServiceStack Fundamentals - Configuring your AppHost
+layout: content-page
+sitemap: false
+permalink: /start/configuration
+---
+<div class="">
+    <div class="pt-10">
+        <h1 class="text-center my-4 pt-8">
+            Getting Started - Configuring your AppHost
+        </h1>
+        <div class="colored-line"></div>
+        <div class="flex justify-center">
+            <div class="text-center mt-8 text-xl max-w-prose text-gray-400">
+                Different ways for getting started with ServiceStack: <br>
+                Project templates, Walkthroughs, Docs and Videos, choose what's best for you
+            </div>
+        </div>
+        <div class="container my-10">
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-1/2">
+                    <h2>Registering IoC Dependencies</h2>
+                    <div class="colored-line-left block"></div>
+                    <div class="w-full px-4 py-2">
+                        <p class="pt-4 text-left clearfix">
+                            In your application's <code class="font-semibold">AppHost</code>, you will see a <code class="font-semibold">Configure(Container container)</code> method which is fired during your application startup and is the location that should contain all your configuration, including registering resources you want easy access to in your Services.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            ServiceStack uses a modified version of Funq as the default Inversion of Control (IoC) container. This the primary way to share code across services as well as configuration your might need.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            ServiceStack defaults to public property injection of registered IoC dependencies. This means for if you want a service class to take a dependency on one of your registered IoC instances, you just need to declare a <code class="font-semibold">public property with the matching type</code> and the AppHost will wire up the dependency.
+                        </p>
+                        <div class="buttons text-center sm:text-left my-2">
+                            <a href="https://docs.servicestack.net/ioc"
+                               class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
+                                more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 px-4 py-2 mt-16">
+                    <iframe src="https://gist.cafe/embed?gist=5b896162a52109a1df3818ec9ed2ab64&title=IoC Container Usage&show=AppHost.cs&mode=viewonly"
+                            frameborder="0" style="height:500px;width:100%;border:1px solid #ddd"></iframe>
+                </div>
+                <div class="w-full lg:w-1/2 mt-16">
+                    <h2>Add features via Plugins</h2>
+                    <div class="colored-line-left block"></div>
+                    <div class="w-full px-4 py-2">
+                        <p class="pt-4 text-left clearfix">
+                            ServiceStack has an easy way to add packaged up functionality into your application with the use of the <code>Plugin API</code>. Within your <code>AppHost.Configure</code> method, Plugins can be added using the function <code>Plugins.Add</code> which takes an instance of an IPlugin.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            ServiceStack automatically registers several plugins by default including <code>CSV Format</code>, <code>HTML Format</code>, and <code>Predefined Routes</code> but also has a range of other Plugins available to add functionality to configure and add to your application with minimal fuss.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            You can create your own Plugins using the IPlugin interface as a way to isolate a feature set you have built which can help if you need to share features among multiple hosts.
+                        </p>
+                        <div class="buttons text-center sm:text-left my-2">
+                            <a href="https://docs.servicestack.net/plugins"
+                               class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
+                                more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 px-4 py-4 mt-16">
+                    <iframe src="https://gist.cafe/embed?gist=41188bc10dad514d6861f4a1e6ff9ec0&title=Plugins example usage&show=AppHost.cs&mode=viewonly"
+                            frameborder="0" style="height:450px;width:100%;border:1px solid #ddd"></iframe>
+                </div>
+                <div class="w-full lg:w-1/2 mt-16">
+                    <h2>Manage AppSettings</h2>
+                    <div class="colored-line-left block"></div>
+                    <div class="w-full px-4 py-2">
+                        <p class="pt-4 text-left clearfix">
+                            ServiceStack has several ways to make it easy to populate application configuration from various data sources into a flexible <code>IAppSettings</code> instance including <code>Web.config</code>, <code>database</code>, <code>environment variables</code>, <code>text files</code> and more.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            A <code>MultiAppSettings</code> builder is also provided which creates a cascading configuration that checks various sources in priority order. AppSettings provides a good base for your own custom strongly typed class of settings that can be initialized from AppSettings and then shared in your application as your own custom settings class.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            AppSettings can be registered and used like any other auto wired dependency in your IoC container to make it easy to share runtime configuration among your services. This creates an easy to manage a central place for your application settings that can be used anywhere in your application.
+                        </p>
+                        <div class="buttons text-center sm:text-left my-2">
+                            <a href="https://docs.servicestack.net/appsettings"
+                               class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
+                                more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 px-4 py-4 mt-16">
+                    <iframe src="https://gist.cafe/embed?gist=393d40fb29f1314acf50e1d313482ce5&title=AppSettings example usage&show=AppHost.cs&mode=viewonly"
+                            frameborder="0" style="height:550px;width:100%;border:1px solid #ddd"></iframe>
+                </div>
+                <div class="w-full lg:w-1/2 mt-16">
+                    <h2>Mix in functionality using templates</h2>
+                    <div class="colored-line-left block"></div>
+                    <div class="w-full px-4 py-2">
+                        <p class="pt-4 text-left clearfix">
+                            A great way to speed up development is to use the ServiceStack dotnet <code>x</code> tool to create new projects as well as mix in additional functionality. Once installed, using the command <code>x mix</code> will show a list of features that can be mixed into an existing application.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            For example, using the command <code>x mix sqlite</code> in the root of your project folder will add the required ServiceStack SQLite related dependencies to your project as well as a startup module <code>Configure.Db.cs</code> file with all the required code to incorporate a SQLite OrmLite connection straight into your application.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            The dotnet <code>x</code> tool is cross platform, and can be installed using the command <code>dotnet tool install -g x</code>.
+                        </p>
+                        <div class="buttons text-center sm:text-left my-2">
+                            <a href="https://docs.servicestack.net/mix-tool"
+                               class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
+                                more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 px-4 py-4 mt-16">
+                    <iframe src="https://gist.cafe/embed?gist=45cf495d2fa62ef12d257db0b5b2d9d4&title=Mix example usage&show=Configure.Db.cs&mode=viewonly"
+                            frameborder="0" style="height:550px;width:100%;border:1px solid #ddd"></iframe>
+                </div>
+                <div class="w-full lg:w-1/2 mt-16">
+                    <h2>Register a Database connection</h2>
+                    <div class="colored-line-left block"></div>
+                    <div class="w-full px-4 py-2">
+                        <p class="pt-4 text-left clearfix">
+                            ServiceStack's bundled Object Relational Mapper (ORM), OrmLite, is the standard way to register a RDBMS connect for the rest of your application to use. This can be done by registering an <code>IDbConnectionFactory</code> with your IoC container.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            When registering an <code>OrmLiteConnectionFactory</code>, a <code>Provider</code> must be specified to match which vendor technology you are using. For example, if you are using PostgreSQL as your database backend, you'll need to add the <code>ServiceStack.OrmLite.PostgreSQL</code> dependency to your AppHost project and specify the <code>PostgreSqlDialect.Provider</code>.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            Once the <code>IDbConnectionFactory</code> is registered, it can be resolved from IoC using <code>container.Resolve&lt;IDbConnectionFactory&gt;</code> to be used in other configuration as well as accessed in your services using the <code>Db</code> property helper to open a new database connection. Your other projects will only need the <code>ServiceStack.OrmLite</code> package to access the OrmLite API.
+                        </p>
+                        <div class="buttons text-center sm:text-left my-2">
+                            <a href="https://github.com/ServiceStack/ServiceStack.OrmLite#configure-ormliteconnectionfactory"
+                               class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
+                                more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 px-4 py-4 mt-16">
+                    <iframe src="https://gist.cafe/embed?gist=b2f1c0b67b67a071fd1a7b1c9654d3d5&title=Database connection example&show=AppHost.cs&mode=viewonly"
+                            frameborder="0" style="height:700px;width:100%;border:1px solid #ddd"></iframe>
+                </div>
+            </div>
+        </div>
+        {% include learning-resources-bottom-menu.html %}
+    </div>
+</div>
