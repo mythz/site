@@ -13,7 +13,7 @@ sitemap: false
 <div class="">
     <div class="pt-10">
         <h1 class="text-center my-4 pt-8">
-            Getting Started
+            <a href="/start" class="text-body text-body:hover">Getting Started</a>
         </h1>
         <div class="colored-line"></div>
         <div class="flex justify-center">
@@ -55,7 +55,7 @@ sitemap: false
 
         <div class="flex justify-center">
             <div class="w-70">
-                <input id="txtProjectName" type="text" class="text-2xl" placeholder="Project Name"
+                <input id="txtProjectName" type="text" class="text-2xl" placeholder="Project Name" autocorrect="off" spellcheck="false"
                        onkeypress="return isAlphaNumeric(event.charCode)"
                        onchange="this.value = this.value.replace(/[\W]+/g,'')"
                        oninput="updateTemplates()"
@@ -134,10 +134,6 @@ sitemap: false
                         <input id="chkMongoDb" type="checkbox" value="mongodb">
                         <label for="chkMongoDb">MongoDB</label>
                     </div>
-                    <div>
-                        <input id="chkMarten" type="checkbox" value="marten">
-                        <label for="chkMarten">Marten</label>
-                    </div>
                 </div>
                 <div class="p-2 mr-2">
                     <h4>Messaging (MQ)</h4>
@@ -170,15 +166,15 @@ sitemap: false
                     </div>
                     <div>
                         <input id="chkActionEcrAws" type="radio" name="action" value="release-ecr-aws">
-                        <label for="chkActionEcrAws">Deploy to AWS ECS via ECR</label>
+                        <label for="chkActionEcrAws">Deploy to AWS ECS via <abbr title="Amazon Elastic Container Registry">ECR</abbr></label>
                     </div>
                     <div>
                         <input id="chkActionGhrVanilla" type="radio" name="action" value="release-ghr-vanilla">
-                        <label for="chkActionGhrVanilla">Deploy to Linux via GHCR</label>
+                        <label for="chkActionGhrVanilla">Deploy to Linux via <abbr title="GitHub Container Registry">GHCR</abbr></label>
                     </div>
                     <div>
                         <input id="chkActionEcrVanilla" type="radio" name="action" value="release-ecr-vanilla">
-                        <label for="chkActionEcrVanilla">Deploy to Linux via ECR</label>
+                        <label for="chkActionEcrVanilla">Deploy to Linux via <abbr title="Amazon Elastic Container Registry">ECR</abbr></label>
                     </div>
                     <div>
                         <input id="chkActionHubVanilla" type="radio" name="action" value="release-hub-vanilla">
@@ -186,8 +182,9 @@ sitemap: false
                     </div>
                 </div>
             </div>
-            <div class="text-gray-500">
-                see <a href="https://docs.servicestack.net/mix-tool">mix</a> for adding more features.
+            <div id="reset" class="invisible text-blue-500 text-blue-600:hover cursor-pointer" onclick="reset()" style="margin-top:-2em">reset</div>
+            <div class="text-gray-400">
+                see <a href="https://docs.servicestack.net/mix-tool">mix</a> for adding more features after project is created
             </div>
         </div>
 
@@ -478,11 +475,20 @@ function leftPart(s, needle) {
 function updateTemplates() {
     let name = $('#txtProjectName').val() || 'MyApp';
     let mix = getMix();
+    let urlParams = 'Name=' + encodeURIComponent(name);
+    if (mix) {
+        urlParams += '&Mix=' + mix;
+    }
+    if (urlParams == 'Name=MyApp') {
+        history.replaceState(null,null,location.href.split('#')[0]);
+        $('#reset').addClass('invisible');
+    } else {
+        history.replaceState(null,null,'#'+urlParams);
+        $('#reset').removeClass('invisible');
+    }
+
     $('.archive-url').each(function () {
-        let url = leftPart(this.href, '?') + '?Name=' + encodeURIComponent(name);
-        if (mix) {
-            url += '&Mix=' + mix;
-        }
+        let url = leftPart(this.href, '?') + '?' + urlParams;
         this.href = url;
     });
     $('.archive-name').each(function () {
@@ -502,6 +508,44 @@ function getMix() {
 $('#mix [type=checkbox],#mix [type=radio]').on('input', updateTemplates);
 $('[name=auth-repo]').on('input', function () { $('#chkAuth').prop('checked',true) });
 $('[name=action]').on('input', function () { $('#chkActionBuild').prop('checked',true) });
+
+function reset() {
+    $('#txtProjectName').val('');
+    $('#mix input:checked').prop('checked',false);
+    updateTemplates();
+}
+
+function splitOnFirst(s, c) {
+    if (!s) return [s];
+    let pos = s.indexOf(c);
+    return pos >= 0 ? [s.substring(0, pos), s.substring(pos + 1)] : [s];
+}
+function hashParams(url) {
+    if (!url || url.indexOf('#') === -1) return {};
+    let pairs = splitOnFirst(url, '#')[1].split('&');
+    let map = {};
+    for (let i = 0; i < pairs.length; ++i) {
+        let p = pairs[i].split('=');
+        map[p[0]] = p.length > 1
+            ? decodeURIComponent(p[1].replace(/\+/g, ' '))
+            : null;
+    }
+    return map;
+}
+
+if (location.hash) {
+    let hash = hashParams(location.hash);
+    if (hash.Name && hash.Name != 'MyApp') {
+        $('#txtProjectName').val(hash.Name);
+    }
+    if (hash.Mix) {
+        let mix = hash.Mix.split(',');
+        mix.forEach(function (id) {
+            $(`input[value=${id}]`).prop('checked',true);
+        });
+    }
+    updateTemplates();
+}
 
 </script>
 

@@ -12,7 +12,9 @@ body {
     overflow-x: hidden !important;
     margin: auto !important;
 }
-
+.text-body, .text-body\:hover:hover {
+    color: #313131;
+}
 
 /* Bootstrap imports */
 .container {
@@ -369,13 +371,16 @@ h5 {
 }
 
 a {
-    --tw-text-opacity: 1;color: rgba(59, 130, 246, var(--tw-text-opacity));
+    --tw-text-opacity: 1;color: rgba(59, 130, 246, var(--tw-text-opacity)); /*text-blue-500*/
     -webkit-transition: all ease 0.25s;
             transition: all ease 0.25s;
 }
 a:hover {
-    --tw-text-opacity: 1;color: rgba(37, 99, 235, var(--tw-text-opacity));
+    --tw-text-opacity: 1;color: rgba(37, 99, 235, var(--tw-text-opacity)); /*text-blue-600*/
     text-decoration: none;
+}
+abbr[title] {
+    text-decoration-color: rgb(156, 163, 175); /*text-gray-400*/
 }
 h1, .h1, h2, .h2, h3, .h3 {
     margin-top: 20px;
