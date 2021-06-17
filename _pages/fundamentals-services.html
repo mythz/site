@@ -1,0 +1,170 @@
+---
+title: ServiceStack Fundamentals - Services
+layout: content-page
+sitemap: false
+permalink: /start/services
+---
+<div class="">
+    <div class="pt-10">
+        <h1 class="text-center my-4 pt-8">
+            Getting Started - Services
+        </h1>
+        <div class="colored-line"></div>
+        <div class="flex justify-center">
+            <div class="text-center mt-8 text-xl max-w-prose text-gray-400">
+                Different ways for getting started with ServiceStack: <br>
+                Project templates, Walkthroughs, Docs and Videos, choose what's best for you
+            </div>
+        </div>
+        <div class="container my-10">
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-1/2">
+                    <h2>API Design</h2>
+                    <div class="colored-line-left block"></div>
+                    <div class="w-full px-4 py-2">
+                        <p class="pt-4 text-left clearfix">
+                            The primary difference between developing RPC vs ServiceStack's <a href="https://docs.servicestack.net/what-is-a-message-based-web-service">Message-based Services</a> is that the Services entire contract
+                            is defined by its typed messages, specifically the Request DTO which defines both the System inputs and identifies the System output. Typically both are POCO DTOs
+                            however the <a href="https://docs.servicestack.net/service-return-types">response can be any serializable object</a>.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            As only the <code class="language-plaintext highlighter-rouge">Any()</code> wildcard method is defined, it will get executed whenever the <code class="language-plaintext highlighter-rouge">GetContacts</code> Service is invoked via <strong>any HTTP Verb</strong>, <a href="https://docs.servicestack.net/grpc">gRPC</a>, <a href="https://docs.servicestack.net/messaging">MQ</a> or <a href="https://docs.servicestack.net/soap-support">SOAP</a> Request.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            The Request DTO is also all that’s required to invoke it via any <a href="https://docs.servicestack.net/clients-overview">Typed Generic Service Client</a> in any supported language, e.g: <code>client.Get(new GetContacts());</code>
+                        </p>
+                        <div class="buttons text-center sm:text-left my-2">
+                            <a href="https://docs.servicestack.net/api-design"
+                               class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
+                                more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 px-4 py-2 mt-16">
+                    <iframe src="https://gist.cafe/embed?gist=bf900de93adca720c7be36af374f3c28&title=Example API Design&show=MyServices.cs&mode=viewonly"
+                            frameborder="0" style="height:375px;width:100%;border:1px solid #ddd"></iframe>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <h2>Routing</h2>
+                    <div class="colored-line-left block"></div>
+                    <div class="w-full px-4 py-2">
+                        <p class="pt-4 text-left clearfix">
+                            Without any configuration required, ServiceStack already includes <a href="https://docs.servicestack.net/routing#pre-defined-routes">pre-defined routes</a> for all services in the format:
+                            <pre>/api?/[xml|json|html|jsv|csv]/[reply|oneway]/[servicename]</pre>
+                            Where <code>servicename</code> is the name of the Request DTO. For example, the pre-defined URL to call a JSON <code>Hello</code> Service is <code style="white-space: nowrap">/json/reply/hello</code>
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            Friendly custom routes are defined using the <code>RouteAttribute</code> applied to the Request DTO. Variable place holders bind by property name and can be used in the path. For example, the path <code>/hello/world</code> will bind "world" to the <code>Name</code>  property of the Request DTO.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            The QueryString, FormData and HTTP Request Body isn’t apart of the Route (i.e. only the /path/info is) but they can all be used in addition to every web service call to further populate the Request DTO. Routing can be limited to specific verbs, have flexible matching rules as well as matching specific service methods to be <code>Content-Type</code> specific.
+                        </p>
+                        <div class="buttons text-center sm:text-left my-2">
+                            <a href="https://docs.servicestack.net/routing"
+                               class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
+                                more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 px-4 py-2 mt-16">
+                    <iframe src="https://gist.cafe/embed?gist=d10d569dfb5959bd8911923619166c00&title=Example custom routes&show=MyServices.cs&mode=viewonly"
+                            frameborder="0" style="height:525px;width:100%;border:1px solid #ddd"></iframe>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <h2>HTTP Verbs</h2>
+                    <div class="colored-line-left block"></div>
+                    <div class="w-full px-4 py-2">
+                        <p class="pt-4 text-left clearfix">
+                            ServiceStack Services lets you handle any HTTP Verb in the same way by using a matching method name in your Service class. Routing by default will match All HTTP verbs, but an additional parameter can be specified to limit routes to individual verbs. This lets you route the same path to different services.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            Multiple verbs on a <code>Route</code> can be used with a single <code>Any</code> service method to handle situations where you want multiple, but specific, verbs to map to a single service method like handling both the creation and update of a resource.
+                        </p>
+                        <div class="buttons text-center sm:text-left my-2">
+                            <a href="https://docs.servicestack.net/api-design#handling-different-http-verbs"
+                               class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
+                                more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 px-4 py-2 mt-16">
+                    <iframe src="https://gist.cafe/embed?gist=94295afba552a465500979dd9bf87f48&title=HTTP Verbs&show=Contacts.cs&mode=viewonly"
+                            frameborder="0" style="height:600px;width:100%;border:1px solid #ddd"></iframe>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <h2>Filters</h2>
+                    <div class="colored-line-left block"></div>
+                    <div class="w-full px-4 py-2">
+                        <p class="pt-4 text-left clearfix">
+
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+
+                        </p>
+                        <div class="buttons text-center sm:text-left my-2">
+                            <a href="https://docs.servicestack.net/ioc"
+                               class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
+                                more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 px-4 py-2 mt-16">
+                    <iframe src="https://gist.cafe/embed?gist=5b896162a52109a1df3818ec9ed2ab64&title=IoC Container Usage&show=AppHost.cs&mode=viewonly"
+                            frameborder="0" style="height:500px;width:100%;border:1px solid #ddd"></iframe>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <h2>Validation</h2>
+                    <div class="colored-line-left block"></div>
+                    <div class="w-full px-4 py-2">
+                        <p class="pt-4 text-left clearfix">
+
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+
+                        </p>
+                        <div class="buttons text-center sm:text-left my-2">
+                            <a href="https://docs.servicestack.net/ioc"
+                               class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
+                                more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 px-4 py-2 mt-16">
+                    <iframe src="https://gist.cafe/embed?gist=5b896162a52109a1df3818ec9ed2ab64&title=IoC Container Usage&show=AppHost.cs&mode=viewonly"
+                            frameborder="0" style="height:500px;width:100%;border:1px solid #ddd"></iframe>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <h2>Formats</h2>
+                    <div class="colored-line-left block"></div>
+                    <div class="w-full px-4 py-2">
+                        <p class="pt-4 text-left clearfix">
+
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+
+                        </p>
+                        <div class="buttons text-center sm:text-left my-2">
+                            <a href="https://docs.servicestack.net/ioc"
+                               class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
+                                more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 px-4 py-2 mt-16">
+                    <iframe src="https://gist.cafe/embed?gist=5b896162a52109a1df3818ec9ed2ab64&title=IoC Container Usage&show=AppHost.cs&mode=viewonly"
+                            frameborder="0" style="height:500px;width:100%;border:1px solid #ddd"></iframe>
+                </div>
+            </div>
+        </div>
+        {% include learning-resources-bottom-menu.html %}
+    </div>
+</div>
