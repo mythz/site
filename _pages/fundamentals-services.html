@@ -28,7 +28,7 @@ permalink: /start/services
                             however the <a href="https://docs.servicestack.net/service-return-types">response can be any serializable object</a>.
                         </p>
                         <p class="pt-4 text-left clearfix">
-                            As only the <code class="language-plaintext highlighter-rouge">Any()</code> wildcard method is defined, it will get executed whenever the <code class="language-plaintext highlighter-rouge">GetContacts</code> Service is invoked via <strong>any HTTP Verb</strong>, <a href="https://docs.servicestack.net/grpc">gRPC</a>, <a href="https://docs.servicestack.net/messaging">MQ</a> or <a href="https://docs.servicestack.net/soap-support">SOAP</a> Request.
+                            As only the <code class="highlighter-rouge">Any()</code> wildcard method is defined, it will get executed whenever the <code class="highlighter-rouge">GetContacts</code> Service is invoked via <strong>any HTTP Verb</strong>, <a href="https://docs.servicestack.net/grpc">gRPC</a>, <a href="https://docs.servicestack.net/messaging">MQ</a> or <a href="https://docs.servicestack.net/soap-support">SOAP</a> Request.
                         </p>
                         <p class="pt-4 text-left clearfix">
                             The Request DTO is also all that’s required to invoke it via any <a href="https://docs.servicestack.net/clients-overview">Typed Generic Service Client</a> in any supported language, e.g: <code>client.Get(new GetContacts());</code>
@@ -96,72 +96,73 @@ permalink: /start/services
                     <div class="colored-line-left block"></div>
                     <div class="w-full px-4 py-2">
                         <p class="pt-4 text-left clearfix">
-
+                            ServiceStack has several ways to have custom filter methods on requests and responses. Global filters will fire every request/response allowing you to apply your own generic custom behavior across your application.
                         </p>
                         <p class="pt-4 text-left clearfix">
-
+                            Typed request/response filters give you a strongly typed API for specific message types. These can be registered for MQ and HTTP independently. All filters can access the underlying Request, Response and related typed DTO. If you need access to resources from your IoC, you can also register Autowired Typed Filters which can have IoC dependencies injected like services.
                         </p>
                         <p class="pt-4 text-left clearfix">
-
+                            Filter attributes are another powerful way to have generic filter that can be then applied to service methods as .NET attributes as needed. An example of this is the ServiceStack <code>[Authenticate]</code> and <code>[RequiredPermission]</code> attributes are filter attributes.
                         </p>
                         <div class="buttons text-center sm:text-left my-2">
-                            <a href="https://docs.servicestack.net/ioc"
+                            <a href="https://docs.servicestack.net/request-and-response-filters"
                                class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
                                 more</a>
                         </div>
                     </div>
                 </div>
                 <div class="w-full lg:w-1/2 px-4 py-2 mt-16">
-                    <iframe src="https://gist.cafe/embed?gist=5b896162a52109a1df3818ec9ed2ab64&title=IoC Container Usage&show=AppHost.cs&mode=viewonly"
-                            frameborder="0" style="height:500px;width:100%;border:1px solid #ddd"></iframe>
+                    <iframe src="https://gist.cafe/embed?gist=5b490ddf8453b79e174073ac5805f67c&title=Filters usage examples&show=AppHost.cs&mode=viewonly"
+                            frameborder="0" style="height:680px;width:100%;border:1px solid #ddd"></iframe>
                 </div>
                 <div class="w-full lg:w-1/2">
                     <h2>Validation</h2>
                     <div class="colored-line-left block"></div>
                     <div class="w-full px-4 py-2">
                         <p class="pt-4 text-left clearfix">
-
+                            As validation and error handling is an essential part of developing services, ServiceStack provides a rich array of error handling options that work intuitively out-of-the-box.
                         </p>
                         <p class="pt-4 text-left clearfix">
-
+                            The <code class="highlighter-rouge">ValidationFeature</code> plugin automatically scans and auto-wires all validators in the <code class="highlighter-rouge">AppHost.ServiceAssemblies</code> that’s injected in the <code class="highlighter-rouge">AppHost</code> constructor. Like services registered in the IoC container, validators are also auto-wired, so if there’s a public property which can be resolved by the IoC container, the IoC container will inject it.
                         </p>
                         <p class="pt-4 text-left clearfix">
-
+                            The validation rules for this request dto are made with <a href="https://github.com/JeremySkinner/FluentValidation/wiki">FluentValidation</a>. ServiceStack makes heavy use of <a href="https://github.com/JeremySkinner/FluentValidation/wiki/b.-Creating-a-Validator#rulesets">rule sets</a> to provide different validation rules for each HTTP method (GET, POST, PUT…). This enables developers to write comprehensive validation rules to suit complex business requirements.
                         </p>
                         <div class="buttons text-center sm:text-left my-2">
-                            <a href="https://docs.servicestack.net/ioc"
+                            <a href="https://docs.servicestack.net/validation"
                                class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
                                 more</a>
                         </div>
                     </div>
                 </div>
                 <div class="w-full lg:w-1/2 px-4 py-2 mt-16">
-                    <iframe src="https://gist.cafe/embed?gist=5b896162a52109a1df3818ec9ed2ab64&title=IoC Container Usage&show=AppHost.cs&mode=viewonly"
-                            frameborder="0" style="height:500px;width:100%;border:1px solid #ddd"></iframe>
+                    <iframe src="https://gist.cafe/embed?gist=ee3278bf123810ac59f9c91e1f281e95&title=Validation example usage&show=AppHost.cs&mode=viewonly"
+                            frameborder="0" style="height:675px;width:100%;border:1px solid #ddd"></iframe>
                 </div>
                 <div class="w-full lg:w-1/2">
                     <h2>Formats</h2>
                     <div class="colored-line-left block"></div>
                     <div class="w-full px-4 py-2">
                         <p class="pt-4 text-left clearfix">
-
+                            ServiceStack bundles support for 5 default formats. Those are HTML, JSON, XML, CSV and JSV. Additionally ServiceStack has support for SOAP, Message Pack, Protocol Buffers and Wire. Since ServiceStack is message based, the serialization of requests and responses are completely interchangeable.
                         </p>
                         <p class="pt-4 text-left clearfix">
-
+                            ServiceStack Services supports a number of <a href="https://docs.servicestack.net/routing#content-negotiation">Content Negotiation</a> options where you can define which
+                            format should be returned by adding a <code class="highlighter-rouge" style="white-space: nowrap">.{format}</code> extension to your <code class="highlighter-rouge">/route.{format}</code>. For example, <code>/hello/world.json</code> and <code>/hello/world?format=json</code> will both respond to in the JSON format.
                         </p>
                         <p class="pt-4 text-left clearfix">
-
+                            Adding these additional formatters like MessagePack can be done by including the relevant dependency from NuGet and adding support using <code>Plugins.Add</code>. For Example, adding the NuGet package <code>ServiceStack.MsgPack</code> and then in the AppHost, <code style="white-space: nowrap">Plugins.Add(new MsgPackFormat());</code>.
                         </p>
                         <div class="buttons text-center sm:text-left my-2">
-                            <a href="https://docs.servicestack.net/ioc"
+                            <a href="https://docs.servicestack.net/formats"
                                class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
                                 more</a>
                         </div>
                     </div>
                 </div>
                 <div class="w-full lg:w-1/2 px-4 py-2 mt-16">
-                    <iframe src="https://gist.cafe/embed?gist=5b896162a52109a1df3818ec9ed2ab64&title=IoC Container Usage&show=AppHost.cs&mode=viewonly"
-                            frameborder="0" style="height:500px;width:100%;border:1px solid #ddd"></iframe>
+                    <iframe src="https://gist.cafe/embed?gist=7a7d42cd598fbb7b592996f35ce3154e&title=IoC Container Usage&show=AppHost.cs&mode=viewonly"
+                            frameborder="0" style="height:350px;width:100%;border:1px solid #ddd"></iframe>
                 </div>
             </div>
         </div>
