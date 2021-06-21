@@ -659,6 +659,7 @@ FORM [type=checkbox]+label, FORM label+[type=checkbox] {
     .lg\:w-1\/5{width:20%}.lg\:w-2\/5{width:40%}.lg\:w-1\/6{width:16.666667%}.lg\:w-1\/8{width:12.5%}.lg\:w-1\/10{width:10%}.lg\:w-full{width:100%}
     .lg\:col-span-2 {grid-column: span 2 / span 2}
     .lg\:flex-wrap { flex-wrap: wrap }
+    .lg\:mt-16 {margin-top: 4rem}.lg\:mt-24{margin-top:6rem}.lg\:mt-32{margin-top: 8rem}
     .lg\:justify-between{justify-content:space-between}.lg\:justify-evenly{justify-content:space-evenly}
     .lg\:text-left{text-align:left}.lg\:text-center{text-align:center}.lg\:text-right{text-align:right}
 }

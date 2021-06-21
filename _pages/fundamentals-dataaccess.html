@@ -1,0 +1,131 @@
+---
+title: ServiceStack Fundamentals - Data Access
+layout: content-page
+sitemap: false
+permalink: /start/data-access
+---
+<div class="">
+    <div class="pt-10">
+        <h1 class="text-center my-4 pt-8">
+            Getting Started - Data Access
+        </h1>
+        <div class="colored-line"></div>
+        <div class="flex justify-center">
+            <div class="text-center mt-8 text-xl max-w-prose text-gray-400">
+                Different ways for getting started with ServiceStack: <br>
+                Project templates, Walkthroughs, Docs and Videos, choose what's best for you
+            </div>
+        </div>
+        <div class="container my-10">
+            <div class="flex flex-wrap">
+                <div class="w-full mt-16 lg:mt-24">
+                    <h2>Introducing OrmLite</h2>
+                    <div class="colored-line-left block"></div>
+                    <div class="w-full px-4 py-2">
+                        <p class="pt-4 text-left clearfix">
+                            OrmLite's goal is to provide a convenient, DRY, config-free, RDBMS-agnostic typed wrapper that retains a high affinity with SQL, exposing intuitive APIs that generate predictable SQL and maps cleanly to (DTO-friendly) disconnected POCO's.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            This approach makes easier to reason-about your data access making it obvious what SQL is getting executed at what time, whilst mitigating unexpected behavior, implicit N+1 queries and leaky data access prevalent in Heavy ORMs.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            In OrmLite: <strong>1 Class = 1 Table</strong>. There should be no surprising or hidden behaviour, the Typed API that produces the Query doesn't impact how results get intuitively mapped to the returned POCO's which could be different to the POCO used to create the query, e.g. containing only a subset of the fields you want populated.
+                        </p>
+                        <div class="buttons text-center sm:text-left my-2">
+                            <a href="https://github.com/ServiceStack/ServiceStack.OrmLite#fast-simple-typed-orm-for-net"
+                               class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
+                                more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 mt-16 lg:mt-24">
+                    <h2>Supported Databases</h2>
+                    <div class="colored-line-left block"></div>
+                    <div class="w-full px-4 py-2">
+                        <p class="pt-4 text-left clearfix">
+                            OrmLite supports most popular RDBMS platforms including:
+                        </p>
+                        <ul>
+                            <li class="list-disc list-inside">PostgreSQL</li>
+                            <li class="list-disc list-inside">Microsoft SQL Server</li>
+                            <li class="list-disc list-inside">Sqlite</li>
+                            <li class="list-disc list-inside">MySQL</li>
+                        </ul>
+                        <p class="pt-4 text-left clearfix">
+                            When registering your <code>IDbConnectionFactory</code> in your IoC, you can specify which <code>Provider</code> to use. These providers are available in the respective NuGet packages.
+                        </p>
+                        <ul>
+                            <li class="list-disc list-inside"><a href="http://nuget.org/List/Packages/ServiceStack.OrmLite.PostgreSQL">ServiceStack.OrmLite.PostgreSQL</a></li>
+                            <li class="list-disc list-inside"><a href="http://nuget.org/List/Packages/ServiceStack.OrmLite.SqlServer">ServiceStack.OrmLite.SqlServer</a></li>
+                            <li class="list-disc list-inside"><a href="http://nuget.org/packages/ServiceStack.OrmLite.Sqlite">ServiceStack.OrmLite.Sqlite</a></li>
+                            <li class="list-disc list-inside"><a href="http://nuget.org/List/Packages/ServiceStack.OrmLite.MySql">ServiceStack.OrmLite.MySql</a></li>
+                        </ul>
+                        <p class="pt-4 text-left clearfix">
+                            These packages contain both <strong>.NET Framework v4.5</strong>> and <strong>.NET Standard 2.0</strong> versions and supports both .NET Framework and .NET Core projects.
+                        </p>
+                        <div class="buttons text-center sm:text-left my-2">
+                            <a href="https://github.com/ServiceStack/ServiceStack.OrmLite#ormlite-rdbms-providers"
+                               class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
+                                more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 px-4 mt-16 lg:mt-24">
+                    <iframe src="https://gist.cafe/embed?gist=ac5af1852c90b3c6fafab78c02801c74&title=Database connection example&show=AppHost.cs&mode=viewonly"
+                            frameborder="0" style="height:475px;width:100%;border:1px solid #ddd"></iframe>
+                </div>
+                <div class="w-full lg:w-1/2 mt-16 lg:mt-24">
+                    <h2>API Overview</h2>
+                    <div class="colored-line-left block"></div>
+                    <div class="w-full px-4 py-2">
+                        <p class="pt-4 text-left clearfix">
+                            OrmLite makes available most of its functionality via extension methods to add enhancments over ADO.NET's <strong>IDbConnection</strong>, providing a Typed RDBMS-agnostic API that transparently handles differences in each supported RDBMS provider.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            OrmLite public API's also have async equivalents of the same name and an additional conventional *Async suffix. The Async API's also take an optional CancellationToken, where you just need to add the <code>Async</code> suffix and <code>await</code> keyword.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            Whilst OrmLite aims to provide a light-weight typed wrapper around SQL, it offers a number of convenient features that makes working with RDBMS's a clean and enjoyable experience, including:
+                        </p>
+                        <ul>
+                            <li class="list-disc list-inside">Typed SqlExpression support for JOINs</li>
+                            <li class="list-disc list-inside">References by attributes</li>
+                            <li class="list-disc list-inside">Self References</li>
+                            <li class="list-disc list-inside">Merge results</li>
+                            <li class="list-disc list-inside">Nested JOIN table expressions</li>
+                        </ul>
+                        <div class="buttons text-center sm:text-left my-2">
+                            <a href="https://github.com/ServiceStack/ServiceStack.OrmLite#api-overview"
+                               class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
+                                more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 px-4 mt-16 lg:mt-24">
+                    <img src="/images/start/OrmLiteApi.png" alt="OrmLite API overview">
+                </div>
+                <div class="w-full lg:w-1/3 mt-16 lg:mt-24">
+                    <h2>Example queries</h2>
+                    <div class="colored-line-left block"></div>
+                    <div class="w-full px-4 py-2">
+                        <p class="pt-4 text-left clearfix">
+                            Strongly typed LINQ query expressions give an intuitive way to query your database. Equal, GreaterThan, LessThan translate as expected as well as server side utility functions like <code>StartsWith</code>, <code>EndsWith</code> and <code>Contains</code>.
+                        </p>
+                        <p class="pt-4 text-left clearfix">
+                            <code>Sql.In</code> enables the ability to easily perform <code>IN</code> queries with static lists. Other helpful functions like aggregations of <code>SUM</code>, <code>AVG</code>, <code>MIN</code> and <code>MAX</code> are also easily accessible.
+                        </p>
+                        <div class="buttons text-center sm:text-left my-2">
+                            <a href="https://github.com/ServiceStack/ServiceStack.OrmLite#querying-with-select"
+                               class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
+                                more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-2/3 px-4 mt-16 lg:mt-24">
+                    <iframe src="https://gist.cafe/embed?gist=05ffec316fb1525e0b9bce9f2c193f2f&title=OrmLite Query Examples&show=QueryExamples.cs&mode=viewonly"
+                            frameborder="0" style="height:550px;width:100%;border:1px solid #ddd"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
