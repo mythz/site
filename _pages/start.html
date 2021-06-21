@@ -159,6 +159,33 @@ sitemap: false
                     </div>
                 </div>
                 <div class="p-2 mr-2">
+                    <h4>Features</h4>
+                    <div>
+                        <input id="chkAutoQuery" type="radio" name="aq" value="autoquery">
+                        <label for="chkAutoQuery">AutoQuery</label>
+                    </div>
+                    <div>
+                        <input id="chkAutoGen" type="radio" name="aq" value="autocrudgen">
+                        <label for="chkAutoGen">AutoGen DB</label>
+                    </div>
+                    <div>
+                        <input id="chkValidation" type="checkbox" value="validation">
+                        <label for="chkValidation">Validation</label>
+                    </div>
+                    <div>
+                        <input id="chkServerEvents" type="checkbox" value="serverevents">
+                        <label for="chkServerEvents">Server Events</label>
+                    </div>
+                    <div>
+                        <input id="chkOpenApi" type="checkbox" value="openapi">
+                        <label for="chkOpenApi">Open API</label>
+                    </div>
+                    <div>
+                        <input id="chkPostman" type="checkbox" value="postman2">
+                        <label for="chkPostman">Postman2</label>
+                    </div>
+                </div>
+                <div class="p-2 mr-2">
                     <h4>GitHub Actions</h4>
                     <div>
                         <input id="chkActionBuild" type="checkbox" value="build">
@@ -166,7 +193,7 @@ sitemap: false
                     </div>
                     <div>
                         <input id="chkActionEcrAws" type="radio" name="action" value="release-ecr-aws">
-                        <label for="chkActionEcrAws">Deploy to AWS ECS via <abbr title="Amazon Elastic Container Registry">ECR</abbr></label>
+                        <label for="chkActionEcrAws">Deploy to <abbr title="Amazon Elastic Container Service">ECS</abbr> via <abbr title="Amazon Elastic Container Registry">ECR</abbr></label>
                     </div>
                     <div>
                         <input id="chkActionGhrVanilla" type="radio" name="action" value="release-ghr-vanilla">
@@ -178,7 +205,7 @@ sitemap: false
                     </div>
                     <div>
                         <input id="chkActionHubVanilla" type="radio" name="action" value="release-hub-vanilla">
-                        <label for="chkActionHubVanilla">Deploy to Linux via Docker Hub</label>
+                        <label for="chkActionHubVanilla">Deploy to Linux via <abbr title="Docker Hub">Hub</abbr></label>
                     </div>
                 </div>
             </div>
