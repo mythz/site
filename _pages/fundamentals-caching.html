@@ -29,7 +29,7 @@ permalink: /start/caching
                             Configuring to use another implementation requires registering <code>ICacheClient</code> with your applications IoC. These will usually be registered as a factory <code>Func</code> that resolves a single client from a pool.
                         </p>
                         <div class="buttons text-center sm:text-left my-2">
-                            <a href="https://github.com/ServiceStack/ServiceStack.OrmLite#fast-simple-typed-orm-for-net"
+                            <a href="https://docs.servicestack.net/caching#configure-caching-providers"
                                class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
                                 more</a>
                         </div>
@@ -49,10 +49,10 @@ permalink: /start/caching
                         <ul>
                             <li class="list-inside list-disc">Memory Cache</li>
                             <li class="list-inside list-disc">Redis</li>
-                            <li class="list-inside list-disc">Memcached</li>
                             <li class="list-inside list-disc">AWS DynamoDb</li>
                             <li class="list-inside list-disc">Azure Table Storage</li>
                             <li class="list-inside list-disc">OrmLiteCacheClient</li>
+                            <li class="list-inside list-disc">Memcached</li>
                         </ul>
                         <p class="pt-4 text-left clearfix">
                             Each of these options have their own strengths. <code>MemoryCache</code> is useful for single host web services without needing any infrastructure dependencies. <code>Redis</code> is a common choice due to being a fast key-value store with non-volatile persistent storage and support for rich comp-sci data structures.
@@ -61,15 +61,15 @@ permalink: /start/caching
                             <code>OrmLiteCacheClient</code> supports all <a href="https://github.com/ServiceStack/ServiceStack.OrmLite/#download">OrmLite’s RDBMS providers</a> for using an existing RDBMS as a distributed cache. <code>Memcached</code> is a tried and tested distributed memory caching provider. <code>AWS DynamoDb</code> and <code>Azure Table Storage</code> give you option to use cloud managed solution that may better suit your use case.
                         </p>
                         <div class="buttons text-center sm:text-left my-2">
-                            <a href="https://github.com/ServiceStack/ServiceStack.OrmLite#ormlite-rdbms-providers"
+                            <a href="https://docs.servicestack.net/caching"
                                class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
                                 more</a>
                         </div>
                     </div>
                 </div>
                 <div class="w-full lg:w-1/2 px-4 mt-16 lg:mt-24">
-                    <iframe src="https://gist.cafe/embed?gist=ac5af1852c90b3c6fafab78c02801c74&title=Database connection example&show=AppHost.cs&mode=viewonly"
-                            frameborder="0" style="height:475px;width:100%;border:1px solid #ddd"></iframe>
+                    <iframe src="https://gist.cafe/embed?gist=8315fc7afc43bbab46915f1031a3a7c5&title=Database connection example&show=Redis.cs&mode=viewonly"
+                            frameborder="0" style="height:525px;width:100%;border:1px solid #ddd"></iframe>
                 </div>
                 <div class="w-full lg:w-1/2 mt-16 lg:mt-24">
                     <h2>Using Cache in Services</h2>
@@ -79,15 +79,13 @@ permalink: /start/caching
                             ServiceStack services have <code>Cache</code> autowired and can be used for any custom cache population or retrieval via <code>Get&lt;T&gt;</code> or <code>Set&lt;T&gt;</code>.
                         </p>
                         <p class="pt-4 text-left clearfix">
-                            There are also built in helpers for common caching patterns.
-                            For example, the base <code>Request</code> of a service has the extension method <code>ToOptimizedResultCache</code> which takes a Cache provider, key and <code>Func</code> that returns a DTO response.
-                            The serialized result will be cached so that if a subsequent request with the same computed key, the <code>Func</code> method won't be re-computed, and the cached serialized result will be returned.
-                        </p>
-                        <p class="pt-4 text-left clearfix">
                             The <code>CacheResponse</code> attribute is a built in Request Filter attribute of easily adding cache support for an endpoint. This can be customized to <code>VaryByUser</code> and <code>VaryByRoles</code> as well as controlling duration/max age.
                         </p>
+                        <p class="pt-4 text-left clearfix">
+                            Since the CacheResponse attribute is service wide, this allows for patterns like creating a Cache proxy with minimal code via the use of a service's Gateway property.
+                        </p>
                         <div class="buttons text-center sm:text-left my-2">
-                            <a href="https://github.com/ServiceStack/ServiceStack.OrmLite#ormlite-rdbms-providers"
+                            <a href="https://docs.servicestack.net/caching#cache-a-response-of-a-service"
                                class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
                                 more</a>
                         </div>
