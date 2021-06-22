@@ -546,9 +546,9 @@ function getMix() {
     });
     return mix.join(',');
 }
-$('#mix [type=checkbox],#mix [type=radio]').on('input', updateTemplates);
 $('[name=auth-repo]').on('input', function () { $('#chkAuth').prop('checked',true) });
 $('[name=action]').on('input', function () { $('#chkActionBuild').prop('checked',true) });
+$('#mix [type=checkbox],#mix [type=radio]').on('input', updateTemplates);
 
 function reset() {
     $('#txtProjectName').val('');
