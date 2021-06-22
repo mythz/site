@@ -124,7 +124,7 @@ sitemap: false
                     </div>
                     <div>
                         <input id="chkDynamoDb" type="checkbox" value="dynamodb">
-                        <label for="chkDynamoDb">DynamoDb</label>
+                        <label for="chkDynamoDb">DynamoDB</label>
                     </div>
                     <div>
                         <input id="chkRavenDb" type="checkbox" value="ravendb">
@@ -166,7 +166,7 @@ sitemap: false
                     </div>
                     <div>
                         <input id="chkAutoGen" type="radio" name="aq" value="autocrudgen">
-                        <label for="chkAutoGen">AutoGen DB</label>
+                        <label for="chkAutoGen">AutoGen from DB</label>
                     </div>
                     <div>
                         <input id="chkValidation" type="checkbox" value="validation">
@@ -470,6 +470,17 @@ sitemap: false
 
         </div>
 
+        <div id="tool" class="flex justify-center mt-8">
+            <div class="">
+                <p class="text-center text-gray-400">
+                    Alternatively create &amp; restore this new custom Web App with the <a href="https://docs.servicestack.net/dotnet-new">x dotnet tool</a>:
+                </p>
+                <div class="flex justify-center">
+                    {% include copy-cmd.html text="x new web MyApp" %}
+                </div>
+            </div>
+        </div>
+
         <div class="my-20 flex justify-center">
             <div class="flex items-center">
                 <span class="text-2xl mr-4 text-gray-400">Next:</span>
@@ -506,7 +517,8 @@ function updateTemplates() {
     if (mix) {
         urlParams += '&Mix=' + mix;
     }
-    if (urlParams == 'Name=MyApp') {
+    let defaultState = urlParams == 'Name=MyApp';
+    if (defaultState) {
         history.replaceState(null,null,location.href.split('#')[0]);
         $('#reset').addClass('invisible');
     } else {
@@ -524,6 +536,8 @@ function updateTemplates() {
     $('.project-name').each(function () {
         this.innerHTML = name;
     });
+
+    $('#tool .copy-cmd label').html('x new web ' + name + (mix ? ' && cd ' + name + ' && x mix -f ' + mix.replace(/,/g,' ') : ''));
 }
 function getMix() {
     let mix = [];
