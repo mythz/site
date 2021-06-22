@@ -56,8 +56,9 @@ code {
             </p>
             <div class="mt-4 w-full text-center">
                 <div class="buttons text-center text-2xl my-2">
-                    <a href="https://servicestack.net/start#Name=MyApp&Mix=autoquery"
-                       class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Create a project
+                    <a href="{{site.content_url}}/start#Name=MyApp&Mix=autoquery"
+                       class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">
+                        New Project with AutoQuery
                     </a>
                 </div>
             </div>
@@ -260,11 +261,16 @@ code {
                     ServiceStack Plugins use the same interfaces that your custom plugins can use, giving you the ability to extend and expand
                     your service features consistently across AutoQuery or standard ServiceStack services.
                 </p>
-                <div class="mt-8">
-                    {% include project-template-install-card.html
-                    repo="NetCoreTemplates/web"
-                    name="Download project template!"
-                    icon_element="<i class='fab fa-servicestack text-8xl'></i>" %}
+
+                <div>
+                    <h3 class="text-center">Download new Web App with AutoQuery</h3>
+                    <div class="flex justify-center">
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/web"
+                        name="web"
+                        icon_element="<i class='fab fa-servicestack text-6xl'></i>" %}
+                    </div>
+                    <div class="text-gray-400 text-center text-sm">or choose custom <a href="{{site.content_url}}/start#Name=MyApp&Mix=autoquery">Project Template with AutoQuery</a></div>
                 </div>
             </div>
         </div>
