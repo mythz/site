@@ -4,6 +4,20 @@ layout: content-page
 sitemap: false
 permalink: /start/clients
 ---
+
+<link rel="stylesheet" href="/css/lite-yt-embed.css">
+<style>
+    /* VIDEO */
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+    iframe,
+    embed,
+    object {
+        max-width: 100%;
+    }
+</style>
 <div class="">
     <div class="pt-10">
         <h1 class="text-center my-4 pt-8">
@@ -32,7 +46,7 @@ permalink: /start/clients
                             This is an especially good idea if you want to support static languages (i.e. C# and Java) where having typed client libraries saves end-users from reverse engineering the types and API calls. It also saves them having to look up documentation since a lot of it can be inferred from the type info.
                         </p>
                         <div class="buttons text-center sm:text-left my-2">
-                            <a href="https://github.com/ServiceStack/ServiceStack.OrmLite#fast-simple-typed-orm-for-net"
+                            <a href="https://docs.servicestack.net/clients-overview#net-clients"
                                class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
                                 more</a>
                         </div>
@@ -42,126 +56,137 @@ permalink: /start/clients
                     <img src="/images/start/servicestack-httpclients.png" alt="ServiceStack Clients">
                 </div>
                 <div class="w-full lg:w-1/2 mt-16 lg:mt-24">
-                    <h2>Json Service Clients</h2>
+                    <h2>Service Clients</h2>
                     <div class="colored-line-left block"></div>
                     <div class="w-full px-4 py-2">
                         <p class="pt-4 text-left clearfix">
-
+                            Using DTOs to define your web service interface makes it possible to provide strong-typed generic service clients without any code-gen or extra build-steps, leading to a productive end-to-end type-safe communication gateway from client to server.
                         </p>
                         <p class="pt-4 text-left clearfix">
-
+                            This experience is consistent across ServiceStack client libraries and DTOs can be easily shared through tooling like <strong>Add ServiceStack Reference</strong>. These clients are  optimized for consuming ServiceStack Services including built-in <a href="https://docs.servicestack.net/error-handling">Error handling</a>, <a href="https://docs.servicestack.net/routing">Predefined Routes</a>, <a href="https://docs.servicestack.net/auto-batched-requests">Auto Batched Requests</a>, etc.
                         </p>
-                        <p class="pt-4 text-left clearfix">
-
-                        </p>
+                        <ul>
+                            <li class="list-inside list-disc"><a href="https://docs.servicestack.net/csharp-client">C#/.NET Client</a></li>
+                            <li class="list-inside list-disc"><a href="https://docs.servicestack.net/typescript-add-servicestack-reference">TypeScript Client</a></li>
+                            <li class="list-inside list-disc"><a href="https://docs.servicestack.net/kotlin-add-servicestack-reference">Kotlin Client</a></li>
+                            <li class="list-inside list-disc"><a href="https://docs.servicestack.net/java-add-servicestack-reference">Java Client</a></li>
+                            <li class="list-inside list-disc"><a href="https://docs.servicestack.net/swift-add-servicestack-reference">Swift Client</a></li>
+                            <li class="list-inside list-disc"><a href="https://docs.servicestack.net/dart-add-servicestack-reference#example-usage">Dart Client</a></li>
+                            <li class="list-inside list-disc"><a href="https://docs.servicestack.net/javascript-client">JavaScript Client</a></li>
+                            <li class="list-inside list-disc"><a href="https://docs.servicestack.net/redis-mq">MQ Clients</a></li>
+                        </ul>
                         <div class="buttons text-center sm:text-left my-2">
-                            <a href="https://github.com/ServiceStack/ServiceStack.OrmLite#fast-simple-typed-orm-for-net"
+                            <a href="https://docs.servicestack.net/clients-overview#servicestack-clients"
                                class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
                                 more</a>
                         </div>
                     </div>
                 </div>
                 <div class="w-full lg:w-1/2 px-4 mt-16 lg:mt-24">
-                    <iframe src="https://gist.cafe/embed?gist=ac5af1852c90b3c6fafab78c02801c74&title=Database connection example&show=AppHost.cs&mode=viewonly"
-                            frameborder="0" style="height:475px;width:100%;border:1px solid #ddd"></iframe>
+                    <iframe src="https://gist.cafe/embed?gist=881c413bdcdb0f9d4f8f121803787b07&title=Client examples&show=Client.cs&mode=viewonly"
+                            frameborder="0" style="height:275px;width:100%;border:1px solid #ddd"></iframe>
                 </div>
                 <div class="w-full lg:w-1/2 mt-16 lg:mt-24">
                     <h2>Web Client</h2>
                     <div class="colored-line-left block"></div>
                     <div class="w-full px-4 py-2">
                         <p class="pt-4 text-left clearfix">
-
+                            TypeScript provides a great developer experience for web developers, the additional type information and safety also makes ServiceStack's typed end to end services a pleasure to use.
+                            The NPM library <code>@servicestack/client</code> combined with your service DTOs which are generated by ServiceStack takes the guess work out of what data structures will be returning from each service.
                         </p>
                         <p class="pt-4 text-left clearfix">
-
+                            Here, in a VueJS project, we can see the server DTOs in C# as well as what the TypeScript DTOs that the server generates from them. The Service Client can infer the response type from the request type thanks to the use of IReturn&lt;T&gt;.
                         </p>
                         <p class="pt-4 text-left clearfix">
-
+                            This provides web development with autocomplete of the available requests as well as typed objects in the response so you know exactly what data is available and it is typed without any additional effort.
                         </p>
                         <div class="buttons text-center sm:text-left my-2">
-                            <a href="https://github.com/ServiceStack/ServiceStack.OrmLite#fast-simple-typed-orm-for-net"
+                            <a href="https://docs.servicestack.net/typescript-add-servicestack-reference#first-class-development-experience"
                                class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
                                 more</a>
                         </div>
                     </div>
                 </div>
                 <div class="w-full lg:w-1/2 px-4 mt-16 lg:mt-24">
-                    <iframe src="https://gist.cafe/embed?gist=ac5af1852c90b3c6fafab78c02801c74&title=Database connection example&show=AppHost.cs&mode=viewonly"
-                            frameborder="0" style="height:475px;width:100%;border:1px solid #ddd"></iframe>
+                    <iframe src="https://gist.cafe/embed?gist=1ebf39ffa3afce9adadeecaa381be0b8&title=Vue examples&show=Hello.vue&mode=viewonly"
+                            frameborder="0" style="height:550px;width:100%;border:1px solid #ddd"></iframe>
                 </div>
                 <div class="w-full lg:w-1/2 mt-16 lg:mt-24">
-                    <h2>Native Mobile Clients</h2>
+                    <h2>Native Clients</h2>
                     <div class="colored-line-left block"></div>
                     <div class="w-full px-4 py-2">
                         <p class="pt-4 text-left clearfix">
-
+                            As well as supporting the use of cross platform frameworks like Xamarin, ServiceStack supports building native client apps through the array of service client libraries and tooling.
                         </p>
                         <p class="pt-4 text-left clearfix">
-
+                            This means you'll have the most flexibility when it comes to building your client applications when integrating with a ServiceStack backend. You can use <code>Swift</code> for iOS, <code>Java</code> or <code>Kotlin</code> for Android and get the most out of platform you are targeting.
                         </p>
-                        <p class="pt-4 text-left clearfix">
-
+                        <p>
+                            The DTOs are live generated from a running ServiceStack server and can be viewed via the URL <code>/types/{Name}</code>. Test this live using one of our hosted demo applications below.
                         </p>
+                        <ul>
+                            <li class="list-inside list-disc"><a href="https://web.web-templates.io/types/java">Java</a></li>
+                            <li class="list-inside list-disc"><a href="https://web.web-templates.io/types/kotlin">Kotlin</a></li>
+                            <li class="list-inside list-disc"><a href="https://web.web-templates.io/types/swift">Swift</a></li>
+                            <li class="list-inside list-disc"><a href="https://web.web-templates.io/types/dart">Dart</a></li>
+                        </ul>
                         <div class="buttons text-center sm:text-left my-2">
-                            <a href="https://github.com/ServiceStack/ServiceStack.OrmLite#fast-simple-typed-orm-for-net"
+                            <a href="https://docs.servicestack.net/java-add-servicestack-reference"
                                class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
                                 more</a>
                         </div>
                     </div>
                 </div>
                 <div class="w-full lg:w-1/2 px-4 mt-16 lg:mt-24">
-                    <iframe src="https://gist.cafe/embed?gist=ac5af1852c90b3c6fafab78c02801c74&title=Database connection example&show=AppHost.cs&mode=viewonly"
-                            frameborder="0" style="height:475px;width:100%;border:1px solid #ddd"></iframe>
+                    <iframe src="https://gist.cafe/embed?gist=2714689d6063338478ef35e791208a91&title=Native client examples&show=dtos.swift&mode=viewonly"
+                            frameborder="0" style="height:775px;width:100%;border:1px solid #ddd"></iframe>
                 </div>
                 <div class="w-full lg:w-1/2 mt-16 lg:mt-24">
-                    <h2>Add ServiceStack Reference</h2>
+                    <h2>Cross platform tooling</h2>
                     <div class="colored-line-left block"></div>
                     <div class="w-full px-4 py-2">
                         <p class="pt-4 text-left clearfix">
-
+                            The ability to generate DTOs from your ServiceStack server can be done with a simple, cross-platform CLI as well as with many populate IDEs via direct integration.
                         </p>
                         <p class="pt-4 text-left clearfix">
-
+                            Adding integration only needs the base URL of the ServiceStack server, and a specified language. For example, if you were working on a TypeScript React application and wanted to integrate with a ServiceStack service, you could use the command.
+                            <pre>x typescript https://web.web-template.io</pre>
                         </p>
                         <p class="pt-4 text-left clearfix">
-
+                            This would generate the server DTOs in TypeScript, allowing you to easily communicate with the server using <code>@servicestack/client</code> library. The same workflow works for all supported languages!
                         </p>
                         <div class="buttons text-center sm:text-left my-2">
-                            <a href="https://github.com/ServiceStack/ServiceStack.OrmLite#fast-simple-typed-orm-for-net"
+                            <a href="https://docs.servicestack.net/add-servicestack-reference#installation"
                                class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
                                 more</a>
                         </div>
                     </div>
                 </div>
                 <div class="w-full lg:w-1/2 px-4 mt-16 lg:mt-24">
-                    <iframe src="https://gist.cafe/embed?gist=ac5af1852c90b3c6fafab78c02801c74&title=Database connection example&show=AppHost.cs&mode=viewonly"
-                            frameborder="0" style="height:475px;width:100%;border:1px solid #ddd"></iframe>
+                    <img src="/images/start/add-ss-ref.png" alt="Add ServiceStack Reference">
                 </div>
                 <div class="w-full lg:w-1/2 mt-16 lg:mt-24">
                     <h2>Instant Client Apps</h2>
                     <div class="colored-line-left block"></div>
                     <div class="w-full px-4 py-2">
                         <p class="pt-4 text-left clearfix">
-
+                            The typed end to end clients also means we can generate complete working client application from a ServiceStack server. This enabled ServiceStack to offer a free web hosted tool to do just that and allow anyone to generate native client apps instantly with just a base URL.
                         </p>
                         <p class="pt-4 text-left clearfix">
-
-                        </p>
-                        <p class="pt-4 text-left clearfix">
-
+                            Check out this video to see how this can be used to speed up client application development using Dart and Flutter!
                         </p>
                         <div class="buttons text-center sm:text-left my-2">
-                            <a href="https://github.com/ServiceStack/ServiceStack.OrmLite#fast-simple-typed-orm-for-net"
-                               class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
-                                more</a>
+                            <a href="https://apps.servicestack.net/"
+                               class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Try it out!</a>
                         </div>
                     </div>
                 </div>
                 <div class="w-full lg:w-1/2 px-4 mt-16 lg:mt-24">
-                    <iframe src="https://gist.cafe/embed?gist=ac5af1852c90b3c6fafab78c02801c74&title=Database connection example&show=AppHost.cs&mode=viewonly"
-                            frameborder="0" style="height:475px;width:100%;border:1px solid #ddd"></iframe>
+                    <lite-youtube class="shadow-sm" width="560" height="315" videoid="GTnuMhvUayg"
+                                  style="margin-bottom:3px;background-image: url('https://img.youtube.com/vi/GTnuMhvUayg/maxresdefault.jpg')"></lite-youtube>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="/js/lite-yt-embed.js"></script>
