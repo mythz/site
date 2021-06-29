@@ -37,36 +37,36 @@ code {
             </div>
         </div>
 
-        <div class="w-full flex flex-col justify-center text-center">
+        <div class="w-full flex flex-col justify-center">
             <div class="flex flex-wrap">
                 <div class="w-full lg:w-1/2 px-4 py-2">
-                    <p class="py-4 text-left clearfix">
-                        The templates all have a <code>.sln</code> file which you can open with your favorite IDE.
+                    <p>
+                        All templates have a <code>.sln</code> file which you can open with your favorite C# IDE.
                     </p>
-                    <p class="text-left clearfix">
-                        The Recommended project structure separating the <a class="underline"
-                                                                            href="https://docs.servicestack.net/create-your-first-webservice#host-project">Host</a>,
-                        <a class="underline"
-                           href="https://docs.servicestack.net/create-your-first-webservice#serviceinterface-project">Service
-                            Interface</a>,
-                        <a class="underline"
-                           href="https://docs.servicestack.net/create-your-first-webservice#servicemodel-project">Service
-                            Model</a> and
-                        <a class="underline"
-                           href="https://docs.servicestack.net/create-your-first-webservice#test-project">Tests</a> is a
-                        common part of the ServiceStack templates, this ensures ServiceStack solutions starts off from
-                        an optimal logical project layout, laying the foundation for growing into a more maintainable,
-                        cohesive and reusable code-base.
+                    <p>
+                        Most project templates adopts ServiceStack's recommended Physical Project Structure with solutions
+                        separated into their individual logical components:
                     </p>
-                    <p class="text-left clearfix">
-                        A lot of templates use NPM, so remember to run <code>npm install</code> on the Host project (MyApp) before running the application.
+                    <div class="mb-2">
+                        <div><i class="far fa-folder-open text-gray-400 px-2"></i><a href="https://docs.servicestack.net/create-your-first-webservice#host-project">Host</a></div>
+                        <div><i class="far fa-folder-open text-gray-400 px-2"></i><a href="https://docs.servicestack.net/create-your-first-webservice#serviceinterface-project">Service Interface</a></div>
+                        <div><i class="far fa-folder-open text-gray-400 px-2"></i><a href="https://docs.servicestack.net/create-your-first-webservice#servicemodel-project">Service Model</a></div>
+                        <div><i class="far fa-folder-open text-gray-400 px-2"></i><a href="https://docs.servicestack.net/create-your-first-webservice#test-project">Tests</a></div>
+                    </div>
+                    <p>
+                        Ensuring ServiceStack solutions start off from an optimal logical project layout that lays the
+                        foundation for a growing maintainable, cohesive and reusable code-base.
                     </p>
-                    <p class="text-left clearfix">
+                    <p class="info-note">
+                        Many SPA project templates use npm which requires running <code>npm install</code> on the
+                        Host project (MyApp) before running the application.
+                    </p>
+                    <p>
                         Templates are designed with developer workflows in mind, specific to each template. Building
                         on existing OSS tooling like Vue CLI, and useful NPM scripts, you'll get everything you need
                         to start integrating with your ServiceStack server quickly right from the beginning.
                     </p>
-                    <p class="text-left clearfix">
+                    <p>
                         Template specific workflows are documented within the <code>README.md</code> for each template.
                     </p>
                     <div class="buttons text-center sm:text-left my-2">
