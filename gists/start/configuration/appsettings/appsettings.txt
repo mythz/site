@@ -1,0 +1,12 @@
+# Which port to host Chat app on
+port 1337
+
+# Change what starting background image should be used
+background /img/bg.jpg
+
+# Don't allow Anon Users to use Remote Control
+LimitRemoteControlToAuthenticatedUsers False
+
+#default settings for all oauth providers uses AuthTest OAuth configured for http://localhost:1337/
+oauth.RedirectUrl http://localhost:1337/
+oauth.CallbackUrl http://localhost:1337/auth/{0}
