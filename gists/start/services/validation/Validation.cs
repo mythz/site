@@ -8,8 +8,8 @@ public class AddressValidator : IAddressValidator
     public bool ValidAddress(string address)
     {
         return address != null
-               && address.Length >= 20
-               && address.Length <= 250;
+           && address.Length >= 20
+           && address.Length <= 250;
     }
 }
 

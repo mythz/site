@@ -8,9 +8,7 @@ public class AppHost : AppHostBase
         container.Register<IRedisClientsManager>(c => 
             new RedisManagerPool("localhost:6379"));
 
-        // Registered as a factory
-        container.Register(c => 
-            c.Resolve<IRedisClientsManager>()
-                .GetCacheClient());
+        container.Register(c =>
+            c.Resolve<IRedisClientsManager>().GetCacheClient());
     }
 }

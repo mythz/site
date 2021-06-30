@@ -1,9 +1,8 @@
 import { JsonServiceClient } from 'servicestack-client';
 import { Hello } from './web.dtos';
 
-var client = 
-    new JsonServiceClient("https://web.web-templates.io");
-var request = new Hello();
-request.Name = "World!";
+let baseUrl = "https://web.web-templates.io";
+let client = new JsonServiceClient(baseUrl);
 
-var res = await client.get(request); //res:HelloResponse
+let request = new Hello({ name: 'World!' });
+let response = await client.get(request); //res:HelloResponse

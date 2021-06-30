@@ -1,4 +1,3 @@
-JsonServiceClient client = 
-    new JsonServiceClient("https://web.web-templates.io");
-HelloResponse = 
-    client.get(new Hello().setName("World!"));
+String baseUrl = "https://web.web-templates.io";
+JsonServiceClient client = new JsonServiceClient(baseUrl);
+HelloResponse = client.get(new Hello().setName("World!"));

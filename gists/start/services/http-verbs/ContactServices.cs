@@ -3,9 +3,8 @@ public class ContactServices
     public object Get(GetContacts request)
     {
         var contacts = request.Id == null ? 
-            Db.Select<Contact>().ToList() :
-            Db.Select<Contact>(x => x.Id == 
-                (int)request.Id).ToList();
+            Db.Select<Contact>() :
+            Db.Select<Contact>(x => x.Id == request.Id.ToInt());
         return contacts;
     }
     
@@ -13,11 +12,10 @@ public class ContactServices
     {
         var contact = Db.SingleById<Contact>(request.Id);
         contact.PopulateWith(request);
+        Db.Update(contact);
         return contact;
     }
     
-    public void Delete(DeleteContact request)
-    {
+    public void Delete(DeleteContact request) =>
         Db.Delete<Contact>(x => x.Id == request.Id);
-    }
 }

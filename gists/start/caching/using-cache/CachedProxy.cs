@@ -5,11 +5,10 @@ public class CachedServices : Service
         Gateway.Send(new GetAllCustomers());
 
     public object Get(CachedGetCustomerDetails request) => 
-        Gateway.Send(new GetCustomerDetails { Id = request.Id });
+        Gateway.Send(new GetCustomerDetails { Id=request.Id });
 
     public object Get(CachedGetOrders request) => 
-        Gateway.Send(new GetOrders 
-        { 
+        Gateway.Send(new GetOrders {
             CustomerId = request.CustomerId, 
             Page = request.Page 
         });

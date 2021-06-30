@@ -4,8 +4,7 @@ public class MyServices : Service
     {
         // Db property opens a new connection per request
         var user = Db.Single<User>(x => x.Id == request.Id);
-        return new HelloResponse
-        {
+        return new HelloResponse {
             Result = $"Hello, {user.Name}!"
         };
     }

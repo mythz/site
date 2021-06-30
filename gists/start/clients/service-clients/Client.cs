@@ -1,4 +1,3 @@
-var client = 
-    new JsonServiceClient("https://web.web-templates.io");
-HelloResponse response = 
-    client.Get(new Hello { Name = "World!" });
+var baseUrl = "https://web.web-templates.io";
+var client = new JsonServiceClient(baseUrl);
+var response = client.Get(new Hello { Name = "World!" });

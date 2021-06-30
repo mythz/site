@@ -10,13 +10,11 @@ public class AppHost : AppHostBase
             Secrets.AWS_SECRET_KEY, 
             RegionEndpoint.USEast1);
 
-        container.Register<IPocoDynamo>(
-                    new PocoDynamo(awsDb));
+        container.Register<IPocoDynamo>(new PocoDynamo(awsDb));
         container.Register<ICacheClient>(c => 
-                    new DynamoDbCacheClient(
-                          c.Resolve<IPocoDynamo>()));
+            new DynamoDbCacheClient(c.Resolve<IPocoDynamo>()));
 
-        var cache = container.Resolve<ICacheClient>();
-        cache.InitSchema();
+        // Create 'CacheEntry' DynamoDB table if doesn't exist
+        container.Resolve<ICacheClient>().InitSchema();
     }
 }

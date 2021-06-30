@@ -1,7 +1,6 @@
 public class AppHost : AppHostBase
 {
-    public AppHost() : base("Web", 
-        typeof(MyServices).Assembly) { }
+    public AppHost() : base("Web",typeof(MyServices).Assembly){}
 
     public override void Configure(Container container)
     {
@@ -16,16 +15,12 @@ public class AppHost : AppHostBase
                 PostgreSqlDialect.Provider));
         
         using var db = container
-            .Resolve<IDbConnectionFactory>()
-            .Open();
-            
+            .Resolve<IDbConnectionFactory>().Open();
         if (db.CreateTableIfNotExists<MyTable>())
         {
-            db.Insert(
-                new MyTable
-                {
-                    Name = "Seed Data for new MyTable"
-                });
+            db.Insert(new MyTable {
+                Name = "Seed Data for new MyTable"
+            });
         }
     }
 }

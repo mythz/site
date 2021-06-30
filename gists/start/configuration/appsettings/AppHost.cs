@@ -1,12 +1,12 @@
 public class AppHost : AppHostBase
 {
-    public AppHost() : base("WebApp",
-        typeof(MyServices).Assembly)
+    public AppHost() : base("Web",typeof(MyServices).Assembly)
     {
         var customSettings = new FileInfo("appsettings.txt");
-        AppSettings = customSettings.Exists
-            ? (IAppSettings)new TextFileSettings(customSettings.FullName)
-            : new AppSettings();
+        if (customSettings.Exists)
+        {
+            AppSettings = new TextFileSettings(customSettings.FullName);
+        }
     }
 
     public override void Configure(Container container)

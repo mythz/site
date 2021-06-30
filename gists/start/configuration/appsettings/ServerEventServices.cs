@@ -6,6 +6,6 @@ public class ServerEventsServices : Service
     {
         if (!IsAuthenticated && AppSettings.Get("LimitRemoteControlToAuthenticatedUsers", false))
             throw new HttpError(HttpStatusCode.Forbidden, "You must be authenticated to use remote control.");
-        ...
+        //...
     }   
 }

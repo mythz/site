@@ -4,8 +4,7 @@ public class MyServices
     
     public object Any(Hello request)
     {
-        return new HelloResponse
-        {
+        return new HelloResponse {
             Result = $"Hello, {Bar.Name}";
         }
     }
