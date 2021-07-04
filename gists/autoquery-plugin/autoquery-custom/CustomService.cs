@@ -28,7 +28,6 @@ public class MyQueryServices : Service
     {
         using var db = AutoQuery.GetDb(query, base.Request);
         var q = AutoQuery.CreateQuery(query, base.Request, db);
-        return await AutoQuery
-                        .ExecuteAsync(query, q, base.Request, db);
+        return await AutoQuery.ExecuteAsync(query, q, base.Request, db);
     }
 }
