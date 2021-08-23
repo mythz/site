@@ -159,7 +159,7 @@
     {% include home/feature-video-left.html
     youtube_id="UQlYodNS1xc,5NNCaWMviXU,t83gDzEGpac,K0QAUQPJNtM,y3MBaapcN-0,9XTy3eOdpHw,QL56lOHiXVM"
     local_link_id="grpc-feature"
-    title="gRPC Support"
+    title="ServiceStack gRPC"
     bg_class="bg-white"
     embed_html="
     <p>
@@ -170,6 +170,34 @@
     </p>
     "
     learn_url="https://docs.servicestack.net/grpc"
+    %}
+
+    {% include home/feature-video-right.html
+    youtube_id="FcXG4RnlVQk"
+    local_link_id="post-command"
+    title="Post Command line HTTP API tools"
+    bg_class="bg-gray-100"
+    embed_html="
+    <p>
+        <a href="https://docs.servicestack.net/post-command">Post Command</a>
+        is a collection of command line utils that lets you easily discover, inspect and invoke ServiceStack endpoints from a single command.
+    </p>
+    <p>
+        Use <a href="https://docs.servicestack.net/post-command#inspect-command">inspect</a>
+        to discover features and APIs available on a remote ServiceStack endpoint including the version of ServiceStack running,
+        the App’s registered Content Types, Plugins and Auth Providers as well as its public APIs, their routes and Response Types.
+    </p>
+    <p>
+        Then use
+        <a href="https://docs.servicestack.net/post-command#send---invoking-apis">send</a>
+        to invoke any ServiceStack API with just its name and a JavaScript Object literal to view the response in a
+        human-friendly markdown view or as
+        <a href="https://docs.servicestack.net/post-command#json-response-output">JSON</a>
+        or with
+        <a href="https://docs.servicestack.net/post-command#raw-http-output">raw HTTP Request & Response Headers</a>.
+    </p>
+    "
+    learn_url="https://docs.servicestack.net/post-command"
     %}
 
     {% include home/feature-thirdparty.html %}
