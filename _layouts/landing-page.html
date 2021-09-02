@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include meta-section.html %}
+  <title>{{page.title}}</title>
+  {% include fav-icons-section.html %}
+  {% include stylesheets-section.html %}
+  <link rel="stylesheet" href="{{site.content_url}}/css/{{page.customcss}}">
+  <!-- CAROUSEL AND LIGHTBOX -->
+  <link rel="stylesheet" href="/css/owl.theme.css">
+  <link rel="stylesheet" href="/css/owl.carousel.css">
+  <link rel="stylesheet" href="/css/nivo-lightbox.css">
+  <link rel="stylesheet" href="/css/nivo_themes/default/default.css">
+  <link rel="stylesheet" href="/css/lite-yt-embed.css">
+  <link rel="stylesheet" href="/css/flip.min.css">
+</head>
+<body>
+<div>
+  {% include navigation.html %}
+
+  {{ content }}
+
+</div>
+{% include footer-section.html %}
+{% include scripts-section.html %}
+{% include linkedin-tag.html %}
+<script src="/js/jquery-1.9.1.min.js"></script><!-- legacy only for / and landing pages -->
+<script src="/js/jquery.fitvids.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/nivo-lightbox.min.js"></script>
+<script src="/js/lite-yt-embed.js"></script>
+<script src="/js/tweets.js"></script>
+<script src="/js/flip.min.js"></script>
+<script>
+  /* RESPONSIVE VIDEO */
+  $(".video-container").fitVids();
+  $(".videos").owlCarousel({
+    dots: true,
+    items: 1,
+    nav: false
+  });
+
+  /* TWEET CAROUSEL*/
+  $(document).ready(function () {
+    createOwlCarousel(4);
+  });
+</script>
+</body>
+</html>

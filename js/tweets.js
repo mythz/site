@@ -231,10 +231,6 @@ function removeLinkFromTwitterProfileDescription(profileDesc) {
     return result;
 }
 
-$(document).ready(function () {
-    createOwlCarousel(52);
-});
-
 function createOwlCarousel(number) {
     var html = getNextQuotes(number).join('');
     $("#feedbacks").html(html);
