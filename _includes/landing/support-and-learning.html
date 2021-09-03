@@ -1,0 +1,59 @@
+<section class="text-center">
+  <div class="container">
+    <div class="mb-8">
+      <h2 class="text-gray-700 pb-2">Support and Learning</h2>
+      <div class="colored-line"></div>
+      <div class="section-description my-2">
+        Extensive documentation, step by step tutorials, open source example applications and video guides
+      </div>
+    </div>
+
+    <div class="flex flex-wrap text-left">
+      <div class="w-full lg:w-3/4 p-4">
+        <div class="video-container videos owl-carousel owl-theme">
+          {% assign videos = include.youtube_id | split: "," %}
+          {% if videos.size == 0 %}
+          <div class="video shadow-sm">
+            <lite-youtube width="560" height="315" videoid="{{include.youtube_id}}"
+                          style="margin-bottom:3px;background-image: url('https://img.youtube.com/vi/{{include.youtube_id}}/maxresdefault.jpg')"></lite-youtube>
+          </div>
+          {% endif %}
+          {% if videos.size > 0 %}
+          {% for vid_id in videos %}
+          <div class="video shadow-sm">
+            <lite-youtube width="560" height="315" videoid="{{ vid_id }}"
+                          style="margin-bottom:3px;background-image: url('https://img.youtube.com/vi/{{ vid_id }}/maxresdefault.jpg')"></lite-youtube>
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+
+      </div>
+      <div class="w-full lg:w-1/4 p-4">
+        <div class="flex flex-wrap text-left">
+          <div class="w-full">
+            <h3>Related Docs</h3>
+            <ul style="list-style: none">
+              {{ include.related_docs_html }}
+            </ul>
+          </div>
+          <div class="w-full">
+            <h3>Support</h3>
+            <ul style="list-style: none">
+              <li><a href="https://forums.servicestack.net">Customer Forums</a></li>
+              <li><a href="https://account.servicestack.net/account/support">Premium Support</a></li>
+              <li><a href="https://github.com/ServiceStack/Issues">Bug Reports</a></li>
+              <li><a href="https://servicestack.uservoice.com/forums/176786-feature-requests">Feature Requests</a></li>
+            </ul>
+          </div>
+          <div class="w-full">
+            <h3>Code Examples</h3>
+            <ul style="list-style: none">
+              {{ include.code_example_html }}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

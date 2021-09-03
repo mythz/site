@@ -1,0 +1,44 @@
+<section class="text-center">
+  <div class="container">
+    <div class="mb-8">
+      <h2 class="text-gray-700 pb-2">Key Features</h2>
+      <div class="colored-line"></div>
+      <div class="section-description my-2">
+        {{ include.sub_heading }}
+      </div>
+    </div>
+
+    <div class="flex flex-wrap text-left">
+      <div class="w-full lg:w-1/2 p-4">
+        {% assign key_feature_html_1_size = include.key_feature_html_1 | size %}
+        {% if key_feature_html_1_size > 0 %}
+        {% include {{ include.key_feature_html_1 }} %}
+        {% endif %}
+      </div>
+      <div class="w-full lg:w-1/2 p-4">
+        {% assign key_feature_html_2_size = include.key_feature_html_2 | size %}
+        {% if key_feature_html_2_size > 0 %}
+        {% include {{ include.key_feature_html_2 }} %}
+        {% endif %}
+      </div>
+      <div class="w-full lg:w-1/2 p-4">
+        {% assign key_feature_html_3_size = include.key_feature_html_3 | size %}
+        {% if key_feature_html_3_size > 0 %}
+        {% include {{ include.key_feature_html_3 }} %}
+        {% endif %}
+      </div>
+      <div class="w-full lg:w-1/2 p-4">
+        {% assign key_feature_html_4_size = include.key_feature_html_4 | size %}
+        {% if key_feature_html_4_size > 0 %}
+        {% include {{ include.key_feature_html_4 }} %}
+        {% endif %}
+      </div>
+      <div class="buttons mb-8">
+        <a href="/trial"
+           class="cursor-pointer text-2xl font-normal bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-6 py-3 inline-block text-blue-100 rounded">
+          Start Free Trial
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
