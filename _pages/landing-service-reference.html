@@ -1,0 +1,222 @@
+---
+title: Service Reference for Typed APIs
+layout: landing-page
+customcss: home.css
+sitemap: false
+permalink: /service-reference
+---
+<style>
+.owl-dots {
+    padding-top: 2em;
+}
+header {
+    background-image: url(../images/bg-header4.jpg);
+}
+
+#langIcons {
+    justify-content: space-between;
+}
+#langIcons a {}
+#langIcons img {
+    max-height: 80px;
+    min-width: 80px;
+    filter: grayscale(100%) invert(1);
+    opacity: .5;
+    box-shadow: none;
+    padding: 2px;
+}
+#langIcons img:hover {
+    filter: none;
+    opacity: 1;
+    background: rgba(255,255,255,.8);
+    border-radius: 50%;
+    transition: background 0.2s cubic-bezier(0, 0, 0.2, 1);
+}
+</style>
+<!--Hero banner -->
+{% include landing/hero.html
+intro_heading="High performance APIs that integrate with any platform"
+intro_text="Maximize the utility of your System APIs with end-to-end typed integrations to all popular languages for Web, Mobile & Desktop"
+call_to_action_url="/start"
+call_to_action_text="Get Started"
+youtube_id="JKsgrstNnYY"
+%}
+
+<div class="hidden md:block" style="max-width:1150px;margin:-180px auto 80px auto">
+    <div id="langIcons" class="flex justify-center items-center">
+        <a class="cursor-pointer" href="https://docs.servicestack.net/csharp-add-servicestack-reference">
+            <img src="/images/svgs/csharp.svg" style="transform:scale(.95)" alt="C#">
+        </a>
+        <a class="cursor-pointer" href="https://docs.servicestack.net/typescript-add-servicestack-reference">
+            <img class="" src="/images/svgs/node.svg" style="transform:scale(.9)" alt="Node.js">
+        </a>
+        <a class="cursor-pointer" href="https://docs.servicestack.net/python-add-servicestack-reference">
+            <img src="/images/svgs/python.svg" style="transform:scale(.90)" alt="Python">
+        </a>
+        <a class="cursor-pointer" href="https://docs.servicestack.net/dart-add-servicestack-reference">
+            <img src="/images/svgs/dart.svg" alt="Dart">
+        </a>
+        <a class="cursor-pointer" href="https://docs.servicestack.net/java-add-servicestack-reference">
+            <img class="" src="/images/svgs/java.svg" alt="Java">
+        </a>
+        <a class="cursor-pointer" href="https://docs.servicestack.net/kotlin-add-servicestack-reference">
+            <img class="" src="/images/svgs/kotlin.svg" style="transform:scale(.9)" alt="Kotlin">
+        </a>
+        <a class="cursor-pointer" href="https://docs.servicestack.net/swift-add-servicestack-reference">
+            <img class="" src="/images/svgs/swift.svg" style="transform:scale(.9)" alt="Swift">
+        </a>
+        <a class="cursor-pointer" href="https://docs.servicestack.net/vbnet-add-servicestack-reference">
+            <img src="/images/svgs/vb.svg" style="transform:scale(.95)" alt="VB">
+        </a>
+        <a class="cursor-pointer" href="https://docs.servicestack.net/fsharp-add-servicestack-reference">
+            <img src="/images/svgs/fsharp.svg" style="transform:scale(.95)" alt="F#">
+        </a>
+    </div>
+</div>
+
+
+<section class="text-center">
+    <div class="container">
+        <div class="my-20">
+            <h2 class="text-gray-700 pb-2">Right Click, Integrate</h2>
+            <div class="colored-line"></div>
+            <div class="section-description my-2">
+                Generate working client code for specific services in all popular languages from your favorite IDE.
+            </div>
+        </div>
+
+        <div class="flex flex-wrap">
+            {% include landing/add-ss-ref-ide.html
+            plugin_url="https://plugins.jetbrains.com/plugin/7749-servicestack"
+            ide_svg="/images/svgs/ides/icon-intellij-idea.svg"
+            ide_name="IntelliJ"
+            support_languages="Java, Kotlin, TypeScript"
+            %}
+
+            {% include landing/add-ss-ref-ide.html
+            plugin_url="https://plugins.jetbrains.com/plugin/7749-servicestack"
+            ide_svg="/images/svgs/ides/icon-webstorm.svg"
+            ide_name="WebStorm"
+            support_languages="TypeScript"
+            %}
+
+            {% include landing/add-ss-ref-ide.html
+            plugin_url="https://plugins.jetbrains.com/plugin/7749-servicestack"
+            ide_svg="/images/svgs/ides/icon-pycharm.svg"
+            ide_name="PyCharm"
+            support_languages="Python, TypeScript"
+            %}
+
+            {% include landing/add-ss-ref-ide.html
+            plugin_url="https://plugins.jetbrains.com/plugin/17295-servicestack"
+            ide_svg="/images/svgs/ides/icon-rider.svg"
+            ide_name="Rider"
+            support_languages="C#, F#, TypeScript, VB.NET"
+            %}
+
+            {% include landing/add-ss-ref-ide.html
+            plugin_url="https://plugins.jetbrains.com/plugin/7749-servicestack"
+            ide_svg="/images/svgs/ides/icon-rubymine.svg"
+            ide_name="RubyMine"
+            support_languages="TypeScript"
+            %}
+
+            {% include landing/add-ss-ref-ide.html
+            plugin_url="https://marketplace.visualstudio.com/items?itemName=Mythz.ServiceStackVS"
+            ide_svg="/images/svgs/vs-2019.svg"
+            ide_name="Visual Studio"
+            ide_style="width:70px;height:70px;"
+            support_languages="C#, F#, TypeScript, VB.NET"
+            %}
+
+            {% include landing/add-ss-ref-ide.html
+            plugin_url="https://plugins.jetbrains.com/plugin/7749-servicestack"
+            ide_svg="/images/svgs/androidstudio.svg"
+            ide_name="Android Studio"
+            ide_style="width:70px;height:70px;"
+            support_languages="Java, Kotlin, TypeScript"
+            %}
+
+            {% include landing/add-ss-ref-ide.html
+            plugin_url="https://marketplace.eclipse.org/content/servicestackeclipse"
+            ide_svg="/images/svgs/ides/eclipse-11.svg"
+            ide_style="width:70px;height:70px;"
+            ide_name="Eclipse"
+            support_languages="Java"
+            %}
+        </div>
+    <!-- /END CONTAINER -->
+    </div>
+</section>
+
+{% include landing/key-features.html
+sub_heading="Generate working client code for specific services in all popular languages from your favorite IDE."
+key_feature_html_one="
+<h3 class='text-green-600'><i class='fa fa-check'></i> Maximized for Developer Experience</h3>
+<p>To provide a seamless Development Experience, Add ServiceStack Reference is available as a plugin in most major IDEs which will allow your API Consumers to be able easily add a typed Service Reference to your Services with just its URL in their preferred language from within JetBrains Rider, VS.NET, Android Studio, PyCharm, IntelliJ IDEA, RubyMine, PhpStorm, WebStorm and Eclipse</p>
+"
+key_feature_html_two="
+<h3 class='text-green-600'><i class='fa fa-check'></i> Wide Language Support</h3>
+<p>Server side code generation and IDE integrated tooling makes it easy for any team or customers to integrate with your services in the language they know best. With 9 support languages and 8 custom IDE plugins supported as well as CLI tooling, ServiceStack can be used to enhance developer workflows with your favorite language and IDE. </p>
+"
+key_feature_html_three="
+<h3 class='text-green-600'><i class='fa fa-check'></i> Generated from the Service itself</h3>
+<p>Native server-side generated code provides an alternative for sharing compiled DLLs of Data Transform Objects and enables a better developer workflow for external clients who are now able to generate, update and control Typed APIs for your Services from a single remote URL directly within their favorite IDE - reducing the burden and effort required to consume ServiceStack Services whilst benefiting from clients native language strong-typing feedback.</p>
+"
+key_feature_html_four="
+<h3 class='text-green-600'><i class='fa fa-check'></i> Consistent Integration Process</h3>
+<p>Add ServiceStack Reference enables teams cross disciplinary and language teams to work the same way when integrating internal or external applications or tools. This reduces software maintenance efforts and enables developers to focus on the important part of their code rather than the plumbing between client and server. </p>
+"
+%}
+
+{% include landing/resources.html
+heading="Learn & Support"
+description="Extensive documentation, step by step tutorials, full source code examples, demos and video guides"
+youtube_id="ocH5L-CikQ0,WjbhfH45i5k,cbYuem1b2tg,GTnuMhvUayg"
+links_html="
+<div class='w-full'>
+    <h3>Language Docs</h3>
+    <ul class='list-none'>
+        <li><a href='https://docs.servicestack.net/csharp-add-servicestack-reference'>C#</a></li>
+        <li><a href='https://docs.servicestack.net/typescript-add-servicestack-reference'>TypeScript</a></li>
+        <li><a href='https://docs.servicestack.net/python-add-servicestack-reference'>Python</a></li>
+        <li><a href='https://docs.servicestack.net/swift-add-servicestack-reference'>Swift</a></li>
+        <li><a href='https://docs.servicestack.net/java-add-servicestack-reference'>Java</a></li>
+        <li><a href='https://docs.servicestack.net/kotlin-add-servicestack-reference'>Kotlin</a></li>
+        <li><a href='https://docs.servicestack.net/dart-add-servicestack-reference'>Dart</a></li>
+        <li><a href='https://docs.servicestack.net/fsharp-add-servicestack-reference'>F#</a></li>
+        <li><a href='https://docs.servicestack.net/vbnet-add-servicestack-reference'>VB.NET</a></li>
+    </ul>
+</div>
+<div class='w-full'>
+    <h3>Example Demos</h3>
+    <ul class='list-none'>
+        <li><a href='https://github.com/NetCoreApps/TechStacks'>TechStacks</a></li>
+        <li><a href='https://github.com/NetCoreApps/BookingsCrud'>Bookings CRUD</a></li>
+        <li><a href='https://github.com/NetCoreApps/Chinook'>Chinook AutoQuery</a></li>
+        <li><a href='https://github.com/NetCoreApps/Northwind'>Northwind AutoQuery</a></li>
+    </ul>
+</div>
+<div class='w-full'>
+    <h3>Support</h3>
+    <ul class='list-none'>
+        <li><a href='https://forums.servicestack.net'>Customer Forums</a></li>
+        <li><a href='https://account.servicestack.net/account/support'>Premium Support</a></li>
+        <li><a href='https://github.com/ServiceStack/Issues'>Bug Reports</a></li>
+        <li><a href='https://servicestack.uservoice.com/forums/176786-feature-requests'>Feature Requests</a></li>
+    </ul>
+</div>
+" %}
+
+<div class="buttons my-20 text-center justify-center">
+    {% include btn_lg.html href="/start" label="Get Started Today" %}
+    <span class="mx-1"></span>
+    {% include btn_lg.html href="#{site.dynamic_url}/trial" label="30 Day Free Trial" %}
+</div>
+
+{% comment %} What developers say, maybe pick 3 tweets? {% endcomment %}
+<div class="text-center">
+    {% include home/testimonials-section.html %}
+</div>
+
+{% include landing/brand-customers.html %}
