@@ -10,28 +10,31 @@
 
     <div class="flex flex-wrap text-left">
       <div class="w-full lg:w-1/2 p-4">
-        {% assign key_feature_html_1_size = include.key_feature_html_1 | size %}
-        {% if key_feature_html_1_size > 0 %}
-        {% include {{ include.key_feature_html_1 }} %}
+        {% assign key_feature_html_one_size = include.key_feature_html_one | size %}
+        {% if key_feature_html_one_size > 0 %}
+        {{include.key_feature_html_one}}
         {% endif %}
       </div>
       <div class="w-full lg:w-1/2 p-4">
-        {% assign key_feature_html_2_size = include.key_feature_html_2 | size %}
-        {% if key_feature_html_2_size > 0 %}
-        {% include {{ include.key_feature_html_2 }} %}
+        {% assign key_feature_html_two_size = include.key_feature_html_two | size %}
+        {% if key_feature_html_two_size > 0 %}
+        {{include.key_feature_html_two}}
         {% endif %}
       </div>
       <div class="w-full lg:w-1/2 p-4">
-        {% assign key_feature_html_3_size = include.key_feature_html_3 | size %}
-        {% if key_feature_html_3_size > 0 %}
-        {% include {{ include.key_feature_html_3 }} %}
+        {% assign key_feature_html_three_size = include.key_feature_html_three | size %}
+        {% if key_feature_html_three_size > 0 %}
+        {{include.key_feature_html_three}}
         {% endif %}
       </div>
       <div class="w-full lg:w-1/2 p-4">
-        {% assign key_feature_html_4_size = include.key_feature_html_4 | size %}
-        {% if key_feature_html_4_size > 0 %}
-        {% include {{ include.key_feature_html_4 }} %}
+        {% assign key_feature_html_four_size = include.key_feature_html_four | size %}
+        {% if key_feature_html_four_size > 0 %}
+        {{include.key_feature_html_four}}
         {% endif %}
+      </div>
+      <div>
+
       </div>
       <div class="buttons mb-8">
         <a href="/trial"
