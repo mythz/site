@@ -32,6 +32,7 @@ header {
     border-radius: 50%;
     transition: background 0.2s cubic-bezier(0, 0, 0.2, 1);
 }
+
 </style>
 <!--Hero banner -->
 {% include landing/hero.html
@@ -145,14 +146,13 @@ youtube_id="JKsgrstNnYY"
             support_languages="Java"
             %}
         </div>
-    <!-- /END CONTAINER -->
     </div>
 </section>
 
 {% include landing/key-features.html
 sub_heading="Generate working client code for specific services in all popular languages from your favorite IDE."
 key_feature_html_one="
-<h3 class='text-green-600'><i class='fa fa-check'></i> Maximized for Developer Experience</h3>
+<h3 class='text-green-600'><i class='fa fa-check'></i> Maximize Developer Experience</h3>
 <p>To provide a seamless Development Experience, Add ServiceStack Reference is available as a plugin in most major IDEs which will allow your API Consumers to be able easily add a typed Service Reference to your Services with just its URL in their preferred language from within JetBrains Rider, VS.NET, Android Studio, PyCharm, IntelliJ IDEA, RubyMine, PhpStorm, WebStorm and Eclipse</p>
 "
 key_feature_html_two="
@@ -170,7 +170,7 @@ key_feature_html_four="
 %}
 
 {% include landing/resources.html
-heading="Learn & Support"
+heading="Learning & Support"
 description="Extensive documentation, step by step tutorials, full source code examples, demos and video guides"
 youtube_id="ocH5L-CikQ0,WjbhfH45i5k,cbYuem1b2tg,GTnuMhvUayg"
 links_html="
@@ -208,10 +208,14 @@ links_html="
 </div>
 " %}
 
-<div class="buttons my-20 text-center justify-center">
+<div class="buttons my-8 flex text-center justify-center">
     {% include btn_lg.html href="/start" label="Get Started Today" %}
     <span class="mx-1"></span>
     {% include btn_lg.html href="#{site.dynamic_url}/trial" label="30 Day Free Trial" %}
+</div>
+
+<div class="text-center mb-8 pb-8 text-2xl">
+    <a href="{{site.dynamic_url}}/pricing">See Pricing</a>
 </div>
 
 {% comment %} What developers say, maybe pick 3 tweets? {% endcomment %}
