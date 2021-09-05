@@ -1,3 +1,4 @@
-<a href="{{ include.href }}" class="cursor-pointer text-2xl font-normal bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-6 py-3 inline-block text-blue-100 rounded">
+{% assign href = include.href | replace: "#{site.content_url}", site.content_url | replace: "#{site.dynamic_url}", site.dynamic_url %}
+<a href="{{ href }}" class="cursor-pointer text-2xl font-normal bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-6 py-3 inline-block text-blue-100 rounded">
   {{ include.label }}
 </a>
