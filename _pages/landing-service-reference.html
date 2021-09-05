@@ -75,7 +75,6 @@ youtube_id="JKsgrstNnYY"
     </div>
 </div>
 
-
 <section class="text-center">
     <div class="container">
         <div class="my-20">
@@ -146,6 +145,82 @@ youtube_id="JKsgrstNnYY"
             support_languages="Java"
             %}
         </div>
+    </div>
+</section>
+
+<style>
+[data-lang]:hover {
+    box-shadow: 1px 1px 7px 7px rgba(0, 0, 0, .1);
+    transition: box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1);
+}
+.lang:active, .lang.active {
+    background-color: #fff;
+    --tw-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.16);
+    box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
+</style>
+<section id="serviceRef" class="text-center">
+    <div class="container">
+        <div class="mt-8 pt-8 pb-2">
+            <h2 class="text-gray-700 pb-2">Typed API Examples</h2>
+            <div class="colored-line"></div>
+            <div class="section-description my-2">
+                Usage of smart generic Service Clients and idiomatic DTOs enable a productive dev UX with the nicest typed API integrations in every language
+            </div>
+        </div>
+
+        <div class="flex justify-center">
+            <select class="sel-examples pr-8" style="width:auto"></select>
+        </div>
+
+        <div class="flex justify-evenly langs m-4 pb-6 w-container hide-fullscreen">
+            <span data-lang="csharp" class="lang project shadow-lg rounded-full cursor-pointer p-1" title="C#">
+                <img class="w-20 h-20" src="/images/svgs/csharp.svg" alt="C# logo">
+            </span>
+
+            <span data-lang="typescript" class="lang project shadow-lg rounded-full cursor-pointer p-1" title="Node.js TypeScript">
+                <img class="w-20 h-20 p-1" src="/images/svgs/node.svg" alt="Node.js logo">
+            </span>
+
+            <span data-lang="python" class="lang project shadow-lg rounded-full cursor-pointer p-1" title="Python">
+                <img class="w-20 h-20 p-1" src="/images/svgs/python.svg" alt="Python logo">
+            </span>
+
+            <span data-lang="dart" class="lang shadow-lg rounded-full cursor-pointer p-1" title="Dart">
+                <img class="w-20 h-20" src="/images/svgs/dart.svg" alt="Dart logo">
+            </span>
+
+            <span data-lang="java" class="lang shadow-lg rounded-full cursor-pointer p-1" title="Java">
+                <img class="w-20 h-20 p-1" src="/images/svgs/java.svg" alt="Java logo">
+            </span>
+
+            <span data-lang="kotlin" class="lang shadow-lg rounded-full cursor-pointer p-1" title="Kotlin">
+                <img class="w-20 h-20 p-1" src="/images/svgs/kotlin.svg" alt="Kotlin logo">
+            </span>
+
+            <span data-lang="swift" class="lang shadow-lg rounded-full cursor-pointer p-1" title="Swift">
+                <img class="w-20 h-20" src="/images/svgs/swift.svg" alt="Swift logo">
+            </span>
+
+            <span data-lang="vbnet" class="lang project shadow-lg rounded-full cursor-pointer p-1" title="VB">
+                <img class="w-20 h-20" src="/images/svgs/vb.svg" alt="VB.NET logo">
+            </span>
+
+            <span data-lang="fsharp" class="lang shadow-lg rounded-full cursor-pointer p-1" title="F#">
+                <img class="w-20 h-20" src="/images/svgs/fsharp.svg" alt="F# logo">
+            </span>
+        </div>
+
+        <div class="lang-preview"></div>
+
+        <div class="text-gray-400 pt-1">
+            All Service Clients include integrated
+            <a href="https://docs.servicestack.net/add-servicestack-reference#built-in-authentication">built-in Authentication</a>
+            inc. transparent JWT &amp; Refresh Token Cookie support
+        </div>
+
+        <div class="download pt-2"></div>
+
     </div>
 </section>
 
