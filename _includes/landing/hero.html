@@ -1,16 +1,16 @@
 <header class="header">
   <!-- To make header full screen. Use .full-screen class with color overlay. Example: <div class="color-overlay full-screen">  -->
-  <div class="color-overlay">
+  <div class="color-overlay" style="min-height:900px">
     <div class="container">
-      <div class="row home-contents">
+      <div class="row" style="margin-top:11em">
         <div class="col-md-6 col-sm-6">
-          <div class="intro-section">
-            <h1 class="intro">{{ include.intro_heading }}</h1>
+          <div class="intro-section text-left">
+            <h1 class="intro text-white mb-8">{{ include.intro_heading }}</h1>
             <p class="text-white text-lg">
               {{ include.intro_text }}
             </p>
 
-            <div class="buttons mb-8">
+            <div class="buttons my-8">
               <a href="{{ include.call_to_action_url }}"
                  class="cursor-pointer text-2xl font-normal bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-6 py-3 inline-block text-blue-100 rounded">
                 {{ include.call_to_action_text }}
@@ -18,9 +18,8 @@
             </div>
           </div>
         </div>
-
         <div class="col-md-6 col-sm-6 hidden-xs">
-          <div class="video-preview">
+          <div class="video-preview" style="max-height: 400px; margin: auto auto 50px;">
             <lite-youtube width="560" height="315" videoid="{{ include.youtube_id }}" style="background-image: url('https://img.youtube.com/vi/{{ include.youtube_id }}/maxresdefault.jpg')"></lite-youtube>
           </div>
         </div>

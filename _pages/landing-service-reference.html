@@ -1,18 +1,13 @@
 ---
 title: Service Reference for Typed APIs
 layout: landing-page
-customcss: home.css
 sitemap: false
 permalink: /service-reference
 ---
 <style>
-.owl-dots {
-    padding-top: 2em;
-}
 header {
-    background-image: url(../images/bg-header4.jpg);
+    background-image: url(/images/bg-header4.jpg);
 }
-
 #langIcons {
     justify-content: space-between;
 }
@@ -32,9 +27,8 @@ header {
     border-radius: 50%;
     transition: background 0.2s cubic-bezier(0, 0, 0.2, 1);
 }
-
 </style>
-<!--Hero banner -->
+
 {% include landing/hero.html
 intro_heading="High performance APIs that integrate with any platform"
 intro_text="Maximize the utility of your System APIs with end-to-end typed integrations to all popular languages for Web, Mobile & Desktop"
@@ -159,7 +153,7 @@ youtube_id="JKsgrstNnYY"
     box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
 }
 </style>
-<section id="serviceRef" class="text-center">
+<section id="serviceRef" class="hidden md:block text-center">
     <div class="container">
         <div class="mt-8 pt-8 pb-2">
             <h2 class="text-gray-700 pb-2">Typed API Examples</h2>
@@ -216,7 +210,9 @@ youtube_id="JKsgrstNnYY"
         <div class="text-gray-400 pt-1">
             All Service Clients include integrated
             <a href="https://docs.servicestack.net/add-servicestack-reference#built-in-authentication">built-in Authentication</a>
-            inc. transparent JWT &amp; Refresh Token Cookie support
+            inc. transparent
+            <a href="https://docs.servicestack.net/jwt-authprovider#refresh-token-cookies-supported-in-all-service-clients">JWT &amp; Refresh Token Cookie</a>
+            support
         </div>
 
         <div class="download pt-2"></div>
@@ -252,6 +248,7 @@ links_html="
 <div class='w-full'>
     <h3>Language Docs</h3>
     <ul class='list-none'>
+        <li><a href='https://docs.servicestack.net/add-servicestack-reference'>Overview</a></li>
         <li><a href='https://docs.servicestack.net/csharp-add-servicestack-reference'>C#</a></li>
         <li><a href='https://docs.servicestack.net/typescript-add-servicestack-reference'>TypeScript</a></li>
         <li><a href='https://docs.servicestack.net/python-add-servicestack-reference'>Python</a></li>
@@ -293,9 +290,7 @@ links_html="
     <a href="{{site.dynamic_url}}/pricing">See Pricing</a>
 </div>
 
-{% comment %} What developers say, maybe pick 3 tweets? {% endcomment %}
 <div class="text-center">
     {% include home/testimonials-section.html %}
 </div>
-
 {% include landing/brand-customers.html %}
