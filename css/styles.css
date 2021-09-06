@@ -130,7 +130,7 @@ body {
 }
 .navbar-brand {
     float: left;
-    padding: 15px;
+    padding: 8px;
     font-size: 18px;
     line-height: 32px;
     height: 32px;
@@ -201,7 +201,8 @@ textarea.form-control {
 }
 
 .navbar-brand img {
-    height: 32px;
+    margin-top: 2px;
+    height: 35px;
 }
 
 /*
