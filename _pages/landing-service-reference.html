@@ -1,18 +1,13 @@
 ---
 title: Service Reference for Typed APIs
 layout: landing-page
-customcss: home.css
 sitemap: false
 permalink: /service-reference
 ---
 <style>
-.owl-dots {
-    padding-top: 2em;
-}
 header {
-    background-image: url(../images/bg-header4.jpg);
+    background-image: url(/images/bg-header4.jpg);
 }
-
 #langIcons {
     justify-content: space-between;
 }
@@ -32,9 +27,8 @@ header {
     border-radius: 50%;
     transition: background 0.2s cubic-bezier(0, 0, 0.2, 1);
 }
-
 </style>
-<!--Hero banner -->
+
 {% include landing/hero.html
 intro_heading="High performance APIs that integrate with any platform"
 intro_text="Maximize the utility of your System APIs with end-to-end typed integrations to all popular languages for Web, Mobile & Desktop"
@@ -293,9 +287,7 @@ links_html="
     <a href="{{site.dynamic_url}}/pricing">See Pricing</a>
 </div>
 
-{% comment %} What developers say, maybe pick 3 tweets? {% endcomment %}
 <div class="text-center">
     {% include home/testimonials-section.html %}
 </div>
-
 {% include landing/brand-customers.html %}

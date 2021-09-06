@@ -1,4 +1,11 @@
 <style>
+.testimonials {
+    background: url(/images/bg-header.jpg) no-repeat center top fixed;
+    z-index: -1;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #ffffff;
+}
 .testimonials .color-overlay {
     padding-top: 110px;
     padding-bottom: 110px;
@@ -71,6 +78,27 @@
 #feedbacks .owl-dot.active span { background: #fff !important; }
 .owl-theme .owl-nav [class*='owl-']:hover {
     background: transparent;
+}
+.owl-nav {
+    display: flex;
+    justify-content: space-between;
+    margin: -200px 0 120px 0 !important;
+}
+.owl-prev, .owl-next {
+    width: 60px;
+    height: 100%;
+    margin: 10px 0;
+    display: block;
+    z-index: 1;
+    opacity: .2;
+    transition: opacity .3s;
+}
+.owl-prev:hover, .owl-next:hover {
+    opacity: 1;
+    transition: opacity .3s;
+}
+.owl-prev:focus, .owl-next:focus, .owl-dot:focus {
+    outline: none;
 }
 </style>
 <section class="testimonials">
