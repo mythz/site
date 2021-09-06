@@ -42,6 +42,15 @@
       background: url('/images/logo-only.svg') no-repeat top left;
       padding: 5px 5px 5px 45px;
     }
+    @media (max-width:544px) {
+      .navbar-brand {
+        padding: 2px;
+      }
+      .brand, a .brand {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+      }
+    }
   </style>
   {% if page.customcss %}<link rel="stylesheet" href="/css/{{page.customcss}}">{% endif %}
 </head>
