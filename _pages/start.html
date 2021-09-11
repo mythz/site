@@ -383,17 +383,17 @@ sitemap: false
                 <div class="flex flex-wrap justify-center">
                     <div>
                         {% include project-template-install-card.html
-                        repo="NetCoreTemplates/vuetify-spa"
-                        name="Vuetify"
-                        tags="auth"
-                        icon_element="<i class='fab fa-vuejs'></i>" %}
-                    </div>
-                    <div>
-                        {% include project-template-install-card.html
                         repo="NetCoreTemplates/vue-nuxt"
                         name="Nuxt"
                         tags="auth"
                         icon_element="<img class='w-10 h-10' src='/images/svgs/nuxtjs.svg'>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/vuetify-spa"
+                        name="Vuetify"
+                        tags="auth"
+                        icon_element="<i class='fab fa-vuejs'></i>" %}
                     </div>
                     <div>
                         {% include project-template-install-card.html
@@ -439,19 +439,6 @@ sitemap: false
                 </div>
             </div>
 
-            <div id="desktop" class="mt-4 mb-2">
-                <h3 class="text-gray-400">Desktop Project Templates</h3>
-
-                <div class="flex flex-wrap justify-center">
-                    <div>
-                        {% include project-template-install-card.html
-                        repo="NetCoreTemplates/vue-desktop"
-                        name="Vue Desktop"
-                        icon_element="<i class='fab fa-vuejs'></i>" %}
-                    </div>
-                </div>
-            </div>
-
             <div id="community" class="mt-4 mb-2">
                 <h3 class="text-gray-400">Community Project Templates</h3>
 
@@ -462,6 +449,19 @@ sitemap: false
                         name="Blazor"
                         tags="auth"
                         icon_element="<i class='fab fa-microsoft'></i>" %}
+                    </div>
+                </div>
+            </div>
+
+            <div id="desktop" class="mt-4 mb-2">
+                <h3 class="text-gray-400">Desktop Project Templates</h3>
+
+                <div class="flex flex-wrap justify-center">
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetCoreTemplates/vue-desktop"
+                        name="Vue Desktop"
+                        icon_element="<i class='fab fa-vuejs'></i>" %}
                     </div>
                 </div>
             </div>
@@ -606,6 +606,27 @@ if (location.hash) {
     }
     updateTemplates();
 }
+
+function formatNumber(num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
+
+fetch("{{site.dynamic_url}}/stats/projects.json")
+    .then(function (r) { return r.json(); })
+    .then(function (obj) {
+        let results = obj.Results || obj.results;
+        Object.keys(results).forEach(function (k) {
+            let count = results[k];
+            let name = k.indexOf('/') >= 0
+                ? k.replace('/','_')
+                : 'netcoretemplates_' + k;
+            let $count = $1('.' + name + ' .count');
+            if (!$count) return;
+            $count.innerHTML = count < 60
+                ? '<span class="px-2 h-8 rounded-lg bg-red-50 text-red-600 text-sm">new</span>'
+                : formatNumber(count) + ' installs';
+        });
+    })
 
 </script>
 <!-- Event snippet for Website traffic - Start conversion page -->
