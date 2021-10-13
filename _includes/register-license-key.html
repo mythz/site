@@ -28,7 +28,7 @@
 }
 </pre>
                 <p>
-                    Non ServiceStack .NET Core <b>AppHost</b> Apps (e.g. just using Redis or OrmLite) will need to explicitly register the license key from IConfiguration, e.g:
+                    Non ServiceStack .NET Core <b>AppHost</b> Apps (i.e. just using Redis or OrmLite) will also need to explicitly register the license key from IConfiguration:
                 </p>
                 <pre>Licensing.RegisterLicense(Configuration.GetValue&lt;string&gt;("servicestack:license"));</pre>
                 <p>
