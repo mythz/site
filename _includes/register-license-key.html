@@ -28,6 +28,10 @@
 }
 </pre>
                 <p>
+                    Non ServiceStack .NET Core <em>AppHost</em> Apps will need to register the license key explicitly, e.g:
+                </p>
+                <pre>Licensing.RegisterLicense(Configuration.GetValue&lt;string&gt;("servicestack:license"));</pre>
+                <p>
                     For .NET Framework Applications add it to the <b>Web.config</b> or App.config's <b>&lt;appSettings/&gt;</b> config section:
                 </p>
 
