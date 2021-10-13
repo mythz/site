@@ -28,7 +28,7 @@
 }
 </pre>
                 <p>
-                    Non ServiceStack .NET Core <b>AppHost</b> Apps will need to register the license key explicitly, e.g:
+                    Non ServiceStack .NET Core <b>AppHost</b> Apps will need to explicitly register the license key from IConfiguration, e.g:
                 </p>
                 <pre>Licensing.RegisterLicense(Configuration.GetValue&lt;string&gt;("servicestack:license"));</pre>
                 <p>
