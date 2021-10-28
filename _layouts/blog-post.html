@@ -22,6 +22,9 @@
         .news-post-page-author-container {
             font-weight: 300;
         }
+        .blog-content ul>li {
+            list-style: disc inside;
+        }
     </style>
 </head>
 <body>
@@ -30,7 +33,7 @@
     <section class="my-8 pt-8 {{ page.section_css }}">
         <div class="container news-post-page mt-8">
             <div class="grid grid-cols-12">
-                <div class="flex-grow col-start-1 col-end-10 text-left wow fadeInLeft animated px-4 text-lg">
+                <div class="flex-grow col-start-1 col-end-10 text-left wow fadeInLeft animated px-4 text-lg blog-content">
                     <span class="news-post-page-date">{{ page.date | date: '%B %d, %Y' }}</span>
                     <h1 style="text-align: center">{{page.title}}</h1>
                     {{ content }}
