@@ -12,21 +12,9 @@
     {% endcomment %}
     <link rel="stylesheet" href="/css/syntax.css">
     <style>
-        .news-post-page {
-
-        }
         .news-post-page img {
             padding-top: 2em;
             padding-bottom: 2em;
-        }
-        .news-post-page-date {
-            display:block;
-            text-align: center;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-        .news-post-page-author-container {
-            font-weight: 300;
         }
         .blog-content ul>li {
             list-style: disc inside;
@@ -74,11 +62,11 @@
         <div class="container news-post-page mt-8">
             <div class="grid grid-cols-12">
                 <div class="flex-grow col-start-1 col-end-10 text-left wow fadeInLeft animated px-4 text-lg blog-content">
-                    <span class="news-post-page-date">{{ page.date | date: '%B %d, %Y' }}</span>
-                    <h1 style="text-align: center">{{page.title}}</h1>
+                    <h1 class="text-center font-light mt-0 mb-2">{{page.title}}</h1>
+                    <div class="text-center text-gray-400 mb-8 border-gray-200 border-t-1 border-b-1 py-1">{{ page.date | date: '%B %d, %Y' }}</div>
                     {{ content }}
                 </div>
-                <div class="flex-shrink col-start-10 col-end-13 px-4 bg-gray-100 news-post-page-author-container">
+                <div class="flex-shrink col-start-10 col-end-13 px-4 bg-gray-100">
                     <h3 style="font-weight: 700">Author</h3>
                     {% if page.author_img %}
                         <img src="{{page.author_img}}" alt="{{page.author_img_alt}}" />
