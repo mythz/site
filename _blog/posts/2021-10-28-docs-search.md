@@ -279,3 +279,10 @@ The whole GitHub Action can be seen in our [ServiceStack/docs repository](https:
 
 The results are **excellent**, [see for yourself](https://docs.servicestack.net) by using the search at the top right or using Ctrl+K shortcut key on our docs site. 
 It handles typos really well, it is very quick and has become the fastest way to navigate our extensive documentation.
+
+We have been super impressed with the search experience that Typesense enabled, the engineers behind the Typesense product have created something with a better developer experience than even paid SaaS options and provided it with a clear value proposition.
+
+As a way to show our thanks, ServiceStack is now a sponsor of [Typesense on GitHub sponsors](https://github.com/sponsors/typesense) 🎉 🎉 
+
+At ServiceStack, we know how challenging trying to make open source software sustainable can be and our dual license approach isn't going to suit everyone. 
+So if you find yourself using amazing open source products like Typesense, and you want to see these teams continue, find out how you or your company can support them.
