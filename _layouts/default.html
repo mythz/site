@@ -45,10 +45,22 @@
     {% include home/testimonials-section.html %}
 
     {% include home/feature-video-left.html
+    youtube_id="WjbhfH45i5k,cbYuem1b2tg,xg677weFef4,EaUcPXVeLpk,T3KTDPdovOw,nmB0NaI9-3k"
+    local_link_id="add-ss-ref-feature"
+    title="Add ServiceStack Reference"
+    bg_class="bg-white"
+    embed_html="
+    <p>Generate Native Types for your preferred language and platforms directly from within your favorite IDE or easy to use CLI tooling.</p>
+    <p>Add and update lightweight client code straight from the server you integrate with giving you an easy to use end-to-end typed interface with your ServiceStack server.</p>
+    "
+    learn_url="/service-reference"
+    %}
+
+    {% include home/feature-video-right.html
     local_link_id="autoquery-feature"
     youtube_id="nhc4MZufkcM,NaJ7TW-Q_pU,1dFqzrF1mV8"
     title="AutoQuery"
-    bg_class="bg-white"
+    bg_class="bg-gray-100"
     embed_html="
     <p>Surface the ideal API a developer would naturally write and complete their implementation for them with AutoQuery!</p>
     <p>AutoQuery which utilizes conventions to automate the creation of intent-based self-descriptive APIs that are able to specify configurable conventions and leverage extensibility options for a great developer experience.</p>
@@ -56,17 +68,19 @@
     learn_url="/autoquery"
     %}
 
-    {% include home/feature-video-right.html
+    {% include home/feature-video-left.html
     youtube_id="kN7371bqUII,XpHAaCTV7jE"
     local_link_id="studio-feature"
     title="Studio"
-    bg_class="bg-gray-100"
+    bg_class="bg-white"
     embed_html="
     <p>Use ServiceStack Studio to manage Users, Validation, Permissions and Data with our portable tool for your AutoQuery services.</p>
     <p>ServiceStack Studio is a capability-based UI to manage multiple remote ServiceStack instances from either a Chromium Desktop App or cross-platform .NET Core Web App.</p>
     "
     learn_url="https://docs.servicestack.net/studio"
     %}
+
+    {% include home/feature-service-clients.html %}
 
     {% include home/feature-video-left.html
     youtube_id="NaJ7TW-Q_pU,3iz9aM1AlGA"
@@ -78,20 +92,6 @@
     <p>AutoGen for AutoQuery generates the required DTO types at runtime, and ServiceStack tooling allows you to extract those runtime types, giving you a future proof pathway to customize and migrate to a code-first model when you need.</p>
     "
     learn_url="https://docs.servicestack.net/autogen"
-    %}
-
-    {% include home/feature-service-clients.html %}
-
-    {% include home/feature-video-left.html
-    youtube_id="WjbhfH45i5k,cbYuem1b2tg,xg677weFef4,EaUcPXVeLpk,T3KTDPdovOw,nmB0NaI9-3k"
-    local_link_id="add-ss-ref-feature"
-    title="Add ServiceStack Reference"
-    bg_class="bg-white"
-    embed_html="
-    <p>Generate Native Types for your preferred language and platforms directly from within your favorite IDE or easy to use CLI tooling.</p>
-    <p>Add and update lightweight client code straight from the server you integrate with giving you an easy to use end-to-end typed interface with your ServiceStack server.</p>
-    "
-    learn_url="/service-reference"
     %}
 
     {% include home/feature-video-right.html
