@@ -274,7 +274,7 @@ Once a day, the process checks if the latest commit in the repository is less th
 
 The whole GitHub Action can be seen in our [ServiceStack/docs repository](https://github.com/ServiceStack/docs/blob/master/.github/workflows/search-index-update.yml) if you are interested or are setting up your own process the same way.
 
-## UI Search Dialog
+## Search UI Dialog
 
 Now that our docs are indexed the only thing left to do is display the results. We used algolia's OSS docs search UX as
 our inspiration which we've implemented in custom Vue3 components that we've Open sourced in 

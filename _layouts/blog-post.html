@@ -8,7 +8,7 @@
     {% comment %}
     rogue syntax theme: https://mcpride.github.io/posts/development/2018/03/06/syntax-highlighting-with-jekyll/
     Use `rougify help style` to view available themes, create with:
-    $ rougify style github > css/syntax.css
+    $ rougify style thankful_eyes > css/syntax.css
     {% endcomment %}
     <link rel="stylesheet" href="/css/syntax.css">
     <style>
@@ -30,6 +30,40 @@
         }
         .blog-content ul>li {
             list-style: disc inside;
+        }
+        /* from docs.servicestack.net */
+        h1, h2, h3, h4, h5, h6, strong, b {
+            font-weight: 500;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            line-height: 1.25;
+        }
+        h1 {
+            margin-top: 1.25rem;
+            margin-bottom: 2.25rem;
+        }
+        h2 {
+            margin-top: 2.25rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(60, 60, 67, 0.12);
+            padding-bottom: .3rem;
+            line-height: 1.25;
+            font-size: 1.65rem;
+        }
+        h3 {
+            margin-top: 2rem;
+            font-size: 1.35rem;
+        }
+        div[class*=language-] {
+            margin: 1rem 0;
+            border-radius: 6px;
+        }
+        @media (min-width: 420px) {
+            div[class*=language-] {
+                margin: 1rem 0;
+                border-radius: 6px;
+            }
         }
     </style>
 </head>
