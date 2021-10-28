@@ -25,9 +25,9 @@ However, the Algolia DocSeach product didn't seem to offer the service for comme
 
 We found [Typesense](https://typesense.org) as an appealing alternative which offers [simple cost-effective cloud hosting](https://cloud.typesense.org) 
 but even better, they also have an easy to use open source option for self-hosting or evaluation. 
-We were so pleased with its simplicity focus and end-user UX that it quickly became our preferred way to 
+We were so pleased with its simplicity-focus and end-user UX that it quickly became our preferred way to 
 [navigate our docs](https://docs.servicestack.net). So that more people can find out about Typesense's amazing OSS Search
-product we've documented the approach we used for creating and deploying an index of our site with GitHub Actions.
+product we've documented our approach used for creating and deploying an index of our site using GitHub Actions.
 
 Documentation search is a common use case which Typesense caters for with their [typesense-docsearch-scraper](https://github.com/typesense/typesense-docsearch-scraper). This is a utility designed to easily scrape a documentation site and post the results to a Typesense server to create a fast searchable index.
 
@@ -286,10 +286,10 @@ The whole GitHub Action can be seen in our [ServiceStack/docs repository](https:
 
 ## Search UI Dialog
 
-Now that our docs are indexed the only thing left to do is display the results. We used algolia's OSS docs search UX as
-our inspiration which we've implemented in custom Vue3 components that we've Open sourced in 
-[this gist](https://gist.github.com/gistlyn/d215e9ff31abd9adce719a663a4bd8af) we hope will serve useful in being able to
-quickly adopt typesearch for your own purposes.
+Now that our docs are indexed the only thing left to do is display the results. We set out to create a comparable UX to
+algolia's doc search which we've implemented in custom Vue3 components and have Open sourced in 
+[this gist](https://gist.github.com/gistlyn/d215e9ff31abd9adce719a663a4bd8af) in hope it will serve useful in adopting 
+typesearch for your own purposes.
 
 As VitePress is a SSG framework we need to wrap them in a [ClientOnly component](https://vitepress.vuejs.org/guide/global-component.html#clientonly)
 to ensure they're only rendered on the client:
@@ -301,7 +301,7 @@ to ensure they're only rendered on the client:
 </ClientOnly>
 ```
 
-With the logic to capture the window global shortcut keys wrapped in a hidden 
+Where the logic to capture the window global shortcut keys is wrapped in a hidden 
 [KeyboardEvents.vue](https://gist.github.com/gistlyn/d215e9ff31abd9adce719a663a4bd8af#file-keyboardevents-vue):
 
 ```html
@@ -325,7 +325,7 @@ With the logic to capture the window global shortcut keys wrapped in a hidden
 </script>
 ```
 
-Which we handle in our custom [Layout.vue](https://gist.github.com/gistlyn/d215e9ff31abd9adce719a663a4bd8af#file-layout-vue)
+Which is handled in our custom [Layout.vue](https://gist.github.com/gistlyn/d215e9ff31abd9adce719a663a4bd8af#file-layout-vue)
 VitePress theme to detect when the `esc` and `CTRL+K` keys are pressed to hide/open the dialog: 
 
 ```ts
@@ -343,8 +343,9 @@ const onKeyDown = (e:KeyboardEvent) => {
 ```
 
 The actual search dialog component is encapsulated in 
-[TypeSenseDialog.vue](https://gist.github.com/gistlyn/d215e9ff31abd9adce719a663a4bd8af#file-typesensedialog-vue) the 
-integral part being the API search query to our typesense instance:
+[TypeSenseDialog.vue](https://gist.github.com/gistlyn/d215e9ff31abd9adce719a663a4bd8af#file-typesensedialog-vue)
+(utilizing tailwind classes, scoped styles and inline SVGs so is easily portable), 
+the integral part being the API search query to our typesense instance:
 
 ```js
 fetch('https://search.docs.servicestack.net/collections/typesense_docs/documents/search?q='
@@ -357,10 +358,10 @@ fetch('https://search.docs.servicestack.net/collections/typesense_docs/documents
 })
 ```
 
-Which essentially just searches index docs content and its h1-3 headings, grouping by the document's title. To better
-fine-tune search results for your use-case please refer to the [Typesense API Search Reference](https://typesense.org/docs/0.21.0/api/documents.html#search). 
-
-The Search UI component uses tailwind classes, scoped styles and inline SVGs so should be very portable.  
+Which instructs Typesense to search through each documents content and h1-3 headings, grouping results by its page title.
+Refer to the [Typesense API Search Reference](https://typesense.org/docs/0.21.0/api/documents.html#search) to learn how
+to further fine-tune search results for your use-case. 
+ 
 
 ## Search Results
 
