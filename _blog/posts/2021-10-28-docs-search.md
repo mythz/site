@@ -4,7 +4,7 @@ slug: docs-search-powered-by-typesense
 title: Docs search powered by Typesense
 layout: blog-post
 sitemap: false
-preview_text: We've recently migrated our docs from Jekyll to Vitepress and took the opportunity to make some UX improvements including instant search powered by Typesense!
+preview_text: We've recently migrated our docs from Jekyll to VitePress and took the opportunity to make some UX improvements including instant search powered by Typesense!
 preview_img_url: /images/blog/typesense_logo.svg
 author: Darren Reid
 author_title: Developer
@@ -14,9 +14,10 @@ linkedin_url: https://www.linkedin.com/in/layoric/
 github_url: https://github.com/layoric/
 ---
 
-We have recently migrated the [ServiceStack documentation website](https://docs.servicestack.net) from using Jekyll for static site generation (SSG) to using [Vitepress](https://vitepress.vuejs.org/) which enables us to use Vite with Vue 3 components and have an insanely fast hot reload while we update our documentation.
+We have recently migrated the [ServiceStack documentation website](https://docs.servicestack.net) from using Jekyll for static site generation (SSG) to using 
+[VitePress](https://vitepress.vuejs.org) which enables us to use Vite with Vue 3 components and have an insanely fast hot reload while we update our documentation.
 
-Vitepress is very well suited to documentation sites, and it is one of the primary use cases for Vitepress at the time of writing. 
+VitePress is very well suited to documentation sites, and it is one of the primary use cases for VitePress at the time of writing. 
 The default theme even has optional [integration with Algolia DocSearch](https://vitepress.vuejs.org/config/algolia-search). 
 However, the Algolia DocSeach product didn't seem to offer the service for commercial products even as a paid service and their per request pricing model made it harder to determine what our costs would be in the long run for using their search service for our documentation.
 
@@ -272,6 +273,84 @@ To make things more hands off and reduce any possible issues from GitHub Pages C
 Once a day, the process checks if the latest commit in the repository is less than 1 day old. If it is,we ship an updated search index, otherwise we actually cancel the GitHub Action process early to save on CI minutes.
 
 The whole GitHub Action can be seen in our [ServiceStack/docs repository](https://github.com/ServiceStack/docs/blob/master/.github/workflows/search-index-update.yml) if you are interested or are setting up your own process the same way.
+
+## UI Search Dialog
+
+Now that our docs are indexed the only thing left to do is display the results. We used algolia's OSS docs search UX as
+our inspiration which we've implemented in custom Vue3 components that we've Open sourced in 
+[this gist](https://gist.github.com/gistlyn/d215e9ff31abd9adce719a663a4bd8af) we hope will serve useful in being able to
+quickly adopt typesearch for your own purposes.
+
+As VitePress is a SSG framework we need to wrap them in a [ClientOnly component](https://vitepress.vuejs.org/guide/global-component.html#clientonly)
+to ensure they're only rendered on the client:
+
+```html
+<ClientOnly>
+    <KeyboardEvents @keydown="onKeyDown" />
+    <TypeSenseDialog :open="openSearch" @hide="hideSearch" />
+</ClientOnly>
+```
+
+With the logic to capture the window global shortcut keys wrapped in a hidden 
+[KeyboardEvents.vue](https://gist.github.com/gistlyn/d215e9ff31abd9adce719a663a4bd8af#file-keyboardevents-vue):
+
+```html
+<template>
+  <div class="hidden"></div>
+</template>
+  
+<script>
+  export default {
+    created() {
+      const component = this;
+      this.handler = function (e) {
+        component.$emit('keydown', e);
+      }
+      window.addEventListener('keydown', this.handler);
+    },
+    beforeDestroy() {
+      window.removeEventListener('keydown', this.handler);
+    }
+  }
+</script>
+```
+
+Which we handle in our custom [Layout.vue](https://gist.github.com/gistlyn/d215e9ff31abd9adce719a663a4bd8af#file-layout-vue)
+VitePress theme to detect when the `esc` and `CTRL+K` keys are pressed to hide/open the dialog: 
+
+```ts
+const onKeyDown = (e:KeyboardEvent) => {
+  if (e.code === 'Escape') {
+    hideSearch();
+  }
+  else if ((e.target as HTMLElement).tagName != 'INPUT') {
+    if (e.ctrlKey && e.code == 'KeyK') {
+      showSearch();
+      e.preventDefault();
+    }
+  }
+};
+```
+
+The actual search dialog component is encapsulated in 
+[TypeSenseDialog.vue](https://gist.github.com/gistlyn/d215e9ff31abd9adce719a663a4bd8af#file-typesensedialog-vue) the 
+integral part being the API search query to our typesense instance:
+
+```js
+fetch('https://search.docs.servicestack.net/collections/typesense_docs/documents/search?q='
+  + encodeURIComponent(query.value)
+  + '&query_by=content,hierarchy.lvl0,hierarchy.lvl1,hierarchy.lvl2,hierarchy.lvl3&group_by=hierarchy.lvl0', {
+    headers: {
+      // Search only API key for Typesense.
+      'x-typesense-api-key': 'REPLACE_WITH_TYPESENSE_API_KEY'
+    }
+})
+```
+
+Which essentially just searches index docs content and its h1-3 headings, grouping by the document's title. To better
+fine-tune search results for your use-case please refer to the [Typesense API Search Reference](https://typesense.org/docs/0.21.0/api/documents.html#search). 
+
+The Search UI component uses tailwind classes, scoped styles and inline SVGs so should be very portable.  
 
 ## Search Results
 
