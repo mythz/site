@@ -31,6 +31,13 @@ plugins:
   - github-pages
   - jekyll-sitemap
 
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 # https://github.com/helaili/jekyll-action/issues/43
 exclude:
   - readme.md

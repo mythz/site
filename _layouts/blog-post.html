@@ -5,6 +5,12 @@
     <title>{{page.title}}</title>
     {% include fav-icons-section.html %}
     {% include stylesheets-section.html %}
+    {% comment %}
+    rogue syntax theme: https://mcpride.github.io/posts/development/2018/03/06/syntax-highlighting-with-jekyll/
+    Use `rougify help style` to view available themes, create with:
+    $ rougify style github > css/syntax.css
+    {% endcomment %}
+    <link rel="stylesheet" href="/css/syntax.css">
     <style>
         .news-post-page {
 
