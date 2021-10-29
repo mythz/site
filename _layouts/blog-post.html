@@ -5,31 +5,53 @@
     <title>{{page.title}}</title>
     {% include fav-icons-section.html %}
     {% include stylesheets-section.html %}
+    {% comment %}
+    rogue syntax theme: https://mcpride.github.io/posts/development/2018/03/06/syntax-highlighting-with-jekyll/
+    Use `rougify help style` to view available themes, create with:
+    $ rougify style thankful_eyes > css/syntax.css
+    {% endcomment %}
+    <link rel="stylesheet" href="/css/syntax.css">
     <style>
-        .news-post-page {
-
-        }
         .news-post-page img {
             padding-top: 2em;
             padding-bottom: 2em;
         }
-        .news-post-page-date {
-            display:block;
-            text-align: center;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-        .news-post-page-author-container {
-            font-weight: 300;
-        }
         .blog-content ul>li {
             list-style: disc inside;
         }
-        .container {
-            width:100%;
+        /* from docs.servicestack.net */
+        h1, h2, h3, h4, h5, h6, strong, b {
+            font-weight: 500;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            line-height: 1.25;
         }
         h1 {
-            margin-bottom: 2rem;
+            margin-top: 1.25rem;
+            margin-bottom: 2.25rem;
+        }
+        h2 {
+            margin-top: 2.25rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(60, 60, 67, 0.12);
+            padding-bottom: .3rem;
+            line-height: 1.25;
+            font-size: 1.65rem;
+        }
+        h3 {
+            margin-top: 2rem;
+            font-size: 1.35rem;
+        }
+        div[class*=language-] {
+            margin: 1rem 0;
+            border-radius: 6px;
+        }
+        @media (min-width: 420px) {
+            div[class*=language-] {
+                margin: 1rem 0;
+                border-radius: 6px;
+            }
         }
     </style>
 </head>
@@ -39,12 +61,12 @@
     <section class="my-8 pt-8 {{ page.section_css }}">
         <div class="container news-post-page mt-8">
             <div class="grid grid-cols-12">
-                <div class="flex-grow col-start-1 col-end-11 text-left wow fadeInLeft animated px-4 text-lg blog-content">
-                    <span class="news-post-page-date">{{ page.date | date: '%B %d, %Y' }}</span>
-                    <h1 style="text-align: center">{{page.title}}</h1>
+                <div class="flex-grow col-start-1 col-end-10 text-left wow fadeInLeft animated px-4 text-lg blog-content">
+                    <h1 class="text-center font-light mt-0 mb-2">{{page.title}}</h1>
+                    <div class="text-center text-gray-400 mb-8 border-gray-200 border-t-1 border-b-1 py-1">{{ page.date | date: '%B %d, %Y' }}</div>
                     {{ content }}
                 </div>
-                <div class="flex-shrink col-start-11 col-end-13 px-4 bg-gray-100 news-post-page-author-container">
+                <div class="flex-shrink col-start-10 col-end-13 px-4 bg-gray-100">
                     <h3 style="font-weight: 700">Author</h3>
                     {% if page.author_img %}
                         <img src="{{page.author_img}}" alt="{{page.author_img_alt}}" />
