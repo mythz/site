@@ -14,8 +14,11 @@ linkedin_url: https://www.linkedin.com/in/layoric/
 github_url: https://github.com/layoric/
 ---
 <style>
-tbody td{
-  padding: 30px;
+table {
+    margin-bottom: 2em;
+}
+th, td {
+  padding: 1em 1.5em;
 }
 
 tbody tr:nth-child(odd){
@@ -33,22 +36,22 @@ We wanted to share our experience with this process in the hope it might help ot
 
 Below is not an exhaustive list of features but more focusing on pros and cons when it comes to comparing these two options for use as the static site generator for a documentation site.
 
-|  | Jekyll |         VitePress           |
-|:---|:----:|:--------------------------------:|
-| Native Language | Ruby | JavaScript
-| Template Syntax | Liquid | Vue
-| Update Time | 6-30 seconds | 30-500 ms
-| Themes | ✅ - mature market | ✅ - limited
-| Extensible | ✅✅✅ | ✅ - only themes + Vite plugins
-| Client framework | None | Vue 3
-| Maintained | No longer | New project
-| 1.0+ release | ✅ | ➖
-| Permalink | ✅ | ➖ (depends on filename)
-| Markdown support | ✅ | ✅
-| HTML support | ✅ | ✅* (must use Vue component)
+|Features            | Jekyll | VitePress |
+|:-------------------|:-------|:----------|
+| Native Language    | Ruby | JavaScript
+| Template Syntax    | Liquid | Vue
+| Update Time        | 6-30 seconds | 30-500 ms
+| Themes             | ✅ - mature market | ✅ - limited
+| Extensible         | ✅ | ✅ (only themes + vite plugins)
+| Client framework   | None | Vue 3
+| Maintained         | No longer | New project
+| 1.0+ release       | ✅ | ➖
+| Permalink          | ✅ | ➖ (depends on filename)
+| Markdown support   | ✅ | ✅
+| HTML support       | ✅ | ✅ (must use Vue component)
 | Sitemap generation | ✅ | ➖
-| Tags | ✅ | ➖
-| Clean URLs | ✅ | ➖
+| Tags               | ✅ | ➖
+| Clean URLs         | ✅ | ➖
 
 This list might look bad for VitePress, but it comes down to a young library that is still in active development. The default theme for VitePress is also centered around technical documentation making it quick to get up and running looking good for this use case.
 
