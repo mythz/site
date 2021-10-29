@@ -147,22 +147,20 @@ curl -H 'x-typesense-api-key: <apikey>' \
     'http://localhost:8108/collections/typesense_docs/documents/search?q=test&query_by=content'
 ```
 
-The collection name and `query_by` come from how our scraper were configured. The scraper was posting data to the `typesense_docs` collection and populating various fields, eg `content`.
+The collection name and `query_by` come from how our scraper were configured. The scraper was posting data to the 
+`typesense_docs` collection and populating various fields, eg `content`.
 
-Since our new docs site is now powered by Vite and Vue 3, we can create a client side Vue 3 component of our statically generated site that will query the Typesense server and present the results.
+Which as it returns JSON can be easily queried in JavaScript using **fetch**:
 
-```javascript
-fetch('https://search.docs.servicestack.net/collections/typesense_docs/documents/search?q='
-    + encodeURIComponent(query.value)
-    + '&query_by=content,hierarchy.lvl0,hierarchy.lvl1,hierarchy.lvl2,hierarchy.lvl3&group_by=hierarchy.lvl0', {
+```js
+fetch('http://localhost:8108/collections/typesense_docs/documents/search?q='
+    + encodeURIComponent(query) + '&query_by=content', {
     headers: {
         // Search only API key for Typesense.
-        'x-typesense-api-key': 'REPLACE_WITH_TYPESENSE_API_KEY'
+        'x-typesense-api-key': 'TYPESENSE_SEARCH_ONLY_API_KEY'
     }
 })
 ```
-
-In the above `fetch` command we are further controlling the query to group the results as well as query by additional fields. The client can also control a [whole range of other options](https://typesense.org/docs/0.21.0/api/documents.html#arguments) to help improve the results.
 
 In the above we have also used a different name for the API key token, this is important since the `--api-key` specified to the running Typesense server is the admin API key. You don't want to expose this to a browser client since they will have the ability to create,update and delete your collections or documents.
 
@@ -340,19 +338,20 @@ Where the logic to capture the window global shortcut keys is wrapped in a hidde
 ```
 
 Which is handled in our custom [Layout.vue](https://gist.github.com/gistlyn/d215e9ff31abd9adce719a663a4bd8af#file-layout-vue)
-VitePress theme to detect when the `esc` and `CTRL+K` keys are pressed to hide/open the dialog: 
+VitePress theme to detect when the `esc` and `/` or `CTRL+K` keys are pressed to hide/open the dialog: 
 
 ```ts
 const onKeyDown = (e:KeyboardEvent) => {
-  if (e.code === 'Escape') {
-    hideSearch();
-  }
-  else if ((e.target as HTMLElement).tagName != 'INPUT') {
-    if (e.ctrlKey && e.code == 'KeyK') {
-      showSearch();
-      e.preventDefault();
+    console.log(e.code)
+    if (e.code === 'Escape') {
+        hideSearch();
     }
-  }
+    else if ((e.target as HTMLElement).tagName != 'INPUT') {
+        if (e.code == 'Slash' || (e.ctrlKey && e.code == 'KeyK')) {
+            showSearch();
+            e.preventDefault();
+        }
+    }
 };
 ```
 
@@ -367,7 +366,7 @@ fetch('https://search.docs.servicestack.net/collections/typesense_docs/documents
   + '&query_by=content,hierarchy.lvl0,hierarchy.lvl1,hierarchy.lvl2,hierarchy.lvl3&group_by=hierarchy.lvl0', {
     headers: {
       // Search only API key for Typesense.
-      'x-typesense-api-key': 'REPLACE_WITH_TYPESENSE_API_KEY'
+      'x-typesense-api-key': 'TYPESENSE_SEARCH_ONLY_API_KEY'
     }
 })
 ```
