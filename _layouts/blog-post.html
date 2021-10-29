@@ -52,6 +52,9 @@
                 margin: 1rem 0;
                 border-radius: 6px;
             }
+            .author-bio {
+
+            }
         }
     </style>
 </head>
@@ -61,18 +64,18 @@
     <section class="my-8 pt-8 {{ page.section_css }}">
         <div class="container news-post-page mt-8">
             <div class="grid grid-cols-12">
-                <div class="flex-grow col-start-1 col-end-10 text-left wow fadeInLeft animated px-4 text-lg blog-content">
+                <div class="flex-grow col-span-full lg:col-start-1 lg:col-end-11 text-left wow fadeInLeft animated px-4 text-lg blog-content">
                     <h1 class="text-center font-light mt-0 mb-2">{{page.title}}</h1>
                     <div class="text-center text-gray-400 mb-8 border-gray-200 border-t-1 border-b-1 py-1">{{ page.date | date: '%B %d, %Y' }}</div>
                     {{ content }}
                 </div>
-                <div class="flex-shrink col-start-10 col-end-13 px-4 bg-gray-100">
+                <div class="flex-shrink invisible lg:visible lg:col-start-11 lg:col-end-13 px-4 bg-gray-100">
                     <h3 style="font-weight: 700">Author</h3>
                     {% if page.author_img %}
                         <img src="{{page.author_img}}" alt="{{page.author_img_alt}}" />
                     {% endif %}
                     <h4 style="font-weight: 400">{{page.author}}</h4>
-                    <h5>{{page.author_title}}</h5>
+                    <h5 style="font-weight: 300">{{page.author_title}}</h5>
                     <div class="mt-2 text-xl">
                         {% if page.twitter_url %}
                         <a href="{{page.twitter_url}}" class="text-gray-500 hover:text-blue-400"><i class="fab fa-twitter"></i></a>
