@@ -387,7 +387,9 @@ We have been super impressed with the search experience that Typesense enabled, 
 
 ## ServiceStack a Sponsor of Typesense
 
-We were so impressed by the amazing results, as a way to show our thanks ServiceStack is now a sponsor of [Typesense on GitHub sponsors](https://github.com/sponsors/typesense) 🎉 🎉 
+We were so impressed by the amazing results, as a way to show our thanks ServiceStack is now a sponsor of 
+[Typesense on GitHub sponsors](https://github.com/sponsors/typesense) 🎉 🎉 
 
-We know how challenging trying to make open source software sustainable can be, and our dual license approach isn't going to suit everyone. 
-If you find yourself using amazing open source products like Typesense, and you want to see these teams continue, find out how you or your company can support them.
+We know how challenging trying to make open source software sustainable can be that if you find yourself using 
+amazing open source products like Typesense which you want to see continue to flourish, we encourage you to find 
+out how you or your organization can help directly support them.

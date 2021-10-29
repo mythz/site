@@ -30,6 +30,12 @@ Since Jekyll support has been officially sunset, we decided to migrate our docs 
 
 This has given us the ability to update our docs locally with instant on save update to view the final result quickly while we edit/create docs.
 
+<div class="my-8 ml-20 flex justify-center">
+    <img style="max-height:150px" src="/images/blog/vite.svg" alt="Vite logo">
+    <img style="max-height:150px" src="/images/blog/vuepress.png" alt="VitePress logo">
+</div>
+
+
 We wanted to share our experience with this process in the hope it might help others that are performing the same migration, document common errors and help other developer to get an idea about what is involved before you might undertake such a task.
 
 ## Jekyll vs VitePress
@@ -347,9 +353,21 @@ If you have standard `.html` paths on your existing site, you won't need the abo
 While we have made the jump to VitePress, it is still young and under heavy development.
 There is a good chance that some of the behaviour and lacking features will make this not a viable option for migrating off Jekyll.
 
-And we knew this going in as it is very clearly outlined on the front page of their docs.
+And we knew this going in as it is very clearly outlined on the front page of their docs:
 
 ![](/images/blog/jekyll-docs-migration/vitepress-warning.png)
 
-However, while there are still outstanding issues, the developer experience of Vue 3 combined with Vite and an SSG theme aimed at producing documentation is extremely compelling.
-The work Even You and the VitePress community are doing is something to look out for as currently we believe it offers one of the best content heavy site development experiences currently possible.
+However, while there are still outstanding issues, the developer experience of Vue 3 combined with Vite and an SSG theme 
+aimed at producing documentation is extremely compelling.
+The work Even You and the VitePress community are doing is something to look out for as currently we believe it offers 
+one of the best content heavy site development experiences currently possible.
+
+## ServiceStack a Sponsor of Vue's Evan You
+
+As maintainers of several [Vue + .NET Project Templates](https://docs.servicestack.net/templates-vue), we're big fans of 
+Evan's work creating Vue, Vite and overall stewardship of their surrounding ecosystems which greatly benefits from his 
+master design skills and attention to detail in both UI and API design who has a talent in creating inherently simple 
+technologies that progressively scales up to handle the complexest of Apps.
+
+We believe in and are excited for the future of Vue and Vite that to show our support ServiceStack is now a sponsor of
+[Evan You on GitHub sponsors](https://github.com/sponsors/yyx990803) 🎉 🎉 
