@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 slug: docs-search-powered-by-typesense
 title: Docs search powered by Typesense
 layout: blog-post
@@ -7,26 +7,28 @@ sitemap: false
 preview_text: We've recently migrated our docs from Jekyll to Vitepress and took the opportunity to make some UX improvements including instant search powered by Typesense!
 preview_img_url: /images/blog/typesense_logo.svg
 author: Darren Reid
-author_title: Developer
+author_title: ServiceStack Developer
 author_img: /images/blog/authors/darren.jpg
 twitter_url: https://twitter.com/layoric/
 linkedin_url: https://www.linkedin.com/in/layoric/
 github_url: https://github.com/layoric/
 ---
 
-We have recently migrated the [ServiceStack documentation website](https://docs.servicestack.net) from using Jekyll for static site generation (SSG) to using [Vitepress](https://vitepress.vuejs.org/) which enables us to use Vite with Vue 3 components and have an insanely fast hot reload while we update our documentation.
+We have recently migrated the [ServiceStack documentation website](https://docs.servicestack.net) from using Jekyll for static site generation (SSG) to using [Vitepress](https://vitepress.vuejs.org) which enables us to use Vite with Vue 3 components and have an insanely fast hot reload while we update our documentation.
 
 Vitepress is very well suited to documentation sites, and it is one of the primary use cases for Vitepress at the time of writing. 
 The default theme even has optional [integration with Algolia DocSearch](https://vitepress.vuejs.org/config/algolia-search). 
 However, the Algolia DocSeach product didn't seem to offer the service for commercial products even as a paid service and their per request pricing model made it harder to determine what our costs would be in the long run for using their search service for our documentation.
 
-We found Typesense as an alternative which offers a [simple cloud hosting per hour pricing model](https://cloud.typesense.org/) but even better, they also has an easy to use open source option when you want to try it out or want to host it yourself.
+We found Typesense as an alternative which offers a [simple cloud hosting per hour pricing model](https://cloud.typesense.org) but even better, they also has an easy to use open source option when you want to [try it out or want to host it yourself](https://typesense.org/docs/guide).
 
 Documentation search is a common use case which Typesense caters for with their [typesense-docsearch-scraper](https://github.com/typesense/typesense-docsearch-scraper). This is a utility designed to easily scrape a documentation site and post the results to a Typesense server to create a fast searchable index.
 
-## Self hosting option
+Typesense have [a great guide if you are interested in trying it out](https://typesense.org/docs/guide), but we wanted to also document the process we used to add this functionality to our docs site.
 
-Since we already have several AWS instances hosting our example applications, we opted to start with a self hosting on AWS Elastic Container Service (ECS) since Typesense is already packaged into [an easy to use Docker image](https://hub.docker.com/r/typesense/typesense/).
+## [Self hosting option](https://typesense.org/docs/guide/install-typesense.html#option-2-local-machine-self-hosting)
+
+Since we already have several AWS instances hosting our [example applications](https://github.com/ServiceStackApps), we opted to start with a self hosting on AWS Elastic Container Service (ECS) since Typesense is already packaged into [an easy to use Docker image](https://hub.docker.com/r/typesense/typesense).
 
 Trying it locally, we used the following commands to spin up a local Typesense server ready to scrape out docs site.
 
@@ -38,7 +40,7 @@ docker run -p 8108:8108 -v/tmp/data:/data typesense/typesense:0.21.0 \
 
 To check that the server is running, we can open a browser at `/health` and we get back 200 OK with `ok: true`.
 
-The Typesense server has a [REST API](https://typesense.org/docs/0.21.0/api/) which can be used to manage the indexes you create. The cloud offering comes with a web dashboard to manage your data which is a definite advantage over the self hosting, but for now we were still trying it out.
+The Typesense server has a [REST API](https://typesense.org/docs/0.21.0/api) which can be used to manage the indexes you create. The cloud offering comes with a web dashboard to manage your data which is a definite advantage over the self hosting, but for now we were still trying it out.
 
 ## Populating our index
 
@@ -49,7 +51,7 @@ Now that our local server is running, we can scrape our docs site using the [typ
 - Where is the docs website.
 - Rules for the scraper to follow extracting information from the docs website.
 
-These pieces of configuration come from 2 sources. A `.env` file related to the Typesense server information and a `.json` file related to what site will be getting scraped.
+These [pieces of configuration come from 2 sources](https://github.com/ServiceStack/docs/tree/master/search-server/typesense-scraper). A [`.env` file](https://github.com/ServiceStack/docs/blob/master/search-server/typesense-scraper/typesense-scraper.env) related to the Typesense server information and [a `.json` file](https://github.com/ServiceStack/docs/blob/master/search-server/typesense-scraper/typesense-scraper-config.json) related to what site will be getting scraped.
 
 With our Typesense running locally on port 8108, we configure the .env file with the following information.
 
@@ -194,7 +196,7 @@ This dance would require multiple commits/actions in GitHub (we use GitHub Actio
 
 Additional operational burden is something we want to avoid since it an on going cost on developer time that would otherwise be spent improving ServiceStack offerings for our customers.
 
-## Immutable Infrastructure
+## Read-only Docker container
 
 Something to keep in mind when making architecture decisions is looking at the specifics of what is involved when it comes to the *flow of data* of your systems.
 
@@ -223,6 +225,20 @@ This has several key advantages.
 
 To make things even more simplified, the incremental improvement of our documentation means that the difference between search index between updates is very small.
 This means if our search index is updated even a day after the actual documentation, the vast majority of our documentation is still accurately searchable by our users.
+
+Search on our documentation site is a very light workload for Typesense. Running as an ECS service on a 2 vCPU instance, the service struggled to get close to 1% with constant typeahead searching.
+
+![](/images/blog/typesense-cpu-utilization.png)
+
+And since our docs site index is so small, the memory footprint is also tiny and stable at ~50MB or ~10% of the the service's soft memory limit.
+
+![](/images/blog/typesense-memory-utilization.png)
+
+This means we will be able to host this using a single EC2 instance among various other or the ServiceStack hosted example applications and use the same [deployment patterns we've shared in our GitHub Actions templates](https://docs.servicestack.net/mix-github-actions-aws-ecs).
+
+[![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/mix/cloudcraft-host-digram-release-ecr-aws.png)](https://docs.servicestack.net/mix-github-actions-aws-ecs)
+
+So while this approach of shipping an index along with the Docker image isn't practical for large or 'living' indexes, many opensource documentation sites would likely be able to reuse this simplified approach.
 
 ## GitHub Actions Process
 
@@ -282,7 +298,9 @@ It handles typos really well, it is very quick and has become the fastest way to
 
 We have been super impressed with the search experience that Typesense enabled, the engineers behind the Typesense product have created something with a better developer experience than even paid SaaS options and provided it with a clear value proposition.
 
-As a way to show our thanks, ServiceStack is now a sponsor of [Typesense on GitHub sponsors](https://github.com/sponsors/typesense) 🎉 🎉 
+## ServiceStack a Sponsor of Typesense
 
-At ServiceStack, we know how challenging trying to make open source software sustainable can be and our dual license approach isn't going to suit everyone. 
-So if you find yourself using amazing open source products like Typesense, and you want to see these teams continue, find out how you or your company can support them.
+We were so impressed by the amazing results, as a way to show our thanks ServiceStack is now a sponsor of [Typesense on GitHub sponsors](https://github.com/sponsors/typesense) 🎉 🎉 
+
+We know how challenging trying to make open source software sustainable can be, and our dual license approach isn't going to suit everyone. 
+If you find yourself using amazing open source products like Typesense, and you want to see these teams continue, find out how you or your company can support them.
