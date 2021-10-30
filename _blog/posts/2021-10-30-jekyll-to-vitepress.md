@@ -1,6 +1,6 @@
 ---
 draft: true
-slug: jekyll-docs-migration
+slug: jekyll-to-vitepress
 title: Migrating from Jekyll to VitePress
 layout: blog-post
 sitemap: false
@@ -364,10 +364,10 @@ one of the best content heavy site development experiences currently possible.
 
 ## ServiceStack a Sponsor of Vue's Evan You
 
-As maintainers of several [Vue + .NET Project Templates](https://docs.servicestack.net/templates-vue), we're big fans of 
-Evan's work creating Vue, Vite and overall stewardship of their surrounding ecosystems which greatly benefits from his 
-master design skills and attention to detail in both UI and API design who has a talent in creating inherently simple 
-technologies that progressively scales up to handle the complexest of Apps.
+As maintainers of several [Vue & .NET Project Templates](https://docs.servicestack.net/templates-vue), we're big fans of 
+Evan's work creating Vue, Vite and his overall stewardship of their surrounding ecosystems which greatly benefits from his 
+master design skills and fine attention to detail in both library and UI design who has a talent in creating inherently 
+simple technologies that progressively scales up to handle the complexest of Apps.
 
 We believe in and are excited for the future of Vue and Vite that to show our support ServiceStack is now a sponsor of
 [Evan You on GitHub sponsors](https://github.com/sponsors/yyx990803) 🎉 🎉 

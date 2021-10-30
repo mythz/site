@@ -25,7 +25,7 @@ However, the Algolia DocSeach product didn't seem to offer the service for comme
 
 We found [Typesense](https://typesense.org) as an appealing alternative which offers [simple cost-effective cloud hosting](https://cloud.typesense.org) 
 but even better, they also have an easy to use open source option for self-hosting or evaluation. 
-We were so pleased with its simplicity-focus and end-user UX that it quickly became our preferred way to 
+We were so pleased with its effortless adoption, simplicity-focus and end-user UX that it quickly became our preferred way to 
 [navigate our docs](https://docs.servicestack.net). So that more people can find out about Typesense's amazing OSS Search
 product we've documented our approach used for creating and deploying an index of our site using GitHub Actions.
 
@@ -387,9 +387,11 @@ We have been super impressed with the search experience that Typesense enabled, 
 
 ## ServiceStack a Sponsor of Typesense
 
-We were so impressed by the amazing results, as a way to show our thanks ServiceStack is now a sponsor of 
+We were so impressed by the amazing results, that as a way to show our thanks we've become sponsors of 
 [Typesense on GitHub sponsors](https://github.com/sponsors/typesense) 🎉 🎉 
 
-We know how challenging trying to make open source software sustainable can be that if you find yourself using 
-amazing open source products like Typesense which you want to see continue to flourish, we encourage you to find 
-out how you or your organization can help directly support them.
+We know how challenging it can be to try make open source software sustainable that if you find yourself using 
+amazing open source products like Typesense which you want to continue to see flourish, we encourage finding 
+out how you or your organization can support them, either via direct contributions or by helping spread the
+word with public posts (like this) sharing your experiences as their continued success will encourage further
+investments that ultimately benefits the project and all its users.
