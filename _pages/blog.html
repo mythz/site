@@ -3,14 +3,8 @@ title: Blog
 slug: blog
 sitemap: false
 ---
-<style>
-    .news-post-date {
-        text-transform: uppercase;
-        font-weight: 700;
-    }
-</style>
-<div class="container news-container">
-    <h1 style="text-align: center">{{page.title}}</h1>
+<div class="container news-container h-screen">
+    <h1 class="text-center mb-8 pb-8">{{page.title}}</h1>
     {% assign sorted = site.blog | reverse %}
     {% for item in sorted %}
     {% if item.draft == true %}
@@ -18,16 +12,12 @@ sitemap: false
     {% continue %}
     {% endif %}
     {% endif %}
-    <div class="grid grid-cols-12 mt-8">
-        <div class="flex-shrink col-start-1 col-end-4 wow fadeInRight animated" style="margin-top: 4rem" data-wow-offset="10" data-wow-duration="1.5s">
-            <div class="video-container px-4">
-                <div class="news-img-container align-middle">
-                    <img src="{{item.preview_img_url}}" alt="" style="max-height: 100px" class="m-auto">
-                </div>
-            </div>
+    <div class="grid grid-cols-12 mt-8 mb-8 pb-8 border-b">
+        <div class="flex flex-shrink col-start-1 col-end-4 wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.5s">
+            <img src="{{item.preview_img_url}}" alt="" style="max-height:100px" class="m-auto">
         </div>
         <div class="flex-grow col-start-4 col-end-12 text-left wow fadeInLeft animated px-4" data-wow-offset="10" data-wow-duration="1.5s">
-            <span class="news-post-date">{{ item.date | date: '%B %d, %Y' }}</span>
+            <span class="text-xl">{{ item.date | date: '%B %d, %Y' }}</span>
             <h3 class="text-gray-700"><a href="{{item.url}}">{{ item.title }}</a> {% if item.draft == true and site.show_drafts == true %} DRAFT {% endif %}</h3>
             <div class="colored-line-left"></div>
             <div class="p-2 text-left clearfix"></div>

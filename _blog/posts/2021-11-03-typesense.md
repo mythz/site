@@ -373,8 +373,7 @@ fetch('https://search.docs.servicestack.net/collections/typesense_docs/documents
 
 Which instructs Typesense to search through each documents content and h1-3 headings, grouping results by its page title.
 Refer to the [Typesense API Search Reference](https://typesense.org/docs/0.21.0/api/documents.html#search) to learn how
-to further fine-tune search results for your use-case. 
- 
+to further fine-tune search results for your use-case.
 
 ## Search Results
 

@@ -1,5 +1,4 @@
 ---
-draft: false
 slug: jekyll-to-vitepress
 title: Migrating from Jekyll to VitePress
 layout: blog-post
