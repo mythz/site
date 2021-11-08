@@ -1,5 +1,4 @@
 ---
-draft: true
 slug: typesense-realtime-search
 title: Real-time search with Typesense
 layout: blog-post
