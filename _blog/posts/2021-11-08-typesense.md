@@ -13,7 +13,7 @@ linkedin_url: https://www.linkedin.com/in/layoric/
 github_url: https://github.com/layoric/
 ---
 
-We have recently migrated the [ServiceStack Docs](https://docs.servicestack.net) website from using Jekyll for static site generation (SSG) to using 
+We have [recently migrated](/blog/jekyll-to-vitepress) the [ServiceStack Docs](https://docs.servicestack.net) website from using Jekyll for static site generation (SSG) to using 
 [VitePress](https://vitepress.vuejs.org) which enables us to use Vite with Vue 3 components and have an insanely fast hot reload while we update our documentation.
 
 VitePress is very well suited to documentation sites, and it is one of the primary use cases for VitePress at the time of writing. 
