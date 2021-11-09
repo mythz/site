@@ -341,7 +341,6 @@ VitePress theme to detect when the `esc` and `/` or `CTRL+K` keys are pressed to
 
 ```ts
 const onKeyDown = (e:KeyboardEvent) => {
-    console.log(e.code)
     if (e.code === 'Escape') {
         hideSearch();
     }
