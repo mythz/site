@@ -1,0 +1,249 @@
+---
+title: Getting Started
+slug: start-netfx
+layout: content-page
+sitemap: false
+---
+
+<style>
+#mix label {
+    user-select: none;
+}
+</style>
+<div class="">
+    <div class="pt-10">
+        <h1 class="text-center my-4 pt-8">
+            <a href="/start" class="text-body text-body:hover">Getting Started</a>
+        </h1>
+        <div class="colored-line"></div>
+        <div class="flex justify-center">
+            <div class="text-center mt-8 text-xl max-w-prose text-gray-400">
+                Different ways for getting started with ServiceStack: <br>
+                Project templates, Walkthroughs, Docs and Videos, choose what's best for you
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-10">
+        <div class="">
+            <div class="flex justify-center">
+                <div class="mx-2 px-2 py-1 rounded-lg bg-purple-50 text-purple-500"><a href="/start">.NET 6.0</a></div>
+                <div class="mx-2 px-2 py-1 rounded-lg bg-purple-500 text-white">.NET Framework</div>
+                <div class="mx-2 px-2 py-1 rounded-lg bg-purple-50 text-purple-500"><a href="/start-corefx">ASP.NET Core FX</a></div>
+            </div>
+        </div>
+
+        <div class="px-4 py-2 flex justify-center">
+            <div class="max-w-screen-md text-center">
+                <h2 class="text-2xl">Get the .NET Framework  SDK</h2>
+                <div>
+                    <p>
+                        If you haven't already got the .NET Framework SDK installed, we recommended starting with the latest.
+                    </p>
+                    <div class="">
+                        <a href="https://dotnet.microsoft.com/download/dotnet-framework/net48"
+                           class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Download
+                            .NET Framework</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="px-4 py-2 w-full flex justify-center text-center">
+            <div class="px-4 py-2">
+                <h2>Customize &amp; Download a new C# Project</h2>
+                <div class="colored-line"></div>
+                <div class="py-4">
+                    <p>
+                        ServiceStack has a number of different integrated project templates to help you get started quickly.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-center">
+            <div class="w-70">
+                <input id="txtProjectName" type="text" class="text-2xl" placeholder="Project Name" autocorrect="off" spellcheck="false"
+                       onkeypress="return isAlphaNumeric(event.charCode)"
+                       onchange="this.value = this.value.replace(/[\W]+/g,'')"
+                       oninput="updateTemplates()"
+                       >
+            </div>
+        </div>
+
+        <div class="w-full flex flex-col justify-center text-center">
+
+            <div id="empty" class="mt-4 mb-2">
+                <h3 class="text-gray-400">Empty Project Templates</h3>
+
+                <div class="flex flex-wrap justify-center">
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetFrameworkTemplates/web-netfx"
+                        name="Web"
+                        icon_element="<i class='fab fa-servicestack'></i>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetFrameworkTemplates/selfhost-netfx"
+                        name="Self Host Project"
+                        icon_element="<i class='fab fa-servicestack'></i>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetFrameworkTemplates/winservice-netfx"
+                        name="Windows Service"
+                        icon_element="<i class='fab fa-servicestack'></i>" %}
+                    </div>
+                </div>
+            </div>
+
+            <div id="spa" class="mt-4 mb-2">
+                <h3 class="text-gray-400">Single Page Apps</h3>
+                <div class="flex flex-wrap justify-center">
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetFrameworkTemplates/vue-spa-netfx"
+                        name="Vue SPA"
+                        tags="auth"
+                        icon_element="<i class='fab fa-vuejs'></i>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetFrameworkTemplates/react-spa-netfx"
+                        name="React SPA"
+                        tags="auth"
+                        icon_element="<i class='fab fa-react'></i>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetFrameworkTemplates/angular-spa-netfx"
+                        name="Angular SPA"
+                        tags="auth"
+                        icon_element="<i class='fab fa-angular'></i>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetFrameworkTemplates/aurelia-spa-netfx"
+                        name="Aurelia SPA"
+                        icon_element="<img class='w-10 h-10' src='/images/svgs/aurelia.svg'>" %}
+                    </div>
+                </div>
+                <p class="text-gray-400">
+                    Run <code>npm install</code> in the <code class="project-name">MyApp</code> project folder before running.
+                </p>
+            </div>
+
+            <div id="server" class="mt-4 mb-2">
+                <h3 class="text-gray-400">Server Generated Websites</h3>
+
+                <div class="flex flex-wrap justify-center">
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetFrameworkTemplates/mvc-netfx"
+                        name="MVC"
+                        icon_element="<i class='fab fa-microsoft'></i>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetFrameworkTemplates/razor-netfx"
+                        name="ServiceStack Razor"
+                        tags="auth"
+                        icon_element="<i class='fab fa-servicestack'></i>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetFrameworkTemplates/script-netfx"
+                        name="#Script"
+                        tags="auth"
+                        icon_element="<img class='w-10 h-10' src='/images/svgs/script.svg'>" %}
+                    </div>
+                </div>
+            </div>
+
+            <div id="nuxt" class="mt-4 mb-2">
+                <h3 class="text-gray-400">Vuetify &amp; Nuxt Templates</h3>
+
+                <div class="flex flex-wrap justify-center">
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetFrameworkTemplates/vue-nuxt-netfx"
+                        name="Nuxt"
+                        tags="auth"
+                        icon_element="<img class='w-10 h-10' src='/images/svgs/nuxtjs.svg'>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetFrameworkTemplates/vuetify-spa-netfx"
+                        name="Vuetify"
+                        tags="auth"
+                        icon_element="<i class='fab fa-vuejs'></i>" %}
+                    </div>
+                    <div>
+                        {% include project-template-install-card.html
+                        repo="NetFrameworkTemplates/vuetify-nuxt-netfx"
+                        name="Vuetify Nuxt"
+                        icon_element="<img class='w-10 h-10' src='/images/svgs/nuxtjs.svg'>" %}
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="tool" class="flex justify-center mt-8">
+            <div class="">
+                <p class="text-center text-gray-400">
+                    Alternatively create &amp; restore this new custom Web App with the <a href="https://docs.servicestack.net/dotnet-new">x dotnet tool</a>:
+                </p>
+                <div class="flex justify-center">
+                    {% include copy-cmd.html text="x new web-netfx MyApp" %}
+                </div>
+            </div>
+        </div>
+
+        <div class="my-20 flex justify-center">
+            <div class="flex items-center">
+                <span class="text-2xl mr-4 text-gray-400">Next</span>
+                <a href="/start/project-overview">
+                    <div class="rounded-md py-2 px-4 shadow-lg bg-blue-500 text-white hover:bg-blue-600 text-2xl font-normal">
+                        Project Overview
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="text-center flex justify-center">
+            <div class="">
+                <h2 class="mt-8 pt-8">Free Trial</h2>
+                <div class="colored-line"></div>
+
+                <p class="mt-4 text-lg font-medium">
+                    Try ServiceStack in larger Apps exceeding the
+                    <a href="{{site.content_url}}/download#free-quotas">Free Quotas</a>
+                    with an unrestricted 30 Day Free Trial.
+                </p>
+                <div class="buttons mb-8 mt-8">
+                    <a href="{{site.account_url}}/trial"
+                       class="cursor-pointer text-2xl font-normal bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-6 py-3 inline-block text-blue-100 rounded">
+                        30 Day Free Trial
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {% include learning-resources-bottom-menu.html %}
+    </div>
+</div>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/start.js"></script>
+
+<!-- Event snippet for Website traffic - Start conversion page -->
+<script>
+    gtag('event', 'conversion', {'send_to': 'AW-311872389/0T6UCNq3p-4CEIWX25QB'});
+</script>
+
+
