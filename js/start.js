@@ -91,7 +91,7 @@ function formatNumber(num) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
-fetch("{{site.dynamic_url}}/stats/projects.json")
+fetch(DYNAMIC_URL + "/stats/projects.json")
     .then(function (r) { return r.json(); })
     .then(function (obj) {
         let results = obj.Results || obj.results;
