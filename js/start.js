@@ -9,6 +9,11 @@ function leftPart(s, needle) {
         ? s
         : s.substring(0, pos);
 }
+function withoutTrailingSlash(path) {
+    return path && path[path.length-1] === '/'
+        ? path.substring(0, path.length - 1)
+        : path
+}
 function updateTemplates() {
     let hasTag = location.search.indexOf('tag=') >= 0
     $('#mix').css({
@@ -57,7 +62,7 @@ $('[name=auth-repo]').on('input', function () { $('#chkAuth').prop('checked',tru
 $('[name=action]').on('input', function () { $('#chkActionBuild').prop('checked',true) });
 $('#mix [type=checkbox],#mix [type=radio]').on('input', updateTemplates);
 
-let activePath = location.pathname + location.search
+let activePath = withoutTrailingSlash(location.pathname) + location.search
 document.querySelectorAll('#templates-nav a').forEach(function(el) {
     if (el.getAttribute('href') === activePath) {
         el.parentElement.classList.add('active')
