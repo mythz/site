@@ -687,3 +687,7 @@ footer .mx-auto { margin-left: auto; margin-right: auto; }
         justify-content: flex-end;
     }
 }
+
+/* /start pages */
+#templates-nav .active { background-color: rgb(139, 92, 246) !important }
+#templates-nav .active a { color: #fff }

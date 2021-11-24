@@ -5,18 +5,26 @@ function leftPart(s, needle) {
     if (s == null)
         return null;
     let pos = s.indexOf(needle);
-    return pos == -1
+    return pos === -1
         ? s
         : s.substring(0, pos);
 }
 function updateTemplates() {
+    let hasTag = location.search.indexOf('tag=') >= 0
+    $('#mix').css({
+        display: !hasTag ? 'flex' : 'none'
+    })
+
     let name = $('#txtProjectName').val() || 'MyApp';
-    let mix = getMix();
+    let mix = !hasTag ? getMix() : null;
     let urlParams = 'Name=' + encodeURIComponent(name);
+    if (location.search) {
+        urlParams += '&' + location.search.substring(1)
+    }
     if (mix) {
         urlParams += '&Mix=' + mix;
     }
-    let defaultState = urlParams == 'Name=MyApp';
+    let defaultState = urlParams === 'Name=MyApp';
     if (defaultState) {
         history.replaceState(null,null,location.href.split('#')[0]);
         $('#reset').addClass('invisible');
@@ -49,6 +57,13 @@ $('[name=auth-repo]').on('input', function () { $('#chkAuth').prop('checked',tru
 $('[name=action]').on('input', function () { $('#chkActionBuild').prop('checked',true) });
 $('#mix [type=checkbox],#mix [type=radio]').on('input', updateTemplates);
 
+let activePath = location.pathname + location.search
+document.querySelectorAll('#templates-nav a').forEach(function(el) {
+    if (el.getAttribute('href') === activePath) {
+        el.parentElement.classList.add('active')
+    }
+})
+
 function reset() {
     $('#txtProjectName').val('');
     $('#mix input:checked').prop('checked',false);
@@ -75,7 +90,7 @@ function hashParams(url) {
 
 if (location.hash) {
     let hash = hashParams(location.hash);
-    if (hash.Name && hash.Name != 'MyApp') {
+    if (hash.Name && hash.Name !== 'MyApp') {
         $('#txtProjectName').val(hash.Name);
     }
     if (hash.Mix) {
@@ -86,6 +101,7 @@ if (location.hash) {
     }
     updateTemplates();
 }
+else if (location.search) updateTemplates();
 
 function formatNumber(num) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
