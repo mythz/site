@@ -16,7 +16,7 @@ ServiceStack, Inc. makes available software known as ServiceStack, including the
 
 (a) "Licensor" means ServiceStack Inc, having its principal place of business at 2035 Sunset Lake Road, Newark, Delaware, USA.
 
-(b) "Licensee" means the legal entity specified in the License Certificate, exercising rights under, and complying with all of the terms of, this Agreement.
+(b) "Licensee" means the legal entity specified in the License Certificate, exercising rights under, and complying with all of the terms of, this Agreement who has not previously violated the terms of this Licence with respect to the Software, or who has received express permission from the Licensor to exercise rights under this Licence despite a previous violation.
 
 ### DEFINITIONS
 
@@ -24,13 +24,15 @@ The following terms have the meanings assigned to the below:
 
 "Derivative Software" means the Binary code Software and/or Binary code that results from your compilation of modified or unmodified source code Software.
 
-"Authorized User" means a single employee, independent contractor or other temporary worker authorized by Licensee to use Software while performing duties within the scope of their employment or assignment.
+"Authorized User" means a single employee, independent contractor or other temporary worker authorized by Licensee to use Software while performing duties within the scope of their employment or assignment who has not previously violated the terms of this Licence with respect to the Software, or who has received express permission from the Licensor to exercise rights under this Licence despite a previous violation.
 
 "License Certificate" means evidence of a license provided by Licensor to Licensee in electronic or printed form.
 
 "License Key" means a unique key-code that enables Licensee to use Software by a single Authorized User. Only Licensor and/or its representatives are permitted to produce License Keys for Software.
 
-"Developer Product" means your own software product that incorporates Derivative Software and substantially duplicates the capabilities or competes with the Software or Derivative Software.
+"Competing Product" means your own software product that incorporates Derivative Software and substantially duplicates the capabilities or competes with the Software or Derivative Software.
+
+"Allowed Project" means your own software that is not a Competing Product. 
 
 "ServiceStack Public Services" means any public remote services or Internet websites hosted or operated by ServiceStack, Inc. including websites or services identified using the top-level servicestack.net domain.
 
@@ -40,7 +42,7 @@ Use of the Software and Documentation is subject to the restrictions contained i
 
 You agree that ServiceStack, Inc. or third parties own all legal right, title and interest in and to the Software, including any Intellectual Property Rights that subsist in the Software. "Intellectual Property Rights" means any and all rights under patent law, copyright law, trade secret law, trademark law, and any and all other proprietary rights. ServiceStack, Inc. reserves all rights not expressly granted to you. Nothing in this Agreement gives you a right to use the ServiceStack name or any of the ServiceStack trademarks, logos, domain names, and other distinctive brand features. Any feedback, comments, or suggestions you may provide regarding ServiceStack or the Software are entirely voluntary and we will be free to use such feedback, comments or suggestions as we see fit and without any obligation to you.
 
-You may not use the Software for any purpose not expressly permitted by this License Agreement. Except to the extent required by applicable third party licenses, you may not: (a) use, modify, and compile source code Software for the purpose of creating Developer Products, or (b) copy, modify, adapt, redistribute, decompile, reverse engineer, disassemble reproduce and distribute Derivative Software as part of a Developer Product, and (c) share the same License Key to Unauthorized Users.
+You may not use the Software for any purpose not expressly permitted by this License Agreement. Except to the extent required by applicable third party licenses, you may not: (a) use, modify, and compile source code Software for the purpose of creating Competing Products, or (b) copy, modify, adapt, redistribute, decompile, reverse engineer, disassemble reproduce and distribute Derivative Software as part of a Competing Product, and (c) share License Keys to Unauthorized Users.
 
 Use, reproduction and distribution of components of the Software licensed under an open source software license are governed solely by the terms of that open source software license and not this License Agreement.
 
@@ -48,19 +50,32 @@ You agree that you will not remove, obscure, or alter any proprietary rights not
 
 You agree that you are solely responsible for (and that ServiceStack, Inc. has no responsibility to you or to any third party for) any data, content, or resources that you create, transmit or display through the Software, and for the consequences of your actions (including any loss or damage which ServiceStack may suffer) by doing so.
 
-You must protect the license key as Confidential Information of ServiceStack, Inc. You agree that you will not reproduce, publish, transmit, display, distribute or disclose your License Key.
+With the exception of Open Source License Keys, you must protect the license key as Confidential Information of ServiceStack, Inc and you agree that you will not reproduce, publish, transmit, display, distribute or disclose your License Key.
 
 We may, without prior notice, change the Software; stop providing the Software or features of the Software, to you, or to users generally; or we may create usage limits for the Software.
 
-ServiceStack, Inc. may investigate and/or suspend your account if you violate any of the above policies. ServiceStack, Inc. reserves the right to immediately terminate your account without further notice in the event that, in its judgment, you violate this Agreement.
+The Software contains features that removes technical restrictions and automatically disables the Software upon exceeding the free usage limits. Licensee may not disable, destroy, circumvent or remove these feature of the Software, and any attempt to do so will be in violation of this Agreement and will terminate Licensee's rights to use the Software.
+
+ServiceStack, Inc. may investigate and/or suspend your license to use the Software and account if you violate any of the above policies. ServiceStack, Inc. reserves the right to immediately terminate your license to use the Software and account without further notice in the event that, in its judgment, you violate this Agreement.
+
+### INDIVIDUAL FREE USAGE
+
+Subject to the terms of this Agreement, a Licensee is granted a right to use the Software in Allowed Projects where they are the sole copyright owner and author within the scope 
+permitted by the "Individual License Key" granted from the Licensor's website at [servicestack.net/free](https://servicestack.net/free).
+
+### OPEN SOURCE FREE USAGE
+
+Subject to the terms of this Agreement, a Licensee is granted a right to use the Software in Allowed Projects whose entire source code is released under the Open Source licenses 
+identified by its [SPDX identifier](https://spdx.org/licenses/): MIT, GPL-3.0, Apache-2.0, GPL-2.0, BSD-3-Clause, LGPL-2.1-or-later, MS-PL, BSD-2-Clause, Zlib, EPL-1.0 and is 
+publicly available within the sites and scope permitted by the "Open Source License Key" granted from the Licensor's website at [servicestack.net/free](https://servicestack.net/free).
 
 ### RESTRICTED FREE USAGE
 
 Subject to the terms of this Agreement, Licensee is granted a right to use the Software for small projects and evaluation purposes without charge provided that use of the Software is within the "Free Usage Quota" published on Licensor's website at [servicestack.net](https://servicestack.net).
 
-Upon exceeding the Free Usage Quota limits in production, Licensee must obtain License Key for continued use of the Software or cease using the Software. The Software contains a feature that will automatically disable the Software upon exceeding the free usage limits. Licensee may not disable, destroy, circumvent or remove this feature of the Software, and any attempt to do so will be in violation of this Agreement and will terminate Licensee's rights to use the Software.
+Upon exceeding the Free Usage Quota limits in production, Licensee must obtain License Key for continued use of the Software or cease using the Software. 
 
-Libraries without Free Usage Quotas can be used in any project subject to the terms of this Agreement.
+Libraries without Free Usage Quotas can be used in any Allowed Project subject to the terms of this Agreement.
 
 ### LICENSE FEES AND PAYMENTS
 
@@ -120,4 +135,4 @@ We may revise this Agreement from time to time. The most current version will al
 
 The Software is operated and provided by ServiceStack, Inc., 2035 Sunset Lake Road, Newark, Delaware, USA 19702-2600. If you have questions about this Agreement, please contact us at [team@servicestack.net](mailto:team@servicestack.net).
 
-January 1, 2020
+January 1, 2022
