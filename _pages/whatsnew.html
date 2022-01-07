@@ -19,6 +19,13 @@ slug: whatsnew
 
     {% assign sorted = site.whatsnew | reverse %}
     {% for item in sorted %}
+
+    {% if item.draft == true %}
+    {% if site.show_drafts == nil or site.show_drafts == false %}
+    {% continue %}
+    {% endif %}
+    {% endif %}
+
     {% assign contentSplit = item.content | split: site.content_separator %}
     {% assign contentSize = contentSplit | size %}
     {% assign featureSize = item.feature_url | size %}
@@ -30,7 +37,7 @@ slug: whatsnew
             <h2 class="mt-8 text-center text-7xl font-normal">{{ item.title }}</h2>
             <div class="text-center text-lg font-normal text-gray-500 mb-8">{{ item.date | date: '%B %d, %Y' }}</div>
         </div>
-        {% for i in (0..2) %}
+        {% for i in (0..4) %}
         {% if i >= contentSize or i >= featureSize or i >= previewSize or i >= subtitleSize %}
         {% break %}
         {% else %}
