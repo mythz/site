@@ -1,0 +1,130 @@
+<!-- testimonials-section.html to create servicestack-100m.png -->
+<style>
+    .testimonials {
+        background: url(/images/bg-header.jpg) no-repeat center top fixed;
+        z-index: -1;
+        -webkit-background-size: cover;
+        background-size: cover;
+        color: #ffffff;
+    }
+    .testimonials .color-overlay {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+    .testimonials .feedback {
+        max-width: 750px;
+        margin: auto;
+    }
+    .testimonials .feedback .image {
+        font-size: 24px;
+        border: 2px solid transparent;
+        -webkit-box-shadow: 0px 0px 0px 2px #ffffff;
+        box-shadow: 0px 0px 0px 2px #ffffff;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        margin: 5px auto auto;
+        overflow: hidden;
+    }
+    .testimonials .feedback .image img {
+        width: 100%;
+        vertical-align: top;
+    }
+    .testimonials .feedback .message {
+        font-size: 18px;
+        font-style: italic;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+    .testimonials .feedback blockquote {
+        margin: 1.5em 10px;
+        padding: 0.5em 10px;
+        quotes: "\201C" "\201D";
+        border: none;
+        display: block;
+    }
+    .testimonials .feedback blockquote:before {
+        opacity: 40%;
+        content: open-quote;
+        font-size: 5em;
+        line-height: 0.1em;
+        margin-right: 0.25em;
+        vertical-align: -0.4em;
+    }
+    .testimonials .feedback .name {
+        margin-top: 15px;
+        font-weight: 400;
+    }
+    
+    .testimonials .feedback .company-info {
+        font-size: 12px;
+    }
+    .testimonials .owl-theme .owl-controls .owl-page span {
+        background: #ffffff;
+        border-radius: 50%;
+    }
+    .testimonials .customNavigation a {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    #feedbacks .owl-dots .owl-dot span {
+        width:5px;
+        height:5px;
+    }
+    #feedbacks .owl-dot span { background: rgba(255,255,255,.5) !important; }
+    #feedbacks .owl-dot.active span { background: #fff !important; }
+    .owl-theme .owl-nav [class*='owl-']:hover {
+        background: transparent;
+    }
+    .owl-nav {
+        display: flex;
+        justify-content: space-between;
+        margin: -200px 0 120px 0 !important;
+    }
+    .owl-prev, .owl-next {
+        width: 60px;
+        height: 100%;
+        margin: 10px 0;
+        display: block;
+        z-index: 1;
+        opacity: .2;
+        transition: opacity .3s;
+    }
+    .owl-prev:hover, .owl-next:hover {
+        opacity: 1;
+        transition: opacity .3s;
+    }
+    .owl-prev:focus, .owl-next:focus, .owl-dot:focus {
+        outline: none;
+    }
+    </style>
+    <section class="testimonials">
+        <div class="color-overlay mx-auto" style="padding: 300px 0 300px 0;">
+            <div class="container wow fadeIn animated hidden" data-wow-offset="10" data-wow-duration="1.5s">
+                <div id="feedbacks" class="owl-carousel owl-theme"></div>
+            </div>
+    
+            <div class="flex justify-center">
+                <img class="" style="width:650px;" src="https://account.servicestack.net/metadata/svg/servicestack.svg" alt="">
+            </div>
+    
+            <div class="flex justify-center">
+                <a href="https://www.nuget.org/profiles/servicestack" class="text-gray-500 hover:text-blue-500">
+                    <div class="tick" data-did-init="handleTickInit" data-value="100000000" style="width:770px; margin-top:-40px">
+                    <span data-layout="horizontal fit">
+                        <span data-repeat="true">
+                            <span data-view="flip"></span>
+                        </span>
+                    </span>
+                    </div>
+                    <h4 class="text-white text-5xl mt-2">downloads of servicestack packages</h4>
+                </a>
+            </div>
+    
+        </div>
+    </section>
+    
