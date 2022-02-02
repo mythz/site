@@ -9,6 +9,14 @@
   },
   {
     "Condition": {
+      "KeyPrefixEquals": "Buy/"
+    },
+    "Redirect": {
+      "HostName": "account.servicestack.net"
+    }
+  },
+  {
+    "Condition": {
       "KeyPrefixEquals": "subscriptions/"
     },
     "Redirect": {
