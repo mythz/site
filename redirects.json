@@ -70,5 +70,32 @@
     "Redirect": {
       "HostName": "account.servicestack.net"
     }
+  },
+  {
+    "Condition": {
+      "KeyPrefixEquals": "ask"
+    },
+    "Redirect": {
+      "HostName": "github.com",
+      "ReplaceKeyPrefixWith": "ServiceStack/Discuss/discussions/categories/q-a"
+    }
+  },
+  {
+    "Condition": {
+      "KeyPrefixEquals": "ideas"
+    },
+    "Redirect": {
+      "HostName": "github.com",
+      "ReplaceKeyPrefixWith": "ServiceStack/Discuss/discussions/categories/ideas"
+    }
+  },
+  {
+    "Condition": {
+      "KeyPrefixEquals": "showcase"
+    },
+    "Redirect": {
+      "HostName": "github.com",
+      "ReplaceKeyPrefixWith": "ServiceStack/Discuss/discussions/categories/show-and-tell"
+    }
   }
 ]
