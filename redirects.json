@@ -84,6 +84,7 @@
       "KeyPrefixEquals": "discuss"
     },
     "Redirect": {
+      "Protocol": "https",
       "HostName": "github.com",
       "ReplaceKeyPrefixWith": "ServiceStack/Discuss/discussions"
     }
@@ -93,6 +94,7 @@
       "KeyPrefixEquals": "discord"
     },
     "Redirect": {
+      "Protocol": "https",
       "HostName": "discord.gg",
       "ReplaceKeyPrefixWith": "w4ayGbuYpA"
     }
@@ -102,6 +104,7 @@
       "KeyPrefixEquals": "ask"
     },
     "Redirect": {
+      "Protocol": "https",
       "HostName": "github.com",
       "ReplaceKeyPrefixWith": "ServiceStack/Discuss/discussions/categories/q-a"
     }
@@ -111,6 +114,7 @@
       "KeyPrefixEquals": "ideas"
     },
     "Redirect": {
+      "Protocol": "https",
       "HostName": "github.com",
       "ReplaceKeyPrefixWith": "ServiceStack/Discuss/discussions/categories/ideas"
     }
@@ -120,6 +124,7 @@
       "KeyPrefixEquals": "showcase"
     },
     "Redirect": {
+      "Protocol": "https",
       "HostName": "github.com",
       "ReplaceKeyPrefixWith": "ServiceStack/Discuss/discussions/categories/show-and-tell"
     }
