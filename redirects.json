@@ -81,6 +81,24 @@
   },
   {
     "Condition": {
+      "KeyPrefixEquals": "discuss"
+    },
+    "Redirect": {
+      "HostName": "github.com",
+      "ReplaceKeyPrefixWith": "ServiceStack/Discuss/discussions"
+    }
+  },
+  {
+    "Condition": {
+      "KeyPrefixEquals": "discord"
+    },
+    "Redirect": {
+      "HostName": "discord.gg",
+      "ReplaceKeyPrefixWith": "w4ayGbuYpA"
+    }
+  },
+  {
+    "Condition": {
       "KeyPrefixEquals": "ask"
     },
     "Redirect": {
