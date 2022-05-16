@@ -43,7 +43,7 @@
             <a href="/whatsnew"
                class="bg-gray-100 rounded-full py-1 px-1 pr-4 mb-4 text-sm text-gray-700 inline-flex items-center justify-between hover:bg-gray-200" role="alert">
                 <span class="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 mr-3">New</span>
-                <span class="text-sm font-medium">v6 is the best ServiceStack yet, checkout its feature-packed release</span>
+                <span class="text-sm font-medium">v6.1: Rapidly develop beautiful modern Web Apps with Locode</span>
                 <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
             </a>
         </div>
@@ -62,18 +62,20 @@
     {% include home/testimonials-section.html %}
 
     {% include home/feature-video-left.html
-    youtube_id="lUDlTMq9DHU"
-    local_link_id="api-explorer"
-    title="API Explorer"
+    youtube_id="hkuO_DMFXmc,NiTp5Z_5U2Y,mFyMgg7c3vg"
+    local_link_id="locode"
+    title="Locode"
     bg_class="bg-white"
     embed_html="
-    <p>Built into every ServiceStack v6 App is API Explorer - an instant integrated Postman and Swagger UI alternative to quickly Call and Explore your APIs.</p>
-    <p>
-        With envious performance and unmatched customizability, API Explorer lets you easily incorporate gorgeous, rich, interactive API Documentation 
-        your API Consumers will love who'll be able to read its source code in their preferred programming language and easily call from their existing Client Apps.
-    </p>
+    <div class='mt-4'>
+        <p><a href='https://locode.dev'>locode.dev</a> is our Rapid Application Development (RAD) solution to quickly develop 
+            beautiful Full Stack CRUD Apps around AutoQuery APIs, suitable for a wide number of use-cases including:</p>
+        <p>Creating an instant UI around existing Database-First RDBMS tables</p>
+        <p>Highly customizable, declarative Code-First development model</p>
+        <p>As Locode’s UI is built on top of ServiceStack’s industrial strength AutoQuery APIs, Hybrid Apps can benefit from its superior end-to-end typed development model for creating Web, Mobile &amp; Desktop Apps.</p>
+    </div>
     "
-    learn_url="https://docs.servicestack.net/api-explorer"
+    learn_url="https://www.locode.dev"
     %}
 
     {% include home/feature-video-right.html
@@ -90,17 +92,19 @@
     learn_url="https://docs.servicestack.net/templates-blazor"
     %}
 
-
     {% include home/feature-video-left.html
-    youtube_id="WjbhfH45i5k,cbYuem1b2tg,xg677weFef4,EaUcPXVeLpk,T3KTDPdovOw,nmB0NaI9-3k"
-    local_link_id="add-ss-ref-feature"
-    title="Add ServiceStack Reference"
+    youtube_id="lUDlTMq9DHU"
+    local_link_id="api-explorer"
+    title="API Explorer"
     bg_class="bg-white"
     embed_html="
-    <p>Generate Native Types for your preferred language and platforms directly from within your favorite IDE or easy to use CLI tooling.</p>
-    <p>Add and update lightweight client code straight from the server you integrate with giving you an easy to use end-to-end typed interface with your ServiceStack server.</p>
+    <p>Built into every ServiceStack v6 App is API Explorer - an instant integrated Postman and Swagger UI alternative to quickly Call and Explore your APIs.</p>
+    <p>
+        With envious performance and unmatched customizability, API Explorer lets you easily incorporate gorgeous, rich, interactive API Documentation 
+        your API Consumers will love who'll be able to read its source code in their preferred programming language and easily call from their existing Client Apps.
+    </p>
     "
-    learn_url="/service-reference"
+    learn_url="https://docs.servicestack.net/api-explorer"
     %}
 
     {% include home/feature-video-right.html
@@ -116,15 +120,15 @@
     %}
 
     {% include home/feature-video-left.html
-    youtube_id="kN7371bqUII,XpHAaCTV7jE"
-    local_link_id="studio-feature"
-    title="Studio"
+    youtube_id="WjbhfH45i5k,cbYuem1b2tg,xg677weFef4,EaUcPXVeLpk,T3KTDPdovOw,nmB0NaI9-3k"
+    local_link_id="add-ss-ref-feature"
+    title="Add ServiceStack Reference"
     bg_class="bg-white"
     embed_html="
-    <p>Use ServiceStack Studio to manage Users, Validation, Permissions and Data with our portable tool for your AutoQuery services.</p>
-    <p>ServiceStack Studio is a capability-based UI to manage multiple remote ServiceStack instances from either a Chromium Desktop App or cross-platform .NET Core Web App.</p>
+    <p>Generate Native Types for your preferred language and platforms directly from within your favorite IDE or easy to use CLI tooling.</p>
+    <p>Add and update lightweight client code straight from the server you integrate with giving you an easy to use end-to-end typed interface with your ServiceStack server.</p>
     "
-    learn_url="https://docs.servicestack.net/studio"
+    learn_url="/service-reference"
     %}
 
     {% include home/feature-service-clients.html %}
