@@ -210,6 +210,43 @@
     %}
 
     {% include home/feature-video-left.html
+    youtube_id="5sd00MzHpaU"
+    local_link_id="file-uploads"
+    title="Managed File Uploads"
+    bg_class="bg-white"
+    embed_html="
+    <p>
+        <a href='https://docs.servicestack.net/locode/files'>Managed Files Uploads</a>
+        is a high-level ServiceStack feature that allows you to configure multiple managed file upload locations within the same App 
+        that any ServiceStack HTTP API can declaratively annotate on Request DTOs to upload files to AWS S3, Azure Blob storage or internal File Systems.
+    </p>
+    <p>
+        It's especially useful in 
+        <a href='https://docs.servicestack.net/autoquery-crud'>AutoQuery CRUD APIs</a>
+        as it enables an easy way to populate a file path that can be stored along with a table row 
+        without the uploaded files embedded in the database itself, taking up valuable RDBMS resources and significantly impacting its performance.        
+    </p>
+    "
+    learn_url="https://docs.servicestack.net/locode/files"
+    %}
+
+    {% include home/feature-video-right.html
+    youtube_id="UQlYodNS1xc,5NNCaWMviXU,t83gDzEGpac,K0QAUQPJNtM,y3MBaapcN-0,9XTy3eOdpHw,QL56lOHiXVM"
+    local_link_id="grpc-feature"
+    title="ServiceStack gRPC"
+    bg_class="bg-gray-100"
+    embed_html="
+    <p>
+        Create gRPC services in a consistent way to all your other services or easily add gRPC support to your existing ServiceStack services.
+    </p>
+    <p>
+        ServiceStack’s gRPC support enables a highly productive development environment for developing high-performance gRPC HTTP/2 Services by making ServiceStack’s existing typed Services available from ASP.NET’s gRPC endpoints.
+    </p>
+    "
+    learn_url="https://docs.servicestack.net/grpc"
+    %}
+
+    {% include home/feature-video-left.html
     youtube_id="FcXG4RnlVQk"
     local_link_id="post-command"
     title="Post Command line HTTP API tools"
@@ -235,22 +272,6 @@
     </p>
     "
     learn_url="https://docs.servicestack.net/post-command"
-    %}
-
-    {% include home/feature-video-right.html
-    youtube_id="UQlYodNS1xc,5NNCaWMviXU,t83gDzEGpac,K0QAUQPJNtM,y3MBaapcN-0,9XTy3eOdpHw,QL56lOHiXVM"
-    local_link_id="grpc-feature"
-    title="ServiceStack gRPC"
-    bg_class="bg-gray-100"
-    embed_html="
-    <p>
-        Create gRPC services in a consistent way to all your other services or easily add gRPC support to your existing ServiceStack services.
-    </p>
-    <p>
-        ServiceStack’s gRPC support enables a highly productive development environment for developing high-performance gRPC HTTP/2 Services by making ServiceStack’s existing typed Services available from ASP.NET’s gRPC endpoints.
-    </p>
-    "
-    learn_url="https://docs.servicestack.net/grpc"
     %}
 
     {% include home/feature-thirdparty.html %}
