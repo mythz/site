@@ -1,0 +1,137 @@
+---
+title: Litestream templates
+layout: landing-page
+sitemap: false
+permalink: /litestream
+brand: <h2 class="brand">Litestream Templates</h2>
+---
+<style>
+    header {
+        background-image: url(/images/bg-header4.jpg);
+    }
+
+    #langIcons {
+        justify-content: space-between;
+    }
+
+    #langIcons a {
+    }
+
+    #langIcons img {
+        max-height: 80px;
+        min-width: 80px;
+        filter: grayscale(100%) invert(1);
+        opacity: .5;
+        box-shadow: none;
+        padding: 2px;
+    }
+
+    #langIcons img:hover {
+        filter: none;
+        opacity: 1;
+        background: rgba(255, 255, 255, .8);
+        border-radius: 50%;
+        transition: background 0.2s cubic-bezier(0, 0, 0.2, 1);
+    }
+</style>
+
+{% include landing/hero.html
+intro_heading="Single server simplicity with disaster-recovery"
+intro_text="Keep it simple. Most applications can run on a single server, use SQLite with Litestream for continuous backup to cheap storage."
+call_to_action_url="https://litestream.io"
+call_to_action_text="What is Litestream?"
+youtube_id="JKsgrstNnYY"
+%}
+
+<section class="text-center">
+    <div class="container">
+        <div class="my-20">
+            <h2 class="text-gray-700 pb-2">Save Money</h2>
+            <div class="colored-line"></div>
+            <div class="section-description my-2">
+                Litestream performs continuous backups using WAL journal files pushed to the remote storage once per second providing resilient, cost effective point-in-time restore functionality.
+            </div>
+        </div>
+        <img src="/images/litestream/Slide36.PNG" />
+    </div>
+</section>
+
+
+<section class="text-center">
+    <div class="container">
+        <div class="my-20">
+            <h2 class="text-gray-700 pb-2">Ready to go templates</h2>
+            <div class="colored-line"></div>
+            <div class="section-description my-2">
+                Get working with Litestream quickly using ServiceStack Mix templates utilizing GitHub Actions,
+                Docker-Compose and targeting the following storage types.
+            </div>
+        </div>
+
+        <div class="flex flex-wrap">
+            <div class="w-full lg:w-1/3 mt-4">
+                <a href="/">
+                    <div class="inline-flex justify-center">
+                        <img src="/images/litestream/aws_square.svg" alt="" style="width:70px;height:70px;">
+                    </div>
+                    <h3>AWS S3</h3>
+                </a>
+            </div>
+            <div class="w-full lg:w-1/3 mt-4">
+                <a href="/">
+                    <div class="inline-flex justify-center">
+                        <img src="/images/litestream/azure_square.svg" alt="" style="width:70px;height:70px;">
+                    </div>
+                    <h3>Azure Blob Storage</h3>
+                </a>
+            </div>
+            <div class="w-full lg:w-1/3 mt-4">
+                <a href="/">
+                    <div class="inline-flex justify-center">
+                        <img src="/images/litestream/sftp.png" alt="" style="width:70px;height:70px;">
+                    </div>
+                    <h3>SFTP</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="text-center">
+    <div class="container">
+        <div class="my-20">
+            <h2 class="text-gray-700 pb-2">Use with existing Jamstack templates</h2>
+            <div class="colored-line"></div>
+            <div class="section-description my-2">
+                Get a jump start with Jamstack templates for Vue3, Next.js and Vite.
+            </div>
+        </div>
+
+        <div class="flex flex-wrap">
+            <div class="w-full lg:w-1/3 mt-4">
+                <a href="/">
+                    <div class="inline-flex justify-center">
+                        <img src="/images/litestream/vue.svg" alt="Vue3" style="width:70px;height:70px;">
+                    </div>
+                    <h3>Vue3</h3>
+                </a>
+            </div>
+            <div class="w-full lg:w-1/3 mt-4">
+                <a href="/">
+                    <div class="inline-flex justify-center">
+                        <img src="/images/litestream/vite.svg" alt="Vite" style="width:70px;height:70px;">
+                    </div>
+                    <h3>Vite</h3>
+                </a>
+            </div>
+            <div class="w-full lg:w-1/3 mt-4">
+                <a href="/">
+                    <div class="inline-flex justify-center">
+                        <img src="/images/litestream/nextjs-logo.svg" alt="Next.js" style="width:70px;height:70px;">
+                    </div>
+                    <h3>Next.js</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
