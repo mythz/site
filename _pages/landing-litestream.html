@@ -197,36 +197,16 @@ youtube_id="YGlQ_FurUrM"
                 <h3 class="text-gray-400 text-xl mb-2">SSG Templates</h3>
                 <div class="flex flex-wrap justify-center">
                     <div>
-                    <a class="archive-url hover:no-underline netcoretemplates_web" :href="zipUrl('NetCoreTemplates/nextjs')">
-                        <div class="bg-white dark:bg-gray-800 px-4 py-4 mr-4 mb-4 rounded-lg shadow-lg text-center items-center justify-center hover:shadow-2xl dark:border-2 dark:border-pink-600 dark:hover:border-blue-600" style="min-width:150px">
-                            <div class="text-center font-extrabold flex items-center justify-center mb-2">
-                                <div class="text-4xl text-blue-400 my-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="w-14 h-14 border-2 bg-white rounded-full iconify iconify--logos" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M119.617.069c-.55.05-2.302.225-3.879.35c-36.36 3.278-70.419 22.894-91.99 53.044c-12.012 16.764-19.694 35.78-22.597 55.922C.125 116.415 0 118.492 0 128.025c0 9.533.125 11.61 1.151 18.64c6.957 48.065 41.165 88.449 87.56 103.411c8.309 2.678 17.067 4.504 27.027 5.605c3.879.425 20.645.425 24.524 0c17.192-1.902 31.756-6.155 46.12-13.486c2.202-1.126 2.628-1.426 2.327-1.677c-.2-.15-9.584-12.735-20.845-27.948l-20.47-27.648l-25.65-37.956c-14.114-20.868-25.725-37.932-25.825-37.932c-.1-.025-.2 16.84-.25 37.431c-.076 36.055-.1 37.506-.551 38.357c-.65 1.226-1.151 1.727-2.202 2.277c-.801.4-1.502.475-5.28.475h-4.33l-1.15-.725a4.679 4.679 0 0 1-1.677-1.827l-.526-1.126l.05-50.166l.075-50.192l.776-.976c.4-.525 1.251-1.2 1.852-1.526c1.026-.5 1.426-.55 5.755-.55c5.105 0 5.956.2 7.282 1.651c.376.4 14.264 21.318 30.88 46.514c16.617 25.195 39.34 59.599 50.5 76.488l20.27 30.7l1.026-.675c9.084-5.905 18.693-14.312 26.3-23.07c16.191-18.59 26.626-41.258 30.13-65.428c1.026-7.031 1.151-9.108 1.151-18.64c0-9.534-.125-11.61-1.151-18.641c-6.957-48.065-41.165-88.449-87.56-103.411c-8.184-2.652-16.892-4.479-26.652-5.58c-2.402-.25-18.943-.525-21.02-.325Zm52.401 77.414c1.201.6 2.177 1.752 2.527 2.953c.2.65.25 14.562.2 45.913l-.074 44.987l-7.933-12.16l-7.958-12.16v-32.702c0-21.143.1-33.028.25-33.603c.4-1.401 1.277-2.502 2.478-3.153c1.026-.525 1.401-.575 5.33-.575c3.704 0 4.354.05 5.18.5Z"></path></svg>
-                                </div>
-                            </div>
-                            <div class="text-xl font-medium text-gray-700">Next.js</div>
-                            <div class="flex justify-center h-8"></div>
-                            <span class="archive-name px-4 pb-2 text-blue-600 dark:text-indigo-400">{{ projectZip }}</span>
-                            <div class="count mt-1 text-gray-400 text-sm"></div>
-                        </div>
-                    </a>
-                    <a class="text-sm text-center mr-4" href="https://nextjs.jamstacks.net">nextjs.jamstacks.net</a>
+                        {% include project-template-install-card.html
+                            repo="NetCoreTemplates/nextjs"
+                            name="Next.js"
+                            icon_element="<img class='w-12 h-12 border-2 bg-white rounded-full' src='/images/svgs/nextjs.svg'>" %}
                     </div>
                     <div>
-                    <a class="archive-url hover:no-underline netcoretemplates_grpc" :href="zipUrl('NetCoreTemplates/vue-ssg')">
-                        <div class="bg-white dark:bg-gray-800 px-4 py-4 mr-4 mb-4 rounded-lg shadow-lg text-center items-center justify-center hover:shadow-2xl dark:border-2 dark:border-pink-600 dark:hover:border-blue-600" style="min-width:150px">
-                            <div class="text-center font-extrabold flex items-center justify-center mb-2">
-                                <div class="text-4xl text-blue-400 my-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="w-14 h-14 iconify iconify--logos" width="1.16em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 221"><path fill="#41B883" d="M204.8 0H256L128 220.8L0 0h97.92L128 51.2L157.44 0h47.36Z"></path><path fill="#41B883" d="m0 0l128 220.8L256 0h-51.2L128 132.48L50.56 0H0Z"></path><path fill="#35495E" d="M50.56 0L128 133.12L204.8 0h-47.36L128 51.2L97.92 0H50.56Z"></path></svg>                                
-                                </div>
-                            </div>
-                            <div class="text-xl font-medium text-gray-700">Vue SSG</div>
-                            <div class="flex justify-center h-8"></div>
-                            <span class="archive-name px-4 pb-2 text-blue-600 dark:text-indigo-400">{{ projectZip }}</span>
-                            <div class="count mt-1 text-gray-400 text-sm"></div>
-                        </div>
-                    </a>
-                    <a class="text-sm text-center mr-4" href="https://vue-ssg.jamstacks.net">vue-ssg.jamstacks.net</a>
+                        {% include project-template-install-card.html
+                            repo="NetCoreTemplates/vue-ssg"
+                            name="Vue SSG"
+                            icon_element="<img class='w-12 h-12' src='/images/svgs/vue.svg'>" %}
                     </div>
                 </div>
             </div>
@@ -237,36 +217,16 @@ youtube_id="YGlQ_FurUrM"
             <h3 class="text-gray-400 text-xl mb-2">SPA Templates</h3>
             <div class="flex flex-wrap justify-center">
                 <div>
-                    <a class="archive-url hover:no-underline netcoretemplates_aws-lambda" :href="zipUrl('NetCoreTemplates/vue-vite')">
-                    <div class="bg-white dark:bg-gray-800 px-4 py-4 mr-4 mb-4 rounded-lg shadow-lg text-center items-center justify-center hover:shadow-2xl dark:border-2 dark:border-pink-600 dark:hover:border-blue-600" style="min-width:150px">
-                        <div class="text-center font-extrabold flex items-center justify-center mb-2">
-                            <div class="text-4xl text-blue-400 my-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="w-14 h-14 iconify iconify--logos" width="1.16em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 221"><path fill="#41B883" d="M204.8 0H256L128 220.8L0 0h97.92L128 51.2L157.44 0h47.36Z"></path><path fill="#41B883" d="m0 0l128 220.8L256 0h-51.2L128 132.48L50.56 0H0Z"></path><path fill="#35495E" d="M50.56 0L128 133.12L204.8 0h-47.36L128 51.2L97.92 0H50.56Z"></path></svg>                                
-                            </div>
-                        </div>
-                        <div class="text-xl font-medium text-gray-700">Vue Vite</div>
-                        <div class="flex justify-center h-8"></div>
-                        <span class="archive-name px-4 pb-2 text-blue-600 dark:text-indigo-400">{{ projectZip }}</span>
-                        <div class="count mt-1 text-gray-400 text-sm"></div>
-                    </div>
-                    </a>
-                    <a class="text-sm text-center mr-4" href="https://vue-vite.jamstacks.net">vue-vite.jamstacks.net</a>
+                    {% include project-template-install-card.html
+                        repo="NetCoreTemplates/vue-vite"
+                        name="Vue Vite"
+                        icon_element="<img class='w-12 h-12' src='/images/svgs/vue.svg'>" %}
                 </div>
                 <div>
-                    <a class="archive-url hover:no-underline netcoretemplates_empty" :href="zipUrl('NetCoreTemplates/blazor-wasm')">
-                    <div class="bg-white dark:bg-gray-800 px-4 py-4 mr-4 mb-4 rounded-lg shadow-lg text-center items-center justify-center hover:shadow-2xl dark:border-2 dark:border-pink-600 dark:hover:border-blue-600 dark:border-2 dark:border-pink-600 dark:hover:border-blue-600" style="min-width:150px">
-                        <div class="text-center font-extrabold flex items-center justify-center mb-2">
-                            <div class="text-4xl text-blue-400 my-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="w-14 h-14 text-purple-500 iconify iconify--simple-icons" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M23.834 8.101a13.912 13.912 0 0 1-13.643 11.72a10.105 10.105 0 0 1-1.994-.12a6.111 6.111 0 0 1-5.082-5.761a5.934 5.934 0 0 1 11.867-.084c.025.983-.401 1.846-1.277 1.871c-.936 0-1.374-.668-1.374-1.567v-2.5a1.531 1.531 0 0 0-1.52-1.533H8.715a3.648 3.648 0 1 0 2.695 6.08l.073-.11l.074.121a2.58 2.58 0 0 0 2.2 1.048a2.909 2.909 0 0 0 2.695-3.04a7.912 7.912 0 0 0-.217-1.933a7.404 7.404 0 0 0-14.64 1.603a7.497 7.497 0 0 0 7.308 7.405s.549.05 1.167.035a15.803 15.803 0 0 0 8.475-2.528c.036-.025.072.025.048.061a12.44 12.44 0 0 1-9.69 3.963a8.744 8.744 0 0 1-8.9-8.972a9.049 9.049 0 0 1 3.635-7.247a8.863 8.863 0 0 1 5.229-1.726h2.813a7.915 7.915 0 0 0 5.839-2.578a.11.11 0 0 1 .059-.034a.112.112 0 0 1 .12.053a.113.113 0 0 1 .015.067a7.934 7.934 0 0 1-1.227 3.549a.107.107 0 0 0-.014.06a.11.11 0 0 0 .073.095a.109.109 0 0 0 .062.004a8.505 8.505 0 0 0 5.913-4.876a.155.155 0 0 1 .055-.053a.15.15 0 0 1 .147 0a.153.153 0 0 1 .054.053A10.779 10.779 0 0 1 23.834 8.1zM8.895 11.628a2.188 2.188 0 1 0 2.188 2.188v-2.042a.158.158 0 0 0-.15-.15Z"></path></svg>
-                            </div>
-                        </div>
-                        <div class="text-xl font-medium text-gray-700">Blazor WASM</div>
-                        <div class="flex justify-center h-8"></div>
-                        <span class="archive-name px-4 pb-2 text-blue-600 dark:text-indigo-400">{{ projectZip }}</span>
-                        <div class="count mt-1 text-gray-400 text-sm"></div>
-                    </div>
-                    </a>
-                    <a class="text-sm text-center mr-4" href="https://blazor-wasm.jamstacks.net">blazor-wasm.jamstacks.net</a>
+                    {% include project-template-install-card.html
+                        repo="NetCoreTemplates/blazor-wasm"
+                        name="Blazor WASM"
+                        icon_element="<img class='w-12 h-12' src='/images/svgs/blazor.svg'>" %}
                 </div>
             </div>
         </div>
