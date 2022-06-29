@@ -20,14 +20,12 @@ call_to_action_text="What is Litestream?"
 youtube_id="YGlQ_FurUrM"
 %}
 
-
 <section class="text-center">
     <div class="container">
         <div class="my-20">
             <h2 class="text-gray-700 pb-2">Reduce Complexity & Save Costs</h2>
             <div class="colored-line"></div>
             <div class="section-description my-2">
-                
                 <p>
                     Litestream performs continuous, per second backups to AWS S3, Azure Blob Storage & SFTP
                     providing resilient, cost effective point-in-time restore functionality. <br>
@@ -39,26 +37,56 @@ youtube_id="YGlQ_FurUrM"
     </div>
 </section>
 
+<section class="my-10 py-10 text-center bg-gray-50">
+    <div class="container">
+        <div class="">
+            <h2 class="text-gray-700 pb-2">Savings at Scale</h2>
+            <div class="colored-line"></div>
+            <div class="section-description my-2">
+                <p>
+                    SQLite directly benefits from improving hardware's faster CPUs and SSDs with superior locality to comfortably handle most App's needs. 
+                </p>
+            </div>
+        </div>
+        <img src="/images/litestream/litestream-costs-perf.svg">
+    </div>
+</section>
+
 <section class="text-center">
     <div class="container">
         <div class="my-20">
             <h2 class="text-gray-700 pb-2">Effortless Migrations</h2>
             <div class="colored-line"></div>
             <div class="section-description my-2">
+                No Lock-in. Migrate off whenever you want. <br>
                 Using SQLite with <a href="https://docs.servicestack.net/ormlite/">OrmLite's</a> fast, typed APIs
                 lets you easily migrate to any of its 
                 <a href="https://docs.servicestack.net/ormlite/installation">supported RDBMS</a> with just configuration, no other code changes required.
             </div>
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center pb-8 my-8">
             <img src="/images/litestream/litestream-migrate.svg" class="max-w-screen-md">
         </div>
     </div>
 </div>
 
-<style>
+<section class="my-10 py-10 text-center bg-gray-50">
+    <div class="container">
+        <div class="pb-8">
+            <h2 class="text-gray-700 pb-2">How it works</h2>
+            <div class="colored-line"></div>
+            <div class="section-description my-2">
+                <p>
+                    Litestream is run as a 
+                    <a href="https://litestream.io/guides/docker/">sidecar Docker container</a>,
+                    activated on each deployment to handle restoring & replicating changes from its configured storage
+                </p>
+            </div>
+        </div>
+        <img src="/images/litestream/litestream-how-it-works.svg">
+    </div>
+</section>
 
-</style>
 
 <section class="text-center">
     <div class="container">
@@ -213,8 +241,9 @@ youtube_id="YGlQ_FurUrM"
                 </div>
             </div>
         </div>
-        </section>
-        <section class="w-full flex flex-col justify-center text-center">
+    </section>
+
+    <section class="w-full flex flex-col justify-center text-center">
         <div id="spa" class="mt-4 mb-2">
             <h3 class="text-gray-400 text-xl mb-2">SPA Templates</h3>
             <div class="flex flex-wrap justify-center">
@@ -235,11 +264,49 @@ youtube_id="YGlQ_FurUrM"
             </div>
         </div>
     </section>   
+    
+    <section class="w-full flex flex-col justify-center text-center">
+        <div id="spa" class="mt-4 mb-2">
+
+            <div class="mt-8">
+                <h3 class="text-gray-700 pb-2">Create empty Litestream Web App</h3>
+                <div class="section-description pb-8">
+                    For any other project, you can start with the empty App template
+                </div>
+            </div>
+        
+            <div class="flex flex-wrap justify-center">
+                <div>
+                    {% include project-template-install-card.html
+                        repo="NetCoreTemplates/web"
+                        name="Web"
+                        icon_element="<i class='fab fa-servicestack'></i>" %}
+                    <a class="text-sm text-center mr-4 text-gray-700" href="https://web.web-templates.io">web.web-templates.io</a>
+                </div>
+            </div>
+        </div>
+    </section>   
+
 
     </div>
 </section>
 
 <div class="my-20"></div>
+
+<div class="buttons my-8 flex text-center justify-center">
+    {% include btn_lg.html href="/start" label="Get Started Today" %}
+    <span class="mx-1"></span>
+    {% include btn_lg.html href="#{site.dynamic_url}/trial" label="30 Day Free Trial" %}
+</div>
+
+<div class="text-center mb-8 pb-8 text-2xl">
+    <a href="{{site.dynamic_url}}/pricing">See Pricing</a>
+</div>
+
+<div class="text-center">
+    {% include home/testimonials-section.html %}
+</div>
+{% include landing/brand-customers.html %}
 
 <script>
 let DYNAMIC_URL = "{{site.dynamic_url}}"
