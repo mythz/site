@@ -112,7 +112,7 @@ youtube_id="YR481S2ZdpM"
                 Active: "border-indigo-500 ring-2 ring-indigo-500"
             -->
             <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none border-indigo-500 ring-2 ring-indigo-500">
-                <input type="radio" name="storage-type" value="s3" class="sr-only" aria-labelledby="storage-type-0-label" aria-describedby="storage-type-0-description-0 storage-type-0-description-1">
+                <input type="radio" name="storage-type" value="aws" class="sr-only" aria-labelledby="storage-type-0-label" aria-describedby="storage-type-0-description-0 storage-type-0-description-1">
                 <span class="flex-1 flex">
                 <span class="flex flex-col">
                     <span>
@@ -311,6 +311,12 @@ youtube_id="YR481S2ZdpM"
 
 <script>
 let DYNAMIC_URL = "{{site.dynamic_url}}"
+
+let defaultValue = location.hash.indexOf('azure') >= 0
+        ? 'azure'
+        : location.hash.indexOf('sftp') >= 0
+            ? 'sftp'
+            : 'aws'
 </script>
 
 <script src="/js/jquery.min.js"></script>
@@ -321,16 +327,25 @@ updateTemplates()
 
 let inputs = $('#litestream-options input[type=radio]')
 
-// overrides getMix in start.js
+// overrides getMix + templateUrlFilter in start.js
 function getMix() {
-    // let mix = [];
-    // $('#mix input:checked').each(function () {
-    //     mix.push(this.value);
-    // });
-    // return mix.join(',');
+    let chk = $('#litestream-options input:checked')[0]
+    return 'x-litestream-' + (chk && chk.value) || defaultValue
 }
+function templateUrlFilter(url) {
+    let mixPrefixes = {
+        "web":             "litestream",
+        "nextjs":          "jamstack-litestream",
+        "vue-ssg":         "jamstack-litestream",
+        "vue-vite":        "jamstack-litestream",
+        "blazor-wasm":     "blazor-litestream",
+        "blazor-tailwind": "blazor-litestream",
+    }
 
-$('#litestream-options input[type=radio]').on('change', updateStorage)
+    let tplUrl = url.split('?')[0]
+    let tpl = tplUrl.substring(tplUrl.lastIndexOf('/') + 1)
+    return url.replace('x-litestream', mixPrefixes[tpl])
+}
 
 function updateStorage(e) {
     //let input = e.target
@@ -358,9 +373,11 @@ function updateStorage(e) {
             border.addClass('border-2').removeClass('border')
         }
     })
+    updateTemplates()
 }
 
-$('#litestream-options input[value=s3]').attr('checked', true)
+$(`#litestream-options input[value=${defaultValue}]`).attr('checked', true)
+$('#litestream-options input[type=radio]').on('change', updateStorage)
 updateStorage()
 </script>
 

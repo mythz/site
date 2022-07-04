@@ -40,7 +40,7 @@ function updateTemplates() {
 
     $('.archive-url').each(function () {
         let url = leftPart(this.href, '?') + '?' + urlParams;
-        this.href = url;
+        this.href = templateUrlFilter(url);
     });
     $('.archive-name').each(function () {
         this.innerHTML = name + '.zip';
@@ -58,6 +58,10 @@ function getMix() {
     });
     return mix.join(',');
 }
+function templateUrlFilter(url) {
+    return url
+}
+
 $('[name=auth-repo]').on('input', function () { $('#chkAuth').prop('checked',true) });
 $('[name=action]').on('input', function () { $('#chkActionBuild').prop('checked',true) });
 $('#mix [type=checkbox],#mix [type=radio]').on('input', updateTemplates);
