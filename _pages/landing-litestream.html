@@ -17,17 +17,17 @@ intro_heading="Safely run DB Apps on a single server at low cost"
 intro_text="Simple & Fast! Litestream reliably runs most Apps, fast on a single server, with continuous backups to cheap managed storage."
 call_to_action_url="https://litestream.io"
 call_to_action_text="What is Litestream?"
-youtube_id="YR481S2ZdpM"
+youtube_id="WXRwT7ayc1Y"
 %}
 
 <section class="text-center">
     <div class="container">
         <div class="my-20">
-            <h2 class="text-gray-700 pb-2">Reduce Complexity & Save Costs</h2>
+            <h2 class="text-gray-700 pb-2">Reduce Complexity &amp; Save Costs</h2>
             <div class="colored-line"></div>
             <div class="section-description my-2">
                 <p>
-                    Litestream performs continuous, per second backups to AWS S3, Azure Blob Storage & SFTP
+                    Litestream performs continuous, per second backups to AWS S3, Azure Blob Storage &amp; SFTP
                     providing resilient, cost effective point-in-time restore functionality <br>
                     Avoid expensive managed RDBMS servers, reduce deployment complexity by replicating to cheap managed storage with 
                     <a href="https://aws.amazon.com/s3/storage-classes/">11 9's durability</a>
@@ -69,7 +69,7 @@ youtube_id="YR481S2ZdpM"
             <img src="/images/litestream/litestream-migrate.svg" class="max-w-screen-md">
         </div>
     </div>
-</div>
+</section>
 
 <section class="my-10 py-10 text-center bg-gray-50">
     <div class="container">
@@ -80,14 +80,13 @@ youtube_id="YR481S2ZdpM"
                 <p>
                     Litestream is run as a 
                     <a href="https://litestream.io/guides/docker/">sidecar Docker container</a>,
-                    activated on each deployment to handle restoring & replicating changes from its configured storage
+                    activated on each deployment to handle restoring &amp; replicating changes from its configured storage
                 </p>
             </div>
         </div>
         <img src="/images/litestream/litestream-how-it-works.svg">
     </div>
 </section>
-
 
 <section class="text-center">
     <div class="container">
@@ -97,107 +96,108 @@ youtube_id="YR481S2ZdpM"
             <div class="section-description my-2">
                 To make working with Litestream easy, we've created GitHub Action Docker Compose configurations for each of Litestream's popular Storage options
                 that you can 
-                <a href="https://docs.servicestack.net/mix-tool">mix</a> & match with any modern C#
+                <a href="https://docs.servicestack.net/mix-tool">mix</a> &amp; match with any modern C#
                 <a href="https://jamstacks.net">jamstacks.net</a> Project Template below:
             </div>
 
-        <!-- This example requires Tailwind CSS v2.0+ -->
-        <fieldset id="litestream-options" class="my-10">
-            <legend class="text-gray-700">
-                <h3>Select preferred Litestream storage option</h3>
-            </legend>
-            <div class="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-3 sm:gap-x-4">
-            <!--
-                Checked: "border-transparent", Not Checked: "border-gray-300"
-                Active: "border-indigo-500 ring-2 ring-indigo-500"
-            -->
-            <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none border-indigo-500 ring-2 ring-indigo-500">
-                <input type="radio" name="storage-type" value="aws" class="sr-only" aria-labelledby="storage-type-0-label" aria-describedby="storage-type-0-description-0 storage-type-0-description-1">
-                <span class="flex-1 flex">
-                <span class="flex flex-col">
-                    <span>
-                        <img src="/images/litestream/aws_square.svg" alt="AWS S3" class="w-15">
-                    </span>
-                    <span id="storage-type-0-label" class="block text-2xl font-medium text-gray-900">
-                        S3 Simple Storage Service
-                    </span>
-                </span>
-                </span>
+            <!-- This example requires Tailwind CSS v2.0+ -->
+            <fieldset id="litestream-options" class="my-10">
+                <legend class="text-gray-700">
+                    <h3>Select preferred Litestream storage option</h3>
+                </legend>
+                <div class="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-3 sm:gap-x-4">
                 <!--
-                    Not Checked: "invisible"
-                    Heroicon name: solid/check-circle
+                    Checked: "border-transparent", Not Checked: "border-gray-300"
+                    Active: "border-indigo-500 ring-2 ring-indigo-500"
                 -->
-                <svg class="h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                </svg>
-                <!--
-                    Active: "border", Not Active: "border-2"
-                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                -->
-                <span class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true"></span>
-            </label>
-        
-            <!--
-                Checked: "border-transparent", Not Checked: "border-gray-300"
-                Active: "border-indigo-500 ring-2 ring-indigo-500"
-            -->
-            <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none">
-                <input type="radio" name="storage-type" value="azure" class="sr-only" aria-labelledby="storage-type-1-label" aria-describedby="storage-type-1-description-0 storage-type-1-description-1">
-                <span class="flex-1 flex">
-                <span class="flex flex-col">
-                    <span>
-                        <img src="/images/litestream/azure_square.svg" alt="Azure Blob Storage" class="w-15">
+                <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none border-indigo-500 ring-2 ring-indigo-500">
+                    <input type="radio" name="storage-type" value="aws" class="sr-only" aria-labelledby="storage-type-0-label" aria-describedby="storage-type-0-description-0 storage-type-0-description-1">
+                    <span class="flex-1 flex">
+                    <span class="flex flex-col">
+                        <span>
+                            <img src="/images/litestream/aws_square.svg" alt="AWS S3" class="w-15">
+                        </span>
+                        <span id="storage-type-0-label" class="block text-2xl font-medium text-gray-900">
+                            S3 Simple Storage Service
+                        </span>
                     </span>
-                    <span id="storage-type-1-label" class="block text-2xl font-medium text-gray-900">
-                        Azure Blob Storage
                     </span>
-                </span>
-                </span>
+                    <!--
+                        Not Checked: "invisible"
+                        Heroicon name: solid/check-circle
+                    -->
+                    <svg class="h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <!--
+                        Active: "border", Not Active: "border-2"
+                        Checked: "border-indigo-500", Not Checked: "border-transparent"
+                    -->
+                    <span class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true"></span>
+                </label>
+            
                 <!--
-                    Not Checked: "invisible"
-                    Heroicon name: solid/check-circle
+                    Checked: "border-transparent", Not Checked: "border-gray-300"
+                    Active: "border-indigo-500 ring-2 ring-indigo-500"
                 -->
-                <svg class="h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                </svg>
-                <!--
-                    Active: "border", Not Active: "border-2"
-                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                -->
-                <span class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true"></span>
-            </label>
-        
-            <!--
-                Checked: "border-transparent", Not Checked: "border-gray-300"
-                Active: "border-indigo-500 ring-2 ring-indigo-500"
-            -->
-            <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none">
-                <input type="radio" name="storage-type" value="sftp" class="sr-only" aria-labelledby="storage-type-2-label" aria-describedby="storage-type-2-description-0 storage-type-2-description-1">
-                <span class="flex-1 flex">
-                <span class="flex flex-col">
-                    <span>
-                        <img src="/images/litestream/sftp.png" alt="SFTP" class="w-15">
+                <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none">
+                    <input type="radio" name="storage-type" value="azure" class="sr-only" aria-labelledby="storage-type-1-label" aria-describedby="storage-type-1-description-0 storage-type-1-description-1">
+                    <span class="flex-1 flex">
+                    <span class="flex flex-col">
+                        <span>
+                            <img src="/images/litestream/azure_square.svg" alt="Azure Blob Storage" class="w-15">
+                        </span>
+                        <span id="storage-type-1-label" class="block text-2xl font-medium text-gray-900">
+                            Azure Blob Storage
+                        </span>
                     </span>
-                    <span id="storage-type-2-label" class="block text-2xl font-medium text-gray-900">
-                        SSH File Transfer Protocol
                     </span>
-                </span>
-                </span>
+                    <!--
+                        Not Checked: "invisible"
+                        Heroicon name: solid/check-circle
+                    -->
+                    <svg class="h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <!--
+                        Active: "border", Not Active: "border-2"
+                        Checked: "border-indigo-500", Not Checked: "border-transparent"
+                    -->
+                    <span class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true"></span>
+                </label>
+            
                 <!--
-                    Not Checked: "invisible"
-                    Heroicon name: solid/check-circle
+                    Checked: "border-transparent", Not Checked: "border-gray-300"
+                    Active: "border-indigo-500 ring-2 ring-indigo-500"
                 -->
-                <svg class="h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                </svg>
-                <!--
-                    Active: "border", Not Active: "border-2"
-                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                -->
-                <span class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true"></span>
-            </label>
-            </div>
-        </fieldset>        
+                <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none">
+                    <input type="radio" name="storage-type" value="sftp" class="sr-only" aria-labelledby="storage-type-2-label" aria-describedby="storage-type-2-description-0 storage-type-2-description-1">
+                    <span class="flex-1 flex">
+                    <span class="flex flex-col">
+                        <span>
+                            <img src="/images/litestream/sftp.png" alt="SFTP" class="w-15">
+                        </span>
+                        <span id="storage-type-2-label" class="block text-2xl font-medium text-gray-900">
+                            SSH File Transfer Protocol
+                        </span>
+                    </span>
+                    </span>
+                    <!--
+                        Not Checked: "invisible"
+                        Heroicon name: solid/check-circle
+                    -->
+                    <svg class="h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <!--
+                        Active: "border", Not Active: "border-2"
+                        Checked: "border-indigo-500", Not Checked: "border-transparent"
+                    -->
+                    <span class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true"></span>
+                </label>
+                </div>
+            </fieldset>        
+        </div>
 
     </div>
 </section>
