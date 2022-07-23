@@ -326,6 +326,7 @@ let defaultValue = location.hash.indexOf('azure') >= 0
             : 'aws'
 
 let anchor = location.hash && location.hash.indexOf('=') <= 0 && document.querySelector(location.hash)
+if (!anchor && location.hash) anchor = document.querySelector('#create')
 </script>
 
 <script src="/js/jquery.min.js"></script>
