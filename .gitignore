@@ -8,3 +8,5 @@ _site/
 GPUCache/
 blob_storage/
 .Identifier
+/node_modules/
+/.jekyll-metadata
