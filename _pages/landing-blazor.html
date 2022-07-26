@@ -5,8 +5,13 @@ sitemap: false
 permalink: /blazor
 brand: <h2 class="brand">Blazor</h2>
 ---
+<style>
+    .font-override {
+        font-family: "Segoe UI",serif;
+    }
+</style>
 
-<div class="relative overflow-hidden">
+<div class="relative overflow-hidden font-override">
     <main>
         <div class="pt-32 bg-gray-900 sm:pt-32 lg:pt-24 lg:pb-14 lg:overflow-hidden">
             <div class="mx-auto max-w-7xl lg:px-8">
@@ -17,29 +22,12 @@ brand: <h2 class="brand">Blazor</h2>
                                 <span class="block">A better way to</span>
                                 <span class="block text-indigo-400">build Blazor apps</span>
                             </h1>
-                            <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">Anim aute
-                                id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo. Elit
-                                sunt amet fugiat veniam occaecat fugiat.</p>
-                            <div class="mt-10 sm:mt-12">
-                                <form action="#" class="sm:max-w-xl sm:mx-auto lg:mx-0">
-                                    <div class="sm:flex">
-                                        <div class="min-w-0 flex-1">
-                                            <label for="email" class="sr-only">Email address</label>
-                                            <input id="email" type="email" placeholder="Enter your email"
-                                                   class="block w-full px-4 py-3 rounded-md border-0 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900">
-                                        </div>
-                                        <div class="mt-3 sm:mt-0 sm:ml-3">
-                                            <button type="submit"
-                                                    class="block w-full py-3 px-4 rounded-md shadow bg-indigo-500 text-white font-medium hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900">
-                                                Start free trial
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <p class="mt-3 text-sm text-gray-300 sm:mt-4">Start your free 14-day trial, no
-                                        credit card necessary. By providing your email, you agree to our <a href="#"
-                                                                                                            class="font-medium text-white">terms
-                                            of service</a>.</p>
-                                </form>
+                            <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">Blazor with ServiceStack gives you the ideal development workflow without compromise. Integrate with your services by reusing your Request DTO C# code in Blazor WASM creating typed end-to-end safety and productivity.
+                            Multiple templates, Blazor component library, extensive examples.</p>
+                            <div>
+                                <button class="block w- py-3 px-4 rounded-md shadow bg-indigo-500 text-white font-medium hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900">
+                                    Get started
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -58,64 +46,12 @@ brand: <h2 class="brand">Blazor</h2>
 
         <!-- More main page content here... -->
         <!-- video -->
-        <div>
-
-            <div class="relative overflow-hidden">
-                <div class="absolute inset-y-0 h-full w-full -z-20" aria-hidden="true">
-                    <div class="relative h-full">
-                        <svg class="absolute right-full transform translate-y-1/3 translate-x-1/4 md:translate-y-1/2 sm:translate-x-1/2 lg:translate-x-full"
-                             width="404" height="784" fill="none" viewBox="0 0 404 784">
-                            <defs>
-                                <pattern id="e229dbec-10e9-49ee-8ec3-0286ca089edf" x="0" y="0" width="20" height="20"
-                                         patternUnits="userSpaceOnUse">
-                                    <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor"/>
-                                </pattern>
-                            </defs>
-                            <rect width="404" height="784" fill="url(#e229dbec-10e9-49ee-8ec3-0286ca089edf)"/>
-                        </svg>
-                        <svg class="absolute left-full transform -translate-y-3/4 -translate-x-1/4 sm:-translate-x-1/2 md:-translate-y-1/2 lg:-translate-x-3/4"
-                             width="404" height="784" fill="none" viewBox="0 0 404 784">
-                            <defs>
-                                <pattern id="d2a68204-c383-44b1-b99f-42ccff4e5365" x="0" y="0" width="20" height="20"
-                                         patternUnits="userSpaceOnUse">
-                                    <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor"/>
-                                </pattern>
-                            </defs>
-                            <rect width="404" height="784" fill="url(#d2a68204-c383-44b1-b99f-42ccff4e5365)"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24 sm:px-6">
-                    <div class="text-center">
-                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                            <span class="block">Creating Beautiful Apps</span>
-                            <span class="block text-indigo-600">with Blazor WASM</span>
-                        </h1>
-                        <p class="my-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                            Learn how to easily create customizable feature-rich Blazor WASM Web Apps with ServiceStack
-                        </p>
-                    </div>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute inset-0 flex flex-col" aria-hidden="true">
-                        <div class="flex-1"></div>
-                        <div class="flex-1 w-full bg-gray-900"></div>
-                    </div>
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 pb-40">
-                        <div class="aspect-w-16 aspect-h-9">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/BcQqCzm4tK0"
-                                    title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        {% include landing/feature-with-video.html
+        title_top_line="Creating Beautiful Apps"
+        title_bottom_line="with Blazor WASM"
+        subtitle_text="Learn how to easily create customizable feature-rich Blazor WASM Web Apps with ServiceStack."
+        youtube_id="BcQqCzm4tK0"
+        %}
 
         <!-- This example requires Tailwind CSS v2.0+ -->
         <div class="relative bg-white py-8 sm:py-12 lg:py-16">
@@ -129,13 +65,8 @@ brand: <h2 class="brand">Blazor</h2>
                             <div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
                                 <div class="-mt-6">
                                     <div>
-                                        <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-3 shadow-lg">
-                                          <!-- Heroicon name: outline/cloud-upload -->
-                                          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                               stroke-width="2" stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
-                                          </svg>
+                                        <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-3 shadow-lg text-white">
+                                          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><circle cx="21" cy="21" r="2" fill="currentColor"/><circle cx="7" cy="7" r="2" fill="currentColor"/><path fill="currentColor" d="M27 31a4 4 0 1 1 4-4a4.012 4.012 0 0 1-4 4Zm0-6a2 2 0 1 0 2 2a2.006 2.006 0 0 0-2-2Z"/><path fill="currentColor" d="M30 16A14.041 14.041 0 0 0 16 2a13.043 13.043 0 0 0-6.8 1.8l1.1 1.7a24.425 24.425 0 0 1 2.4-1A25.135 25.135 0 0 0 10 15H4a11.149 11.149 0 0 1 1.4-4.7L3.9 9A13.842 13.842 0 0 0 2 16a13.998 13.998 0 0 0 14 14a13.366 13.366 0 0 0 5.2-1l-.6-1.9a11.442 11.442 0 0 1-5.2.9A21.071 21.071 0 0 1 12 17h17.9a3.402 3.402 0 0 0 .1-1ZM12.8 27.6a13.02 13.02 0 0 1-5.3-3.1A12.505 12.505 0 0 1 4 17h6a25.002 25.002 0 0 0 2.8 10.6ZM12 15a21.446 21.446 0 0 1 3.3-11h1.4A21.446 21.446 0 0 1 20 15Zm10 0a23.278 23.278 0 0 0-2.8-10.6A12.092 12.092 0 0 1 27.9 15Z"/></svg>
                                         </span>
                                     </div>
                                     <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-900">Static Page Generation</h3>
@@ -148,17 +79,12 @@ brand: <h2 class="brand">Blazor</h2>
                             <div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
                                 <div class="-mt-6">
                                     <div>
-                                        <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-3 shadow-lg">
-                                          <!-- Heroicon name: outline/lock-closed -->
-                                          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                               stroke-width="2" stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                                          </svg>
+                                        <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-3 shadow-lg text-white">
+                                          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.41-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z" clip-rule="evenodd"/></svg>
                                         </span>
                                     </div>
                                     <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-900">GitHub Actions</h3>
-                                    <p class="mt-5 text-base text-gray-500">Support to deploy straight from GitHub Actions with built in workflows. Supports usage of CDN for static site and simple Linux host for .NET.</p>
+                                    <p class="mt-5 text-base text-gray-500">Deploy straight from GitHub Actions with built in workflows. Supports usage of CDN for static site and simple Linux host for .NET.</p>
                                 </div>
                             </div>
                         </div>
@@ -167,13 +93,8 @@ brand: <h2 class="brand">Blazor</h2>
                             <div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
                                 <div class="-mt-6">
                                     <div>
-                                        <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-3 shadow-lg">
-                                          <!-- Heroicon name: outline/refresh -->
-                                          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                               stroke-width="2" stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-                                          </svg>
+                                        <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-3 shadow-lg text-white">
+                                          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M23.834 8.101a13.912 13.912 0 0 1-13.643 11.72a10.105 10.105 0 0 1-1.994-.12a6.111 6.111 0 0 1-5.082-5.761a5.934 5.934 0 0 1 11.867-.084c.025.983-.401 1.846-1.277 1.871c-.936 0-1.374-.668-1.374-1.567v-2.5a1.531 1.531 0 0 0-1.52-1.533H8.715a3.648 3.648 0 1 0 2.695 6.08l.073-.11l.074.121a2.58 2.58 0 0 0 2.2 1.048a2.909 2.909 0 0 0 2.695-3.04a7.912 7.912 0 0 0-.217-1.933a7.404 7.404 0 0 0-14.64 1.603a7.497 7.497 0 0 0 7.308 7.405s.549.05 1.167.035a15.803 15.803 0 0 0 8.475-2.528c.036-.025.072.025.048.061a12.44 12.44 0 0 1-9.69 3.963a8.744 8.744 0 0 1-8.9-8.972a9.049 9.049 0 0 1 3.635-7.247a8.863 8.863 0 0 1 5.229-1.726h2.813a7.915 7.915 0 0 0 5.839-2.578a.11.11 0 0 1 .059-.034a.112.112 0 0 1 .12.053a.113.113 0 0 1 .015.067a7.934 7.934 0 0 1-1.227 3.549a.107.107 0 0 0-.014.06a.11.11 0 0 0 .073.095a.109.109 0 0 0 .062.004a8.505 8.505 0 0 0 5.913-4.876a.155.155 0 0 1 .055-.053a.15.15 0 0 1 .147 0a.153.153 0 0 1 .054.053A10.779 10.779 0 0 1 23.834 8.1zM8.895 11.628a2.188 2.188 0 1 0 2.188 2.188v-2.042a.158.158 0 0 0-.15-.15Z"/></svg>
                                         </span>
                                     </div>
                                     <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-900">Blazor Components</h3>
@@ -186,17 +107,12 @@ brand: <h2 class="brand">Blazor</h2>
                             <div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
                                 <div class="-mt-6">
                                     <div>
-                                        <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-3 shadow-lg">
-                                          <!-- Heroicon name: outline/shield-check -->
-                                          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                               stroke-width="2" stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                                          </svg>
+                                        <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-3 shadow-lg text-white">
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><g fill="currentColor"><path d="M14 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/><path fill-rule="evenodd" d="M9.146 8.146a.5.5 0 0 1 .708 0L11.5 9.793l1.646-1.647a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 0-.708z"/><path fill-rule="evenodd" d="M11.5 5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 1 .5-.5z"/><path d="M3.56 11V7.01h.056l1.428 3.239h.774l1.42-3.24h.056V11h1.073V5.001h-1.2l-1.71 3.894h-.039l-1.71-3.894H2.5V11h1.06z"/></g></svg>
                                         </span>
                                     </div>
                                     <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-900">Markdown Support</h3>
-                                    <p class="mt-5 text-base text-gray-500">Create content pages with ease using Markdown. These can be pre-rendered for a complete static site generation based solution.</p>
+                                    <p class="mt-5 text-base text-gray-500">Create content pages with ease using Markdown. Pre-rendered for a complete static site generation based solution.</p>
                                 </div>
                             </div>
                         </div>
@@ -205,14 +121,8 @@ brand: <h2 class="brand">Blazor</h2>
                             <div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
                                 <div class="-mt-6">
                                     <div>
-                                        <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-3 shadow-lg">
-                                          <!-- Heroicon name: outline/cog -->
-                                          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                               stroke-width="2" stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                          </svg>
+                                        <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-3 shadow-lg text-white">
+                                          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path fill="currentColor" d="M128 204.667C145.062 136.227 187.738 102 256 102c102.4 0 115.2 77 166.4 89.833c34.138 8.56 64-4.273 89.6-38.5C494.938 221.773 452.262 256 384 256c-102.4 0-115.2-77-166.4-89.833c-34.138-8.56-64 4.273-89.6 38.5zm-128 154C17.062 290.227 59.738 256 128 256c102.4 0 115.2 77 166.4 89.833c34.138 8.56 64-4.273 89.6-38.5C366.938 375.773 324.262 410 256 410c-102.4 0-115.2-77-166.4-89.833c-34.138-8.56-64 4.273-89.6 38.5z"/></svg>
                                         </span>
                                     </div>
                                     <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-900">Tailwind Support</h3>
@@ -225,13 +135,8 @@ brand: <h2 class="brand">Blazor</h2>
                             <div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
                                 <div class="-mt-6">
                                     <div>
-                                        <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-3 shadow-lg">
-                                          <!-- Heroicon name: outline/server -->
-                                          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                               stroke-width="2" stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                  d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
-                                          </svg>
+                                        <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-3 shadow-lg text-white">
+                                          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9a3 3 0 0 0-3-3h-.5A3.5 3.5 0 0 0 3 9.5v5A3.5 3.5 0 0 0 6.5 18H7a3 3 0 0 0 3-3m6-8l-1 10m5-10l-1 10m-5-7h7.5m-.5 4h-7.5"/></svg>
                                         </span>
                                     </div>
                                     <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-900">Shared DTOs</h3>
@@ -270,33 +175,7 @@ brand: <h2 class="brand">Blazor</h2>
                 </div>
             </div>
 
-            <div class="mt-8 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6">
-                <div class="text-center">
-                    <h1 class="text-2xl tracking-tight font-extrabold text-gray-900 sm:text-3xl md:text-4xl">
-                        <span class="block">Creating Beautiful Apps</span>
-                        <span class="block">with Blazor WASM</span>
-                    </h1>
-                    <p class="my-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                        Learn how to easily create customizable feature-rich Blazor WASM Web Apps with ServiceStack
-                    </p>
-                </div>
-            </div>
 
-            <div class="relative">
-                <div class="absolute inset-0 flex flex-col" aria-hidden="true">
-                    <div class="flex-1"></div>
-                    <div class="flex-1 w-full bg-gray-900"></div>
-                </div>
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 pb-40">
-                    <div class="aspect-w-16 aspect-h-9">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/BcQqCzm4tK0"
-                                title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!-- This example requires Tailwind CSS v2.0+ -->
