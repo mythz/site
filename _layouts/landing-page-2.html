@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include meta-section.html %}
+    <title>{{page.title}}</title>
+    {% include fav-icons-section.html %}
+    {% include stylesheets-section.html %}
+    <!-- CAROUSEL AND LIGHTBOX -->
+    <link rel="stylesheet" href="/css/owl.theme.css">
+    <link rel="stylesheet" href="/css/owl.carousel.css">
+    <link rel="stylesheet" href="/css/nivo-lightbox.css">
+    <link rel="stylesheet" href="/css/nivo_themes/default/default.css">
+    <link rel="stylesheet" href="/css/lite-yt-embed.css">
+    <link rel="stylesheet" href="/css/flip.min.css">
+    <style>
+        header {
+            background-image: url(/images/bg-header.jpg);
+        }
+        /*from: https://gist.github.com/AndrewCraswell/106143d1bb5d4162689b9e1d89a2d0fb*/
+        @font-face {
+            font-family: SegoeUI;
+            src:
+                    local("Segoe UI Bold"),
+                    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2) format("woff2"),
+                    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff) format("woff"),
+                    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf) format("truetype");
+            font-weight: 600;
+        }
+        .navbar-brand {
+            line-height: unset;
+            height: unset;
+        }
+        .brand, a .brand {
+            --tw-text-opacity: 1;
+            color: rgba(17, 24, 39,var(--tw-text-opacity));
+            margin:0;
+            font-size: 1.75rem;
+            line-height: 2rem;
+            font-weight: bold;
+            font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+            letter-spacing: -0.5px;
+            background: url('/images/logo-only.svg') no-repeat top left;
+            padding: 5px 5px 5px 45px;
+        }
+        @media (max-width:544px) {
+            .navbar-brand {
+                padding: 8px 2px;
+            }
+            .brand, a .brand {
+                font-size: 1.5rem;
+                line-height: 1.75rem;
+            }
+        }
+    </style>
+    {% if page.customcss %}<link rel="stylesheet" href="/css/{{page.customcss}}">{% endif %}
+</head>
+<body>
+<div>
+    {% include navigation.html %}
+
+    {{ content }}
+
+</div>
+{% include footer-section.html %}
+{% include scripts-section.html %}
+{% include linkedin-tag.html %}
+<script src="/js/default.landing.js"></script>
+<script src="/js/jquery-1.9.1.min.js"></script><!-- legacy only for / and landing pages -->
+<script src="/js/jquery.fitvids.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/nivo-lightbox.min.js"></script>
+<script src="/js/lite-yt-embed.js"></script>
+<script src="/js/tweets.js"></script>
+<script src="/js/flip.min.js"></script>
+{% if page.customjs %}
+<script src="/js/{{page.customjs}}"></script>
+{% endif %}
+<script>
+    /* RESPONSIVE VIDEO */
+    $(".video-container").fitVids();
+    $(".videos").owlCarousel({
+        dots: true,
+        items: 1,
+        nav: false
+    });
+
+    /* TWEET CAROUSEL*/
+    $(document).ready(function () {
+        createOwlCarousel(4);
+    });
+</script>
+</body>
+</html>
