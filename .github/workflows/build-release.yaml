@@ -21,6 +21,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
 
+      - name: Tailwind build
+        run: npm run ui:build
+
       # Standard usage
       - name: Build
         uses:  helaili/jekyll-action@v2
