@@ -4,8 +4,8 @@
   "description": "site",
   "main": "index.js",
   "scripts": {
-    "ui:dev":   "npx tailwindcss -c tailwind.config.js -i tailwind.input.css -o ./css/output.css --watch",
-    "ui:build": "npx tailwindcss -c tailwind.config.js -i tailwind.input.css -o ./css/output.css --minify"
+    "ui:dev":   "npx tailwindcss -c tailwind.config.js -i tailwind.input.css -o ./css/app.css --watch",
+    "ui:build": "npx tailwindcss -c tailwind.config.js -i tailwind.input.css -o ./css/app.css --minify"
   },
   "author": "",
   "license": "ISC"
