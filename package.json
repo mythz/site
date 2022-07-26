@@ -4,13 +4,14 @@
   "description": "site",
   "main": "index.js",
   "scripts": {
-    "dev:tailwind": "npx tailwindcss -i ./css/input.css -o ./css/output.css --watch"
+    "ui:dev": "npx tailwindcss -c tailwind.config.js -i ./css/input.css -o ./css/output.css --watch",
+    "ui:build": "npx tailwindcss -c tailwind.config.js -i ./css/input.css -o ./css/output.css --minify"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "tailwindcss": "^3.0.24",
     "@tailwindcss/aspect-ratio": "^0.4.0",
-    "@tailwindcss/typography": "^0.5.2"
+    "@tailwindcss/typography": "^0.5.2",
+    "tailwindcss": "^3.0.24"
   }
 }

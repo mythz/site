@@ -1,13 +1,13 @@
 module.exports = {
     content: [
-        './_pages/*.html',
-        './_pages/*.md',
-        './_layouts/*.html',
-        './_layouts/*.md',
-        './_whatsnew/*.html',
-        './_whatsnew/*.md',
-        './_includes/*.html',
-        './_includes/*.md',
+        './_pages/**/*.html',
+        './_pages/**/*.md',
+        './_layouts/**/*.html',
+        './_layouts/**/*.md',
+        './_whatsnew/**/*.html',
+        './_whatsnew/**/*.md',
+        './_includes/**/*.html',
+        './_includes/**/*.md',
     ],
     theme: {
         extend: {
