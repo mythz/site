@@ -20,7 +20,9 @@
         </div>
         <div class="col-md-6 col-sm-6 hidden-xs">
           <div class="video-preview" style="max-height: 400px; margin: auto auto 50px;">
-            <lite-youtube width="560" height="315" videoid="{{ include.youtube_id }}" style="background-image: url('https://img.youtube.com/vi/{{ include.youtube_id }}/maxresdefault.jpg')"></lite-youtube>
+            {% if include.youtube_id.size > 0 %}
+              <lite-youtube width="560" height="315" videoid="{{ include.youtube_id }}" style="background-image: url('https://img.youtube.com/vi/{{ include.youtube_id }}/maxresdefault.jpg')"></lite-youtube>
+            {% endif %}
           </div>
         </div>
       </div>
