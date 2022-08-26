@@ -1,6 +1,6 @@
 ---
-slug: migrating-apps-with-litestream
-title: Simple Migrations with Litestream and Trying out Hetzner Cloud
+slug: finding-best-us-value-cloud-provider
+title: In pursuit of the best value US cloud provider
 layout: blog-post
 sitemap: false
 draft: true
@@ -13,119 +13,215 @@ twitter_url: https://twitter.com/layoric/
 linkedin_url: https://www.linkedin.com/in/layoric/
 github_url: https://github.com/layoric/
 ---
+<link rel="stylesheet" href="/css/lite-yt-embed.css">
 
-Recently we have been using Litestream with SQLite for our demo applications. It impressed us with its elegant approach of providing a continuous backup of data to cost-effective and resilient storage services like AWS S3. 
-We realized this combination of SQLite, Litestream and Cloud storage like S3 can provide extremely well priced solution to those use cases where SQLite provides more than enough performance.
+At ServiceStack, we have been using AWS for what we need for over 10 years. It has served us well, but it suffers from complex pricing and possibility of bill shock due to its pay-as-you-go design.
 
-We originally used a single DigitalOcean droplet to host these demo applications, giving us an aggregate cost of around $0.40 a month per application. 
-This was serving us quite well, but with adding Litestream into the mix, we decided to do some load tests to see at what point we would hit issues with heavier traffic.
+Thankfully, more and more companies are providing simpler offerings for hosting needs, and AWS themselves launched Lightsail as their answer to market crying out for simple hosting options that package everything you need for basic hosting.
 
-<div class="mx-auto mt-4 mb-4 px-4">
-    <div class="inline-flex justify-center w-full ">
-      <img src="/images/blog/litestream/load-test-rps.png" alt="SQLite & Litestream load tested on DigitalOcean $48 droplet">
-    </div>
-<div class="text-gray-500 text-center">SQLite & Litestream load tested on DigitalOcean $48 droplet</div>
+These simple options tend to bundle several things together as one fixed monthly price. A VM with a specific compute and memory allocation, as well as data transfer, and storage.
+
+## Looking at different US offerings
+
+Something we wanted to do was to host our live demo applications on a US based host. We were using Hetzner dedicated servers in the past for non-latency sensitive use cases like our build server and Gistlyn (our interactive C# playground) but we wanted our demo applications to be snappy for US users.
+
+DigitalOcean provides "Droplets" with this fixed pricing model with a nice and simple interface, their pricing was quite good and we realized we could run all 20+ of our demo applications on a single droplet for $40/month.
+
+For deployment, we also like to keep things as simple as we can. Since all our projects are public and on GitHub, we use GitHub Actions heavily along with a pattern that deploys our applications using Docker Compose via SSH.
+Each application runs in its own container behind an NGINX proxy with a side car that handles renewing LetsEncrypt certificates. Below is an example of this pattern with Blazor and Litestream.
+
+<div class="video-preview" style="max-height: 400px; margin: auto auto 50px;">
+    <lite-youtube width="560" height="315" videoid="fY50dWszpw4" style="background-image: url('https://img.youtube.com/vi/fY50dWszpw4/maxresdefault.jpg')"></lite-youtube>
 </div>
 
-We setup a load test that ramped up active users at a rate of 5 to 15 per second, querying and creating Bookings in our sample booking application so we could set a baseline for comparing the same on AWS and Azure using their managed database solutions.
-Concurrent users maxed out at ~300, and ~150 requests per second, and all platforms performed well, AWS and Azure had 2 vCPU app servers in addition to their default recommended managed database.
+A nice side effect of this approach is moving servers is relatively painless. We change the DNS entry for the application to point to our new server, update the GitHub Action Secrets if needed and run our Release workflow.
 
-One of the main reasons to use a managed database offering is to take advantage of simple automated backups and disaster recovery.
-While managed database solutions are generally mature and well supported services, their cost at the low and middle end of instance sizes can greatly increase monthly costs unnecessarily.
-
-If you just follow the wizards for Azure and AWS, the default database offering costs can come as a bit of a shock.
-
-Take Azure for example, for my own account at least, when attempting to create a database, it defaults to a "Gen5, 2 vCores, 32GB storage" database at $372.97/month, and you still need an application server.
-
-<div class="mx-auto mt-4 mb-4">
-    <div class="inline-flex justify-center w-full">
-      <img src="/images/blog/litestream/azure-recommended-database.png" alt="">
-    </div>
-<div class="text-gray-500 text-center">Azure recommended database setup can easily blow out costs</div>
-</div>
-
-AWS RDS with Postgres is less, but again, you still need an application server, and the "Production" recommendation goes with a Mutli-AZ setup meaning you need to run and pay for two database instances.
-
-While you can go for smaller managed database instances, both these offerings were not particularly large instance types. They both offered 2 vCPUs, and between 8-10.2GB of memory.
-The server we were using on DigitalOcean was similar specs hosting both the database and our application. The managed offerings could likely handle a larger capacity of requests, but there are many use cases where this will be overkill for internal applications or business to business services with a relatively low number of users.
-
-![](/images/blog/litestream/litestream.svg)
-
-This is where Litestream and SQLite provides a compelling counter to this by using a variety of storage options and running on the same machine as your application to monitor your SQLite file for changes.
-It then becomes a single command to continuously replicate or restore your database via its Command Line Interface (CLI).
-AWS S3 and other cloud storage options are very competitive, and if your application is only a few gigabytes, it will likely only cost a few cents a month for your live backups.
+A minute or so later, the application is back running again. Since their were 20+ of these repositories we took advantage of the GitHub Organization Secrets so we only needed to update values in one place, and running the workflows again can also be done programmatically through the GitHub CLI.
 
 ## DigitalOcean Price Increase
 
-Our load tests on DigitalOcean showed that we could achieve around 150 requests per second where 20% of requests wrote to the database.
-The number of writes is important to note since SQLite can only write with one client at a time, but multiple can read.
+In June of 2022, we got a notification that prices for droplets would be increasing, and for our droplet it would be going from $40 to $48. While this is a small amount of money, it prompted us to have a wider look into this market.
 
-This trade off suits those applications only expecting moderate usage, or heavy reads to low writes when users are interacting with their system.
+Something we try to do at ServiceStack is to not only provide a comprehensive .NET Framework for building API first systems, but also keep an eye on different options in this ever change space so we can provide information, like this blog post, that might be useful to our users and others.
 
-We were using the $40/month Basic droplet with 2 vCPUs and 8GB of memory when DigitalOcean increased their prices to $48/month for the same instance.
+Not everyone builds massively distributed systems, and as hardware performance increases, and platforms like .NET are becoming even more optimized, a setup with just a server or two can manage larger and larger load and use cases.
 
-Even at $48/month, this setup can be extremely cost efficient, but the price increase prompted us to look at what other providers might be offering.
+After much searching, we ended up back at Hetzner but this time with your Cloud offering. For less than $15 USD per month, you can get a 4 vCPU, 8GB RAM, 160GB storage and 20TB of data transfer hosted in the US.
 
-<div class="mx-auto mt-4 mb-4 px-4">
-    <div class="inline-flex justify-center w-full ">
-      <img src="/images/blog/litestream/hetzner-vs-do-without-title.png" alt="Cost comparison with default recommendations from Azure and AWS shows nearly a 40x separation in running costs">
+We found this was by far the cheapest offering for a simple fixed monthly hosting, and looked for a way to compare to the more traditional cloud hosting setups.
+
+## Litestream and SQLite
+
+Our demo applications use SQLite as a simple way to host the database storage and application together, taking advantage of SQLite's embedded nature.
+We were also testing our Litestream as a possible solution to the lack of data safety when using SQLite for more production like workloads.
+
+<div class="mx-auto mt-4 mb-4">
+    <div class="inline-flex justify-center w-full">
+      <img src="/images/blog/litestream/litestream.svg" alt="">
     </div>
-<div class="text-gray-500 text-center">Comparison of offerings between DigitalOcean and Hetzner Cloud</div>
+<div class="text-gray-500 text-center">Litestream.io.</div>
 </div>
+
+Litestream runs as a separate process and watches your SQLite file for changes and replicates them to storage options like AWS S3, Azure Blob storage and SFTP.
+We created several templates to make this easier and provide a way to bake in automated disaster recovery using Litestream when used with GitHub Actions and our SSH with Docker Compose deployment.
+
+With some basic load testing, we noticed that SQLite performed pretty well without any effort on our part, and decided we should see how this compares to the commonly suggested hosting patterns provided by the large cloud providers of AWS and Azure.
+
+We used the recommended "Production" setups provided by AWS RDS and Azure SQL Database wizards along with 2 vCPU application server to provide the basis on our comparison.
+The reason we chose to use the suggested defaults from these providers was to illustrate the power of defaults, and that when compared to a simple SQLite setup, and providers that offer fixed monthly pricing like Hetzner and DigitalOcean, the frankly overpriced nature of what is provided as a recommended "Production" environment.
+
+One of the main reasons managed database solutions are chosen is the fact that they take care of automated backups and restore if things go wrong. There are other nice features, but managed disaster recovery is probably the most commonly cited one.
+
+Litestream provides a lot of this by targeting cost effective and robust storage solutions like AWS S3 and other cloud provided object stores, and making the backup process close to real-time, and accessible via their CLI.
+And the embedded nature of SQLite removes the uncertainty of the process of upgrading your database.
+
+## The Test
+
+To get an idea how each of these perform with a fairly modest workload, we used a Gatling test to simulate a user logging into our sample Bookings application, browsing around and creating a booking.
+
+These series of steps had 2 write requests and 8 read, separated by 2 seconds per step. We then setup a Gatling simulation that ramped up adding new users to our system from 5 per second to 15 per second, to add a growing number of users over 10 minutes, then sustained over another 10 minutes.
+
+<div class="mx-auto mt-4 mb-4">
+    <div class="inline-flex justify-center w-full">
+      <img src="/images/blog/litestream/aws-gatling-result.png" alt="">
+    </div>
+<div class="text-gray-500 text-center">AWS Gatling Result.</div>
+</div>
+
+<div class="mx-auto mt-4 mb-4">
+    <div class="inline-flex justify-center w-full">
+      <img src="/images/blog/litestream/azure-gatling-result.png" alt="">
+    </div>
+<div class="text-gray-500 text-center">Azure Gatling Result.</div>
+</div>
+
+<div class="mx-auto mt-4 mb-4">
+    <div class="inline-flex justify-center w-full">
+      <img src="/images/blog/litestream/hetzner-gatling-result.png" alt="">
+    </div>
+<div class="text-gray-500 text-center">Hetzner Gatling Result.</div>
+</div>
+
+All 3 setups could handle this rate of requests without issue, and though the "Recommended" AWS and Azure setups would have more headroom, the price difference is far to large to ignore. 
+The requests throughput of that this test illustrated ~100rps can suit many many use cases, and SQLite is really only limited by write speed. We did previous tests of upto 250rps on the same Hetzner Cloud instance with SQLite, but this was starting to reach the maximum through, again purely to do with the single writer limitation.
+
+## The Setups
+<style>
+    table {
+        width: 100%;
+        margin-top: 4em;
+        margin-bottom: 4em;
+    }
+</style>
+
+The original setup didn't default to provisioned IOPs for AWS, but when repeating the tests AWS costs blow out due to this feature being enabled by default.
+Without provisioned IOPs, it drops to around $132/month as an estimated cost. The $300/month default feature for a "Production" database is very hard for AWS to justify, and I think more of a sign of their poor performing GP2 storage option.
+
+<div class="mx-auto mt-4 mb-4">
+    <div class="inline-flex justify-center w-full">
+      <img src="/images/blog/litestream/aws-rds-with-provisioned-iops.png" alt="">
+    </div>
+<div class="text-gray-500 text-center">AWS RDS now defaults to provisioned IOPs for a Production setup, drastically increasing costs.</div>
+</div>
+
+|              | AWS (DB)          | AWS (App) | Azure (DB) | Azure (App) | DigitalOcean | Hetzner Cloud |
+|--------------|-------------------|-----------|------------|-------------|--------------|---------------|
+| vCPU         | 2                 | 2         | 4          | 2           | 4            | 4             |
+ | Memory  (GB) | 8                 | 4         | 10         | 8           | 8            | 8             |
+ | Storage (GB) | 100 (provisioned) | 16        | 32         | 30          | 160          | 160           |
+ | Cost         | $442              | $34       | $373       | $70         | $48          | $15           |
+
+The above specs were provided as "Production" defaults when using a single database instance. Azure SQL Database defaults to costing $373, during the load test, the database CPU hit ~25%.
+
+<div class="mx-auto mt-4 mb-4">
+    <div class="inline-flex justify-center w-full">
+      <img src="/images/blog/litestream/azure-db-cpu-during-test.png" alt="">
+    </div>
+<div class="text-gray-500 text-center">Azure SQL database without tuning performs poorly for cost, likely due to lack of indexes</div>
+</div>
+
+
+|           | AWS (DB) | AWS (App) | Azure (DB) | Azure (App) | Hetzner Cloud |
+|-----------|----------|-----------|------------|-------------|---------------|
+| Max CPU % | 8        | 35        | 25         | 45          | 40            |
+
+
+This is without any tuning on any of the databases, so while you like more performance out of the recommended setups, it is still clear SQLite performs well by default, and it is well worth considering not only Hetzner Cloud for value for money, but if your use can only needs a single host with SQLite.
 
 ## Hetzner Cloud
 
-For a long time, we have known that Hetzner dedicated servers are very well priced, but the management of these servers is a lot less streamlined than what AWS Console and the Azure portal can offer.
+While we were primarily looking for one of the lowest cost options with simplified pricing, Hetzner Cloud pleasantly surprised us with a few features the larger providers could learn from.
 
-Hetzner Cloud is a much more recent competitor in the space, and in November 2021 started providing cloud instances in a US region, rather than in Europe where they are based.
-
-Their aggressive pricing from their dedicated server offerings has continued with their Cloud product. The same $48 a month droplet with 2 vCPUs and 8GB of memory can be had for ~$12.50 USD, just shy of a 75% discount.
-
-<div class="mx-auto mt-4 px-4">
-    <div class="inline-flex justify-center w-full ">
-      <img src="/images/blog/litestream/hetzner-pricing.png" alt="Cost comparison with default recommendations from Azure and AWS shows nearly a 40x separation in running costs">
+<div class="mx-auto mt-4 mb-4">
+    <div class="inline-flex justify-center w-full">
+      <img src="/images/blog/litestream/hetzner-cloud-buy.png" alt="">
     </div>
-<div class="text-gray-500 text-center">Cost comparison with default recommendations from Azure and AWS shows nearly a 40x separation in running costs</div>
+<div class="text-gray-500 text-center">Hetzner Cloud Pricing.</div>
 </div>
 
-Re-performing the load tests, we pushed the DigitalOcean droplet to ~170rps before write latency started to become an issue. This shows that while our original load test only showed the Digital Ocean droplet at ~60% CPU utilization, SQLite's single writer limitation was holding the instance back from using much more.
+### Creating a new instance is fast. 
+Most of the time if will be ready to remote to before you can open your terminal. Not sure if this is due to some kind of pre-creation process on Hetzner part during the creation screen, but everything is very responsive.
+In my testing from the time the "Create" button was clicked, my SSH commands would succeed in around ~20 seconds.
 
-On the Hetzner Cloud instance however, with the same specifications, we were able to get up to ~250rps and ~90% of CPU utilization.
+### Live Graphs
+Another part of the responsiveness is their "Live" graphs for monitoring. It is surprisingly low latency and an extremely stark difference between AWS charging extra for "Detailed" monitoring on EC2 instances. The graphs update every 3-5 seconds in the browser and look to be over a few seconds behind real-time.
 
-<div class="mx-auto mt-4 mb-4 px-4">
-    <div class="inline-flex justify-center w-full ">
-      <img src="/images/blog/litestream/load-test-rps-hetzner.png" alt="SQLite & Litestream load tested on Hetzner Cloud CPX31">
-</div>
-<div class="text-gray-500 text-center">SQLite & Litestream load tested on Hetzner Cloud CPX31</div>
-</div>
-
-## Portability
-
-Something else that Litestream improves is the portability of moving your applications between servers. For most of the ServiceStack templates we include a pattern to use with GitHub Actions to deploy the application to any Linux server via SSH that has Docker and Docker Compose installed. 
-
-<div class="mx-auto mt-4 mb-4 px-4">
-    <div class="inline-flex justify-center w-full ">
-      <img src="/images/blog/litestream/linux-hosting-with-docker.png" alt="">
-</div>
-<div class="text-gray-500 text-center">Single server Linux host with Docker and Docker Compose</div>
+<div class="mx-auto mt-4 mb-4">
+    <div class="inline-flex justify-center w-full">
+      <img src="/images/blog/litestream/hetzner-cloud-live-graphs.gif" alt="">
+    </div>
+<div class="text-gray-500 text-center">Live monitoring updates every 3-5 seconds.</div>
 </div>
 
-This uses the Nginx reverse proxy and automated TLS certificate management using LetsEncrypt, and once these two containers are running, additional applications can be deployed just by adding some GitHub repository secrets to your templated application.
+CloudWatch is a major value add for AWS, and Hetzner's offering is very very basic in comparison, but it is nice to see live updating stats right in your web browser.
 
-We also added the ability to `mix` in Litestream support for a few of our templates, and this means that if you ever need to move to another hosting provider, your database will be restored to your new server automatically when it is deployed for the first time.
+### Price
+This is the biggest draw card by a long way. The AWS and Azure "recommended" setups are extremely expensive for the hardware and performance they offer. Yes they are mature cloud offerings with a large array of features, but their pricing scales with hardware resources.
+Products like `Provisioned` IOPs are extremely expensive, and when other cloud providers are offering far more performant and competitive storage with their instances, it can feel like AWS is using it's market share and their defaults to upsell very expensive products.
 
-<div class="mx-auto mt-4 mb-4 px-4">
-    <div class="inline-flex justify-center w-full ">
-      <img src="/images/blog/litestream/github-actions-deployment.png" alt="">
-</div>
-<div class="text-gray-500 text-center">Overview of the ServiceStack templates built in deployment process</div>
-</div>
+### Transfer costs
+It's been long known that one of the ways large cloud providers keep customers in their network is by charging really large data egress costs. Something attractive about simplified pricing from Hetzner Cloud (and DigitalOcean to a lesser degree) is the included data transfer of 20TB a month.
 
-This still involves a short bit of down time, but Litestream ensures your application is completely up to date when you change your DNS, and restores quickly up until the latest change to the SQLite file.
+Not only is AWS data transfer pricing extremely complicated (inter region vs cross region vs CloudFront vs Transit Gateway and so on), but if your application was sending a lot of data to clients, the same 20TB coming out of AWS would cost $1791 just for data. Azure pricing also confusing, and in some ways more expensive.
 
-## Not for everyone, but worth considering
+## Defaults are powerful
+Both AWS and Azure "recommended" defaults are there not because the software selected (SQL Server and Postgres) need that amount of resources just to operate, but more as an upsell.
+Lots of projects and applications absolutely do not need features like "Provisioned IOPs", despite GP2 storage of AWS being incredibly slow.
 
-While there are many situations where people will prefer to use managed and serverless offerings from the major providers, if you're an Indie developer or from parts of the world where spending hundreds of dollars a month on a single database server is completely infeasible, SQLite with Litestream is worth considering as it provides automated backup and disaster recovery without the cloud price tag.
+Performing disk speed check using the Linux utility `fio` an AWS EC2 instance with 100GB GP2 storage can do ~2250 IOPS and 9MB/s read, and ~750 IOPs at 3MB/s write.
+In contrast, Digital Ocean $48 instance, this is not even paying the extra $8/month for the faster storage can do 35.2k IOPS at 138MB/s read, and 11.8k IOPS at 45MB/s write.
 
-You can always migrate to Postgres, MS SQL or MySQL at a later date by using something like OrmLite when you start development. 
-This will let you take advantage of the savings during early development, and migrate when or if it ever makes financial sense to do so.
+Hetzner again is the stand out, with the $15 instance tests resulting in 50.8k IOPS at 197MB/s read, and 16.9k IOPS at 65MB/s write.
+
+|               | Read IOPS | Write IOPs | Read MBs  | Write MBs |
+|---------------|-----------|------------|-----------|-----------|
+| AWS           | 2.3k      | 0.8k       | 9.2 MB/s  | 3.1 MB/s  |
+| Azure         | 3.0k      | 1.0k       | 12.5 MB/s | 4.2 MB/s  |
+| DigitalOcean  | 35.2k     | 11.8k      | 144 MB/s  | 48.2 MB/s |
+| Hetzner Cloud | 50.5k     | 16.9k      | 207 MB/s  | 69.2 MB/s |
+
+
+All tests used the following `fio` command.
+
+```shell
+fio --randrepeat=1 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=test --filename=test --bs=4k --iodepth=64 --size=4G --readwrite=randrw --rwmixread=75
+```
+
+## SQLite
+
+Part of the resurgence in popularity of using SQLite is not only the simplicity of a single server, but also as hardware is getting faster, issues surrounding limitations of a single writer are becoming less of an issue for a wider number of use cases.
+
+Litestream's elegant solution for streaming backups to cheap replica storage is definitely adding to that popularity as well since it was a sticking point for a lot of use cases that need that simple data redundancy functionality.
+
+Other solutions for Postgres like `pgbackrest` are similar, but the ease of use is another big part of what makes SQLite and Litestream a great combination.
+One command to watch and replicate, another to restore, and it runs completely independent of your application using the SQLite file.
+
+## Hetzner Cloud is hard to beat on price
+
+We're going to keep testing Hetzner Cloud with new applications and use cases going into the future. While they are a very new player in the crowded Cloud Provider market, and their offerings are much more limited, the pricing is a breath of fresh air from the large three providers.
+
+More competition in this space is a great thing, and for those that can use solutions like SQLite for their projects, checking out some of the smaller players like DigitalOcean and Hetzner Cloud is well worth your time.
+The early signs from Hetzner Cloud is they not only have an amazing value product, but the features they do have improve on the equivalents from likes of AWS and Azure, which is hopefully a sign of things to come from them.
+
+
+<script src="/js/lite-yt-embed.js"></script>
