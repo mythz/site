@@ -15,20 +15,20 @@ github_url: https://github.com/layoric/
 ---
 <link rel="stylesheet" href="/css/lite-yt-embed.css">
 
-At ServiceStack, we have been using AWS for what we need for over 10 years. It has served us well, but it suffers from complex pricing and possibility of bill shock due to its pay-as-you-go design.
+At ServiceStack, we have been using AWS for hosting for over 10 years. It has served us well, but it suffers from complex pricing and possibility of bill shock due to its fractured pay-as-you-go design.
 
-Thankfully, more and more companies are providing simpler offerings for hosting needs, and AWS themselves launched Lightsail as their answer to market crying out for simple hosting options that package everything you need for basic hosting.
+Thankfully, more and more companies are providing simpler offerings for hosting needs, and AWS themselves launched [Lightsail](https://aws.amazon.com/lightsail) as their answer to market demands for simple hosting options that package everything you need for basic hosting.
 
-These simple options tend to bundle several things together as one fixed monthly price. A VM with a specific compute and memory allocation, as well as data transfer, and storage.
+These simpler hosting options tend to bundle several things together as one fixed monthly price. A VM with a specific compute and memory allocation, as well as data transfer, and storage.
 
 ## Looking at different US offerings
 
-Something we wanted to do was to host our live demo applications on a US based host. We were using Hetzner dedicated servers in the past for non-latency sensitive use cases like our build server and Gistlyn (our interactive C# playground) but we wanted our demo applications to be snappy for US users.
+Something we wanted to do was to host our [live demo applications](https://github.com/ServiceStackApps/LiveDemos) on a US based host. We were using [Hetzner dedicated servers](https://www.hetzner.com/dedicated-rootserver) in the past for non-latency sensitive use cases like our build server and [Gist.Cafe (our interactive playground for multiple platforms)](https://gist.cafe) but we also wanted our demo applications to be snappy for US users.
 
-DigitalOcean provides "Droplets" with this fixed pricing model with a nice and simple interface, their pricing was quite good and we realized we could run all 20+ of our demo applications on a single droplet for $40/month.
+[DigitalOcean](https://www.digitalocean.com/pricing) provides ["Droplets"](https://www.digitalocean.com/pricing/droplets) with this fixed pricing model with a nice and simple interface. Their pricing was quite good and we realized we could run all 20+ of our demo applications on a single droplet for $40/month.
 
-For deployment, we also like to keep things as simple as we can. Since all our projects are public and on GitHub, we use GitHub Actions heavily along with a pattern that deploys our applications using Docker Compose via SSH.
-Each application runs in its own container behind an NGINX proxy with a side car that handles renewing LetsEncrypt certificates. Below is an example of this pattern with Blazor and Litestream.
+For deployment, [we also like to keep things as simple as we can, whilst keeping portability](https://docs.servicestack.net/do-github-action-mix-deployment). Since all our projects are public and on GitHub, we use [GitHub Actions](https://docs.servicestack.net/do-github-action-mix-deployment#github-repository-setup) heavily along with a pattern that deploys our applications using Docker Compose via SSH.
+Each application runs in its own container behind an [NGINX proxy](https://docs.servicestack.net/do-github-action-mix-deployment#get-nginx-reverse-proxy-and-letsencrypt-companion-running) with a side car that handles renewing LetsEncrypt certificates. Below is an example of this pattern with Blazor and Litestream.
 
 <div class="video-preview" style="max-height: 400px; margin: auto auto 50px;">
     <lite-youtube width="560" height="315" videoid="fY50dWszpw4" style="background-image: url('https://img.youtube.com/vi/fY50dWszpw4/maxresdefault.jpg')"></lite-youtube>
@@ -36,24 +36,24 @@ Each application runs in its own container behind an NGINX proxy with a side car
 
 A nice side effect of this approach is moving servers is relatively painless. We change the DNS entry for the application to point to our new server, update the GitHub Action Secrets if needed and run our Release workflow.
 
-A minute or so later, the application is back running again. Since their were 20+ of these repositories we took advantage of the GitHub Organization Secrets so we only needed to update values in one place, and running the workflows again can also be done programmatically through the GitHub CLI.
+A minute or so later, the application is back running again. Since their were 20+ of these repositories we took advantage of the [GitHub Organization Secrets](https://cli.github.com/manual/gh_secret_set) so we only needed to update values in one place, and [running the workflows again](https://cli.github.com/manual/gh_workflow_run) can also be done programmatically through the GitHub CLI.
 
 ## DigitalOcean Price Increase
 
-In June of 2022, we got a notification that prices for droplets would be increasing, and for our droplet it would be going from $40 to $48. While this is a small amount of money, it prompted us to have a wider look into this market.
+In June of 2022, we got a notification that [prices for droplets would be increasing](https://www.digitalocean.com/try/new-pricing), and for our droplet it would be going from $40 to $48. While this is a small amount of money, it prompted us to have a wider look into this market.
 
 Something we try to do at ServiceStack is to not only provide a comprehensive .NET Framework for building API first systems, but also keep an eye on different options in this ever change space so we can provide information, like this blog post, that might be useful to our users and others.
 
-Not everyone builds massively distributed systems, and as hardware performance increases, and platforms like .NET are becoming even more optimized, a setup with just a server or two can manage larger and larger load and use cases.
+Not everyone builds massively distributed systems, and as hardware performance increases, and platforms like [.NET are becoming even more optimized](https://devblogs.microsoft.com/dotnet/performance-improvements-in-aspnet-core-6), a setup with just a server or two can manage larger and larger load and use cases.
 
-After much searching, we ended up back at Hetzner but this time with your Cloud offering. For less than $15 USD per month, you can get a 4 vCPU, 8GB RAM, 160GB storage and 20TB of data transfer hosted in the US.
+After much searching, we ended up back at [Hetzner but this time with their Cloud offering](https://www.hetzner.com/cloud). For less than $15 USD per month, you can get a 4 vCPU, 8GB RAM, 160GB storage and 20TB of data transfer hosted in the US.
 
 We found this was by far the cheapest offering for a simple fixed monthly hosting, and looked for a way to compare to the more traditional cloud hosting setups.
 
 ## Litestream and SQLite
 
-Our demo applications use SQLite as a simple way to host the database storage and application together, taking advantage of SQLite's embedded nature.
-We were also testing our Litestream as a possible solution to the lack of data safety when using SQLite for more production like workloads.
+Our demo applications use [SQLite](https://www.sqlite.org) as a simple way to host the database storage and application together, taking advantage of SQLite's embedded nature.
+We were also testing out [Litestream](https://litestream.io) as a possible solution to the lack of data backups and safety when using SQLite for more production like workloads.
 
 <div class="mx-auto mt-4 mb-4">
     <div class="inline-flex justify-center w-full">
@@ -63,21 +63,21 @@ We were also testing our Litestream as a possible solution to the lack of data s
 </div>
 
 Litestream runs as a separate process and watches your SQLite file for changes and replicates them to storage options like AWS S3, Azure Blob storage and SFTP.
-We created several templates to make this easier and provide a way to bake in automated disaster recovery using Litestream when used with GitHub Actions and our SSH with Docker Compose deployment.
+[We created several templates to make this easier](https://docs.servicestack.net/ormlite/litestream) and provide a way to bake in automated disaster recovery using Litestream when used with GitHub Actions and our SSH with Docker Compose deployment.
 
 With some basic load testing, we noticed that SQLite performed pretty well without any effort on our part, and decided we should see how this compares to the commonly suggested hosting patterns provided by the large cloud providers of AWS and Azure.
 
 We used the recommended "Production" setups provided by AWS RDS and Azure SQL Database wizards along with 2 vCPU application server to provide the basis on our comparison.
-The reason we chose to use the suggested defaults from these providers was to illustrate the power of defaults, and that when compared to a simple SQLite setup, and providers that offer fixed monthly pricing like Hetzner and DigitalOcean, the frankly overpriced nature of what is provided as a recommended "Production" environment.
+The reason we chose to use the suggested defaults from these providers was to illustrate the power of defaults when offered by market leaders. When compared to a simple SQLite setup, and providers that offer fixed monthly pricing like Hetzner and DigitalOcean, which is often enough to small companies selling Business to Business solutions, AWS and Azure recommended "Production" environments can look extremely over priced.
 
-One of the main reasons managed database solutions are chosen is the fact that they take care of automated backups and restore if things go wrong. There are other nice features, but managed disaster recovery is probably the most commonly cited one.
+One of the main reasons managed database solutions are chosen is the fact that they take care of automated backups and restore if things go wrong. There are other nice features that definitely have a lot of value, but managed disaster recovery is probably the most commonly cited one I've come across for why services like RDS are chosen during early development.
 
-Litestream provides a lot of this by targeting cost effective and robust storage solutions like AWS S3 and other cloud provided object stores, and making the backup process close to real-time, and accessible via their CLI.
+Litestream provides this kind of data safety and disaster recovery functionality by targeting cost effective and robust storage solutions like AWS S3 and other cloud provided object stores, and making the backup process close to real-time, and accessible via their CLI.
 And the embedded nature of SQLite removes the uncertainty of the process of upgrading your database.
 
 ## The Test
 
-To get an idea how each of these perform with a fairly modest workload, we used a Gatling test to simulate a user logging into our sample Bookings application, browsing around and creating a booking.
+To get a clearer idea how each of these hosting options perform with a fairly modest workload, we used a [Gatling](https://gatling.io) test to simulate a user logging into our sample Bookings application, browsing around and creating a booking.
 
 These series of steps had 2 write requests and 8 read, separated by 2 seconds per step. We then setup a Gatling simulation that ramped up adding new users to our system from 5 per second to 15 per second, to add a growing number of users over 10 minutes, then sustained over another 10 minutes.
 
@@ -102,8 +102,10 @@ These series of steps had 2 write requests and 8 read, separated by 2 seconds pe
 <div class="text-gray-500 text-center">Hetzner Gatling Result.</div>
 </div>
 
-All 3 setups could handle this rate of requests without issue, and though the "Recommended" AWS and Azure setups would have more headroom, the price difference is far to large to ignore. 
-The requests throughput of that this test illustrated ~100rps can suit many many use cases, and SQLite is really only limited by write speed. We did previous tests of upto 250rps on the same Hetzner Cloud instance with SQLite, but this was starting to reach the maximum through, again purely to do with the single writer limitation.
+All 3 setups could handle this rate of requests without issue, and though the "Recommended" AWS and Azure setups would have more headroom, the price difference is far too large to ignore, especially as the difference is paid every month.
+The requests throughput of that this test illustrated ~100rps can suit many many use cases, and SQLite is [really only limited by its single writer design](https://www.sqlite.org/whentouse.html#:~:text=An%20SQLite%20database%20is%20limited,to%20something%20less%20than%20this.). We did previous tests of upto 250rps on the same Hetzner Cloud instance with SQLite, but this was starting to reach the maximum through, again purely to do with the single writer limitation.
+
+This level of throughput is enough to service many kinds of businesses with a drastically more simple system to manage, with large cost savings. Also, with the use of an ORM like [OrmLite](https://docs.servicestack.net/ormlite), switching to another database provider can be migrated if and when the traditional offerings like Postgres are needed.
 
 ## The Setups
 <style>
@@ -114,8 +116,9 @@ The requests throughput of that this test illustrated ~100rps can suit many many
     }
 </style>
 
-The original setup didn't default to provisioned IOPs for AWS, but when repeating the tests AWS costs blow out due to this feature being enabled by default.
+The original setup for tests we did in June didn't default to provisioned IOPs for AWS, but when repeating the tests AWS costs blow out due to this feature being enabled by default.
 Without provisioned IOPs, it drops to around $132/month as an estimated cost. The $300/month default feature for a "Production" database is very hard for AWS to justify, and I think more of a sign of their poor performing GP2 storage option.
+Although this will only impact very "chatty" types of applications that need higher IOPs throughput, the difference in performance from RDS vs providers like DigitalOcean and Hetzner can be quite stark.
 
 <div class="mx-auto mt-4 mb-4">
     <div class="inline-flex justify-center w-full">
@@ -173,25 +176,25 @@ Another part of the responsiveness is their "Live" graphs for monitoring. It is 
 <div class="text-gray-500 text-center">Live monitoring updates every 3-5 seconds.</div>
 </div>
 
-CloudWatch is a major value add for AWS, and Hetzner's offering is very very basic in comparison, but it is nice to see live updating stats right in your web browser.
+CloudWatch is a major value add for AWS, and Hetzner's offering is very very basic in comparison, but it is nice to see live updating stats right in your web browser, and something hopefully the other providers can also offer in the future.
 
 ### Price
-This is the biggest draw card by a long way. The AWS and Azure "recommended" setups are extremely expensive for the hardware and performance they offer. Yes they are mature cloud offerings with a large array of features, but their pricing scales with hardware resources.
-Products like `Provisioned` IOPs are extremely expensive, and when other cloud providers are offering far more performant and competitive storage with their instances, it can feel like AWS is using it's market share and their defaults to upsell very expensive products.
+This is the biggest draw card by a long way. The AWS and Azure "recommended" setups are extremely expensive for the hardware and performance they offer. Yes they are mature cloud offerings with a large array of features, but their **pricing scales with hardware resources**.
+Products like `Provisioned IOPs` are extremely expensive, and when other cloud providers are offering far more performant and competitive storage with their instances, it can feel like AWS is using it's market share and their defaults to upsell very expensive products.
 
 ### Transfer costs
-It's been long known that one of the ways large cloud providers keep customers in their network is by charging really large data egress costs. Something attractive about simplified pricing from Hetzner Cloud (and DigitalOcean to a lesser degree) is the included data transfer of 20TB a month.
+It's been long known that one of the ways large cloud providers keep customers in their network is by charging [excessively large and complex data egress costs](https://aws.amazon.com/blogs/architecture/overview-of-data-transfer-costs-for-common-architectures). Something attractive about simplified pricing from Hetzner Cloud (and DigitalOcean to a lesser degree) is the included data transfer of 20TB a month.
 
-Not only is AWS data transfer pricing extremely complicated (inter region vs cross region vs CloudFront vs Transit Gateway and so on), but if your application was sending a lot of data to clients, the same 20TB coming out of AWS would cost $1791 just for data. Azure pricing also confusing, and in some ways more expensive.
+Not only is AWS data transfer pricing extremely complicated (inter region vs cross region vs CloudFront vs Transit Gateway and so on), but if your application was sending a lot of data to clients, that same 20TB you get for free with a $15 server, would cost **$1791 just for data** when coming from AWS. Azure pricing also confusing, and in some ways more expensive.
 
 ## Defaults are powerful
 Both AWS and Azure "recommended" defaults are there not because the software selected (SQL Server and Postgres) need that amount of resources just to operate, but more as an upsell.
 Lots of projects and applications absolutely do not need features like "Provisioned IOPs", despite GP2 storage of AWS being incredibly slow.
 
 Performing disk speed check using the Linux utility `fio` an AWS EC2 instance with 100GB GP2 storage can do ~2250 IOPS and 9MB/s read, and ~750 IOPs at 3MB/s write.
-In contrast, Digital Ocean $48 instance, this is not even paying the extra $8/month for the faster storage can do 35.2k IOPS at 138MB/s read, and 11.8k IOPS at 45MB/s write.
+In contrast, Digital Ocean $48 instance, this is not even paying the extra $8/month for the faster storage can do 35.2k IOPS at 144MB/s read, and 11.8k IOPS at 48MB/s write.
 
-Hetzner again is the stand out, with the $15 instance tests resulting in 50.8k IOPS at 197MB/s read, and 16.9k IOPS at 65MB/s write.
+Hetzner again is the stand out, with the $15 instance tests resulting in 50.8k IOPS at 207MB/s read, and 16.9k IOPS at 69MB/s write.
 
 |               | Read IOPS | Write IOPs | Read MBs  | Write MBs |
 |---------------|-----------|------------|-----------|-----------|
