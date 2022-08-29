@@ -40,15 +40,15 @@ A minute or so later, the application is back running again. Since their were 20
 
 ## DigitalOcean Price Increase
 
-In June of 2022, we got a notification that [prices for droplets would be increasing](https://www.digitalocean.com/try/new-pricing), and for our droplet it would be going from $40 to $48. While this is a small amount of money, it prompted us to have a wider look into this market.
+In June of 2022, we got a notification that [prices for droplets would be increasing](https://www.digitalocean.com/try/new-pricing), and for our droplet it would be going from **$40 to $48**. While this is a small amount of money, it prompted us to have a wider look into this market.
 
-Something we try to do at ServiceStack is to not only provide a comprehensive .NET Framework for building API first systems, but also keep an eye on different options in this ever change space so we can provide information, like this blog post, that might be useful to our users and others.
+Something we try to do at ServiceStack is to not only provide a comprehensive .NET Framework for building API first systems, but also seek out great value hosting options we can recommend in this ever change space which we're happy to share, like this blog post, that might be useful to our users and others.
 
-Not everyone builds massively distributed systems, and as hardware performance increases, and platforms like [.NET are becoming even more optimized](https://devblogs.microsoft.com/dotnet/performance-improvements-in-aspnet-core-6), a setup with just a server or two can manage larger and larger load and use cases.
+Not everyone builds massively distributed systems, and as hardware performance increases, and platforms like [.NET are becoming even more optimized](https://devblogs.microsoft.com/dotnet/performance-improvements-in-aspnet-core-6), a setup with just a server or two can manage larger loads and use cases.
 
-After much searching, we ended up back at [Hetzner but this time with their Cloud offering](https://www.hetzner.com/cloud). For less than $15 USD per month, you can get a 4 vCPU, 8GB RAM, 160GB storage and 20TB of data transfer hosted in the US.
+Our research and evaluations ended up right back at [Hetzner but this time with their Cloud offering](https://www.hetzner.com/cloud). For less than **$15 USD** per month, you can get a **4 vCPU, 8GB RAM, 160GB storage and 20TB** of data transfer **hosted in the US**.
 
-We found this was by far the cheapest offering for a simple fixed monthly hosting, and looked for a way to compare to the more traditional cloud hosting setups.
+We found this was by far the cheapest offering for a simple fixed monthly hosting, and looked to compare how well it performed against the more traditional cloud hosting setups.
 
 ## Litestream and SQLite
 
@@ -56,10 +56,12 @@ Our demo applications use [SQLite](https://www.sqlite.org) as a simple way to ho
 We were also testing out [Litestream](https://litestream.io) as a possible solution to the lack of data backups and safety when using SQLite for more production like workloads.
 
 <div class="mx-auto mt-4 mb-4">
-    <div class="inline-flex justify-center w-full">
-      <img src="/images/blog/litestream/litestream.svg" alt="">
-    </div>
-<div class="text-gray-500 text-center">Litestream.io.</div>
+  <a href="https://litestream.io">
+      <div class="inline-flex justify-center w-full">
+        <img src="/images/blog/litestream/litestream.svg" alt="">
+      </div>
+      <div class="text-gray-500 text-center">litestream.io</div>
+  </a>
 </div>
 
 Litestream runs as a separate process and watches your SQLite file for changes and replicates them to storage options like AWS S3, Azure Blob storage and SFTP.
@@ -103,7 +105,7 @@ These series of steps had 2 write requests and 8 read, separated by 2 seconds pe
 </div>
 
 All 3 setups could handle this rate of requests without issue, and though the "Recommended" AWS and Azure setups would have more headroom, the price difference is far too large to ignore, especially as the difference is paid every month.
-The requests throughput of that this test illustrated ~100rps can suit many many use cases, and SQLite is [really only limited by its single writer design](https://www.sqlite.org/whentouse.html#:~:text=An%20SQLite%20database%20is%20limited,to%20something%20less%20than%20this.). We did previous tests of upto 250rps on the same Hetzner Cloud instance with SQLite, but this was starting to reach the maximum through, again purely to do with the single writer limitation.
+The requests throughput of that this test illustrated ~100rps can suit many many use cases, and SQLite is [really only limited by its single writer design](https://www.sqlite.org/whentouse.html#:~:text=An%20SQLite%20database%20is%20limited,to%20something%20less%20than%20this.). We did previous tests of upto 250rps on the same Hetzner Cloud instance with SQLite, but this was starting to reach the maximum throughput, again purely to do with the single writer limitation.
 
 This level of throughput is enough to service many kinds of businesses with a drastically more simple system to manage, with large cost savings. Also, with the use of an ORM like [OrmLite](https://docs.servicestack.net/ormlite), switching to another database provider can be migrated if and when the traditional offerings like Postgres are needed.
 
@@ -116,9 +118,9 @@ This level of throughput is enough to service many kinds of businesses with a dr
     }
 </style>
 
-The original setup for tests we did in June didn't default to provisioned IOPs for AWS, but when repeating the tests AWS costs blow out due to this feature being enabled by default.
-Without provisioned IOPs, it drops to around $132/month as an estimated cost. The $300/month default feature for a "Production" database is very hard for AWS to justify, and I think more of a sign of their poor performing GP2 storage option.
-Although this will only impact very "chatty" types of applications that need higher IOPs throughput, the difference in performance from RDS vs providers like DigitalOcean and Hetzner can be quite stark.
+The original setup for tests we did in June didn't default to provisioned IOPs for AWS, but when repeating the tests AWS costs blow out due to this feature being enabled by default. 
+
+Without provisioned IOPs, it drops to around **$132/month** as an estimated cost. The **$300/month** default feature for a "Production" database is very hard for AWS to justify, and I think more of a sign of their poor performing GP2 storage option. Although this will only impact very "chatty" types of applications that need higher IOPs throughput, the difference in performance from RDS vs providers like DigitalOcean and Hetzner can be quite stark.
 
 <div class="mx-auto mt-4 mb-4">
     <div class="inline-flex justify-center w-full">
@@ -130,9 +132,9 @@ Although this will only impact very "chatty" types of applications that need hig
 |              | AWS (DB)          | AWS (App) | Azure (DB) | Azure (App) | DigitalOcean | Hetzner Cloud |
 |--------------|-------------------|-----------|------------|-------------|--------------|---------------|
 | vCPU         | 2                 | 2         | 4          | 2           | 4            | 4             |
- | Memory  (GB) | 8                 | 4         | 10         | 8           | 8            | 8             |
- | Storage (GB) | 100 (provisioned) | 16        | 32         | 30          | 160          | 160           |
- | Cost         | $442              | $34       | $373       | $70         | $48          | $15           |
+| Memory  (GB) | 8                 | 4         | 10         | 8           | 8            | 8             |
+| Storage (GB) | 100 (provisioned) | 16        | 32         | 30          | 160          | 160           |
+| Cost         | $442              | $34       | $373       | $70         | $48          | $15           |
 
 The above specs were provided as "Production" defaults when using a single database instance. Azure SQL Database defaults to costing $373, during the load test, the database CPU hit ~25%.
 
@@ -162,9 +164,9 @@ While we were primarily looking for one of the lowest cost options with simplifi
 <div class="text-gray-500 text-center">Hetzner Cloud Pricing.</div>
 </div>
 
-### Creating a new instance is fast. 
+### Creating a new instance is fast 
 Most of the time if will be ready to remote to before you can open your terminal. Not sure if this is due to some kind of pre-creation process on Hetzner part during the creation screen, but everything is very responsive.
-In my testing from the time the "Create" button was clicked, my SSH commands would succeed in around ~20 seconds.
+In my testing from the time the "Create" button was clicked, my SSH commands would succeed within **20 seconds**.
 
 ### Live Graphs
 Another part of the responsiveness is their "Live" graphs for monitoring. It is surprisingly low latency and an extremely stark difference between AWS charging extra for "Detailed" monitoring on EC2 instances. The graphs update every 3-5 seconds in the browser and look to be over a few seconds behind real-time.
@@ -180,12 +182,12 @@ CloudWatch is a major value add for AWS, and Hetzner's offering is very very bas
 
 ### Price
 This is the biggest draw card by a long way. The AWS and Azure "recommended" setups are extremely expensive for the hardware and performance they offer. Yes they are mature cloud offerings with a large array of features, but their **pricing scales with hardware resources**.
-Products like `Provisioned IOPs` are extremely expensive, and when other cloud providers are offering far more performant and competitive storage with their instances, it can feel like AWS is using it's market share and their defaults to upsell very expensive products.
+Products like **Provisioned IOPs** are extremely expensive, and when other cloud providers are offering far more performant and competitive storage with their instances, it can feel like AWS is using it's market share and their defaults to upsell very expensive products.
 
 ### Transfer costs
 It's been long known that one of the ways large cloud providers keep customers in their network is by charging [excessively large and complex data egress costs](https://aws.amazon.com/blogs/architecture/overview-of-data-transfer-costs-for-common-architectures). Something attractive about simplified pricing from Hetzner Cloud (and DigitalOcean to a lesser degree) is the included data transfer of 20TB a month.
 
-Not only is AWS data transfer pricing extremely complicated (inter region vs cross region vs CloudFront vs Transit Gateway and so on), but if your application was sending a lot of data to clients, that same 20TB you get for free with a $15 server, would cost **$1791 just for data** when coming from AWS. Azure pricing also confusing, and in some ways more expensive.
+Not only is AWS data transfer pricing extremely complicated (inter region vs cross region vs CloudFront vs Transit Gateway and so on), but if your application was sending a lot of data to clients, that same **20TB** you get for free with a **$15 server**, would cost **$1,791 just for data** when coming from AWS. Azure pricing also confusing, and in some ways more expensive.
 
 ## Defaults are powerful
 Both AWS and Azure "recommended" defaults are there not because the software selected (SQL Server and Postgres) need that amount of resources just to operate, but more as an upsell.
