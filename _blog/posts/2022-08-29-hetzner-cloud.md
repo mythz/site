@@ -4,8 +4,8 @@ title: In pursuit of the best value US cloud provider
 layout: blog-post
 sitemap: false
 draft: true
-preview_text: Recently we have been using Litestream with SQLite for our demo applications. It impressed us with its elegant approach of providing a continuous backup of data to cost-effective and resilient storage services like AWS S3.
-preview_img_url: /images/blog/litestream/litestream.svg
+preview_text: At ServiceStack, we have been using AWS for hosting for over 10 years. It has served us well, but it suffers from complex pricing and possibility of bill shock due to its fractured pay-as-you-go design
+preview_img_url: /images/blog/litestream/Amazon_Web_Services_Logo_square_money.png
 author: Darren Reid
 author_title: ServiceStack Developer
 author_img: /images/blog/authors/darren.jpg
