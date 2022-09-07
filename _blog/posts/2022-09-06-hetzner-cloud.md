@@ -3,15 +3,15 @@ slug: finding-best-us-value-cloud-provider
 title: In pursuit of the best value US cloud provider
 layout: blog-post
 sitemap: false
-draft: true
+draft: false
 preview_text: At ServiceStack, we have been using AWS for hosting for over 10 years. It has served us well, but it suffers from complex pricing and possibility of bill shock due to its fractured pay-as-you-go design
 preview_img_url: /images/blog/litestream/Amazon_Web_Services_Logo_square_money.png
 author: Darren Reid
 author_title: ServiceStack Developer
 author_img: /images/blog/authors/darren.jpg
-twitter_url: https://twitter.com/layoric/
-linkedin_url: https://www.linkedin.com/in/layoric/
-github_url: https://github.com/layoric/
+twitter_url: https://twitter.com/layoric
+linkedin_url: https://www.linkedin.com/in/layoric
+github_url: https://github.com/layoric
 ---
 <link rel="stylesheet" href="/css/lite-yt-embed.css">
 
@@ -70,7 +70,7 @@ Litestream runs as a separate process and watches your SQLite file for changes a
 With some basic load testing, we noticed that SQLite performed pretty well without any effort on our part, and decided we should see how this compares to the commonly suggested hosting patterns provided by the large cloud providers of AWS and Azure.
 
 We used the recommended "Production" setups provided by AWS RDS and Azure SQL Database wizards along with 2 vCPU application server to provide the basis on our comparison.
-The reason we chose to use the suggested defaults from these providers was to illustrate the power of defaults when offered by market leaders. When compared to a simple SQLite setup, and providers that offer fixed monthly pricing like Hetzner and DigitalOcean, which is often enough to small companies selling Business to Business solutions, AWS and Azure recommended "Production" environments can look extremely over priced.
+The reason we chose to use the suggested defaults from these providers was to illustrate the power of defaults when offered by market leaders. When compared to a simple SQLite setup, and providers that offer fixed monthly pricing like Hetzner and DigitalOcean, which is often enough to small companies selling Business to Business (B2B) solutions, AWS and Azure recommended "Production" environments can look extremely over priced.
 
 One of the main reasons managed database solutions are chosen is the fact that they take care of automated backups and restore if things go wrong. There are other nice features that definitely have a lot of value, but managed disaster recovery is probably the most commonly cited one I've come across for why services like RDS are chosen during early development.
 
