@@ -107,6 +107,13 @@ These series of steps had 2 write requests and 8 read, separated by 2 seconds pe
 All 3 setups could handle this rate of requests without issue, and though the "Recommended" AWS and Azure setups would have more headroom, the price difference is far too large to ignore, especially as the difference is paid every month.
 The requests throughput of that this test illustrated ~100rps can suit many many use cases, and SQLite is [really only limited by its single writer design](https://www.sqlite.org/whentouse.html#:~:text=An%20SQLite%20database%20is%20limited,to%20something%20less%20than%20this.). We did previous tests of upto 250rps on the same Hetzner Cloud instance with SQLite, but this was starting to reach the maximum throughput, again purely to do with the single writer limitation.
 
+<div class="mx-auto mt-4 mb-4">
+    <div class="inline-flex justify-center w-full">
+      <img src="/images/litestream/litestream-costs.svg" alt="">
+    </div>
+<div class="text-gray-500 text-center">Previous test result price comparison without AWS using Provisioned IOPS.</div>
+</div>
+
 This level of throughput is enough to service many kinds of businesses with a drastically more simple system to manage, with large cost savings. Also, with the use of an ORM like [OrmLite](https://docs.servicestack.net/ormlite), switching to another database provider can be migrated if and when the traditional offerings like Postgres are needed.
 
 ## The Setups
