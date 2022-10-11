@@ -43,7 +43,7 @@
             <a href="/whatsnew"
                class="bg-gray-100 rounded-full py-1 px-1 pr-4 mb-4 text-sm text-gray-700 inline-flex items-center justify-between hover:bg-gray-200" role="alert">
                 <span class="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 mr-3">New</span>
-                <span class="text-sm font-medium">v6.3: Simple Code-First DB Migrations, Manage App's Redis Servers & Browse App's RDBMS with new Admin UIs</span>
+                <span class="text-sm font-medium">v6.4: Rapidly develop Blazor Server and Blazor WASM Web Apps with new high productivity components</span>
                 <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
             </a>
         </div>
@@ -60,6 +60,20 @@
     {% include home/testimonials-section.html %}
 
     {% include home/feature-video-left.html
+    local_link_id="blazor-wasm"
+    youtube_id="iKpQI2233nY,3gD_MMcYI-4,BcQqCzm4tK0,TIgjMf_vtCI"
+    title="Blazor Server & WASM"
+    bg_class="bg-gray-100"
+    embed_html="
+    <p>ServiceStack.Blazor Components gives you the ideal development workflow without compromise. Effortless, highly productive, API integrated Rich Blazor 
+       UI Components with 100% Server model reuse and integrated contextual validation for the rapid development of Web and CRUD Apps</p>
+
+    <p>With first-class support for both Blazor Server and Blazor WASM you'll be able to create the best experiences for both Internet and Intranet sites.</p>
+    "
+    learn_url="/blazor"
+    %}
+
+    {% include home/feature-video-right.html
     youtube_id="hkuO_DMFXmc,NiTp5Z_5U2Y,mFyMgg7c3vg"
     local_link_id="locode"
     title="Locode"
@@ -76,20 +90,6 @@
     learn_url="https://www.locode.dev"
     %}
     
-    {% include home/feature-video-right.html
-    local_link_id="blazor-wasm"
-    youtube_id="3gD_MMcYI-4,BcQqCzm4tK0,TIgjMf_vtCI"
-    title="Blazor WebAssembly"
-    bg_class="bg-gray-100"
-    embed_html="
-    <p>Our first-class Blazor WASM support encompasses an impressively productive dev model with 100% API Types reuse without reliance on tooling.</p>
-    <p>The initial release includes themable Bootstrap and Tailwind UI components and an integrated
-       <a href='https://blazor-wasm.jamstacks.net/docs/prerender'>pre-rendering solution</a>  
-       to enable its instant load times.</p>
-    "
-    learn_url="/blazor"
-    %}
-
     {% include home/feature-video-left.html
     youtube_id="lUDlTMq9DHU"
     local_link_id="api-explorer"
