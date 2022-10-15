@@ -43,7 +43,7 @@
             <a href="/whatsnew"
                class="bg-gray-100 rounded-full py-1 px-1 pr-4 mb-4 text-sm text-gray-700 inline-flex items-center justify-between hover:bg-gray-200" role="alert">
                 <span class="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 mr-3">New</span>
-                <span class="text-sm font-medium">v6.3: Simple Code-First DB Migrations, Manage App's Redis Servers & Browse App's RDBMS with new Admin UIs</span>
+                <span class="text-sm font-medium">v6.4: Rapidly develop Blazor Server and Blazor WASM Web Apps with new high productivity components</span>
                 <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
             </a>
         </div>
@@ -60,6 +60,20 @@
     {% include home/testimonials-section.html %}
 
     {% include home/feature-video-left.html
+    local_link_id="blazor-wasm"
+    youtube_id="iKpQI2233nY,3gD_MMcYI-4,BcQqCzm4tK0,TIgjMf_vtCI"
+    title="Blazor Server & WASM"
+    bg_class="bg-gray-100"
+    embed_html="
+    <p>ServiceStack.Blazor Components gives you the ideal development workflow without compromise. Effortless, highly productive, API integrated Rich Blazor 
+       UI Components with 100% Server model reuse and integrated contextual validation for the rapid development of Web and CRUD Apps</p>
+
+    <p>With first-class support for both Blazor Server and Blazor WASM you'll be able to create the best experiences for both Internet and Intranet sites.</p>
+    "
+    learn_url="/blazor"
+    %}
+
+    {% include home/feature-video-right.html
     youtube_id="hkuO_DMFXmc,NiTp5Z_5U2Y,mFyMgg7c3vg"
     local_link_id="locode"
     title="Locode"
@@ -75,21 +89,19 @@
     "
     learn_url="https://www.locode.dev"
     %}
-    
+
     {% include home/feature-video-right.html
-    local_link_id="blazor-wasm"
-    youtube_id="3gD_MMcYI-4,BcQqCzm4tK0,TIgjMf_vtCI"
-    title="Blazor WebAssembly"
+    local_link_id="autoquery-feature"
+    youtube_id="rSFiikDjGos,NaJ7TW-Q_pU,1dFqzrF1mV8"
+    title="AutoQuery"
     bg_class="bg-gray-100"
     embed_html="
-    <p>Our first-class Blazor WASM support encompasses an impressively productive dev model with 100% API Types reuse without reliance on tooling.</p>
-    <p>The initial release includes themable Bootstrap and Tailwind UI components and an integrated
-       <a href='https://blazor-wasm.jamstacks.net/docs/prerender'>pre-rendering solution</a>  
-       to enable its instant load times.</p>
+    <p>Surface the ideal API a developer would naturally write and complete their implementation for them with AutoQuery!</p>
+    <p>AutoQuery which utilizes conventions to automate the creation of intent-based self-descriptive APIs that are able to specify configurable conventions and leverage extensibility options for a great developer experience.</p>
     "
-    learn_url="/blazor"
+    learn_url="/autoquery"
     %}
-
+    
     {% include home/feature-video-left.html
     youtube_id="lUDlTMq9DHU"
     local_link_id="api-explorer"
@@ -106,15 +118,15 @@
     %}
 
     {% include home/feature-video-right.html
-    local_link_id="autoquery-feature"
-    youtube_id="rSFiikDjGos,NaJ7TW-Q_pU,1dFqzrF1mV8"
-    title="AutoQuery"
+    youtube_id="ocH5L-CikQ0,cbYuem1b2tg,WjbhfH45i5k,JKsgrstNnYY,GTnuMhvUayg,xg677weFef4,EaUcPXVeLpk,T3KTDPdovOw,nmB0NaI9-3k"
+    local_link_id="add-ss-ref-feature"
+    title="Add ServiceStack Reference"
     bg_class="bg-gray-100"
     embed_html="
-    <p>Surface the ideal API a developer would naturally write and complete their implementation for them with AutoQuery!</p>
-    <p>AutoQuery which utilizes conventions to automate the creation of intent-based self-descriptive APIs that are able to specify configurable conventions and leverage extensibility options for a great developer experience.</p>
+    <p>Generate Native Types for your preferred language and platforms directly from within your favorite IDE or easy to use CLI tooling.</p>
+    <p>Add and update lightweight client code straight from the server you integrate with giving you an easy to use end-to-end typed interface with your ServiceStack server.</p>
     "
-    learn_url="/autoquery"
+    learn_url="/service-reference"
     %}
 
     {% include home/feature-video-left.html
@@ -128,18 +140,6 @@
         to observe your App's behavior in real-time.</p>
     "
     learn_url="https://docs.servicestack.net/admin-ui"
-    %}
-
-    {% include home/feature-video-right.html
-    youtube_id="ocH5L-CikQ0,cbYuem1b2tg,WjbhfH45i5k,JKsgrstNnYY,GTnuMhvUayg,xg677weFef4,EaUcPXVeLpk,T3KTDPdovOw,nmB0NaI9-3k"
-    local_link_id="add-ss-ref-feature"
-    title="Add ServiceStack Reference"
-    bg_class="bg-gray-100"
-    embed_html="
-    <p>Generate Native Types for your preferred language and platforms directly from within your favorite IDE or easy to use CLI tooling.</p>
-    <p>Add and update lightweight client code straight from the server you integrate with giving you an easy to use end-to-end typed interface with your ServiceStack server.</p>
-    "
-    learn_url="/service-reference"
     %}
 
     {% include home/feature-service-clients.html %}
@@ -171,18 +171,18 @@
     %}
 
     {% include home/feature-video-left.html
-    youtube_id="h6UwDuXt8MA,vt92pbet5bY,PxH3K5WIDx8"
-    local_link_id="jupyter-notebooks"
-    title="Jupyter Notebooks"
+    youtube_id="NIVFqute7JQ"
+    local_link_id="db-migrations"
+    title="Code-First DB Migrations"
     bg_class="bg-white"
     embed_html="
-    <p>Jupyter is an exciting initiative to support an open standards, language agnostic interactive computing platform where it provides the ideal integrated exploratory programming environment for data science and scientific computing.</p>
-    <p>We've fully embraced this new paradigm with effortless UI and command-line tools for generating pre-populated Python, C# and F# Jupyter Notebooks</p>
+    <p>OrmLite DB Migrations advances OrmLite's light-weight code-first development approach with a simple change based migration solution 
+        that facilitates the code-first development workflow of OrmLite.</p>
     "
-    learn_url="https://docs.servicestack.net/jupyter-notebooks"
+    learn_url="https://docs.servicestack.net/ormlite/db-migrations"
     %}
 
-    {% include home/feature-video-left.html
+    {% include home/feature-video-right.html
     youtube_id="WXRwT7ayc1Y"
     local_link_id="litestream"
     title="Create Litesream Apps"
@@ -205,6 +205,18 @@
     "
     page_content_ref="home/instant-client-apps-content.html"
     learn_url="https://apps.servicestack.net"
+    %}
+
+    {% include home/feature-video-left.html
+    youtube_id="h6UwDuXt8MA,vt92pbet5bY,PxH3K5WIDx8"
+    local_link_id="jupyter-notebooks"
+    title="Jupyter Notebooks"
+    bg_class="bg-gray-100"
+    embed_html="
+    <p>Jupyter is an exciting initiative to support an open standards, language agnostic interactive computing platform where it provides the ideal integrated exploratory programming environment for data science and scientific computing.</p>
+    <p>We've fully embraced this new paradigm with effortless UI and command-line tools for generating pre-populated Python, C# and F# Jupyter Notebooks</p>
+    "
+    learn_url="https://docs.servicestack.net/jupyter-notebooks"
     %}
 
     {% include home/feature-apimap.html %}

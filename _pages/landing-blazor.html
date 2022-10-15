@@ -65,7 +65,7 @@ brand: <h2 class="brand">Blazor Web Assembly</h2>
                     </h3>
                     <div
                         class="my-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                        Customize and Download a new Blazor WASM project with your preferred Project Name:
+                        Customize and Download a new Blazor Server or WASM project with your preferred name:
                     </div>
                 </div>
 
@@ -87,17 +87,28 @@ brand: <h2 class="brand">Blazor Web Assembly</h2>
                         <div class="flex flex-wrap justify-center">
                             <div>
                                 {% include project-template-install-card.html
+                                repo="NetCoreTemplates/blazor-server"
+                                name="Blazor Server"
+                                tags="tailwind"
+                                icon_element="<img class='w-12 h-12' src='/images/svgs/tailwind.svg'>" %}
+                                <a class="text-sm text-center mr-4 text-gray-700"
+                                    href="https://blazor-server.jamstacks.net">blazor-server.jamstacks.net</a>
+                            </div>
+                            <div>
+                                {% include project-template-install-card.html
                                 repo="NetCoreTemplates/blazor-tailwind"
-                                name="Blazor Tailwind"
-                                icon_element="<img class='w-12 h-12' src='/images/svgs/blazor.svg'>" %}
+                                name="Blazor WASM"
+                                tags="tailwind"
+                                icon_element="<img class='w-12 h-12' src='/images/svgs/tailwind.svg'>" %}
                                 <a class="text-sm text-center mr-4 text-gray-700"
                                     href="https://blazor-tailwind.jamstacks.net">blazor-tailwind.jamstacks.net</a>
                             </div>
                             <div>
                                 {% include project-template-install-card.html
                                 repo="NetCoreTemplates/blazor-wasm"
-                                name="Blazor Bootstrap"
-                                icon_element="<img class='w-12 h-12' src='/images/svgs/blazor.svg'>" %}
+                                name="Blazor WASM"
+                                tags="bootstrap"
+                                icon_element="<img class='h-12 p-2' src='/images/svgs/bootstrap.svg'>" %}
                                 <a class="text-sm text-center mr-4 text-gray-700"
                                     href="https://blazor-wasm.jamstacks.net">blazor-wasm.jamstacks.net</a>
                             </div>
