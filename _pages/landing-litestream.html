@@ -229,6 +229,7 @@ youtube_id="WXRwT7ayc1Y"
                         {% include project-template-install-card.html
                             repo="NetCoreTemplates/nextjs"
                             name="Next.js"
+                            tags="tailwind"
                             icon_element="<img class='w-12 h-12 border-2 bg-white rounded-full' src='/images/svgs/nextjs.svg'>" %}
                         <a class="text-sm text-center mr-4 text-gray-700" href="https://nextjs.jamstacks.net">nextjs.jamstacks.net</a>
                     </div>
@@ -236,6 +237,7 @@ youtube_id="WXRwT7ayc1Y"
                         {% include project-template-install-card.html
                             repo="NetCoreTemplates/vue-ssg"
                             name="Vue SSG"
+                            tags="tailwind"
                             icon_element="<img class='w-12 h-12' src='/images/svgs/vue.svg'>" %}
                         <a class="text-sm text-center mr-4 text-gray-700" href="https://vue-ssg.jamstacks.net">vue-ssg.jamstacks.net</a>
                     </div>
@@ -251,7 +253,8 @@ youtube_id="WXRwT7ayc1Y"
                 <div>
                     {% include project-template-install-card.html
                         repo="NetCoreTemplates/blazor-tailwind"
-                        name="Blazor Tailwind"
+                        name="Blazor WASM"
+                        tags="tailwind"
                         icon_element="<img class='w-12 h-12' src='/images/svgs/blazor.svg'>" %}
                     <a class="text-sm text-center mr-4 text-gray-700" href="https://blazor-tailwind.jamstacks.net">blazor-tailwind.jamstacks.net</a>
                 </div>
@@ -259,6 +262,7 @@ youtube_id="WXRwT7ayc1Y"
                     {% include project-template-install-card.html
                         repo="NetCoreTemplates/vue-vite"
                         name="Vue Vite"
+                        tags="tailwind"
                         icon_element="<img class='w-12 h-12' src='/images/svgs/vue.svg'>" %}
                     <a class="text-sm text-center mr-4 text-gray-700" href="https://vue-vite.jamstacks.net">vue-vite.jamstacks.net</a>
                 </div>
@@ -266,8 +270,25 @@ youtube_id="WXRwT7ayc1Y"
                     {% include project-template-install-card.html
                         repo="NetCoreTemplates/blazor-wasm"
                         name="Blazor WASM"
+                        tags="bootstrap"
                         icon_element="<img class='w-12 h-12' src='/images/svgs/blazor.svg'>" %}
                     <a class="text-sm text-center mr-4 text-gray-700" href="https://blazor-wasm.jamstacks.net">blazor-wasm.jamstacks.net</a>
+                </div>
+            </div>
+        </div>
+    </section>   
+
+    <section class="w-full flex flex-col justify-center text-center">
+        <div id="spa" class="mt-4 mb-2">
+            <h3 class="text-gray-400 text-xl mb-2">SSR Templates</h3>
+            <div class="flex flex-wrap justify-center">
+                <div>
+                    {% include project-template-install-card.html
+                        repo="NetCoreTemplates/blazor-server"
+                        name="Blazor Server"
+                        tags="tailwind"
+                        icon_element="<img class='w-12 h-12' src='/images/svgs/blazor.svg'>" %}
+                    <a class="text-sm text-center mr-4 text-gray-700" href="https://blazor-server.jamstacks.net">blazor-server.jamstacks.net</a>
                 </div>
             </div>
         </div>
@@ -353,6 +374,7 @@ function templateUrlFilter(url) {
         "vue-vite":        "jamstack-litestream",
         "blazor-wasm":     "blazor-litestream",
         "blazor-tailwind": "blazor-litestream",
+        "blazor-server":   "blazor-litestream",
     }
 
     let tplUrl = url.split('?')[0]
