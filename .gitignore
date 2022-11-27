@@ -11,3 +11,4 @@ blob_storage/
 /node_modules/
 /.jekyll-metadata
 css/app.css
+package-lock.json
