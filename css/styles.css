@@ -170,6 +170,7 @@ body {
 }
 .collapse {
     display: none;
+    visibility: visible !important; /*override tailwind's collapse*/
 }
 .navbar-nav {
     margin: 7.5px -15px;
