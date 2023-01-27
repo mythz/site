@@ -132,7 +132,7 @@ permalink: /start/configuration
                             Once the <code>IDbConnectionFactory</code> is registered, it can be resolved from IoC using <code>container.Resolve&lt;IDbConnectionFactory&gt;</code> to be used in other configuration as well as accessed in your services using the <code>Db</code> property helper to open a new database connection. Your other projects will only need the <code>ServiceStack.OrmLite</code> package to access the OrmLite API.
                         </p>
                         <div class="buttons text-center sm:text-left my-2">
-                            <a href="https://github.com/ServiceStack/ServiceStack.OrmLite#configure-ormliteconnectionfactory"
+                            <a href="https://docs.servicestack.net/ormlite/getting-started"
                                class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
                                 more</a>
                         </div>
@@ -154,7 +154,7 @@ permalink: /start/configuration
                             Registering a Redis connection requires registering a <code>IRedisClientManager</code> with your IoC container. To take advantage of Redis as a caching provider you can register a factory method with your IoC container returning an ICacheClient from the client manager. The will enable use of the <code>Cache</code> and <code>CacheAsync</code> properties in your services.
                         </p>
                         <div class="buttons text-center sm:text-left my-2">
-                            <a href="https://github.com/ServiceStack/ServiceStack.OrmLite#configure-ormliteconnectionfactory"
+                            <a href="https://docs.servicestack.net/redis/client-managers"
                                class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white hover:text-white shadow-xl px-5 py-2 inline-block text-blue-100 rounded">Learn
                                 more</a>
                         </div>
