@@ -43,7 +43,7 @@
             <a href="/whatsnew"
                class="bg-gray-100 rounded-full py-1 px-1 pr-4 mb-4 text-sm text-gray-700 inline-flex items-center justify-between hover:bg-gray-200" role="alert">
                 <span class="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 mr-3">New</span>
-                <span class="text-sm font-medium">v6.5: Dark Mode Everywhere, new Blazor Components, Blazor Diffusion, Blazing Fast Networkless APIs!</span>
+                <span class="text-sm font-medium">v6.6: New Modern Razor Pages &amp; MVC Tailwind templates, rich Vue 3 components, instant typed APIs!</span>
                 <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
             </a>
         </div>
@@ -74,21 +74,28 @@
     %}
 
     {% include home/feature-video-right.html
-    youtube_id="hkuO_DMFXmc,NiTp5Z_5U2Y,mFyMgg7c3vg"
+    youtube_id="SyppvQB7IPs,YIa0w6whe2U"
     local_link_id="locode"
-    title="Locode"
+    title="Simple, Modern Razor Tailwind Vue 3 Apps"
     bg_class="bg-white"
     embed_html="
     <div class='mt-4'>
-        <p><a href='https://locode.dev'>locode.dev</a> is our Rapid Application Development (RAD) solution to quickly develop 
-            beautiful Full Stack CRUD Apps around AutoQuery APIs, suitable for a wide number of use-cases including:</p>
-        <p>Creating an instant UI around existing Database-First RDBMS tables</p>
-        <p>Highly customizable, declarative Code-First development model</p>
-        <p>As Locode’s UI is built on top of ServiceStack’s industrial strength AutoQuery APIs, Hybrid Apps can benefit from its superior end-to-end typed development model for creating Web, Mobile &amp; Desktop Apps.</p>
+        <p>The new Tailwind Razor Pages &amp; MVC Templates enable rapid development of Modern Tailwind Apps without the pitfalls plaguing SPA development.</p>
+        <p>
+            With all modern browsers natively supporting 
+            <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules'>JavaScript Modules</a>, 
+            traditional Multi Page Apps can deliver amazing end user experiences with progressively enhanced Razor Pages without any need for npm build systems or deps.
+        </p>
+        <p>
+            To maximize productivity for this revolutionary simplified dev model, all templates are pre-configured to use our rich 
+            <a href='https://docs.servicestack.net/vue/'>Vue 3 Taiwlind Library</a> and
+            <a href='https://docs.servicestack.net/releases/v6_6#js-module-es6-class-dtos'>JavaScript Module DTOs</a> - enabling instant typed API integration.
+        </p>
     </div>
     "
-    learn_url="https://www.locode.dev"
+    learn_url="https://docs.servicestack.net/vue/"
     %}
+    
 
     {% include home/feature-video-right.html
     local_link_id="autoquery-feature"
@@ -96,8 +103,8 @@
     title="AutoQuery"
     bg_class="bg-gray-100"
     embed_html="
-    <p>Surface the ideal API a developer would naturally write and complete their implementation for them with AutoQuery!</p>
-    <p>AutoQuery which utilizes conventions to automate the creation of intent-based self-descriptive APIs that are able to specify configurable conventions and leverage extensibility options for a great developer experience.</p>
+    <p>A fast, modern GraphQL &amp; OData alternative - Rapidly develop data-driven Typed APIs by surfacing the ideal API a developer would naturally write and complete their implementation for them with AutoQuery!</p>
+    <p>AutoQuery utilizes conventions to automate the creation of intent-based self-descriptive APIs that are able to specify configurable conventions and leverage extensibility options for a great developer experience.</p>
     "
     learn_url="/autoquery"
     %}
@@ -142,20 +149,38 @@
     learn_url="https://docs.servicestack.net/admin-ui"
     %}
 
-    {% include home/feature-service-clients.html %}
-
-    {% include home/feature-why.html %}
-
-    {% include home/feature-video-left.html
+    {% include home/feature-video-right.html
     youtube_id="NaJ7TW-Q_pU,3iz9aM1AlGA"
     local_link_id="autogen-feature"
     title="AutoGen CRUD"
-    bg_class="bg-white"
+    bg_class="bg-gray-100"
     embed_html="
     <p>Generate fully featured web services dynamically from your RDBMS of choice with ease allowing you to un-silo your valuable data.</p>
     <p>AutoGen for AutoQuery generates the required DTO types at runtime, and ServiceStack tooling allows you to extract those runtime types, giving you a future proof pathway to customize and migrate to a code-first model when you need.</p>
     "
     learn_url="https://docs.servicestack.net/autoquery-autogen"
+    %}
+
+    
+    {% include home/feature-service-clients.html %}
+    {% include home/feature-why.html %}
+
+
+    {% include home/feature-video-left.html
+    youtube_id="hkuO_DMFXmc,NiTp5Z_5U2Y,mFyMgg7c3vg"
+    local_link_id="locode"
+    title="Locode"
+    bg_class="bg-white"
+    embed_html="
+    <div class='mt-4'>
+        <p><a href='https://locode.dev'>locode.dev</a> is our Rapid Application Development (RAD) solution to quickly develop 
+            beautiful Full Stack CRUD Apps around AutoQuery APIs, suitable for a wide number of use-cases including:</p>
+        <p>Creating an instant UI around existing Database-First RDBMS tables</p>
+        <p>Highly customizable, declarative Code-First development model</p>
+        <p>As Locode’s UI is built on top of ServiceStack’s industrial strength AutoQuery APIs, Hybrid Apps can benefit from its superior end-to-end typed development model for creating Web, Mobile &amp; Desktop Apps.</p>
+    </div>
+    "
+    learn_url="https://www.locode.dev"
     %}
 
     {% include home/feature-video-right.html
