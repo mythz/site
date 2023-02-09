@@ -14,6 +14,7 @@ function withoutTrailingSlash(path) {
         ? path.substring(0, path.length - 1)
         : path
 }
+const NoMix = ['nextjs','vue-vite','vue-ssg']
 function updateTemplates() {
     let hasTag = location.search.indexOf('tag=') >= 0
     $('#mix').css({
@@ -40,6 +41,9 @@ function updateTemplates() {
 
     $('.archive-url').each(function () {
         let url = leftPart(this.href, '?') + '?' + urlParams;
+        if (NoMix.some(x => this.href.includes(x))) {
+            url = leftPart(url, '&Mix')
+        }
         this.href = templateUrlFilter(url);
     });
     $('.archive-name').each(function () {
