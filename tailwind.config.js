@@ -8,6 +8,7 @@ module.exports = {
         './_whatsnew/**/*.md',
         './_includes/**/*.html',
         './_includes/**/*.md',
+        './js/**/*.js'
     ],
     theme: {
         extend: {

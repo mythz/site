@@ -123,7 +123,7 @@ function formatNumber(num) {
 fetch(DYNAMIC_URL + "/stats/projects.json")
     .then(function (r) { return r.json(); })
     .then(function (obj) {
-        let results = obj.Results || obj.results;
+        let results = Object.assign({ 'vue-mjs':0,'razor-tailwind':0,'mvc-tailwind':0,'web-tailwind':0,'razor-pages':0 }, obj.Results || obj.results);
         Object.keys(results).forEach(function (k) {
             let count = results[k];
             let name = k.indexOf('/') >= 0
@@ -132,7 +132,7 @@ fetch(DYNAMIC_URL + "/stats/projects.json")
             let $count = $1('.' + name + ' .count');
             if (!$count) return;
             $count.innerHTML = count < 60
-                ? '<span class="px-2 h-8 rounded-lg bg-red-50 text-red-600 text-sm">new</span>'
+                ? '<span class="inline-flex items-center rounded-full bg-pink-100 px-2.5 py-0.5 text-xs font-medium text-pink-800">new</span>'
                 : formatNumber(count) + ' installs';
         });
     })
