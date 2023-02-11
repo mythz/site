@@ -17,10 +17,6 @@ function withoutTrailingSlash(path) {
 const NoMix = ['nextjs','vue-vite','vue-ssg']
 function updateTemplates() {
     let hasTag = location.search.indexOf('tag=') >= 0
-    $('#mix').css({
-        display: !hasTag ? 'flex' : 'none'
-    })
-
     let name = $('#txtProjectName').val() || 'MyApp';
     let mix = !hasTag ? getMix() : null;
     let urlParams = 'Name=' + encodeURIComponent(name);

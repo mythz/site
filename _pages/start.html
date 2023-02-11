@@ -9,8 +9,14 @@ sitemap: false
 #mix label {
     user-select: none;
 }
+.net6-only {
+    display: none;
+}
+.net6 .net6-only {
+    display: block;
+}
 </style>
-<div class="">
+<div id="start" class="net6">
     <div class="pt-10">
         <h1 class="text-center my-4 pt-8">
             <a href="/start" class="text-body text-body:hover">Getting Started</a>
@@ -64,156 +70,159 @@ sitemap: false
                        >
             </div>
         </div>
-        <div id="mix" class="flex justify-center flex-col items-center">
-            <h2 class="text-2xl">Add Features</h2>
-            <div class="flex flex-wrap">
-                <div class="p-2 mr-2">
-                    <h4>Authentication</h4>
-                    <div>
-                        <input id="chkAuth" type="checkbox" value="auth">
-                        <label for="chkAuth">auth</label>
+
+        <div id="mix" class="net6-only">
+            <div class="flex justify-center flex-col items-center">
+                <h2 class="text-2xl">Add Features</h2>
+                <div class="flex flex-wrap">
+                    <div class="p-2 mr-2">
+                        <h4>Authentication</h4>
+                        <div>
+                            <input id="chkAuth" type="checkbox" value="auth">
+                            <label for="chkAuth">auth</label>
+                        </div>
+                        <h4 class="my-2">Auth Repository</h4>
+                        <div>
+                            <input id="chkAuthDb" type="radio" name="auth-repo" value="auth-db">
+                            <label for="chkAuthDb">RDBMS</label>
+                        </div>
+                        <div>
+                            <input id="chkAuthRedis" type="radio" name="auth-repo" value="auth-redis">
+                            <label for="chkAuthRedis">Redis</label>
+                        </div>
+                        <div>
+                            <input id="chkAuthDynamoDb" type="radio" name="auth-repo" value="auth-dynamodb">
+                            <label for="chkAuthDynamoDb">DynamoDB</label>
+                        </div>
+                        <div>
+                            <input id="chkAuthMemory" type="radio" name="auth-repo" value="auth-memory">
+                            <label for="chkAuthMemory">In Memory</label>
+                        </div>
                     </div>
-                    <h4 class="my-2">Auth Repository</h4>
-                    <div>
-                        <input id="chkAuthDb" type="radio" name="auth-repo" value="auth-db">
-                        <label for="chkAuthDb">RDBMS</label>
+                    <div class="p-2 mr-2">
+                        <h4>Features</h4>
+                        <div>
+                            <input id="chkAutoQuery" type="radio" name="aq" value="autoquery">
+                            <label for="chkAutoQuery">AutoQuery</label>
+                        </div>
+                        <div>
+                            <input id="chkAutoGen" type="radio" name="aq" value="autocrudgen">
+                            <label for="chkAutoGen"><abbr title="Auto generate AutoQuery &amp; CRUD APIs for an existing RDBMS">AutoGen CRUD</abbr></label>
+                        </div>
+                        <div>
+                            <input id="chkProfiling" type="checkbox" value="profiling">
+                            <label for="chkProfiling">Profiling</label>
+                        </div>
+                        <div>
+                            <input id="chkServerEvents" type="checkbox" value="serverevents">
+                            <label for="chkServerEvents">Server Events</label>
+                        </div>
+                        <div>
+                            <input id="chkCors" type="checkbox" value="cors">
+                            <label for="chkCors"><abbr title="Cross-Origin Resource Sharing">CORS</abbr></label>
+                        </div>
+                        <div>
+                            <input id="chkOpenApi" type="checkbox" value="openapi">
+                            <label for="chkOpenApi">Open API</label>
+                        </div>
                     </div>
-                    <div>
-                        <input id="chkAuthRedis" type="radio" name="auth-repo" value="auth-redis">
-                        <label for="chkAuthRedis">Redis</label>
+                    <div class="p-2 mr-2">
+                        <h4>RDBMS</h4>
+                        <div>
+                            <input id="chkDbPostgreSql" type="radio" name="db" value="postgres">
+                            <label for="chkDbPostgreSql">PostgreSQL</label>
+                        </div>
+                        <div>
+                            <input id="chkDbSqlServer" type="radio" name="db" value="sqlserver">
+                            <label for="chkDbSqlServer">SQL Server</label>
+                        </div>
+                        <div>
+                            <input id="chkDbMySql" type="radio" name="db" value="mysql">
+                            <label for="chkDbMySql">MySQL</label>
+                        </div>
+                        <div>
+                            <input id="chkDbSqlite" type="radio" name="db" value="sqlite">
+                            <label for="chkDbSqlite">SQLite</label>
+                        </div>
+                        <div>
+                            <input id="chkFirebird" type="radio" name="db" value="firebird">
+                            <label for="chkFirebird">Firebird</label>
+                        </div>
+                        <div>
+                            <input id="chkOracle" type="radio" name="db" value="oracle">
+                            <label for="chkOracle">Oracle</label>
+                        </div>
                     </div>
-                    <div>
-                        <input id="chkAuthDynamoDb" type="radio" name="auth-repo" value="auth-dynamodb">
-                        <label for="chkAuthDynamoDb">DynamoDB</label>
+                    <div class="p-2 mr-2">
+                        <h4>Data Stores</h4>
+                        <div>
+                            <input id="chkRedis" type="checkbox" value="redis">
+                            <label for="chkRedis">Redis</label>
+                        </div>
+                        <div>
+                            <input id="chkDynamoDb" type="checkbox" value="dynamodb">
+                            <label for="chkDynamoDb">DynamoDB</label>
+                        </div>
+                        <div>
+                            <input id="chkRavenDb" type="checkbox" value="ravendb">
+                            <label for="chkRavenDb">RavenDB</label>
+                        </div>
+                        <div>
+                            <input id="chkMongoDb" type="checkbox" value="mongodb">
+                            <label for="chkMongoDb">MongoDB</label>
+                        </div>
                     </div>
-                    <div>
-                        <input id="chkAuthMemory" type="radio" name="auth-repo" value="auth-memory">
-                        <label for="chkAuthMemory">In Memory</label>
+                    <div class="p-2 mr-2">
+                        <h4>Messaging (MQ)</h4>
+                        <div>
+                            <input id="chkBackgroundMq" type="radio" name="mq" value="backgroundmq">
+                            <label for="chkBackgroundMq">Background MQ</label>
+                        </div>
+                        <div>
+                            <input id="chkRabbitMq" type="radio" name="mq" value="rabbitmq">
+                            <label for="chkRabbitMq">RabbitMQ</label>
+                        </div>
+                        <div>
+                            <input id="chkRedisMq" type="radio" name="mq" value="redismq">
+                            <label for="chkRedisMq">Redis MQ</label>
+                        </div>
+                        <div>
+                            <input id="chkSqs" type="radio" name="mq" value="sqs">
+                            <label for="chkSqs">AWS SQS MQ</label>
+                        </div>
+                        <div>
+                            <input id="chkServiceBus" type="radio" name="mq" value="servicebus">
+                            <label for="chkServiceBus">Azure Service Bus</label>
+                        </div>
+                    </div>
+                    <div class="p-2 mr-2">
+                        <h4>GitHub Actions</h4>
+                        <div>
+                            <input id="chkActionBuild" type="checkbox" value="build">
+                            <label for="chkActionBuild">Build &amp; Run Tests</label>
+                        </div>
+                        <div>
+                            <input id="chkActionEcrAws" type="radio" name="action" value="release-ecr-aws">
+                            <label for="chkActionEcrAws">Deploy to <abbr title="Amazon Elastic Container Service">ECS</abbr> via <abbr title="Amazon Elastic Container Registry">ECR</abbr></label>
+                        </div>
+                        <div>
+                            <input id="chkActionGhrVanilla" type="radio" name="action" value="release-ghr-vanilla">
+                            <label for="chkActionGhrVanilla">Deploy to Linux via <abbr title="GitHub Container Registry">GHCR</abbr></label>
+                        </div>
+                        <div>
+                            <input id="chkActionEcrVanilla" type="radio" name="action" value="release-ecr-vanilla">
+                            <label for="chkActionEcrVanilla">Deploy to Linux via <abbr title="Amazon Elastic Container Registry">ECR</abbr></label>
+                        </div>
+                        <div>
+                            <input id="chkActionHubVanilla" type="radio" name="action" value="release-hub-vanilla">
+                            <label for="chkActionHubVanilla">Deploy to Linux via <abbr title="Docker Hub">Hub</abbr></label>
+                        </div>
                     </div>
                 </div>
-                <div class="p-2 mr-2">
-                    <h4>Features</h4>
-                    <div>
-                        <input id="chkAutoQuery" type="radio" name="aq" value="autoquery">
-                        <label for="chkAutoQuery">AutoQuery</label>
-                    </div>
-                    <div>
-                        <input id="chkAutoGen" type="radio" name="aq" value="autocrudgen">
-                        <label for="chkAutoGen"><abbr title="Auto generate AutoQuery &amp; CRUD APIs for an existing RDBMS">AutoGen CRUD</abbr></label>
-                    </div>
-                    <div>
-                        <input id="chkProfiling" type="checkbox" value="profiling">
-                        <label for="chkProfiling">Profiling</label>
-                    </div>
-                    <div>
-                        <input id="chkServerEvents" type="checkbox" value="serverevents">
-                        <label for="chkServerEvents">Server Events</label>
-                    </div>
-                    <div>
-                        <input id="chkCors" type="checkbox" value="cors">
-                        <label for="chkCors"><abbr title="Cross-Origin Resource Sharing">CORS</abbr></label>
-                    </div>
-                    <div>
-                        <input id="chkOpenApi" type="checkbox" value="openapi">
-                        <label for="chkOpenApi">Open API</label>
-                    </div>
+                <div id="reset" class="invisible text-blue-500 text-blue-600:hover cursor-pointer" onclick="reset()" style="margin-top:-2em">reset</div>
+                <div class="text-gray-400">
+                    see <a href="https://docs.servicestack.net/mix-tool">mix</a> for adding more features after project is created
                 </div>
-                <div class="p-2 mr-2">
-                    <h4>RDBMS</h4>
-                    <div>
-                        <input id="chkDbPostgreSql" type="radio" name="db" value="postgres">
-                        <label for="chkDbPostgreSql">PostgreSQL</label>
-                    </div>
-                    <div>
-                        <input id="chkDbSqlServer" type="radio" name="db" value="sqlserver">
-                        <label for="chkDbSqlServer">SQL Server</label>
-                    </div>
-                    <div>
-                        <input id="chkDbMySql" type="radio" name="db" value="mysql">
-                        <label for="chkDbMySql">MySQL</label>
-                    </div>
-                    <div>
-                        <input id="chkDbSqlite" type="radio" name="db" value="sqlite">
-                        <label for="chkDbSqlite">SQLite</label>
-                    </div>
-                    <div>
-                        <input id="chkFirebird" type="radio" name="db" value="firebird">
-                        <label for="chkFirebird">Firebird</label>
-                    </div>
-                    <div>
-                        <input id="chkOracle" type="radio" name="db" value="oracle">
-                        <label for="chkOracle">Oracle</label>
-                    </div>
-                </div>
-                <div class="p-2 mr-2">
-                    <h4>Data Stores</h4>
-                    <div>
-                        <input id="chkRedis" type="checkbox" value="redis">
-                        <label for="chkRedis">Redis</label>
-                    </div>
-                    <div>
-                        <input id="chkDynamoDb" type="checkbox" value="dynamodb">
-                        <label for="chkDynamoDb">DynamoDB</label>
-                    </div>
-                    <div>
-                        <input id="chkRavenDb" type="checkbox" value="ravendb">
-                        <label for="chkRavenDb">RavenDB</label>
-                    </div>
-                    <div>
-                        <input id="chkMongoDb" type="checkbox" value="mongodb">
-                        <label for="chkMongoDb">MongoDB</label>
-                    </div>
-                </div>
-                <div class="p-2 mr-2">
-                    <h4>Messaging (MQ)</h4>
-                    <div>
-                        <input id="chkBackgroundMq" type="radio" name="mq" value="backgroundmq">
-                        <label for="chkBackgroundMq">Background MQ</label>
-                    </div>
-                    <div>
-                        <input id="chkRabbitMq" type="radio" name="mq" value="rabbitmq">
-                        <label for="chkRabbitMq">RabbitMQ</label>
-                    </div>
-                    <div>
-                        <input id="chkRedisMq" type="radio" name="mq" value="redismq">
-                        <label for="chkRedisMq">Redis MQ</label>
-                    </div>
-                    <div>
-                        <input id="chkSqs" type="radio" name="mq" value="sqs">
-                        <label for="chkSqs">AWS SQS MQ</label>
-                    </div>
-                    <div>
-                        <input id="chkServiceBus" type="radio" name="mq" value="servicebus">
-                        <label for="chkServiceBus">Azure Service Bus</label>
-                    </div>
-                </div>
-                <div class="p-2 mr-2">
-                    <h4>GitHub Actions</h4>
-                    <div>
-                        <input id="chkActionBuild" type="checkbox" value="build">
-                        <label for="chkActionBuild">Build &amp; Run Tests</label>
-                    </div>
-                    <div>
-                        <input id="chkActionEcrAws" type="radio" name="action" value="release-ecr-aws">
-                        <label for="chkActionEcrAws">Deploy to <abbr title="Amazon Elastic Container Service">ECS</abbr> via <abbr title="Amazon Elastic Container Registry">ECR</abbr></label>
-                    </div>
-                    <div>
-                        <input id="chkActionGhrVanilla" type="radio" name="action" value="release-ghr-vanilla">
-                        <label for="chkActionGhrVanilla">Deploy to Linux via <abbr title="GitHub Container Registry">GHCR</abbr></label>
-                    </div>
-                    <div>
-                        <input id="chkActionEcrVanilla" type="radio" name="action" value="release-ecr-vanilla">
-                        <label for="chkActionEcrVanilla">Deploy to Linux via <abbr title="Amazon Elastic Container Registry">ECR</abbr></label>
-                    </div>
-                    <div>
-                        <input id="chkActionHubVanilla" type="radio" name="action" value="release-hub-vanilla">
-                        <label for="chkActionHubVanilla">Deploy to Linux via <abbr title="Docker Hub">Hub</abbr></label>
-                    </div>
-                </div>
-            </div>
-            <div id="reset" class="invisible text-blue-500 text-blue-600:hover cursor-pointer" onclick="reset()" style="margin-top:-2em">reset</div>
-            <div class="text-gray-400">
-                see <a href="https://docs.servicestack.net/mix-tool">mix</a> for adding more features after project is created
             </div>
         </div>
 
@@ -229,7 +238,7 @@ sitemap: false
                         name="Web"
                         icon_element="<i class='fab fa-servicestack'></i>" %}
                     </div>
-                    <div>
+                    <div class="net6-only">
                         {% include project-template-install-card.html
                         repo="NetCoreTemplates/web-tailwind"
                         name="Tailwind"
@@ -256,7 +265,7 @@ sitemap: false
                 </div>
             </div>
 
-            <div id="empty" class="mt-4 mb-2">
+            <div id="empty" class="net6-only mt-4 mb-2">
                 <h3 class="text-gray-400">Vue 3 Tailwind CSS Templates</h3>
 
                 <div class="flex flex-wrap justify-center">
@@ -285,7 +294,7 @@ sitemap: false
             </div>
 
 
-            <div id="empty" class="mt-4 mb-2">
+            <div id="empty" class="net6-only mt-4 mb-2">
                 <h3 class="text-gray-400">JAMStack Tailwind CSS Templates</h3>
 
                 <div class="flex flex-wrap justify-center">
@@ -331,7 +340,7 @@ sitemap: false
                 <h3 class="text-gray-400">Server Generated Websites</h3>
 
                 <div class="flex flex-wrap justify-center">
-                    <div>
+                    <div class="net6-only">
                         {% include project-template-install-card.html
                         repo="NetCoreTemplates/razor-pages"
                         name="Razor Pages"
@@ -494,7 +503,7 @@ sitemap: false
                 </div>
             </div>
 
-            <div id="desktop" class="mt-4 mb-2">
+            <div id="desktop" class="net6-only mt-4 mb-2">
                 <h3 class="text-gray-400">Desktop Project Templates</h3>
 
                 <div class="flex flex-wrap justify-center">
@@ -556,13 +565,18 @@ sitemap: false
     </div>
 </div>
 
-<script> let DYNAMIC_URL = "{{site.dynamic_url}}"</script>
+<script>let DYNAMIC_URL = "{{site.dynamic_url}}"</script>
 <script src="/js/jquery.min.js"></script>
 <script src="/js/start.js"></script>
+<script>
+var qs = {};
+location.search.substr(1).split("&").forEach(function(item) {qs[item.split("=")[0]] = item.split("=")[1]})
+$('#start')[0].className = qs['tag'] || 'net6'
+</script>
 
 <!-- Event snippet for Website traffic - Start conversion page -->
 <script>
-    gtag('event', 'conversion', {'send_to': 'AW-311872389/0T6UCNq3p-4CEIWX25QB'});
+gtag('event', 'conversion', {'send_to': 'AW-311872389/0T6UCNq3p-4CEIWX25QB'});
 </script>
 
 
